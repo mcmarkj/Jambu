@@ -9,6 +9,8 @@
 #import "CONINVITEFirstViewController.h"
 
 @interface CONINVITEFirstViewController ()
+@property (strong, nonatomic) IBOutlet UILabel *overlaylabel;
+@property (strong, nonatomic) IBOutlet UILabel *overlaynexteventlabel;
 
 @end
 
@@ -17,6 +19,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _overlaylabel.font = [UIFont fontWithName:@"Roboto-Light" size:28];
+    
+    _overlaynexteventlabel.font = [UIFont fontWithName:@"Roboto-Light" size:15];
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
