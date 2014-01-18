@@ -17,22 +17,7 @@
 		414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414AA82F188AE743001B3301 /* CONINVITEFirstViewController.m */; };
 		414AA833188AE743001B3301 /* CONINVITESecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414AA832188AE743001B3301 /* CONINVITESecondViewController.m */; };
 		414AA835188AE743001B3301 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 414AA834188AE743001B3301 /* Images.xcassets */; };
-		414AA83C188AE743001B3301 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA83B188AE743001B3301 /* XCTest.framework */; };
-		414AA83D188AE743001B3301 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA819188AE743001B3301 /* Foundation.framework */; };
-		414AA83E188AE743001B3301 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA81D188AE743001B3301 /* UIKit.framework */; };
-		414AA846188AE743001B3301 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 414AA844188AE743001B3301 /* InfoPlist.strings */; };
-		414AA848188AE743001B3301 /* Invite_A_FriendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 414AA847188AE743001B3301 /* Invite_A_FriendTests.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		414AA83F188AE743001B3301 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 414AA80E188AE743001B3301 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 414AA815188AE743001B3301;
-			remoteInfo = "Invite-A-Friend";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		414AA816188AE743001B3301 /* Invite-A-Friend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Invite-A-Friend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,11 +36,7 @@
 		414AA831188AE743001B3301 /* CONINVITESecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONINVITESecondViewController.h; sourceTree = "<group>"; };
 		414AA832188AE743001B3301 /* CONINVITESecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CONINVITESecondViewController.m; sourceTree = "<group>"; };
 		414AA834188AE743001B3301 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		414AA83A188AE743001B3301 /* Invite-A-FriendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Invite-A-FriendTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		414AA83B188AE743001B3301 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		414AA843188AE743001B3301 /* Invite-A-FriendTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Invite-A-FriendTests-Info.plist"; sourceTree = "<group>"; };
-		414AA845188AE743001B3301 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		414AA847188AE743001B3301 /* Invite_A_FriendTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Invite_A_FriendTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,16 +50,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		414AA837188AE743001B3301 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				414AA83C188AE743001B3301 /* XCTest.framework in Frameworks */,
-				414AA83E188AE743001B3301 /* UIKit.framework in Frameworks */,
-				414AA83D188AE743001B3301 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				414AA81F188AE743001B3301 /* Invite-A-Friend */,
-				414AA841188AE743001B3301 /* Invite-A-FriendTests */,
 				414AA818188AE743001B3301 /* Frameworks */,
 				414AA817188AE743001B3301 /* Products */,
 			);
@@ -96,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				414AA816188AE743001B3301 /* Invite-A-Friend.app */,
-				414AA83A188AE743001B3301 /* Invite-A-FriendTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,24 +108,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		414AA841188AE743001B3301 /* Invite-A-FriendTests */ = {
-			isa = PBXGroup;
-			children = (
-				414AA847188AE743001B3301 /* Invite_A_FriendTests.m */,
-				414AA842188AE743001B3301 /* Supporting Files */,
-			);
-			path = "Invite-A-FriendTests";
-			sourceTree = "<group>";
-		};
-		414AA842188AE743001B3301 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				414AA843188AE743001B3301 /* Invite-A-FriendTests-Info.plist */,
-				414AA844188AE743001B3301 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,24 +128,6 @@
 			productReference = 414AA816188AE743001B3301 /* Invite-A-Friend.app */;
 			productType = "com.apple.product-type.application";
 		};
-		414AA839188AE743001B3301 /* Invite-A-FriendTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 414AA84E188AE743001B3301 /* Build configuration list for PBXNativeTarget "Invite-A-FriendTests" */;
-			buildPhases = (
-				414AA836188AE743001B3301 /* Sources */,
-				414AA837188AE743001B3301 /* Frameworks */,
-				414AA838188AE743001B3301 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				414AA840188AE743001B3301 /* PBXTargetDependency */,
-			);
-			name = "Invite-A-FriendTests";
-			productName = "Invite-A-FriendTests";
-			productReference = 414AA83A188AE743001B3301 /* Invite-A-FriendTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,8 +138,8 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Concept96;
 				TargetAttributes = {
-					414AA839188AE743001B3301 = {
-						TestTargetID = 414AA815188AE743001B3301;
+					414AA815188AE743001B3301 = {
+						DevelopmentTeam = H7M266N9FJ;
 					};
 				};
 			};
@@ -224,7 +157,6 @@
 			projectRoot = "";
 			targets = (
 				414AA815188AE743001B3301 /* Invite-A-Friend */,
-				414AA839188AE743001B3301 /* Invite-A-FriendTests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,14 +169,6 @@
 				414AA835188AE743001B3301 /* Images.xcassets in Resources */,
 				414AA824188AE743001B3301 /* InfoPlist.strings in Resources */,
 				414AA82D188AE743001B3301 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		414AA838188AE743001B3301 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				414AA846188AE743001B3301 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,23 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		414AA836188AE743001B3301 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				414AA848188AE743001B3301 /* Invite_A_FriendTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		414AA840188AE743001B3301 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 414AA815188AE743001B3301 /* Invite-A-Friend */;
-			targetProxy = 414AA83F188AE743001B3301 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		414AA822188AE743001B3301 /* InfoPlist.strings */ = {
@@ -295,14 +203,6 @@
 				414AA82C188AE743001B3301 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		414AA844188AE743001B3301 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				414AA845188AE743001B3301 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -385,6 +285,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
 				INFOPLIST_FILE = "Invite-A-Friend/Invite-A-Friend-Info.plist";
@@ -398,53 +299,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
 				INFOPLIST_FILE = "Invite-A-Friend/Invite-A-Friend-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		414AA84F188AE743001B3301 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Invite-A-Friend.app/Invite-A-Friend";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Invite-A-FriendTests/Invite-A-FriendTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		414AA850188AE743001B3301 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Invite-A-Friend.app/Invite-A-Friend";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
-				INFOPLIST_FILE = "Invite-A-FriendTests/Invite-A-FriendTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -465,14 +325,6 @@
 			buildConfigurations = (
 				414AA84C188AE743001B3301 /* Debug */,
 				414AA84D188AE743001B3301 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		414AA84E188AE743001B3301 /* Build configuration list for PBXNativeTarget "Invite-A-FriendTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				414AA84F188AE743001B3301 /* Debug */,
-				414AA850188AE743001B3301 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
