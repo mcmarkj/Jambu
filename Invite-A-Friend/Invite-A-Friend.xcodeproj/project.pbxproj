@@ -47,6 +47,23 @@
 		414AA8B2188B0274001B3301 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 414AA8A0188B0274001B3301 /* RobotoCondensed-Light.ttf */; };
 		414AA8B3188B0274001B3301 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 414AA8A1188B0274001B3301 /* RobotoCondensed-LightItalic.ttf */; };
 		414AA8B4188B0274001B3301 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 414AA8A2188B0274001B3301 /* RobotoCondensed-Regular.ttf */; };
+		419BB68A188C119800B7D403 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB67A188C119800B7D403 /* Icon-40.png */; };
+		419BB68B188C119800B7D403 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB67B188C119800B7D403 /* Icon-40@2x.png */; };
+		419BB68C188C119800B7D403 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB67C188C119800B7D403 /* Icon-60.png */; };
+		419BB68D188C119800B7D403 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB67D188C119800B7D403 /* Icon-60@2x.png */; };
+		419BB68E188C119800B7D403 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB67E188C119800B7D403 /* Icon-72.png */; };
+		419BB68F188C119800B7D403 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB67F188C119800B7D403 /* Icon-72@2x.png */; };
+		419BB690188C119800B7D403 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB680188C119800B7D403 /* Icon-76.png */; };
+		419BB691188C119800B7D403 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB681188C119800B7D403 /* Icon-76@2x.png */; };
+		419BB692188C119800B7D403 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB682188C119800B7D403 /* Icon-Small-50.png */; };
+		419BB693188C119800B7D403 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB683188C119800B7D403 /* Icon-Small-50@2x.png */; };
+		419BB694188C119800B7D403 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB684188C119800B7D403 /* Icon-Small.png */; };
+		419BB695188C119800B7D403 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB685188C119800B7D403 /* Icon-Small@2x.png */; };
+		419BB696188C119800B7D403 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB686188C119800B7D403 /* Icon.png */; };
+		419BB697188C119800B7D403 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB687188C119800B7D403 /* Icon@2x.png */; };
+		419BB698188C119800B7D403 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB688188C119800B7D403 /* iTunesArtwork.png */; };
+		419BB699188C119800B7D403 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB689188C119800B7D403 /* iTunesArtwork@2x.png */; };
+		419BB69B188C158800B7D403 /* launch@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB69A188C158800B7D403 /* launch@2.png */; };
 		41BED610188B497400C88770 /* ContactCardBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BED60F188B497400C88770 /* ContactCardBase.png */; };
 		41BED612188B49D000C88770 /* 1609866_10203023090483243_1366328690_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41BED611188B49D000C88770 /* 1609866_10203023090483243_1366328690_n.jpg */; };
 		41BED614188B525800C88770 /* InviteIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BED613188B525800C88770 /* InviteIndicator.png */; };
@@ -100,6 +117,23 @@
 		414AA8A0188B0274001B3301 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		414AA8A1188B0274001B3301 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		414AA8A2188B0274001B3301 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		419BB67A188C119800B7D403 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
+		419BB67B188C119800B7D403 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		419BB67C188C119800B7D403 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		419BB67D188C119800B7D403 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		419BB67E188C119800B7D403 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		419BB67F188C119800B7D403 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		419BB680188C119800B7D403 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		419BB681188C119800B7D403 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		419BB682188C119800B7D403 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		419BB683188C119800B7D403 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		419BB684188C119800B7D403 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		419BB685188C119800B7D403 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		419BB686188C119800B7D403 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		419BB687188C119800B7D403 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		419BB688188C119800B7D403 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		419BB689188C119800B7D403 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		419BB69A188C158800B7D403 /* launch@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch@2.png"; sourceTree = "<group>"; };
 		41BED60F188B497400C88770 /* ContactCardBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ContactCardBase.png; sourceTree = "<group>"; };
 		41BED611188B49D000C88770 /* 1609866_10203023090483243_1366328690_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1609866_10203023090483243_1366328690_n.jpg; sourceTree = "<group>"; };
 		41BED613188B525800C88770 /* InviteIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InviteIndicator.png; sourceTree = "<group>"; };
@@ -179,6 +213,7 @@
 		414AA851188AEFF9001B3301 /* Invite Design Elements */ = {
 			isa = PBXGroup;
 			children = (
+				419BB679188C119800B7D403 /* appicons */,
 				41BED613188B525800C88770 /* InviteIndicator.png */,
 				41BED611188B49D000C88770 /* 1609866_10203023090483243_1366328690_n.jpg */,
 				41BED60F188B497400C88770 /* ContactCardBase.png */,
@@ -223,6 +258,30 @@
 			);
 			name = fonts;
 			path = roboto;
+			sourceTree = "<group>";
+		};
+		419BB679188C119800B7D403 /* appicons */ = {
+			isa = PBXGroup;
+			children = (
+				419BB67A188C119800B7D403 /* Icon-40.png */,
+				419BB67B188C119800B7D403 /* Icon-40@2x.png */,
+				419BB67C188C119800B7D403 /* Icon-60.png */,
+				419BB67D188C119800B7D403 /* Icon-60@2x.png */,
+				419BB67E188C119800B7D403 /* Icon-72.png */,
+				419BB67F188C119800B7D403 /* Icon-72@2x.png */,
+				419BB69A188C158800B7D403 /* launch@2.png */,
+				419BB680188C119800B7D403 /* Icon-76.png */,
+				419BB681188C119800B7D403 /* Icon-76@2x.png */,
+				419BB682188C119800B7D403 /* Icon-Small-50.png */,
+				419BB683188C119800B7D403 /* Icon-Small-50@2x.png */,
+				419BB684188C119800B7D403 /* Icon-Small.png */,
+				419BB685188C119800B7D403 /* Icon-Small@2x.png */,
+				419BB686188C119800B7D403 /* Icon.png */,
+				419BB687188C119800B7D403 /* Icon@2x.png */,
+				419BB688188C119800B7D403 /* iTunesArtwork.png */,
+				419BB689188C119800B7D403 /* iTunesArtwork@2x.png */,
+			);
+			path = appicons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,9 +342,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419BB68A188C119800B7D403 /* Icon-40.png in Resources */,
 				414AA859188AFD51001B3301 /* Heart.png in Resources */,
 				414AA866188B015A001B3301 /* invite@2x.png in Resources */,
 				414AA8AC188B0274001B3301 /* Roboto-Regular.ttf in Resources */,
+				419BB690188C119800B7D403 /* Icon-76.png in Resources */,
 				414AA8B4188B0274001B3301 /* RobotoCondensed-Regular.ttf in Resources */,
 				414AA8A4188B0274001B3301 /* Roboto-BlackItalic.ttf in Resources */,
 				414AA8B2188B0274001B3301 /* RobotoCondensed-Light.ttf in Resources */,
@@ -293,15 +354,23 @@
 				414AA8AB188B0274001B3301 /* Roboto-MediumItalic.ttf in Resources */,
 				414AA85F188AFDB4001B3301 /* chat.png in Resources */,
 				414AA868188B015A001B3301 /* Heart@2x.png in Resources */,
+				419BB692188C119800B7D403 /* Icon-Small-50.png in Resources */,
 				414AA867188B015A001B3301 /* chat@2x.png in Resources */,
 				414AA853188AEFF9001B3301 /* overlay.png in Resources */,
 				414AA855188AF2F5001B3301 /* topbanner.png in Resources */,
+				419BB68F188C119800B7D403 /* Icon-72@2x.png in Resources */,
 				414AA835188AE743001B3301 /* Images.xcassets in Resources */,
+				419BB698188C119800B7D403 /* iTunesArtwork.png in Resources */,
 				414AA85B188AFD51001B3301 /* home.png in Resources */,
+				419BB697188C119800B7D403 /* Icon@2x.png in Resources */,
+				419BB696188C119800B7D403 /* Icon.png in Resources */,
 				41BED610188B497400C88770 /* ContactCardBase.png in Resources */,
+				419BB699188C119800B7D403 /* iTunesArtwork@2x.png in Resources */,
 				414AA8AA188B0274001B3301 /* Roboto-Medium.ttf in Resources */,
+				419BB694188C119800B7D403 /* Icon-Small.png in Resources */,
 				414AA8A8188B0274001B3301 /* Roboto-Light.ttf in Resources */,
 				414AA8A9188B0274001B3301 /* Roboto-LightItalic.ttf in Resources */,
+				419BB68C188C119800B7D403 /* Icon-60.png in Resources */,
 				414AA8B0188B0274001B3301 /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				41BED612188B49D000C88770 /* 1609866_10203023090483243_1366328690_n.jpg in Resources */,
 				414AA824188AE743001B3301 /* InfoPlist.strings in Resources */,
@@ -310,13 +379,20 @@
 				414AA8A3188B0274001B3301 /* Roboto-Black.ttf in Resources */,
 				414AA85E188AFDB4001B3301 /* invite.png in Resources */,
 				414AA8A5188B0274001B3301 /* Roboto-Bold.ttf in Resources */,
+				419BB693188C119800B7D403 /* Icon-Small-50@2x.png in Resources */,
 				414AA85A188AFD51001B3301 /* diary.png in Resources */,
 				414AA8A7188B0274001B3301 /* Roboto-Italic.ttf in Resources */,
+				419BB68D188C119800B7D403 /* Icon-60@2x.png in Resources */,
 				414AA82D188AE743001B3301 /* Main.storyboard in Resources */,
 				41BED614188B525800C88770 /* InviteIndicator.png in Resources */,
 				414AA8AE188B0274001B3301 /* Roboto-ThinItalic.ttf in Resources */,
 				414AA8AD188B0274001B3301 /* Roboto-Thin.ttf in Resources */,
+				419BB691188C119800B7D403 /* Icon-76@2x.png in Resources */,
+				419BB68E188C119800B7D403 /* Icon-72.png in Resources */,
 				414AA861188B00BD001B3301 /* home@2x.png in Resources */,
+				419BB68B188C119800B7D403 /* Icon-40@2x.png in Resources */,
+				419BB695188C119800B7D403 /* Icon-Small@2x.png in Resources */,
+				419BB69B188C158800B7D403 /* launch@2.png in Resources */,
 				414AA8B3188B0274001B3301 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				414AA8B1188B0274001B3301 /* RobotoCondensed-Italic.ttf in Resources */,
 			);
