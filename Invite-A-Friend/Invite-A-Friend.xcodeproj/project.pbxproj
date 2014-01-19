@@ -65,6 +65,14 @@
 		419BB699188C119800B7D403 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB689188C119800B7D403 /* iTunesArtwork@2x.png */; };
 		419BB69B188C158800B7D403 /* launch@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB69A188C158800B7D403 /* launch@2.png */; };
 		419BB69D188C16E000B7D403 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB69C188C16E000B7D403 /* launch.png */; };
+		419BB69F188C1ACC00B7D403 /* menuicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB69E188C1ACC00B7D403 /* menuicon.png */; };
+		419BB6A8188C37EB00B7D403 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */; };
+		419BB6AA188C3EAD00B7D403 /* friendshead.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB6A9188C3EAD00B7D403 /* friendshead.png */; };
+		419BB6AC188C3F6800B7D403 /* friends-socialsync.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB6AB188C3F6800B7D403 /* friends-socialsync.png */; };
+		419BB6AE188C413500B7D403 /* twittersync.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB6AD188C413500B7D403 /* twittersync.png */; };
+		419BB6B0188C426600B7D403 /* facebooksync.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB6AF188C426600B7D403 /* facebooksync.png */; };
+		419BB6B2188C441A00B7D403 /* friendback.png in Resources */ = {isa = PBXBuildFile; fileRef = 419BB6B1188C441A00B7D403 /* friendback.png */; };
+		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; };
 		41BED610188B497400C88770 /* ContactCardBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BED60F188B497400C88770 /* ContactCardBase.png */; };
 		41BED612188B49D000C88770 /* 1609866_10203023090483243_1366328690_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41BED611188B49D000C88770 /* 1609866_10203023090483243_1366328690_n.jpg */; };
 		41BED614188B525800C88770 /* InviteIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BED613188B525800C88770 /* InviteIndicator.png */; };
@@ -136,6 +144,16 @@
 		419BB689188C119800B7D403 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		419BB69A188C158800B7D403 /* launch@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch@2.png"; sourceTree = "<group>"; };
 		419BB69C188C16E000B7D403 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		419BB69E188C1ACC00B7D403 /* menuicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuicon.png; sourceTree = "<group>"; };
+		419BB6A6188C37EB00B7D403 /* TWTSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTSideMenuViewController.h; sourceTree = "<group>"; };
+		419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTSideMenuViewController.m; sourceTree = "<group>"; };
+		419BB6A9188C3EAD00B7D403 /* friendshead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friendshead.png; sourceTree = "<group>"; };
+		419BB6AB188C3F6800B7D403 /* friends-socialsync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends-socialsync.png"; sourceTree = "<group>"; };
+		419BB6AD188C413500B7D403 /* twittersync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twittersync.png; sourceTree = "<group>"; };
+		419BB6AF188C426600B7D403 /* facebooksync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebooksync.png; sourceTree = "<group>"; };
+		419BB6B1188C441A00B7D403 /* friendback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friendback.png; sourceTree = "<group>"; };
+		419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsViewController.h; sourceTree = "<group>"; };
+		419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEFriendsViewController.m; sourceTree = "<group>"; };
 		41BED60F188B497400C88770 /* ContactCardBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ContactCardBase.png; sourceTree = "<group>"; };
 		41BED611188B49D000C88770 /* 1609866_10203023090483243_1366328690_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1609866_10203023090483243_1366328690_n.jpg; sourceTree = "<group>"; };
 		41BED613188B525800C88770 /* InviteIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InviteIndicator.png; sourceTree = "<group>"; };
@@ -192,8 +210,12 @@
 				414AA851188AEFF9001B3301 /* Invite Design Elements */,
 				414AA82E188AE743001B3301 /* CONINVITEFirstViewController.h */,
 				414AA82F188AE743001B3301 /* CONINVITEFirstViewController.m */,
+				419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */,
+				419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */,
 				414AA831188AE743001B3301 /* CONINVITESecondViewController.h */,
 				414AA832188AE743001B3301 /* CONINVITESecondViewController.m */,
+				419BB6A6188C37EB00B7D403 /* TWTSideMenuViewController.h */,
+				419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */,
 				414AA834188AE743001B3301 /* Images.xcassets */,
 				414AA820188AE743001B3301 /* Supporting Files */,
 			);
@@ -215,8 +237,14 @@
 		414AA851188AEFF9001B3301 /* Invite Design Elements */ = {
 			isa = PBXGroup;
 			children = (
+				419BB6AB188C3F6800B7D403 /* friends-socialsync.png */,
+				419BB6AD188C413500B7D403 /* twittersync.png */,
+				419BB6B1188C441A00B7D403 /* friendback.png */,
+				419BB6AF188C426600B7D403 /* facebooksync.png */,
+				419BB6A9188C3EAD00B7D403 /* friendshead.png */,
 				419BB679188C119800B7D403 /* appicons */,
 				41BED613188B525800C88770 /* InviteIndicator.png */,
+				419BB69E188C1ACC00B7D403 /* menuicon.png */,
 				41BED611188B49D000C88770 /* 1609866_10203023090483243_1366328690_n.jpg */,
 				41BED60F188B497400C88770 /* ContactCardBase.png */,
 				414AA862188B015A001B3301 /* invite@2x.png */,
@@ -353,17 +381,21 @@
 				414AA8B4188B0274001B3301 /* RobotoCondensed-Regular.ttf in Resources */,
 				414AA8A4188B0274001B3301 /* Roboto-BlackItalic.ttf in Resources */,
 				414AA8B2188B0274001B3301 /* RobotoCondensed-Light.ttf in Resources */,
+				419BB6B0188C426600B7D403 /* facebooksync.png in Resources */,
 				414AA869188B015A001B3301 /* diary@2x.png in Resources */,
 				414AA8AB188B0274001B3301 /* Roboto-MediumItalic.ttf in Resources */,
 				414AA85F188AFDB4001B3301 /* chat.png in Resources */,
 				414AA868188B015A001B3301 /* Heart@2x.png in Resources */,
 				419BB692188C119800B7D403 /* Icon-Small-50.png in Resources */,
+				419BB6B2188C441A00B7D403 /* friendback.png in Resources */,
 				414AA867188B015A001B3301 /* chat@2x.png in Resources */,
 				414AA853188AEFF9001B3301 /* overlay.png in Resources */,
 				414AA855188AF2F5001B3301 /* topbanner.png in Resources */,
 				419BB68F188C119800B7D403 /* Icon-72@2x.png in Resources */,
 				414AA835188AE743001B3301 /* Images.xcassets in Resources */,
+				419BB6AE188C413500B7D403 /* twittersync.png in Resources */,
 				419BB698188C119800B7D403 /* iTunesArtwork.png in Resources */,
+				419BB69F188C1ACC00B7D403 /* menuicon.png in Resources */,
 				414AA85B188AFD51001B3301 /* home.png in Resources */,
 				419BB697188C119800B7D403 /* Icon@2x.png in Resources */,
 				419BB696188C119800B7D403 /* Icon.png in Resources */,
@@ -375,12 +407,14 @@
 				414AA8A9188B0274001B3301 /* Roboto-LightItalic.ttf in Resources */,
 				419BB68C188C119800B7D403 /* Icon-60.png in Resources */,
 				414AA8B0188B0274001B3301 /* RobotoCondensed-BoldItalic.ttf in Resources */,
+				419BB6AA188C3EAD00B7D403 /* friendshead.png in Resources */,
 				41BED612188B49D000C88770 /* 1609866_10203023090483243_1366328690_n.jpg in Resources */,
 				414AA824188AE743001B3301 /* InfoPlist.strings in Resources */,
 				414AA8A6188B0274001B3301 /* Roboto-BoldItalic.ttf in Resources */,
 				414AA8AF188B0274001B3301 /* RobotoCondensed-Bold.ttf in Resources */,
 				414AA8A3188B0274001B3301 /* Roboto-Black.ttf in Resources */,
 				414AA85E188AFDB4001B3301 /* invite.png in Resources */,
+				419BB6AC188C3F6800B7D403 /* friends-socialsync.png in Resources */,
 				414AA8A5188B0274001B3301 /* Roboto-Bold.ttf in Resources */,
 				419BB693188C119800B7D403 /* Icon-Small-50@2x.png in Resources */,
 				414AA85A188AFD51001B3301 /* diary.png in Resources */,
@@ -410,6 +444,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				414AA833188AE743001B3301 /* CONINVITESecondViewController.m in Sources */,
+				419BB6A8188C37EB00B7D403 /* TWTSideMenuViewController.m in Sources */,
+				419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */,
 				414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */,
 				414AA82A188AE743001B3301 /* CONINVITEAppDelegate.m in Sources */,
 				414AA826188AE743001B3301 /* main.m in Sources */,
