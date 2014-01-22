@@ -35,13 +35,34 @@
         NSLog(@"User is not logged in");
         [self  performSegueWithIdentifier:@"LoginPage" sender:self];
     }
+    
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", @"5"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSError *error;
+    NSURLResponse *response;
+    NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+    //_UserTwitterLabel.text = [json valueForKey:@"username"];
+    //Set Full Name of User
+    _UserNameLabel.text = [json valueForKey:@"full_name"];
+    //Set twitter name
+    _UserTwitterLabel.text = [NSString stringWithFormat:@"@%@", [json valueForKey:@"username"]];
+    
+    //SET IMAGE
+    _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"image_url"]]]];
+    
     
     [self performSelector:@selector(fadein) withObject:nil afterDelay:-10];
     
@@ -52,9 +73,7 @@
        _overlayeventattendeeslabel.font = [UIFont fontWithName:@"Roboto-Light" size:9];
     
     _UserNameLabel.font = [UIFont fontWithName:@"Roboto" size:20];
-    _UserNameLabel.text =@"Mark McWhirter";
     _UserTwitterLabel.font = [UIFont fontWithName:@"Roboto-Light" size:13];
-    _UserTwitterLabel.text =@"@OfficialMarkM";
     _UserEventsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
     _UserEventsLabel.text =@"3";
     _UserEventsAttendedLabel.font = [UIFont fontWithName:@"Roboto" size:20];
