@@ -170,6 +170,7 @@
                         <outlet property="overlayeventdatelabel" destination="oy0-tT-VbY" id="4WZ-Fm-5i5"/>
                         <outlet property="overlaylabel" destination="J0M-8w-YkP" id="mOu-eP-I4o"/>
                         <outlet property="overlaynexteventlabel" destination="aeM-ag-UQ7" id="Tqv-N4-IpI"/>
+                        <segue destination="bvd-Vy-cXL" kind="modal" identifier="LoginPage" modalTransitionStyle="flipHorizontal" id="9UP-zD-xGT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
@@ -206,6 +207,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wqK-Fn-UO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1357" y="21"/>
+        </scene>
+        <!--Login View Controller - loginScreen-->
+        <scene sceneID="g5x-VW-yj7">
+            <objects>
+                <viewController title="loginScreen" id="bvd-Vy-cXL" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xrb-f2-R3t"/>
+                        <viewControllerLayoutGuide type="bottom" id="mdQ-ed-5yZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S1O-Xf-QeI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-3u-odt">
+                                <rect key="frame" x="137" y="196" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v6-hy-nhf">
+                                <rect key="frame" x="14" y="295" width="292" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WL-fy-gnm">
+                                <rect key="frame" x="116" y="418" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="FAKE LOGIN">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fakelogin:" destination="bvd-Vy-cXL" eventType="touchUpInside" id="0IW-MM-klQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="CZ4-MO-1fc" kind="modal" identifier="LoginPage" modalTransitionStyle="flipHorizontal" id="M3E-Y3-Wu6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sJ-lk-E4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="99" y="1407"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">
@@ -377,6 +425,7 @@
                         <segue destination="K2D-YF-ez9" kind="relationship" relationship="viewControllers" id="UDY-DD-Ffl"/>
                         <segue destination="UB3-As-7zp" kind="relationship" relationship="viewControllers" id="I8o-W8-w6y"/>
                         <segue destination="v4d-Mh-if8" kind="relationship" relationship="viewControllers" id="7dN-16-Btp"/>
+                        <segue destination="bvd-Vy-cXL" kind="modal" identifier="LoginPage" modalTransitionStyle="flipHorizontal" id="TE3-BG-HGX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -404,4 +453,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="M3E-Y3-Wu6"/>
+        <segue reference="9UP-zD-xGT"/>
+    </inferredMetricsTieBreakers>
 </document>

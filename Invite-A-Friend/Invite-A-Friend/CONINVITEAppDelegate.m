@@ -7,12 +7,14 @@
 //
 
 #import "CONINVITEAppDelegate.h"
+#import "CONINVITEFirstViewController.h"
 
 @implementation CONINVITEAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+
+    
     
     // Assign tab bar item with titles
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
@@ -46,11 +48,8 @@
     UIImage* tabBarBackground = [UIImage imageNamed:@"tab-back.png"];
     [[UITabBar appearance] setBackgroundImage:tabBarBackground];
     
-    
-    
-    
-    
-    
+
+
     return YES;
 }
 							

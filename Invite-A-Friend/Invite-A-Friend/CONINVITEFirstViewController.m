@@ -18,10 +18,30 @@
 
 @implementation CONINVITEFirstViewController
 
+
+- (void)didFinishLaunchingWithOptions
+{
+    
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([[defaults objectForKey:@"loggedIn"]boolValue]) {
+        NSLog(@"user is logged in - do nothing");
+    }
+    else {
+        
+        NSLog(@"User is not logged in");
+        [self  performSegueWithIdentifier:@"LoginPage" sender:self];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+
     
     [self performSelector:@selector(fadein) withObject:nil afterDelay:-10];
     
@@ -73,6 +93,8 @@
         _overlaynexteventlabel.text = countdownText;
     
 }
+
+
 
 -(void) fadein
 {
@@ -130,6 +152,8 @@
         [UIView commitAnimations];
     }
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {

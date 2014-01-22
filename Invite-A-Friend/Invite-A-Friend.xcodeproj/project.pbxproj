@@ -37,6 +37,7 @@
 		414AA8B4188B0274001B3301 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 414AA8A2188B0274001B3301 /* RobotoCondensed-Regular.ttf */; };
 		419BB6A8188C37EB00B7D403 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */; };
 		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; };
+		41BF6630188F0C3100F7F02F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BF662F188F0C3000F7F02F /* LoginViewController.m */; };
 		41F597DF188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B1188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg */; };
 		41F597E0188C602B00DAF315 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B3188C602B00DAF315 /* Icon-40.png */; };
 		41F597E1188C602B00DAF315 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B4188C602B00DAF315 /* Icon-40@2x.png */; };
@@ -124,6 +125,8 @@
 		419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTSideMenuViewController.m; sourceTree = "<group>"; };
 		419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsViewController.h; sourceTree = "<group>"; };
 		419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEFriendsViewController.m; sourceTree = "<group>"; };
+		41BF662E188F0C3000F7F02F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		41BF662F188F0C3000F7F02F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		41F597B1188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1609866_10203023090483243_1366328690_n.jpg; sourceTree = "<group>"; };
 		41F597B3188C602B00DAF315 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		41F597B4188C602B00DAF315 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 			children = (
 				414AA828188AE743001B3301 /* CONINVITEAppDelegate.h */,
 				414AA829188AE743001B3301 /* CONINVITEAppDelegate.m */,
+				41BF662E188F0C3000F7F02F /* LoginViewController.h */,
+				41BF662F188F0C3000F7F02F /* LoginViewController.m */,
 				414AA82B188AE743001B3301 /* Main.storyboard */,
 				414AA82E188AE743001B3301 /* CONINVITEFirstViewController.h */,
 				414AA82F188AE743001B3301 /* CONINVITEFirstViewController.m */,
@@ -470,6 +475,7 @@
 				419BB6A8188C37EB00B7D403 /* TWTSideMenuViewController.m in Sources */,
 				419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */,
 				414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */,
+				41BF6630188F0C3100F7F02F /* LoginViewController.m in Sources */,
 				414AA82A188AE743001B3301 /* CONINVITEAppDelegate.m in Sources */,
 				414AA826188AE743001B3301 /* main.m in Sources */,
 			);
