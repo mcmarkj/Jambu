@@ -49,7 +49,6 @@
 		41899360189066090089AC7E /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899353189066090089AC7E /* JSONModel+networking.m */; };
 		41899361189066090089AC7E /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899356189066090089AC7E /* JSONKeyMapper.m */; };
 		41899362189066090089AC7E /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899358189066090089AC7E /* JSONValueTransformer.m */; };
-		418AAE331891B10B001D8FE1 /* JsonPut.java in Sources */ = {isa = PBXBuildFile; fileRef = 418AAE321891B10B001D8FE1 /* JsonPut.java */; };
 		419BB6A8188C37EB00B7D403 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */; };
 		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; };
 		41BF6630188F0C3100F7F02F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BF662F188F0C3000F7F02F /* LoginViewController.m */; };
@@ -163,7 +162,6 @@
 		41899356189066090089AC7E /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		41899357189066090089AC7E /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		41899358189066090089AC7E /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
-		418AAE321891B10B001D8FE1 /* JsonPut.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = JsonPut.java; sourceTree = "<group>"; };
 		419BB6A6188C37EB00B7D403 /* TWTSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTSideMenuViewController.h; sourceTree = "<group>"; };
 		419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTSideMenuViewController.m; sourceTree = "<group>"; };
 		419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsViewController.h; sourceTree = "<group>"; };
@@ -272,7 +270,6 @@
 				419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */,
 				419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */,
 				414AA831188AE743001B3301 /* CONINVITESecondViewController.h */,
-				418AAE321891B10B001D8FE1 /* JsonPut.java */,
 				414AA832188AE743001B3301 /* CONINVITESecondViewController.m */,
 				419BB6A6188C37EB00B7D403 /* TWTSideMenuViewController.h */,
 				419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */,
@@ -607,7 +604,6 @@
 				4189935D189066090089AC7E /* NSArray+JSONModel.m in Sources */,
 				41899361189066090089AC7E /* JSONKeyMapper.m in Sources */,
 				414AA82A188AE743001B3301 /* CONINVITEAppDelegate.m in Sources */,
-				418AAE331891B10B001D8FE1 /* JsonPut.java in Sources */,
 				414AA826188AE743001B3301 /* main.m in Sources */,
 				4189935C189066090089AC7E /* JSONModelError.m in Sources */,
 				41899359189066090089AC7E /* JSONModel.m in Sources */,
