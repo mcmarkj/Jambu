@@ -13,7 +13,6 @@
     NSArray *tableData;
 }
 
-@property (nonatomic, retain) NSArray *tableData;
 @property (strong, nonatomic) IBOutlet UILabel *UserNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *UserTwitterLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *UserImage;

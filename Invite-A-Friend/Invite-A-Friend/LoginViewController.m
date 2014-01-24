@@ -8,12 +8,14 @@
 
 #import "LoginViewController.h"
 #import <Accounts/Accounts.h>
-#import <Social/Social.h>   // SLRequest
+#import <Social/Social.h>
 
 @interface LoginViewController ()
 - (IBAction)twitterlogin:(id)sender;
+@property (nonatomic) ACAccountStore *accountStore;
 
 @end
+
 
 @implementation LoginViewController
 
@@ -73,8 +75,49 @@
         
     }];
 }
-- (IBAction)twitterlogin:(id)sender {
-
+- (IBAction)twitterlogin:(id)sender
+{
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
+    [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
+        if(granted) {
+            NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
+            
+            if ([accountsArray count] > 0) {
+                ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
+                NSLog(@"The username is %@",twitterAccount.username);
+                NSLog(@"It is a %@ account",twitterAccount.accountType);
+                
+                NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://80.195.10.84:3000/api/v1/users%@", @""]];
+                
+                //build an info object and convert to json
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"http123123", @"image_url", @"twitter", @"provider",@123,@"uid",twitterAccount.username,@"username", @"Mark McWhirter", @"full_Name", nil];
+     
+                
+                //convert object to data
+                NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+                
+                NSString *editeddata = [NSString stringWithFormat:@"{\"user\"=>%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+                NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+                NSLog(editeddata);
+                
+                
+                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+                [request setURL:url];
+                [request setHTTPMethod:@"POST"];
+                [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                [request setHTTPBody:finaldata];
+                
+                // print json:
+                
+                NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+                [connection start];
+                
+                
+            }
+        }
+    }];
 }
 
 - (void)getTwitterAccount:(ACAccount *)account {
@@ -84,4 +127,21 @@
 {
     
 	     }
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _accountStore = [[ACAccountStore alloc] init];
+    }
+    return self;
+}
+
+- (BOOL)userHasAccessToTwitter
+{
+    return [SLComposeViewController
+            isAvailableForServiceType:SLServiceTypeTwitter];
+}
+
+
 @end
