@@ -49,9 +49,9 @@
 		418AAE371891BF6E001D8FE1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418AAE361891BF6E001D8FE1 /* Social.framework */; };
 		418AAE391891BF86001D8FE1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418AAE381891BF86001D8FE1 /* QuartzCore.framework */; };
 		418AAE3B1891CB24001D8FE1 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418AAE3A1891CB24001D8FE1 /* Twitter.framework */; };
+		418AAE3E1892EF2D001D8FE1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418AAE3D1892EF2D001D8FE1 /* LoginViewController.m */; };
 		419BB6A8188C37EB00B7D403 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */; };
 		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; };
-		41BF6630188F0C3100F7F02F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BF662F188F0C3000F7F02F /* LoginViewController.m */; };
 		41F597DF188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B1188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg */; };
 		41F597E0188C602B00DAF315 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B3188C602B00DAF315 /* Icon-40.png */; };
 		41F597E1188C602B00DAF315 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B4188C602B00DAF315 /* Icon-40@2x.png */; };
@@ -160,12 +160,12 @@
 		418AAE361891BF6E001D8FE1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		418AAE381891BF86001D8FE1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		418AAE3A1891CB24001D8FE1 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		418AAE3C1892EF2D001D8FE1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		418AAE3D1892EF2D001D8FE1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		419BB6A6188C37EB00B7D403 /* TWTSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTSideMenuViewController.h; sourceTree = "<group>"; };
 		419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTSideMenuViewController.m; sourceTree = "<group>"; };
 		419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsViewController.h; sourceTree = "<group>"; };
 		419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEFriendsViewController.m; sourceTree = "<group>"; };
-		41BF662E188F0C3000F7F02F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
-		41BF662F188F0C3000F7F02F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		41F597B1188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1609866_10203023090483243_1366328690_n.jpg; sourceTree = "<group>"; };
 		41F597B3188C602B00DAF315 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		41F597B4188C602B00DAF315 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
@@ -268,13 +268,13 @@
 			children = (
 				414AA828188AE743001B3301 /* CONINVITEAppDelegate.h */,
 				414AA829188AE743001B3301 /* CONINVITEAppDelegate.m */,
-				41BF662E188F0C3000F7F02F /* LoginViewController.h */,
-				41BF662F188F0C3000F7F02F /* LoginViewController.m */,
 				414AA82B188AE743001B3301 /* Main.storyboard */,
 				414AA82E188AE743001B3301 /* CONINVITEFirstViewController.h */,
 				414AA82F188AE743001B3301 /* CONINVITEFirstViewController.m */,
 				419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */,
 				419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */,
+				418AAE3C1892EF2D001D8FE1 /* LoginViewController.h */,
+				418AAE3D1892EF2D001D8FE1 /* LoginViewController.m */,
 				414AA831188AE743001B3301 /* CONINVITESecondViewController.h */,
 				414AA832188AE743001B3301 /* CONINVITESecondViewController.m */,
 				419BB6A6188C37EB00B7D403 /* TWTSideMenuViewController.h */,
@@ -586,8 +586,8 @@
 				4189935F189066090089AC7E /* JSONHTTPClient.m in Sources */,
 				4189935B189066090089AC7E /* JSONModelClassProperty.m in Sources */,
 				41899362189066090089AC7E /* JSONValueTransformer.m in Sources */,
+				418AAE3E1892EF2D001D8FE1 /* LoginViewController.m in Sources */,
 				414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */,
-				41BF6630188F0C3100F7F02F /* LoginViewController.m in Sources */,
 				4189935E189066090089AC7E /* JSONAPI.m in Sources */,
 				4189935D189066090089AC7E /* NSArray+JSONModel.m in Sources */,
 				41899361189066090089AC7E /* JSONKeyMapper.m in Sources */,
