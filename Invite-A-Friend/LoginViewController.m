@@ -7,12 +7,17 @@
 //
 
 #import "LoginViewController.h"
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>   // SLRequest
 
 @interface LoginViewController ()
+- (IBAction)twitterlogin:(id)sender;
 
 @end
 
 @implementation LoginViewController
+
+@synthesize username;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,6 +61,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+
 - (IBAction)fakelogin:(UIButton *)sender {
     
     
@@ -65,4 +73,15 @@
         
     }];
 }
+- (IBAction)twitterlogin:(id)sender {
+
+}
+
+- (void)getTwitterAccount:(ACAccount *)account {
+    }
+
+- (void)fetchData
+{
+    
+	     }
 @end

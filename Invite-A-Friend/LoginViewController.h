@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <Twitter/Twitter.h>
 @interface LoginViewController : UIViewController
+{
+        NSString *username;
+}
 - (IBAction)fakelogin:(UIButton *)sender;
-
+@property (nonatomic, retain) NSString *username;
 @end

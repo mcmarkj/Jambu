@@ -226,6 +226,9 @@
                                 <state key="normal" title="Twitter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="twitterlogin:" destination="bvd-Vy-cXL" eventType="touchUpInside" id="Zms-fY-B0d"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v6-hy-nhf">
                                 <rect key="frame" x="14" y="295" width="292" height="30"/>

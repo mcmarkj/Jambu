@@ -27,7 +27,7 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ([[defaults objectForKey:@"loggedIn"]boolValue]) {
+    if ([[defaults objectForKey:@"1231loggedIn"]boolValue]) {
         NSLog(@"user is logged in - do nothing");
     }
     else {
@@ -43,7 +43,7 @@
 {
     [super viewDidLoad];
     
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", @"5"]];
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", @"6"]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     [request setURL:url];

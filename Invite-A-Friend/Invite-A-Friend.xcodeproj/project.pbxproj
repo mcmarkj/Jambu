@@ -35,10 +35,6 @@
 		414AA8B2188B0274001B3301 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 414AA8A0188B0274001B3301 /* RobotoCondensed-Light.ttf */; };
 		414AA8B3188B0274001B3301 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 414AA8A1188B0274001B3301 /* RobotoCondensed-LightItalic.ttf */; };
 		414AA8B4188B0274001B3301 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 414AA8A2188B0274001B3301 /* RobotoCondensed-Regular.ttf */; };
-		4189933B1890659B0089AC7E /* btnCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 418993351890659A0089AC7E /* btnCheck.png */; };
-		4189933C1890659B0089AC7E /* btnCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 418993361890659A0089AC7E /* btnCheck@2x.png */; };
-		4189933D1890659B0089AC7E /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 418993381890659A0089AC7E /* HUD.m */; };
-		4189933E1890659B0089AC7E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189933A1890659A0089AC7E /* MBProgressHUD.m */; };
 		41899359189066090089AC7E /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899342189066090089AC7E /* JSONModel.m */; };
 		4189935A189066090089AC7E /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899344189066090089AC7E /* JSONModelArray.m */; };
 		4189935B189066090089AC7E /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899346189066090089AC7E /* JSONModelClassProperty.m */; };
@@ -49,6 +45,10 @@
 		41899360189066090089AC7E /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899353189066090089AC7E /* JSONModel+networking.m */; };
 		41899361189066090089AC7E /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899356189066090089AC7E /* JSONKeyMapper.m */; };
 		41899362189066090089AC7E /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899358189066090089AC7E /* JSONValueTransformer.m */; };
+		418AAE351891B471001D8FE1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418AAE341891B471001D8FE1 /* Accounts.framework */; };
+		418AAE371891BF6E001D8FE1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418AAE361891BF6E001D8FE1 /* Social.framework */; };
+		418AAE391891BF86001D8FE1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418AAE381891BF86001D8FE1 /* QuartzCore.framework */; };
+		418AAE3B1891CB24001D8FE1 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418AAE3A1891CB24001D8FE1 /* Twitter.framework */; };
 		419BB6A8188C37EB00B7D403 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */; };
 		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; };
 		41BF6630188F0C3100F7F02F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BF662F188F0C3000F7F02F /* LoginViewController.m */; };
@@ -135,12 +135,6 @@
 		414AA8A0188B0274001B3301 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		414AA8A1188B0274001B3301 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		414AA8A2188B0274001B3301 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
-		418993351890659A0089AC7E /* btnCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCheck.png; sourceTree = "<group>"; };
-		418993361890659A0089AC7E /* btnCheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnCheck@2x.png"; sourceTree = "<group>"; };
-		418993371890659A0089AC7E /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
-		418993381890659A0089AC7E /* HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUD.m; sourceTree = "<group>"; };
-		418993391890659A0089AC7E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		4189933A1890659A0089AC7E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		41899341189066090089AC7E /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
 		41899342189066090089AC7E /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
 		41899343189066090089AC7E /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
@@ -162,6 +156,10 @@
 		41899356189066090089AC7E /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		41899357189066090089AC7E /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		41899358189066090089AC7E /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		418AAE341891B471001D8FE1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		418AAE361891BF6E001D8FE1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		418AAE381891BF86001D8FE1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		418AAE3A1891CB24001D8FE1 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		419BB6A6188C37EB00B7D403 /* TWTSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTSideMenuViewController.h; sourceTree = "<group>"; };
 		419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTSideMenuViewController.m; sourceTree = "<group>"; };
 		419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsViewController.h; sourceTree = "<group>"; };
@@ -220,6 +218,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				418AAE3B1891CB24001D8FE1 /* Twitter.framework in Frameworks */,
+				418AAE391891BF86001D8FE1 /* QuartzCore.framework in Frameworks */,
+				418AAE371891BF6E001D8FE1 /* Social.framework in Frameworks */,
+				418AAE351891B471001D8FE1 /* Accounts.framework in Frameworks */,
 				414AA81C188AE743001B3301 /* CoreGraphics.framework in Frameworks */,
 				414AA81E188AE743001B3301 /* UIKit.framework in Frameworks */,
 				414AA81A188AE743001B3301 /* Foundation.framework in Frameworks */,
@@ -249,6 +251,10 @@
 		414AA818188AE743001B3301 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				418AAE3A1891CB24001D8FE1 /* Twitter.framework */,
+				418AAE381891BF86001D8FE1 /* QuartzCore.framework */,
+				418AAE361891BF6E001D8FE1 /* Social.framework */,
+				418AAE341891B471001D8FE1 /* Accounts.framework */,
 				414AA819188AE743001B3301 /* Foundation.framework */,
 				414AA81B188AE743001B3301 /* CoreGraphics.framework */,
 				414AA81D188AE743001B3301 /* UIKit.framework */,
@@ -283,7 +289,6 @@
 			isa = PBXGroup;
 			children = (
 				4189933F189066090089AC7E /* JSONModel */,
-				418993341890659A0089AC7E /* HUD */,
 				41F597B0188C602B00DAF315 /* Resources */,
 				414AA890188B0249001B3301 /* fonts */,
 				414AA821188AE743001B3301 /* Invite-A-Friend-Info.plist */,
@@ -318,19 +323,6 @@
 			);
 			name = fonts;
 			path = roboto;
-			sourceTree = "<group>";
-		};
-		418993341890659A0089AC7E /* HUD */ = {
-			isa = PBXGroup;
-			children = (
-				418993351890659A0089AC7E /* btnCheck.png */,
-				418993361890659A0089AC7E /* btnCheck@2x.png */,
-				418993371890659A0089AC7E /* HUD.h */,
-				418993381890659A0089AC7E /* HUD.m */,
-				418993391890659A0089AC7E /* MBProgressHUD.h */,
-				4189933A1890659A0089AC7E /* MBProgressHUD.m */,
-			);
-			path = HUD;
 			sourceTree = "<group>";
 		};
 		4189933F189066090089AC7E /* JSONModel */ = {
@@ -533,11 +525,9 @@
 				41F59803188C602B00DAF315 /* InviteIndicator.png in Resources */,
 				414AA8B0188B0274001B3301 /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				41F597E2188C602B00DAF315 /* Icon-60.png in Resources */,
-				4189933C1890659B0089AC7E /* btnCheck@2x.png in Resources */,
 				41F597F0188C602B00DAF315 /* launch.png in Resources */,
 				41F597E4188C602B00DAF315 /* Icon-72.png in Resources */,
 				41F597FF188C602B00DAF315 /* icon2.png in Resources */,
-				4189933B1890659B0089AC7E /* btnCheck.png in Resources */,
 				41F597EF188C602B00DAF315 /* iTunesArtwork@2x.png in Resources */,
 				41F597EC188C602B00DAF315 /* Icon.png in Resources */,
 				41F597F6188C602B00DAF315 /* diary@2x.png in Resources */,
@@ -590,12 +580,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				414AA833188AE743001B3301 /* CONINVITESecondViewController.m in Sources */,
-				4189933D1890659B0089AC7E /* HUD.m in Sources */,
 				41899360189066090089AC7E /* JSONModel+networking.m in Sources */,
 				419BB6A8188C37EB00B7D403 /* TWTSideMenuViewController.m in Sources */,
 				419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */,
 				4189935F189066090089AC7E /* JSONHTTPClient.m in Sources */,
-				4189933E1890659B0089AC7E /* MBProgressHUD.m in Sources */,
 				4189935B189066090089AC7E /* JSONModelClassProperty.m in Sources */,
 				41899362189066090089AC7E /* JSONValueTransformer.m in Sources */,
 				414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */,
