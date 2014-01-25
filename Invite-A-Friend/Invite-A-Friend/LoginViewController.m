@@ -70,7 +70,7 @@
     
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"loggedIn"]; //in
+    [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"InviteLog"]; //in
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
