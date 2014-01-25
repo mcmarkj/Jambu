@@ -92,7 +92,7 @@
                 NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://80.195.10.84:3000/api/v1/users%@", @""]];
                 
                 //build an info object and convert to json
-                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"http123123", @"image_url", @"twitter", @"provider",@123,@"uid",twitterAccount.username,@"username", @"Mark McWhirter", @"full_Name", nil];
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"http123123", @"image_url", @"twitter", @"provider",@123,@"uid",twitterAccount.username,@"username", @"Mark McWhirter", @"full_name", nil];
                 
                 // Sorry dude, im a bit of a moron
                 //convert object to data
