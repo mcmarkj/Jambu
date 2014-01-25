@@ -31,15 +31,13 @@
     
     if ([[defaults objectForKey:@"InviteLog"]boolValue]) {
         NSLog(@"user is logged in - do nothing");
+
         
-        
-        
-        if([[NSUserDefaults standardUserDefaults] objectForKey:@"Con96ID"] != nil) {
+        if([[NSUserDefaults standardUserDefaults] objectForKey:@"Con96TUID"] != nil) {
+            NSLog(@"can't pull info since they're not logged in");
         } else {
-        
-        
-        
-            [self performSelector:@selector(updateinfo) withObject:nil afterDelay:.1]; }
+    
+            [self performSelector:@selector(updateinfo) withObject:nil afterDelay:35]; }
     }
     else {
         
@@ -54,13 +52,13 @@
 {
     [super viewDidLoad];
     
-
+            [self performSelector:@selector(updateinfo) withObject:nil afterDelay:30];
 
     
     
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     
-    NSString *UID = [userdefaults objectForKey:@"Con96ID"];
+    NSString *UID = [userdefaults objectForKey:@"Con96TUID"];
     
     if(UID == NULL){
         NSLog(@"User is not logged in");
@@ -139,11 +137,11 @@
 {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     
-    NSString *UID = [userdefaults objectForKey:@"Con96ID"];
+    NSString *UID = [userdefaults objectForKey:@"Con96TUID"];
     
-    if([[NSUserDefaults standardUserDefaults] objectForKey:@"Con96ID"] != nil) {
-        NSLog(@"User is not logged in");
-        [self  performSegueWithIdentifier:@"LoginPage" sender:self];
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"Con96TUID"] != nil) {
+        NSLog(@"CAN'T UPDATE :: User is not logged in");
+
     }else {
         
         

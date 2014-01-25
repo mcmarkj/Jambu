@@ -102,7 +102,7 @@
     [self performSelector:@selector(checkapisuccess) withObject:nil afterDelay:12.0];
 
     _currentpercentage.format = @"%d%%";
-[_currentpercentage countFrom:0 to:100 withDuration:15.0f];
+[_currentpercentage countFrom:0 to:100 withDuration:17.0f];
        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
@@ -151,6 +151,7 @@
                     
                     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                     [defaults setObject:twitterid forKey:@"Con96TUID"];
+                    [defaults setObject:name forKey:@"Con96fname"];
                     [defaults synchronize];
                     
                     NSString *altprof_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
@@ -230,7 +231,7 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
     NSLog(@"Checking the api if the account was made okay");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *UID = [defaults objectForKey:@"Con96TUID"];
-    NSLog(UID);
+    NSString *fname = [defaults objectForKey:@"Con96fname"];
     
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", UID]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -244,6 +245,8 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
     NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
     
+    NSString *DBNAME = [json valueForKey:@"full_name"];
+    
     //Do some checks to make sure the returned values are correct.
     
     if([json  isEqual: @"null"]){
@@ -251,8 +254,9 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
         
     }else{
     
-    if([json valueForKey:@"id"] == UID){
-                  [self performSelector:@selector(closeview) withObject:nil afterDelay:4.0];
+        
+    if([DBNAME isEqualToString:fname]){
+                  [self performSelector:@selector(closeview) withObject:nil afterDelay:5.0];
             NSLog(@"Apparently the account was made");
         //save this user id so we can now log the user in
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
