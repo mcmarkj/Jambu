@@ -77,6 +77,8 @@
 }
 - (IBAction)twitterlogin:(id)sender
 {
+    
+    login = false;
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
@@ -157,7 +159,7 @@
                 // DISABLED WHILE WE CONFIGURE STUFF
                 [connection start];
                 // If there are no accounts, we need to pop up an alert
-                    
+                
                 }];
                     
                     
@@ -165,6 +167,7 @@
                     
                 }
                 } else {
+                    login = false;
                     NSLog(@"There's no accounts active");
 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Twitter Accounts"
 message:@"There are no Twitter accounts added to your device. You can add or make a new Twitter account by going back to the homescreen and into your Settings."
@@ -183,6 +186,22 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
             
         }
     }];
+    
+    if(login){
+        NSLog(@"Account was created");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"InviteLog"]; //in
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+        
+        
+    } else {
+        //In the meantime we'll say it failed to create due to testing reasons
+        NSLog(@"Account Failed to create");
+    }
+    
+    
 }
 
 - (void)getTwitterAccount:(ACAccount *)account {

@@ -11,6 +11,7 @@
 @interface LoginViewController : UIViewController
 {
         NSString *username;
+    BOOL *login;
 }
 - (IBAction)fakelogin:(UIButton *)sender;
 @property (nonatomic, retain) NSString *username;
