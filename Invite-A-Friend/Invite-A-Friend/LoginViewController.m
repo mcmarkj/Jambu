@@ -90,10 +90,51 @@
                 NSLog(@"The username is %@",twitterAccount.username);
                 NSLog(@"It is a %@ account",twitterAccount.accountType);
                 
+                // Let's pull some info from twitter bro
+                {
+                
+                NSURL *twitterurl = [NSURL URLWithString:@"https://api.twitter.com/1.1/users/show.json"];
+                NSDictionary *params = @{@"screen_name" : twitterAccount.username
+                                         };
+                SLRequest *request =
+                [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                   requestMethod:SLRequestMethodGET
+                                             URL:twitterurl
+                                      parameters:params];
+                
+                //  Attach an account to the request
+                [request setAccount:[accountsArray lastObject]];
+                
+                //  Step 3:  Execute the request
+                [request performRequestWithHandler:^(NSData *responseData,
+                                                     NSHTTPURLResponse *urlResponse,
+                                                     NSError *error) {
+                    
+                    
+                    
+                    // Let's translate it so we can use it later mate
+                    
+                    NSDictionary* json = [NSJSONSerialization
+                                          JSONObjectWithData:responseData //1
+                                          options:NSJSONReadingAllowFragments
+                                          error:&error];
+                    
+                    NSString *name = [json objectForKey:@"name"];
+                    NSString *twitterid = [json objectForKey:@"id"];
+                    NSString *prof_img = [json objectForKey:@"profile_image_url"];
+                    
+
+            
+                
+                //
+                
+                
                 NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users%@", @""]];
                 
                 //build an info object and convert to json
-                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"http123123", @"image_url", @"twitter", @"provider",@123,@"uid",twitterAccount.username,@"username", twitterAccount.userFullName, @"full_name", nil];
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:prof_img, @"image_url", @"twitter", @"provider",twitterid,@"uid",twitterAccount.username,@"username", name, @"full_name", nil];
+                    
+                    
                 
                 // Sorry dude, im a bit of a moron
                 //convert object to data
@@ -101,7 +142,7 @@
                 
                 NSString *editeddata = [NSString stringWithFormat:@"{\"user\":%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
                 NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
-                NSLog(editeddata);
+                //NSLog(editeddata);
                 
                 
                 NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -116,6 +157,13 @@
                 // DISABLED WHILE WE CONFIGURE STUFF
                 [connection start];
                 // If there are no accounts, we need to pop up an alert
+                    
+                }];
+                    
+                    
+                    
+                    
+                }
                 } else {
                     NSLog(@"There's no accounts active");
 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Twitter Accounts"
@@ -131,6 +179,8 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
                    
                 
             }
+            
+            
         }
     }];
 }
