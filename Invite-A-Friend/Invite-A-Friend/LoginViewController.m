@@ -125,7 +125,8 @@
                     NSString *twitterid = [json objectForKey:@"id"];
                     NSString *prof_img = [json objectForKey:@"profile_image_url"];
                     
-
+                    NSString *altprof_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
+                                                         withString:@""];
             
                 
                 //
@@ -134,7 +135,7 @@
                 NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users%@", @""]];
                 
                 //build an info object and convert to json
-                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:prof_img, @"image_url", @"twitter", @"provider",twitterid,@"uid",twitterAccount.username,@"username", name, @"full_name", nil];
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:altprof_img, @"image_url", @"twitter", @"provider",twitterid,@"uid",twitterAccount.username,@"username", name, @"full_name", nil];
                     
                     
                 
