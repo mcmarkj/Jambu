@@ -31,7 +31,15 @@
     
     if ([[defaults objectForKey:@"InviteLog"]boolValue]) {
         NSLog(@"user is logged in - do nothing");
-                          [self performSelector:@selector(updateinfo) withObject:nil afterDelay:.1];
+        
+        
+        
+        if([[NSUserDefaults standardUserDefaults] objectForKey:@"Con96ID"] != nil) {
+        } else {
+        
+        
+        
+            [self performSelector:@selector(updateinfo) withObject:nil afterDelay:.1]; }
     }
     else {
         
@@ -133,7 +141,7 @@
     
     NSString *UID = [userdefaults objectForKey:@"Con96ID"];
     
-    if(UID == NULL){
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"Con96ID"] != nil) {
         NSLog(@"User is not logged in");
         [self  performSegueWithIdentifier:@"LoginPage" sender:self];
     }else {

@@ -99,10 +99,10 @@
     
     [self performSelector:@selector(spinimage) withObject:nil afterDelay:.01];
     
-    [self performSelector:@selector(checkapisuccess) withObject:nil afterDelay:8.0];
+    [self performSelector:@selector(checkapisuccess) withObject:nil afterDelay:12.0];
 
     _currentpercentage.format = @"%d%%";
-[_currentpercentage countFrom:0 to:100 withDuration:9.0f];
+[_currentpercentage countFrom:0 to:100 withDuration:15.0f];
        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
@@ -162,8 +162,11 @@
                 
                 NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users%@", @""]];
                 
+                    NSString *twitterusername = twitterAccount.username;
+                    
                 //build an info object and convert to json
-                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:altprof_img, @"image_url", @"twitter", @"provider",twitterid,@"uid",twitterAccount.username,@"username", name, @"full_name", nil];
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:altprof_img, @"image_url", @"twitter", @"provider",twitterid,@"uid",twitterusername,@"username", name, @"full_name", nil];
+                    
                     
                     
                 
@@ -173,8 +176,10 @@
                 
                 NSString *editeddata = [NSString stringWithFormat:@"{\"user\":%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
                 NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
-                //NSLog(editeddata);
+                   // NSLog(@"Here's the output for the JSON:");
+                   // NSLog(finaldata);
                 
+                    
                 
                 NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
                 [request setURL:url];
@@ -186,8 +191,9 @@
                 
                 NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
                 // DISABLED WHILE WE CONFIGURE STUFF
+                    NSLog(@"We're now collecting to the API");
                 [connection start];
-
+                    NSLog(@"Completed API Request");
 
                 // If there are no accounts, we need to pop up an alert
                 
@@ -223,7 +229,7 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
 -(void)checkapisuccess {
     NSLog(@"Checking the api if the account was made okay");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *UID = [defaults objectForKey:@"Con96ID"];
+    NSString *UID = [defaults objectForKey:@"Con96TUID"];
     NSLog(UID);
     
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", UID]];
@@ -240,7 +246,12 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
     
     //Do some checks to make sure the returned values are correct.
     
-    if([json valueForKey:@"id"] > 0){
+    if([json  isEqual: @"null"]){
+        NSLog(@"It's Null Mark");
+        
+    }else{
+    
+    if([json valueForKey:@"id"] == UID){
                   [self performSelector:@selector(closeview) withObject:nil afterDelay:4.0];
             NSLog(@"Apparently the account was made");
         //save this user id so we can now log the user in
@@ -263,7 +274,7 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
                                 withObject:nil
                              waitUntilDone:NO];
 
-    }
+    }}
 }
 
 
