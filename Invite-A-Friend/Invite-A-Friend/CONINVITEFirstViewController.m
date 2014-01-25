@@ -13,6 +13,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *overlaynexteventlabel;
 @property (strong, nonatomic) IBOutlet UILabel *overlayeventdatelabel;
 @property (strong, nonatomic) IBOutlet UILabel *overlayeventattendeeslabel;
+@property (strong, nonatomic) IBOutlet UIButton *inviteindicator;
+@property (strong, nonatomic) IBOutlet UIImageView *inviteindicatorback;
 
 @end
 
@@ -54,6 +56,19 @@
     NSURLResponse *response;
     NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+    
+    //Checking if the user has any pending events, let's enable / disable the indicator in response to this.
+    if([json valueForKey:@"pendingevents"] > 0){
+        _inviteindicatorback.hidden = false;
+        _inviteindicator.hidden = false;
+        //Change the button's value to match the number of pending events pulled from the JSON.
+        [_inviteindicator setTitle:[json valueForKey:@"pendingevents"] forState:UIControlStateNormal];
+    } else {
+        //Since they have no events we'll hide the indicator and the button.
+        _inviteindicatorback.hidden = true;
+        _inviteindicator.hidden = true;
+    }
+    
     //_UserTwitterLabel.text = [json valueForKey:@"username"];
     //Set Full Name of User
     _UserNameLabel.text = [json valueForKey:@"full_name"];

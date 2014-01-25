@@ -166,6 +166,8 @@
                         <outlet property="UserNameLabel" destination="BSe-nV-uvv" id="nV1-ms-EHK"/>
                         <outlet property="UserRewardsLabel" destination="0U1-fw-Wbl" id="Le7-JJ-RGv"/>
                         <outlet property="UserTwitterLabel" destination="EUd-a8-Xam" id="GRg-1o-hby"/>
+                        <outlet property="inviteindicator" destination="a5F-BJ-oBU" id="QdW-Bt-iDy"/>
+                        <outlet property="inviteindicatorback" destination="uAv-f4-yn9" id="LzK-TL-Iw5"/>
                         <outlet property="overlayeventattendeeslabel" destination="rVA-yK-KNS" id="c4y-Rc-LnE"/>
                         <outlet property="overlayeventdatelabel" destination="oy0-tT-VbY" id="4WZ-Fm-5i5"/>
                         <outlet property="overlaylabel" destination="J0M-8w-YkP" id="mOu-eP-I4o"/>
@@ -543,7 +545,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Zhn-aS-CVs"/>
+        <segue reference="9UP-zD-xGT"/>
         <segue reference="M3E-Y3-Wu6"/>
     </inferredMetricsTieBreakers>
 </document>
