@@ -31,6 +31,7 @@
     
     if ([[defaults objectForKey:@"InviteLog"]boolValue]) {
         NSLog(@"user is logged in - do nothing");
+                          [self performSelector:@selector(updateinfo) withObject:nil afterDelay:.1];
     }
     else {
         
@@ -45,7 +46,23 @@
 {
     [super viewDidLoad];
     
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", @"20"]];
+
+
+    
+    
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *UID = [userdefaults objectForKey:@"Con96ID"];
+    
+    if(UID == NULL){
+        NSLog(@"User is not logged in");
+        [self  performSegueWithIdentifier:@"LoginPage" sender:self];
+    }else {
+        
+    
+    
+    
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", UID]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     [request setURL:url];
@@ -107,10 +124,58 @@
 
     
 	// Do any additional setup after loading the view, typically from a nib.
-}
+    }}
 
 
-
+-(void)updateinfo
+{
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *UID = [userdefaults objectForKey:@"Con96ID"];
+    
+    if(UID == NULL){
+        NSLog(@"User is not logged in");
+        [self  performSegueWithIdentifier:@"LoginPage" sender:self];
+    }else {
+        
+        
+        
+        
+        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", UID]];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        
+        [request setURL:url];
+        [request setHTTPMethod:@"GET"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        NSError *error;
+        NSURLResponse *response;
+        NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+        
+        //Checking if the user has any pending events, let's enable / disable the indicator in response to this.
+        if([json valueForKey:@"pendingevents"] > 0){
+            _inviteindicatorback.hidden = false;
+            _inviteindicator.hidden = false;
+            //Change the button's value to match the number of pending events pulled from the JSON.
+            [_inviteindicator setTitle:[json valueForKey:@"pendingevents"] forState:UIControlStateNormal];
+        } else {
+            //Since they have no events we'll hide the indicator and the button.
+            _inviteindicatorback.hidden = true;
+            _inviteindicator.hidden = true;
+        }
+        
+        //_UserTwitterLabel.text = [json valueForKey:@"username"];
+        //Set Full Name of User
+        _UserNameLabel.text = [json valueForKey:@"full_name"];
+        //Set twitter name
+        _UserTwitterLabel.text = [NSString stringWithFormat:@"@%@", [json valueForKey:@"username"]];
+        
+        //SET IMAGE
+        _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"image_url"]]]];
+        
+    }
+    }
 - (void)updateCountdown {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd"];

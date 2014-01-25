@@ -96,9 +96,10 @@
 
 - (IBAction)twitterlogin:(id)sender
 {
-                    [self performSelector:@selector(closeview) withObject:nil afterDelay:11.0];
+    
     [self performSelector:@selector(spinimage) withObject:nil afterDelay:.01];
-
+    
+    [self performSelector:@selector(checkapisuccess) withObject:nil afterDelay:8.0];
 
     _currentpercentage.format = @"%d%%";
 [_currentpercentage countFrom:0 to:100 withDuration:9.0f];
@@ -148,6 +149,10 @@
                     //NSString *nooffollwers = [json objectForKey:@"follower_count"];
                     
                     
+                    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                    [defaults setObject:twitterid forKey:@"Con96TUID"];
+                    [defaults synchronize];
+                    
                     NSString *altprof_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
                                                          withString:@""];
                     //NSLog(nooffollwers);
@@ -184,7 +189,6 @@
                 [connection start];
 
 
-
                 // If there are no accounts, we need to pop up an alert
                 
                 }];
@@ -214,35 +218,64 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
         }
     }];
     
-    if(login){
-        NSLog(@"Account was created");
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"InviteLog"]; //in
-        [self dismissViewControllerAnimated:YES completion:^{
-            
-        }];
-        
-        
-    } else {
-        //In the meantime we'll say it failed to create due to testing reasons
-        NSLog(@"Account Failed to create");
-    }
-    
-    
 }
 
-- (void)getTwitterAccount:(ACAccount *)account {
+-(void)checkapisuccess {
+    NSLog(@"Checking the api if the account was made okay");
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *UID = [defaults objectForKey:@"Con96ID"];
+    NSLog(UID);
+    
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", UID]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSError *error;
+    NSURLResponse *response;
+    NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+    
+    //Do some checks to make sure the returned values are correct.
+    
+    if([json valueForKey:@"id"] > 0){
+                  [self performSelector:@selector(closeview) withObject:nil afterDelay:4.0];
+            NSLog(@"Apparently the account was made");
+        //save this user id so we can now log the user in
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:UID forKey:@"Con96ID"];
+        [defaults synchronize];
+        
+        //lets mark the user as logged in for the future.
+
+        
+    } else {
+        NSLog(@"The API hasn't returned a correct ID, something mustn't have worked");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                        message:@"Something's gone wrong... Your account with Concept96 hasn't been able to create. Please try again... If this issues continues contact Concept96 Support."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil
+                              ];
+        [alert performSelectorOnMainThread:@selector(show)
+                                withObject:nil
+                             waitUntilDone:NO];
+
     }
+}
+
+
 
 -(void)closeview{
     NSLog(@"Account must have been made, I've been told to close the login view");
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"InviteLog"]; //in
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
-- (void)fetchData
-{
-    
-	     }
+
 
 - (id)init
 {
