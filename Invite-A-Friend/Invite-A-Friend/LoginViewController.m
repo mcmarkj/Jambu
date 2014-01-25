@@ -93,12 +93,12 @@
                 
                 //build an info object and convert to json
                 NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"http123123", @"image_url", @"twitter", @"provider",@123,@"uid",twitterAccount.username,@"username", @"Mark McWhirter", @"full_Name", nil];
-     
                 
+                // Sorry dude, im a bit of a moron
                 //convert object to data
                 NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
                 
-                NSString *editeddata = [NSString stringWithFormat:@"{\"user\"=>%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+                NSString *editeddata = [NSString stringWithFormat:@"{\"user\":%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
                 NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
                 NSLog(editeddata);
                 
