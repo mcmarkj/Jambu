@@ -220,56 +220,123 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-3u-odt">
-                                <rect key="frame" x="137" y="196" width="46" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginprogress.png" translatesAutoresizingMaskIntoConstraints="NO" id="qyQ-oz-13r">
+                                <rect key="frame" x="40" y="173" width="240" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Twitter">
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-3u-odt">
+                                <rect key="frame" x="48" y="384" width="108" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="twitterlogin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="twitterlogin:" destination="bvd-Vy-cXL" eventType="touchUpInside" id="Zms-fY-B0d"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v6-hy-nhf">
-                                <rect key="frame" x="14" y="295" width="292" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Facebook">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WL-fy-gnm">
-                                <rect key="frame" x="116" y="418" width="89" height="30"/>
+                                <rect key="frame" x="116" y="518" width="85" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="FAKE LOGIN">
+                                <state key="normal" title="SKIP LOGIN">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="fakelogin:" destination="bvd-Vy-cXL" eventType="touchUpInside" id="0IW-MM-klQ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="mqX-aR-tSu">
-                                <rect key="frame" x="0.0" y="488" width="320" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newhere.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZMO-bB-aCb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWV-fk-19z">
-                                <rect key="frame" x="20" y="501" width="266" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dO-Av-dUh">
+                                <rect key="frame" x="195" y="384" width="55" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">You've no active Twitter accounts. 
-Please add one in your settings</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="facebooklogin.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eb9-uk-xpd" customClass="UICountingLabel">
+                                <rect key="frame" x="112" y="250" width="106" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spinner.png" translatesAutoresizingMaskIntoConstraints="NO" id="E5A-Hl-Juc">
+                                <rect key="frame" x="89" y="209" width="142" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.47058826684951782" green="0.47058826684951782" blue="0.47058826684951782" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
+                        <outlet property="currentpercentage" destination="eb9-uk-xpd" id="azb-kh-mN0"/>
+                        <outlet property="spinningimage" destination="E5A-Hl-Juc" id="6Lb-xh-iTl"/>
                         <segue destination="CZ4-MO-1fc" kind="modal" identifier="LoginPage" modalTransitionStyle="flipHorizontal" id="M3E-Y3-Wu6"/>
+                        <segue destination="Pkv-4c-iiK" kind="modal" identifier="LoginPageTwo" modalTransitionStyle="coverVertical" id="d2n-Y3-2nb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sJ-lk-E4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="99" y="1407"/>
+        </scene>
+        <!--Login View Two View Controller-->
+        <scene sceneID="MCK-ek-P4L">
+            <objects>
+                <viewController id="Pkv-4c-iiK" customClass="LoginViewTwoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dNQ-aD-h7u"/>
+                        <viewControllerLayoutGuide type="bottom" id="jaS-tU-RPc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ImT-LC-qjy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Vw-TD-hd2">
+                                <rect key="frame" x="82" y="236" width="157" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1F-Hu-eeG">
+                                <rect key="frame" x="134" y="283" width="61" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newhere.png" translatesAutoresizingMaskIntoConstraints="NO" id="3NQ-ng-XLo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lognporgresstwo.png" translatesAutoresizingMaskIntoConstraints="NO" id="wZd-yv-Ujr">
+                                <rect key="frame" x="40" y="171" width="240" height="279"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name Last Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31t-nE-BKT">
+                                <rect key="frame" x="78" y="196" width="172" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spinner.png" translatesAutoresizingMaskIntoConstraints="NO" id="bsS-do-k5j">
+                                <rect key="frame" x="88" y="234" width="157" height="153"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47058826679999999" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="ProgressLabel" destination="P1F-Hu-eeG" id="2JA-0O-Qpb"/>
+                        <outlet property="SpinnerImage" destination="bsS-do-k5j" id="1JD-Za-8YC"/>
+                        <outlet property="UserName" destination="31t-nE-BKT" id="p2r-lD-EQk"/>
+                        <outlet property="UsersImage" destination="0Vw-TD-hd2" id="ZpG-Q0-Ld4"/>
+                        <segue destination="bvd-Vy-cXL" kind="modal" identifier="LoginPageTwo" modalTransitionStyle="coverVertical" id="Zhn-aS-CVs"/>
+                        <segue destination="8YX-ce-x5E" kind="modal" identifier="LoginPageTwo" modalTransitionStyle="coverVertical" id="0Oo-3d-XoO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QN7-un-hbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544" y="1259"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">
@@ -453,15 +520,21 @@ Please add one in your settings</string>
         <image name="1609866_10203023090483243_1366328690_n.jpg" width="85" height="85"/>
         <image name="ContactCardBase.png" width="320" height="210"/>
         <image name="InviteIndicator.png" width="40" height="29"/>
+        <image name="facebooklogin.png" width="55" height="55"/>
         <image name="facebooksync.png" width="25" height="25"/>
         <image name="first" width="30" height="30"/>
         <image name="friendback.png" width="320" height="61"/>
         <image name="friends-socialsync.png" width="320" height="116"/>
         <image name="friendshead.png" width="320" height="66"/>
+        <image name="loginprogress.png" width="223" height="273"/>
+        <image name="lognporgresstwo.png" width="236" height="279"/>
         <image name="menuicon.png" width="20" height="20"/>
+        <image name="newhere.png" width="320" height="65"/>
         <image name="overlay.png" width="320" height="150"/>
         <image name="second" width="30" height="30"/>
+        <image name="spinner.png" width="142" height="133"/>
         <image name="topbanner.png" width="320" height="64"/>
+        <image name="twitterlogin.png" width="55" height="53"/>
         <image name="twittersync.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -470,7 +543,7 @@ Please add one in your settings</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Zhn-aS-CVs"/>
         <segue reference="M3E-Y3-Wu6"/>
-        <segue reference="9UP-zD-xGT"/>
     </inferredMetricsTieBreakers>
 </document>

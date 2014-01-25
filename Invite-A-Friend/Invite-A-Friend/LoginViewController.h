@@ -12,6 +12,7 @@
 {
         NSString *username;
     BOOL *login;
+    NSInteger intTmp;
 }
 - (IBAction)fakelogin:(UIButton *)sender;
 @property (nonatomic, retain) NSString *username;

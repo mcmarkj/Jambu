@@ -9,10 +9,14 @@
 #import "LoginViewController.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
+#include "UICountingLabel.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface LoginViewController ()
 - (IBAction)twitterlogin:(id)sender;
+@property (strong, nonatomic) IBOutlet UICountingLabel *currentpercentage;
 @property (nonatomic) ACAccountStore *accountStore;
+@property (strong, nonatomic) IBOutlet UIImageView *spinningimage;
 
 @end
 
@@ -20,6 +24,7 @@
 @implementation LoginViewController
 
 @synthesize username;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,9 +42,12 @@
     if ([[prefs objectForKey:@"InviteLog"] intValue] == 1) {
         self.view.hidden = YES;
     }
+    
+    _spinningimage.hidden = true;
 }
 
-
+-(void)viewDidDisappear:(BOOL)animated{
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -75,11 +83,26 @@
         
     }];
 }
+-(void)spinimage
+{
+    _spinningimage.hidden = false;
+    CABasicAnimation *fullRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    fullRotation.fromValue = [NSNumber numberWithFloat:0];
+    fullRotation.toValue = [NSNumber numberWithFloat:((360*M_PI)/180)];
+    fullRotation.duration = 6;
+    fullRotation.repeatCount = 3.4028235;
+    [_spinningimage.layer addAnimation:fullRotation forKey:@"360"];
+}
+
 - (IBAction)twitterlogin:(id)sender
 {
-    
-    login = false;
-    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+                    [self performSelector:@selector(closeview) withObject:nil afterDelay:11.0];
+    [self performSelector:@selector(spinimage) withObject:nil afterDelay:.01];
+
+
+    _currentpercentage.format = @"%d%%";
+[_currentpercentage countFrom:0 to:100 withDuration:9.0f];
+       ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
     [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
@@ -89,8 +112,6 @@
             
             if ([accountsArray count] > 0) {
                 ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
-                NSLog(@"The username is %@",twitterAccount.username);
-                NSLog(@"It is a %@ account",twitterAccount.accountType);
                 
                 // Let's pull some info from twitter bro
                 {
@@ -124,10 +145,12 @@
                     NSString *name = [json objectForKey:@"name"];
                     NSString *twitterid = [json objectForKey:@"id"];
                     NSString *prof_img = [json objectForKey:@"profile_image_url"];
+                    //NSString *nooffollwers = [json objectForKey:@"follower_count"];
+                    
                     
                     NSString *altprof_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
                                                          withString:@""];
-            
+                    //NSLog(nooffollwers);
                 
                 //
                 
@@ -159,6 +182,9 @@
                 NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
                 // DISABLED WHILE WE CONFIGURE STUFF
                 [connection start];
+
+
+
                 // If there are no accounts, we need to pop up an alert
                 
                 }];
@@ -168,7 +194,7 @@
                     
                 }
                 } else {
-                    login = false;
+
                     NSLog(@"There's no accounts active");
 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Twitter Accounts"
 message:@"There are no Twitter accounts added to your device. You can add or make a new Twitter account by going back to the homescreen and into your Settings."
@@ -207,6 +233,11 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
 
 - (void)getTwitterAccount:(ACAccount *)account {
     }
+
+-(void)closeview{
+    NSLog(@"Account must have been made, I've been told to close the login view");
+    [self dismissViewControllerAnimated:YES completion:^{}];
+}
 
 - (void)fetchData
 {
