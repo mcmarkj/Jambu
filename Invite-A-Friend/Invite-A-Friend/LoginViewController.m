@@ -82,6 +82,7 @@
     
     [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
         if(granted) {
+            
             NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
             
             if ([accountsArray count] > 0) {
@@ -92,7 +93,7 @@
                 NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users%@", @""]];
                 
                 //build an info object and convert to json
-                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"http123123", @"image_url", @"twitter", @"provider",@123,@"uid",twitterAccount.username,@"username", @"Mark McWhirter", @"full_name", nil];
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"http123123", @"image_url", @"twitter", @"provider",@123,@"uid",twitterAccount.username,@"username", twitterAccount.userFullName, @"full_name", nil];
                 
                 // Sorry dude, im a bit of a moron
                 //convert object to data
@@ -112,8 +113,22 @@
                 // print json:
                 
                 NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+                // DISABLED WHILE WE CONFIGURE STUFF
                 [connection start];
-                
+                // If there are no accounts, we need to pop up an alert
+                } else {
+                    NSLog(@"There's no accounts active");
+UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Twitter Accounts"
+message:@"There are no Twitter accounts added to your device. You can add or make a new Twitter account by going back to the homescreen and into your Settings."
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil
+                      ];
+                    [alert performSelectorOnMainThread:@selector(show)
+                                              withObject:nil
+                                           waitUntilDone:NO];
+                    
+                   
                 
             }
         }
