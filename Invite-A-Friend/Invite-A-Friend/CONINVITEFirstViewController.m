@@ -8,7 +8,9 @@
 
 #import "CONINVITEFirstViewController.h"
 
-@interface CONINVITEFirstViewController ()
+@interface CONINVITEFirstViewController () {
+        UIView *setNeedsDisplay;
+}
 @property (strong, nonatomic) IBOutlet UILabel *overlaylabel;
 @property (strong, nonatomic) IBOutlet UILabel *overlaynexteventlabel;
 @property (strong, nonatomic) IBOutlet UILabel *overlayeventdatelabel;
@@ -22,11 +24,14 @@
 
 
 - (void)didFinishLaunchingWithOptions
+
 {
     
 }
 - (void)viewDidAppear:(BOOL)animated
 {
+    
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ([[defaults objectForKey:@"InviteLog"]boolValue]) {
@@ -43,6 +48,7 @@
         
         NSLog(@"User is not logged in");
         [self  performSegueWithIdentifier:@"LoginPage" sender:self];
+        
     }
     
     
@@ -68,7 +74,7 @@
     
     
     
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", UID]];
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     [request setURL:url];
@@ -147,7 +153,7 @@
         
         
         
-        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", UID]];
+        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         
         [request setURL:url];

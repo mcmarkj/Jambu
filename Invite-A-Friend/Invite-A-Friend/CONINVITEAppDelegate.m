@@ -22,15 +22,12 @@
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
     UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
     UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
-    UITabBarItem *tabBarItem4 = [tabBar.items objectAtIndex:3];
-    UITabBarItem *tabBarItem5 = [tabBar.items objectAtIndex:4];
+
     
     
     tabBarItem1.title = @"";
     tabBarItem2.title = @"";
     tabBarItem3.title = @"";
-    tabBarItem4.title = @"";
-    tabBarItem5.title = @"";
     
     
     
@@ -41,9 +38,7 @@
     tabBarItem3.image = [UIImage imageNamed:@"Heart.png"];
     
     
-    tabBarItem4.image = [UIImage imageNamed:@"invite.png"];
-    
-    tabBarItem5.image = [UIImage imageNamed:@"chat.png"];
+   
     
     UIImage* tabBarBackground = [UIImage imageNamed:@"tab-back.png"];
     [[UITabBar appearance] setBackgroundImage:tabBarBackground];

@@ -161,7 +161,7 @@
                 //
                 
                 
-                NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users%@", @""]];
+                NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users%@", @""]];
                 
                     NSString *twitterusername = twitterAccount.username;
                     
@@ -233,7 +233,7 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
     NSString *UID = [defaults objectForKey:@"Con96TUID"];
     NSString *fname = [defaults objectForKey:@"Con96fname"];
     
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://invite-a-friend-development.herokuapp.com/api/v1/users/%@", UID]];
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     [request setURL:url];

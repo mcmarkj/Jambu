@@ -60,6 +60,7 @@
 		41F27C1A1893E9CE00E64CC1 /* spinner.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F27C191893E9CE00E64CC1 /* spinner.png */; };
 		41F27C1D1893EA4D00E64CC1 /* LoginViewTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F27C1C1893EA4D00E64CC1 /* LoginViewTwoViewController.m */; };
 		41F27C201893EED800E64CC1 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F27C1F1893EED800E64CC1 /* UICountingLabel.m */; };
+		41F27C221895916800E64CC1 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F27C211895916700E64CC1 /* FacebookSDK.framework */; };
 		41F597DF188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B1188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg */; };
 		41F597E0188C602B00DAF315 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B3188C602B00DAF315 /* Icon-40.png */; };
 		41F597E1188C602B00DAF315 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B4188C602B00DAF315 /* Icon-40@2x.png */; };
@@ -184,6 +185,7 @@
 		41F27C1C1893EA4D00E64CC1 /* LoginViewTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewTwoViewController.m; sourceTree = "<group>"; };
 		41F27C1E1893EED800E64CC1 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		41F27C1F1893EED800E64CC1 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		41F27C211895916700E64CC1 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		41F597B1188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1609866_10203023090483243_1366328690_n.jpg; sourceTree = "<group>"; };
 		41F597B3188C602B00DAF315 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		41F597B4188C602B00DAF315 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				418AAE371891BF6E001D8FE1 /* Social.framework in Frameworks */,
 				418AAE351891B471001D8FE1 /* Accounts.framework in Frameworks */,
 				414AA81C188AE743001B3301 /* CoreGraphics.framework in Frameworks */,
+				41F27C221895916800E64CC1 /* FacebookSDK.framework in Frameworks */,
 				414AA81E188AE743001B3301 /* UIKit.framework in Frameworks */,
 				414AA81A188AE743001B3301 /* Foundation.framework in Frameworks */,
 			);
@@ -269,6 +272,7 @@
 		414AA818188AE743001B3301 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41F27C211895916700E64CC1 /* FacebookSDK.framework */,
 				418AAE3A1891CB24001D8FE1 /* Twitter.framework */,
 				418AAE381891BF86001D8FE1 /* QuartzCore.framework */,
 				418AAE361891BF6E001D8FE1 /* Social.framework */,
@@ -737,6 +741,10 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
 				INFOPLIST_FILE = "Invite-A-Friend/Invite-A-Friend-Info.plist";
@@ -753,6 +761,10 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
 				INFOPLIST_FILE = "Invite-A-Friend/Invite-A-Friend-Info.plist";

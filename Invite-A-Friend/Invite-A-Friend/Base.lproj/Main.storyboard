@@ -179,37 +179,6 @@
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
-        <!--View Controller - Item-->
-        <scene sceneID="Yfv-0B-27Q">
-            <objects>
-                <viewController id="v4d-Mh-if8" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9CV-sw-58f"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZaW-K0-Zbc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WOE-v1-COf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="topbanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="mpE-C5-V1J">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5th" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGB-NG-Fls">
-                                <rect key="frame" x="139" y="283" width="25" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.47058826684951782" green="0.47058826684951782" blue="0.47058826684951782" alpha="1" colorSpace="deviceRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="0aG-hh-pfm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wqK-Fn-UO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1357" y="21"/>
-        </scene>
         <!--Login View Controller - loginScreen-->
         <scene sceneID="g5x-VW-yj7">
             <objects>
@@ -371,37 +340,6 @@
             </objects>
             <point key="canvasLocation" x="662" y="523"/>
         </scene>
-        <!--View Controller - Item-->
-        <scene sceneID="Qrt-b2-p1S">
-            <objects>
-                <viewController id="UB3-As-7zp" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uhC-Tp-whl"/>
-                        <viewControllerLayoutGuide type="bottom" id="vrr-s5-UqK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QmZ-4h-u47">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="topbanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="EgN-yk-eT6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4th" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaE-DW-jH4">
-                                <rect key="frame" x="139" y="273" width="25" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.47058826684951782" green="0.47058826684951782" blue="0.47058826684951782" alpha="1" colorSpace="deviceRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="4ch-q7-fEp"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pBE-Cb-UJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1006" y="719"/>
-        </scene>
         <!--Friends View Controller - Item-->
         <scene sceneID="2cb-ve-7Y9">
             <objects>
@@ -508,8 +446,6 @@
                         <segue destination="CZ4-MO-1fc" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
                         <segue destination="QUy-BD-bpt" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
                         <segue destination="K2D-YF-ez9" kind="relationship" relationship="viewControllers" id="UDY-DD-Ffl"/>
-                        <segue destination="UB3-As-7zp" kind="relationship" relationship="viewControllers" id="I8o-W8-w6y"/>
-                        <segue destination="v4d-Mh-if8" kind="relationship" relationship="viewControllers" id="7dN-16-Btp"/>
                         <segue destination="bvd-Vy-cXL" kind="modal" identifier="LoginPage" modalTransitionStyle="flipHorizontal" id="TE3-BG-HGX"/>
                     </connections>
                 </tabBarController>
