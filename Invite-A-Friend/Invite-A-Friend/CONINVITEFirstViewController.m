@@ -238,8 +238,9 @@
     NSLog(@"Need to log out");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[NSNumber numberWithBool:NO] forKey:@"InviteLog"];
-    [defaults setObject:@"NULL" forKey:@"Con96ID"];
+    [defaults setObject:@"NULL" forKey:@"Con96TUID"];
     [defaults synchronize];
+    exit(0);
 
 }
 @end
