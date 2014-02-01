@@ -8,13 +8,14 @@
 
 #import "CONINVITEAppDelegate.h"
 #import "CONINVITEFirstViewController.h"
+#import "TestFlight.h"
 
 @implementation CONINVITEAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-    
+     [TestFlight takeOff:@"dae0430e-bac8-49e4-9857-14f024fb9b28"];
     
     // Assign tab bar item with titles
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;

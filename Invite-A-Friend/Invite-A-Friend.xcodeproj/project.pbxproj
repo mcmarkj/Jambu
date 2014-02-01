@@ -52,6 +52,10 @@
 		418AAE3E1892EF2D001D8FE1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418AAE3D1892EF2D001D8FE1 /* LoginViewController.m */; };
 		419BB6A8188C37EB00B7D403 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */; };
 		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; };
+		41E8FB41189D1005000D43F4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E8FB3B189D1005000D43F4 /* libTestFlight.a */; };
+		41E8FB42189D1005000D43F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 41E8FB3C189D1005000D43F4 /* README.md */; };
+		41E8FB43189D1005000D43F4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 41E8FB3D189D1005000D43F4 /* release_notes.md */; };
+		41E8FB45189D1198000D43F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E8FB44189D1198000D43F4 /* libz.dylib */; };
 		41F27C101893E25000E64CC1 /* newhere.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F27C0F1893E25000E64CC1 /* newhere.png */; };
 		41F27C121893E31200E64CC1 /* loginprogress.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F27C111893E31200E64CC1 /* loginprogress.png */; };
 		41F27C151893E3FD00E64CC1 /* facebooklogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F27C131893E3FD00E64CC1 /* facebooklogin.png */; };
@@ -175,6 +179,13 @@
 		419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTSideMenuViewController.m; sourceTree = "<group>"; };
 		419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsViewController.h; sourceTree = "<group>"; };
 		419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEFriendsViewController.m; sourceTree = "<group>"; };
+		41E8FB3B189D1005000D43F4 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		41E8FB3C189D1005000D43F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		41E8FB3D189D1005000D43F4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		41E8FB3E189D1005000D43F4 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		41E8FB3F189D1005000D43F4 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		41E8FB40189D1005000D43F4 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		41E8FB44189D1198000D43F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		41F27C0F1893E25000E64CC1 /* newhere.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newhere.png; sourceTree = "<group>"; };
 		41F27C111893E31200E64CC1 /* loginprogress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginprogress.png; sourceTree = "<group>"; };
 		41F27C131893E3FD00E64CC1 /* facebooklogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebooklogin.png; sourceTree = "<group>"; };
@@ -238,6 +249,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E8FB45189D1198000D43F4 /* libz.dylib in Frameworks */,
+				41E8FB41189D1005000D43F4 /* libTestFlight.a in Frameworks */,
 				418AAE3B1891CB24001D8FE1 /* Twitter.framework in Frameworks */,
 				418AAE391891BF86001D8FE1 /* QuartzCore.framework in Frameworks */,
 				418AAE371891BF6E001D8FE1 /* Social.framework in Frameworks */,
@@ -272,6 +285,7 @@
 		414AA818188AE743001B3301 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41E8FB44189D1198000D43F4 /* libz.dylib */,
 				41F27C211895916700E64CC1 /* FacebookSDK.framework */,
 				418AAE3A1891CB24001D8FE1 /* Twitter.framework */,
 				418AAE381891BF86001D8FE1 /* QuartzCore.framework */,
@@ -417,10 +431,24 @@
 			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
+		41E8FB3A189D1005000D43F4 /* TestFlightSDK2.2.1 */ = {
+			isa = PBXGroup;
+			children = (
+				41E8FB3B189D1005000D43F4 /* libTestFlight.a */,
+				41E8FB3C189D1005000D43F4 /* README.md */,
+				41E8FB3D189D1005000D43F4 /* release_notes.md */,
+				41E8FB3E189D1005000D43F4 /* TestFlight+AsyncLogging.h */,
+				41E8FB3F189D1005000D43F4 /* TestFlight+ManualSessions.h */,
+				41E8FB40189D1005000D43F4 /* TestFlight.h */,
+			);
+			path = TestFlightSDK2.2.1;
+			sourceTree = "<group>";
+		};
 		41F597B0188C602B00DAF315 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				41F597B1188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg */,
+				41E8FB3A189D1005000D43F4 /* TestFlightSDK2.2.1 */,
 				41F597B2188C602B00DAF315 /* appicons */,
 				41F597C5188C602B00DAF315 /* chat.png */,
 				41F597C6188C602B00DAF315 /* chat@2x.png */,
@@ -508,7 +536,7 @@
 				ORGANIZATIONNAME = Concept96;
 				TargetAttributes = {
 					414AA815188AE743001B3301 = {
-						DevelopmentTeam = H7M266N9FJ;
+						DevelopmentTeam = K4Q5DFPBFZ;
 					};
 				};
 			};
@@ -577,6 +605,7 @@
 				41F59800188C602B00DAF315 /* icon2.psd in Resources */,
 				414AA8A6188B0274001B3301 /* Roboto-BoldItalic.ttf in Resources */,
 				414AA8AF188B0274001B3301 /* RobotoCondensed-Bold.ttf in Resources */,
+				41E8FB43189D1005000D43F4 /* release_notes.md in Resources */,
 				41F597E9188C602B00DAF315 /* Icon-Small-50@2x.png in Resources */,
 				41F597F8188C602B00DAF315 /* friendback.png in Resources */,
 				41F59804188C602B00DAF315 /* launch-small.psd in Resources */,
@@ -593,6 +622,7 @@
 				41F597F1188C602B00DAF315 /* launch@2.png in Resources */,
 				414AA8A7188B0274001B3301 /* Roboto-Italic.ttf in Resources */,
 				41F597EA188C602B00DAF315 /* Icon-Small.png in Resources */,
+				41E8FB42189D1005000D43F4 /* README.md in Resources */,
 				414AA82D188AE743001B3301 /* Main.storyboard in Resources */,
 				414AA8AE188B0274001B3301 /* Roboto-ThinItalic.ttf in Resources */,
 				41F597FC188C602B00DAF315 /* Heart@2x.png in Resources */,
@@ -748,6 +778,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
 				INFOPLIST_FILE = "Invite-A-Friend/Invite-A-Friend-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend/Invite-A-Friend/Resources/TestFlightSDK2.2.1",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -768,6 +802,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
 				INFOPLIST_FILE = "Invite-A-Friend/Invite-A-Friend-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend/Invite-A-Friend/Resources/TestFlightSDK2.2.1",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4AA55EE6-4B8A-4EB4-8BFB-A32F21342858</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Invite-A-Friend</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C67CB840-B50D-4764-AA9B-9B470932ED5D</key>
+		<string>ssh://jenny.concept96.co.uk/concept96-invite-a-friend/invite-a-friend-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Invite-A-Friend/Invite-A-Friend.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C67CB840-B50D-4764-AA9B-9B470932ED5D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://jenny.concept96.co.uk/concept96-invite-a-friend/invite-a-friend-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C67CB840-B50D-4764-AA9B-9B470932ED5D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C67CB840-B50D-4764-AA9B-9B470932ED5D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>invite-a-friend-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

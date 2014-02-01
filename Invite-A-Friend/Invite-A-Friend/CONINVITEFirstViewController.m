@@ -28,38 +28,32 @@
 {
     
 }
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated{
     
-
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ([[defaults objectForKey:@"InviteLog"]boolValue]) {
-        NSLog(@"user is logged in - do nothing");
-
+    if ([[defaults objectForKey:@"Con96TUID"]boolValue]) {
         
-        if([[NSUserDefaults standardUserDefaults] objectForKey:@"Con96TUID"] != nil) {
-            NSLog(@"can't pull info since they're not logged in");
-        } else {
-    
-            [self performSelector:@selector(updateinfo) withObject:nil afterDelay:35]; }
+        NSLog(@"user is logged in - do nothing");
+        
+        [self.view setNeedsDisplay];
+        
     }
+    
     else {
         
         NSLog(@"User is not logged in");
+        
         [self  performSegueWithIdentifier:@"LoginPage" sender:self];
         
+        
     }
-    
-    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-            [self performSelector:@selector(updateinfo) withObject:nil afterDelay:30];
-
     
     
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
@@ -67,11 +61,11 @@
     NSString *UID = [userdefaults objectForKey:@"Con96TUID"];
     
     if(UID == NULL){
-        NSLog(@"User is not logged in");
-        [self  performSegueWithIdentifier:@"LoginPage" sender:self];
+        NSLog(@"I'm not going to run anything until we log the user in");
+    
     }else {
         
-    
+        NSLog(@"User is logged in, let's pull some info from the api");
     
     
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
@@ -139,55 +133,6 @@
     }}
 
 
--(void)updateinfo
-{
-    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
-    
-    NSString *UID = [userdefaults objectForKey:@"Con96TUID"];
-    
-    if([[NSUserDefaults standardUserDefaults] objectForKey:@"Con96TUID"] != nil) {
-        NSLog(@"CAN'T UPDATE :: User is not logged in");
-
-    }else {
-        
-        
-        
-        
-        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-        
-        [request setURL:url];
-        [request setHTTPMethod:@"GET"];
-        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        
-        NSError *error;
-        NSURLResponse *response;
-        NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
-        
-        //Checking if the user has any pending events, let's enable / disable the indicator in response to this.
-        if([json valueForKey:@"pendingevents"] > 0){
-            _inviteindicatorback.hidden = false;
-            _inviteindicator.hidden = false;
-            //Change the button's value to match the number of pending events pulled from the JSON.
-            [_inviteindicator setTitle:[json valueForKey:@"pendingevents"] forState:UIControlStateNormal];
-        } else {
-            //Since they have no events we'll hide the indicator and the button.
-            _inviteindicatorback.hidden = true;
-            _inviteindicator.hidden = true;
-        }
-        
-        //_UserTwitterLabel.text = [json valueForKey:@"username"];
-        //Set Full Name of User
-        _UserNameLabel.text = [json valueForKey:@"full_name"];
-        //Set twitter name
-        _UserTwitterLabel.text = [NSString stringWithFormat:@"@%@", [json valueForKey:@"username"]];
-        
-        //SET IMAGE
-        _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"image_url"]]]];
-        
-    }
-    }
 - (void)updateCountdown {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd"];
@@ -200,7 +145,7 @@
     
     NSInteger hours    = [dateComponents hour];
     
-        NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %d Hours", hours];
+        NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Hours", (long)hours];
         _overlaynexteventlabel.text = countdownText;
     
 }
