@@ -76,7 +76,7 @@
         _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"image_url"]]]];
         
         
-        [self performSelector:@selector(fadein) withObject:nil afterDelay:-10];
+
         
         _overlaylabel.font = [UIFont fontWithName:@"Roboto-Light" size:28];
         
@@ -128,7 +128,7 @@
     [super viewDidLoad];
     
     
-    
+            [self performSelector:@selector(fadein) withObject:nil afterDelay:-10];
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     
     NSString *UID = [userdefaults objectForKey:@"Con96TUID"];

@@ -57,15 +57,18 @@
     }
     
     
-    _UserName.font = [UIFont fontWithName:@"Helvetica" size:18];
-    _UserTwitterName.font = [UIFont fontWithName:@"Helvetica" size:14];
+    _UserName.font = [UIFont fontWithName:@"Roboto" size:20];
+    _UserTwitterName.font = [UIFont fontWithName:@"Roboto-Light" size:14];
     
     _UserName.text = [json valueForKey:@"full_name"];
     _UserTwitterName.text = [NSString stringWithFormat:@"@%@",twitterusername];
     
     _UserEventInvites.text = @"121";
+    _UserEventInvites.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     _UserFriendCount.text = @"17";
+    _UserFriendCount.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     _UserEventsAttended.text = @"76";
+    _UserEventsAttended.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     
     _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"image_url"]]]];
     
