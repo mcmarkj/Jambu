@@ -31,10 +31,78 @@
 - (void)viewDidAppear:(BOOL)animated{
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *UID = [defaults objectForKey:@"Con96TUID"];
     
     if ([[defaults objectForKey:@"Con96TUID"]boolValue]) {
         
         NSLog(@"user is logged in - do nothing");
+        
+        
+        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        
+        [request setURL:url];
+        [request setHTTPMethod:@"GET"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        NSError *error;
+        NSURLResponse *response;
+        NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+        
+        //Checking if the user has any pending events, let's enable / disable the indicator in response to this.
+        if([json valueForKey:@"pendingevents"] > 0){
+            _inviteindicatorback.hidden = false;
+            _inviteindicator.hidden = false;
+            //Change the button's value to match the number of pending events pulled from the JSON.
+            [_inviteindicator setTitle:[json valueForKey:@"pendingevents"] forState:UIControlStateNormal];
+        } else {
+            //Since they have no events we'll hide the indicator and the button.
+            _inviteindicatorback.hidden = true;
+            _inviteindicator.hidden = true;
+        }
+        
+        //_UserTwitterLabel.text = [json valueForKey:@"username"];
+        //Set Full Name of User
+        _UserNameLabel.text = [json valueForKey:@"full_name"];
+        //Set twitter name
+        _UserTwitterLabel.text = [NSString stringWithFormat:@"@%@", [json valueForKey:@"username"]];
+        
+        //SET IMAGE
+        _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"image_url"]]]];
+        
+        
+        [self performSelector:@selector(fadein) withObject:nil afterDelay:-10];
+        
+        _overlaylabel.font = [UIFont fontWithName:@"Roboto-Light" size:28];
+        
+        _overlaynexteventlabel.font = [UIFont fontWithName:@"Roboto-Light" size:15];
+        _overlayeventdatelabel.font = [UIFont fontWithName:@"Roboto-Light" size:9];
+        _overlayeventattendeeslabel.font = [UIFont fontWithName:@"Roboto-Light" size:9];
+        
+        _UserNameLabel.font = [UIFont fontWithName:@"Roboto" size:20];
+        _UserTwitterLabel.font = [UIFont fontWithName:@"Roboto-Light" size:13];
+        _UserEventsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
+        _UserEventsLabel.text =@"3";
+        _UserEventsAttendedLabel.font = [UIFont fontWithName:@"Roboto" size:20];
+        _UserEventsAttendedLabel.text =@"27";
+        _UserFacebookFriendsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
+        _UserFacebookFriendsLabel.text =@"1,272";
+        _UserRewardsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
+        _UserRewardsLabel.text =@"6";
+        _UserCardSplitLabels.font = [UIFont fontWithName:@"Roboto-Light" size:10];
+        _UserCardSplitLabels1.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+        _UserCardSplitLabels2.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+        
+        _UserCardSplitLabels3.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+        
+        [self performSelector:@selector(updateCountdown) withObject:nil afterDelay:1];
+        
+
+        
+        
+        
+        
         
         [self.view setNeedsDisplay];
         
