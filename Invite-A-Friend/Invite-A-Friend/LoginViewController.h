@@ -13,6 +13,7 @@
         NSString *username;
     BOOL *login;
     NSInteger intTmp;
+    IBOutlet UIButton *twitterlogin;
 }
 - (IBAction)fakelogin:(UIButton *)sender;
 @property (nonatomic, retain) NSString *username;

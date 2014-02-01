@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "414AA815188AE743001B3301"
-               BuildableName = "Invite-A-Friend.app"
-               BlueprintName = "Invite-A-Friend"
+               BuildableName = "ProjectInvite.app"
+               BlueprintName = "ProjectInvite"
                ReferencedContainer = "container:Invite-A-Friend.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "414AA815188AE743001B3301"
-            BuildableName = "Invite-A-Friend.app"
-            BlueprintName = "Invite-A-Friend"
+            BuildableName = "ProjectInvite.app"
+            BlueprintName = "ProjectInvite"
             ReferencedContainer = "container:Invite-A-Friend.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "414AA815188AE743001B3301"
-            BuildableName = "Invite-A-Friend.app"
-            BlueprintName = "Invite-A-Friend"
+            BuildableName = "ProjectInvite.app"
+            BlueprintName = "ProjectInvite"
             ReferencedContainer = "container:Invite-A-Friend.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "414AA815188AE743001B3301"
-            BuildableName = "Invite-A-Friend.app"
-            BlueprintName = "Invite-A-Friend"
+            BuildableName = "ProjectInvite.app"
+            BlueprintName = "ProjectInvite"
             ReferencedContainer = "container:Invite-A-Friend.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

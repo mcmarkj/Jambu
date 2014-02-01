@@ -36,7 +36,7 @@
     
     tabBarItem2.image = [UIImage imageNamed:@"diary.png"];
     
-    tabBarItem3.image = [UIImage imageNamed:@"Heart.png"];
+    tabBarItem3.image = [UIImage imageNamed:@"profile.png"];
     
     
    

@@ -96,7 +96,7 @@
 
 - (IBAction)twitterlogin:(id)sender
 {
-    
+    twitterlogin.hidden=YES;
     [self performSelector:@selector(spinimage) withObject:nil afterDelay:.01];
     
     [self performSelector:@selector(checkapisuccess) withObject:nil afterDelay:12.0];
@@ -105,6 +105,7 @@
 [_currentpercentage countFrom:0 to:100 withDuration:17.0f];
        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
     
     [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
         if(granted) {
@@ -170,7 +171,7 @@
                     NSString *twitterusername = twitterAccount.username;
                     
                 //build an info object and convert to json
-                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:altprof_img, @"image_url", @"twitter", @"provider",twitterid,@"uid",twitterusername,@"username", name, @"full_name", nil];
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: altprof_img, @"image_url", @"twitter", @"provider", twitterid, @"uid", @"pink",  @"colour", twitterusername, @"username", name, @"full_name",  nil];
                     
                     
                     
@@ -281,6 +282,7 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
         [alert performSelectorOnMainThread:@selector(show)
                                 withObject:nil
                              waitUntilDone:NO];
+        twitterlogin.hidden=NO;
 
     }}
 }
