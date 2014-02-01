@@ -12,6 +12,7 @@
     
     NSArray *tableData;
 }
+- (IBAction)logout:(UIButton *)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *UserNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *UserTwitterLabel;
@@ -24,6 +25,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *UserCardSplitLabels1;
 @property (strong, nonatomic) IBOutlet UILabel *UserCardSplitLabels2;
 @property (strong, nonatomic) IBOutlet UILabel *UserCardSplitLabels3;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *UserIndicatorImage;
 @property (strong, nonatomic) IBOutlet UIButton *UserIndicatorButton;

@@ -112,6 +112,10 @@
             NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
             
             if ([accountsArray count] > 0) {
+                if ([accountsArray count] >1 ) {
+                    NSLog(@"The user has more than 1 twitter account");
+                    
+                }
                 ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
                 
                 // Let's pull some info from twitter bro

@@ -68,7 +68,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUd-a8-Xam">
-                                <rect key="frame" x="113" y="161" width="15" height="21"/>
+                                <rect key="frame" x="113" y="161" width="175" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.070588238537311554" green="0.7882353663444519" blue="0.85098046064376831" alpha="1" colorSpace="deviceRGB"/>
@@ -148,6 +148,17 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" image="menuicon.png"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTj-ch-yYS">
+                                <rect key="frame" x="244" y="26" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="cEw-7w-gqK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47058826684951782" green="0.47058826684951782" blue="0.47058826684951782" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -165,7 +176,7 @@
                         <outlet property="UserIndicatorButton" destination="a5F-BJ-oBU" id="Sde-ix-RKw"/>
                         <outlet property="UserNameLabel" destination="BSe-nV-uvv" id="nV1-ms-EHK"/>
                         <outlet property="UserRewardsLabel" destination="0U1-fw-Wbl" id="Le7-JJ-RGv"/>
-                        <outlet property="UserTwitterLabel" destination="EUd-a8-Xam" id="GRg-1o-hby"/>
+                        <outlet property="UserTNameLabel" destination="EUd-a8-Xam" id="yVa-GU-7eP"/>
                         <outlet property="inviteindicator" destination="a5F-BJ-oBU" id="QdW-Bt-iDy"/>
                         <outlet property="inviteindicatorback" destination="uAv-f4-yn9" id="LzK-TL-Iw5"/>
                         <outlet property="overlayeventattendeeslabel" destination="rVA-yK-KNS" id="c4y-Rc-LnE"/>
