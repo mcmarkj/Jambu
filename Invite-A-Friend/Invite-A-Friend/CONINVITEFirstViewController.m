@@ -65,6 +65,11 @@
         }
         
         NSString *twitterusername = [json valueForKey:@"username"];
+        NSString *AID = [json valueForKey:@"id"];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:AID forKey:@"Con96AID"];
+        [defaults synchronize];
         
         //_UserTwitterLabel.text = [json valueForKey:@"username"];
         //Set Full Name of User

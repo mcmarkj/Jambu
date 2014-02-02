@@ -13,6 +13,40 @@
 @end
 
 @implementation CONINVITEViewFriendViewController
+- (IBAction)addFriend:(id)sender {
+    
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", @""]];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *MID = [defaults objectForKey:@"Con96AID"];
+    NSString *AID = [defaults objectForKey:@"Con96FAID"];
+    
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: MID, @"user_id", AID, @"friend_id",  nil];
+    
+    NSError *error;
+    
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+    
+    NSString *editeddata = [NSString stringWithFormat:@"{\"friendship\":%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+    
+    NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:finaldata];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    // DISABLED WHILE WE CONFIGURE STUFF
+    
+    NSLog(@"We're now collecting to the API");
+    [connection start];
+    NSLog(@"Completed API Request");
+
+};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -76,7 +110,6 @@
     
     
 }
-
 
 
 

@@ -267,12 +267,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-
      // Pass the selected object to the new view controller.
     NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
+    NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:UID forKey:@"Con96FID"];
+    [defaults setObject:AID forKey:@"Con96FAID"];
     [defaults synchronize];
     
     //Navigation logic may go here. Create and push another view controller.
