@@ -20,5 +20,6 @@
 @property (retain) IBOutlet UITableView *tableV;
 @property (assign) NSMutableData *responseData;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIImageView *yourimageview;
 
 @end

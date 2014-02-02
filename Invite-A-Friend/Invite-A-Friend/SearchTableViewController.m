@@ -207,7 +207,9 @@
     NSURLResponse *response;
     NSError *error;
     NSData *rawImage = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+   // cell.imageView.image = [UIImage imageNamed:@"friendback.png"];
     cell.imageView.image = [UIImage imageWithData:rawImage];
+    
     
     return cell;
 }
@@ -258,16 +260,25 @@
 
 #pragma mark - Table view delegate
 
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
+
+
      // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:UID forKey:@"Con96FID"];
+    [defaults synchronize];
+    
+    //Navigation logic may go here. Create and push another view controller.
+    
+        [self  performSegueWithIdentifier:@"showFriend" sender:self];
+    
 }
 
 -(void)dealloc{

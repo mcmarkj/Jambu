@@ -17,6 +17,9 @@
 		4142F2BD189E8C26002ECA92 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2B5189E8C26002ECA92 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4142F2BE189E8C26002ECA92 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2B7189E8C26002ECA92 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4142F2BF189E8C26002ECA92 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2B9189E8C26002ECA92 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4142F2C2189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2C1189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m */; };
+		4142F2C5189E9EB8002ECA92 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C3189E9EB7002ECA92 /* close.png */; };
+		4142F2C6189E9EB8002ECA92 /* close@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C4189E9EB8002ECA92 /* close@2.png */; };
 		414AA81A188AE743001B3301 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA819188AE743001B3301 /* Foundation.framework */; };
 		414AA81C188AE743001B3301 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA81B188AE743001B3301 /* CoreGraphics.framework */; };
 		414AA81E188AE743001B3301 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA81D188AE743001B3301 /* UIKit.framework */; };
@@ -156,6 +159,10 @@
 		4142F2B7189E8C26002ECA92 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		4142F2B8189E8C26002ECA92 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		4142F2B9189E8C26002ECA92 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		4142F2C0189E9ABC002ECA92 /* CONINVITEViewFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEViewFriendViewController.h; sourceTree = "<group>"; };
+		4142F2C1189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEViewFriendViewController.m; sourceTree = "<group>"; };
+		4142F2C3189E9EB7002ECA92 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		4142F2C4189E9EB8002ECA92 /* close@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2.png"; sourceTree = "<group>"; };
 		414AA816188AE743001B3301 /* ProjectInvite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectInvite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		414AA819188AE743001B3301 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		414AA81B188AE743001B3301 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -388,6 +395,8 @@
 				4142F2AA189E8C04002ECA92 /* SearchTableViewController.m */,
 				414AA82E188AE743001B3301 /* CONINVITEFirstViewController.h */,
 				419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */,
+				4142F2C0189E9ABC002ECA92 /* CONINVITEViewFriendViewController.h */,
+				4142F2C1189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m */,
 				414AA82F188AE743001B3301 /* CONINVITEFirstViewController.m */,
 				419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */,
 				41F27C1B1893EA4D00E64CC1 /* LoginViewTwoViewController.h */,
@@ -410,6 +419,8 @@
 			isa = PBXGroup;
 			children = (
 				41F27C0F1893E25000E64CC1 /* newhere.png */,
+				4142F2C3189E9EB7002ECA92 /* close.png */,
+				4142F2C4189E9EB8002ECA92 /* close@2.png */,
 				41F27C131893E3FD00E64CC1 /* facebooklogin.png */,
 				4142F27A189D993E002ECA92 /* AddFriend.png */,
 				4142F27B189D993E002ECA92 /* AddFriend@2.png */,
@@ -707,6 +718,7 @@
 				41F59800188C602B00DAF315 /* icon2.psd in Resources */,
 				414AA8A6188B0274001B3301 /* Roboto-BoldItalic.ttf in Resources */,
 				414AA8AF188B0274001B3301 /* RobotoCondensed-Bold.ttf in Resources */,
+				4142F2C5189E9EB8002ECA92 /* close.png in Resources */,
 				41E8FB43189D1005000D43F4 /* release_notes.md in Resources */,
 				41E8FB5F189D6D38000D43F4 /* red-profile.png in Resources */,
 				41E8FB48189D4A2A000D43F4 /* home.png in Resources */,
@@ -730,6 +742,7 @@
 				414AA8A5188B0274001B3301 /* Roboto-Bold.ttf in Resources */,
 				41F59806188C602B00DAF315 /* launch.psd in Resources */,
 				41F597F1188C602B00DAF315 /* launch@2.png in Resources */,
+				4142F2C6189E9EB8002ECA92 /* close@2.png in Resources */,
 				414AA8A7188B0274001B3301 /* Roboto-Italic.ttf in Resources */,
 				41F597EA188C602B00DAF315 /* Icon-Small.png in Resources */,
 				41E8FB5D189D6D2E000D43F4 /* pink.png in Resources */,
@@ -776,6 +789,7 @@
 				41F27C1D1893EA4D00E64CC1 /* LoginViewTwoViewController.m in Sources */,
 				414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */,
 				4189935E189066090089AC7E /* JSONAPI.m in Sources */,
+				4142F2C2189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m in Sources */,
 				4189935D189066090089AC7E /* NSArray+JSONModel.m in Sources */,
 				41899361189066090089AC7E /* JSONKeyMapper.m in Sources */,
 				4142F2BE189E8C26002ECA92 /* SBJsonParser.m in Sources */,
