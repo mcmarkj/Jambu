@@ -86,4 +86,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)searchPress:(UIButton*)sender {
+        [self  performSegueWithIdentifier:@"searchFriends" sender:self];
+}
 @end
