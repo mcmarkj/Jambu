@@ -546,10 +546,10 @@
             </objects>
             <point key="canvasLocation" x="1383" y="689"/>
         </scene>
-        <!--View Controller-->
+        <!--Friends Search View Controller-->
         <scene sceneID="GLd-gf-jxV">
             <objects>
-                <viewController id="cOO-aC-mHq" sceneMemberID="viewController">
+                <viewController id="cOO-aC-mHq" customClass="CONINVITEFriendsSearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iss-ol-Ps7"/>
                         <viewControllerLayoutGuide type="bottom" id="2vf-0Q-lvt"/>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4142F27C189D993E002ECA92 /* AddFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F27A189D993E002ECA92 /* AddFriend.png */; };
 		4142F27D189D993E002ECA92 /* AddFriend@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F27B189D993E002ECA92 /* AddFriend@2.png */; };
+		4142F2A8189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2A7189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m */; };
 		414AA81A188AE743001B3301 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA819188AE743001B3301 /* Foundation.framework */; };
 		414AA81C188AE743001B3301 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA81B188AE743001B3301 /* CoreGraphics.framework */; };
 		414AA81E188AE743001B3301 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA81D188AE743001B3301 /* UIKit.framework */; };
@@ -131,6 +132,8 @@
 /* Begin PBXFileReference section */
 		4142F27A189D993E002ECA92 /* AddFriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddFriend.png; sourceTree = "<group>"; };
 		4142F27B189D993E002ECA92 /* AddFriend@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AddFriend@2.png"; sourceTree = "<group>"; };
+		4142F2A6189E8904002ECA92 /* CONINVITEFriendsSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsSearchViewController.h; sourceTree = "<group>"; };
+		4142F2A7189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEFriendsSearchViewController.m; sourceTree = "<group>"; };
 		414AA816188AE743001B3301 /* ProjectInvite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectInvite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		414AA819188AE743001B3301 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		414AA81B188AE743001B3301 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -337,6 +340,8 @@
 				414AA828188AE743001B3301 /* CONINVITEAppDelegate.h */,
 				414AA829188AE743001B3301 /* CONINVITEAppDelegate.m */,
 				414AA82B188AE743001B3301 /* Main.storyboard */,
+				4142F2A6189E8904002ECA92 /* CONINVITEFriendsSearchViewController.h */,
+				4142F2A7189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m */,
 				414AA82E188AE743001B3301 /* CONINVITEFirstViewController.h */,
 				419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */,
 				414AA82F188AE743001B3301 /* CONINVITEFirstViewController.m */,
@@ -727,6 +732,7 @@
 				41899361189066090089AC7E /* JSONKeyMapper.m in Sources */,
 				414AA82A188AE743001B3301 /* CONINVITEAppDelegate.m in Sources */,
 				414AA826188AE743001B3301 /* main.m in Sources */,
+				4142F2A8189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m in Sources */,
 				4189935C189066090089AC7E /* JSONModelError.m in Sources */,
 				41899359189066090089AC7E /* JSONModel.m in Sources */,
 				4189935A189066090089AC7E /* JSONModelArray.m in Sources */,
