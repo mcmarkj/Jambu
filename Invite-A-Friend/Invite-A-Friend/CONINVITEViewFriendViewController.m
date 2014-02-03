@@ -34,6 +34,8 @@
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
+                            NSLog(@"JSON Output : %@", finaldata);
+    
     [request setURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

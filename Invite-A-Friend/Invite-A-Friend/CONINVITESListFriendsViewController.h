@@ -1,14 +1,14 @@
 //
-//  SearchTableViewController.h
+//  CONINVITESListFriendsViewController.h
 //  Invite-A-Friend
 //
-//  Created by Mark McWhirter on 02/02/2014.
+//  Created by Mark McWhirter on 03/02/2014.
 //  Copyright (c) 2014 Concept96. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SearchTableViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>{
+@interface CONINVITESListFriendsViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>{
     NSArray *tweets;
     UISearchBar *searchBar;
     UITableView *tableV;

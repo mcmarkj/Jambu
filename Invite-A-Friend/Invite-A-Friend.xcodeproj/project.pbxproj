@@ -98,6 +98,7 @@
 		41F27C1D1893EA4D00E64CC1 /* LoginViewTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F27C1C1893EA4D00E64CC1 /* LoginViewTwoViewController.m */; };
 		41F27C201893EED800E64CC1 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F27C1F1893EED800E64CC1 /* UICountingLabel.m */; };
 		41F27C221895916800E64CC1 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F27C211895916700E64CC1 /* FacebookSDK.framework */; };
+		41F3227918A008D8001E07EB /* CONINVITESListFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F3227818A008D8001E07EB /* CONINVITESListFriendsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		41F597DF188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B1188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg */; };
 		41F597E0188C602B00DAF315 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B3188C602B00DAF315 /* Icon-40.png */; };
 		41F597E1188C602B00DAF315 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597B4188C602B00DAF315 /* Icon-40@2x.png */; };
@@ -269,6 +270,8 @@
 		41F27C1E1893EED800E64CC1 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		41F27C1F1893EED800E64CC1 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		41F27C211895916700E64CC1 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		41F3227718A008D7001E07EB /* CONINVITESListFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITESListFriendsViewController.h; sourceTree = "<group>"; };
+		41F3227818A008D8001E07EB /* CONINVITESListFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITESListFriendsViewController.m; sourceTree = "<group>"; };
 		41F597B1188C602B00DAF315 /* 1609866_10203023090483243_1366328690_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1609866_10203023090483243_1366328690_n.jpg; sourceTree = "<group>"; };
 		41F597B3188C602B00DAF315 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		41F597B4188C602B00DAF315 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
@@ -397,6 +400,8 @@
 				4142F2A7189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m */,
 				4142F2A9189E8C04002ECA92 /* SearchTableViewController.h */,
 				4142F2AA189E8C04002ECA92 /* SearchTableViewController.m */,
+				41F3227718A008D7001E07EB /* CONINVITESListFriendsViewController.h */,
+				41F3227818A008D8001E07EB /* CONINVITESListFriendsViewController.m */,
 				414AA82E188AE743001B3301 /* CONINVITEFirstViewController.h */,
 				419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */,
 				4142F2C0189E9ABC002ECA92 /* CONINVITEViewFriendViewController.h */,
@@ -782,12 +787,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4142F2AB189E8C04002ECA92 /* SearchTableViewController.m in Sources */,
 				414AA833188AE743001B3301 /* CONINVITESecondViewController.m in Sources */,
 				41899360189066090089AC7E /* JSONModel+networking.m in Sources */,
 				419BB6A8188C37EB00B7D403 /* TWTSideMenuViewController.m in Sources */,
 				419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */,
 				4189935F189066090089AC7E /* JSONHTTPClient.m in Sources */,
+				41F3227918A008D8001E07EB /* CONINVITESListFriendsViewController.m in Sources */,
 				4189935B189066090089AC7E /* JSONModelClassProperty.m in Sources */,
 				4142F2BD189E8C26002ECA92 /* SBJsonBase.m in Sources */,
 				41899362189066090089AC7E /* JSONValueTransformer.m in Sources */,
@@ -801,6 +806,7 @@
 				4189935D189066090089AC7E /* NSArray+JSONModel.m in Sources */,
 				41899361189066090089AC7E /* JSONKeyMapper.m in Sources */,
 				4142F2BE189E8C26002ECA92 /* SBJsonParser.m in Sources */,
+				4142F2AB189E8C04002ECA92 /* SearchTableViewController.m in Sources */,
 				414AA82A188AE743001B3301 /* CONINVITEAppDelegate.m in Sources */,
 				4142F2BA189E8C26002ECA92 /* NSObject+SBJSON.m in Sources */,
 				4142F2BC189E8C26002ECA92 /* SBJSON.m in Sources */,
