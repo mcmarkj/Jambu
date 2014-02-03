@@ -70,6 +70,41 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *AID = [defaults objectForKey:@"Con96FAID"];
+    //Get number of friends info
+    NSURL *friendsurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", AID]];
+    NSMutableURLRequest *friendsrequest = [NSMutableURLRequest requestWithURL:friendsurl];
+    
+    [friendsrequest setURL:friendsurl];
+    [friendsrequest setHTTPMethod:@"GET"];
+    [friendsrequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSError *error;
+    NSURLResponse *friendsresponse;
+    NSData *friendsdata = [NSURLConnection sendSynchronousRequest:friendsrequest returningResponse:&friendsresponse error:&error];
+    NSArray *friendsjson = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingAllowFragments error:nil];
+    
+    NSLog(@"JSON Output : %@", friendsjson);
+    NSLog(@"From URL : %@", friendsurl);
+    
+    
+    NSMutableDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingMutableContainers error:&error];
+    NSDictionary *results = [responseJSON valueForKey:@"friendships"];
+    
+    
+    // 6.1 - Load JSON into internal variable
+    // 6.2 - Get the number of shows (post)
+    int shows = results.count;
+    
+    NSLog(@"count : %d",shows);
+    NSString *friendscount = [NSString stringWithFormat:@"%d",shows];
+    _UserFriendCount.text = friendscount;
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -114,7 +149,6 @@
     
     _UserEventInvites.text = @"121";
     _UserEventInvites.font = [UIFont fontWithName:@"Roboto-Light" size:20];
-    _UserFriendCount.text = @"17";
     _UserFriendCount.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     _UserEventsAttended.text = @"76";
     _UserEventsAttended.font = [UIFont fontWithName:@"Roboto-Light" size:20];

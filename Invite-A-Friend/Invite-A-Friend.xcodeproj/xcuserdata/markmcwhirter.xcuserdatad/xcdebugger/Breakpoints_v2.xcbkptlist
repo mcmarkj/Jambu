@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Invite-A-Friend/CONINVITEFirstViewController.m"
-            timestampString = "413130712.113196"
+            timestampString = "413132959.160619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "-viewDidAppear:"
             landmarkType = "5">
          </BreakpointContent>

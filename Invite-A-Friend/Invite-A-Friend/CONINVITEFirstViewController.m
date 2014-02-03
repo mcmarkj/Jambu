@@ -41,6 +41,7 @@
         
         
         NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
+
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         
         [request setURL:url];
@@ -52,6 +53,8 @@
         NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
         
+        
+        //Check if the response is valid or not - stops the app from crashing
         if (json == [NSNull null]) {
             NSLog(@"Response is Null, user's been deleted");
             [self showLogin:Nil];
@@ -78,6 +81,10 @@
         [defaults setObject:AID forKey:@"Con96AID"];
         [defaults synchronize];
         
+            
+
+            
+            
         //_UserTwitterLabel.text = [json valueForKey:@"username"];
         //Set Full Name of User
         _UserNameLabel.text = [json valueForKey:@"full_name"];
@@ -88,8 +95,33 @@
         _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"image_url"]]]];
         
         
+            //Get number of friends info
+            NSURL *friendsurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", AID]];
+            NSMutableURLRequest *friendsrequest = [NSMutableURLRequest requestWithURL:friendsurl];
+            
+            [friendsrequest setURL:friendsurl];
+            [friendsrequest setHTTPMethod:@"GET"];
+            [friendsrequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            
+            NSError *error;
+            NSURLResponse *friendsresponse;
+            NSData *friendsdata = [NSURLConnection sendSynchronousRequest:friendsrequest returningResponse:&friendsresponse error:&error];
+            NSArray *friendsjson = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingAllowFragments error:nil];
 
-        
+                        NSLog(@"JSON Output : %@", friendsjson);
+            NSLog(@"From URL : %@", friendsurl);
+            
+            
+            NSMutableDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingMutableContainers error:&error];
+            NSDictionary *results = [responseJSON valueForKey:@"friendships"];
+            
+            
+            // 6.1 - Load JSON into internal variable
+            // 6.2 - Get the number of shows (post)
+            int shows = results.count;
+            
+            NSLog(@"count : %d",shows);
+        NSString *friendscount = [NSString stringWithFormat:@"%d",shows];
         _overlaylabel.font = [UIFont fontWithName:@"Roboto-Light" size:28];
         
         _overlaynexteventlabel.font = [UIFont fontWithName:@"Roboto-Light" size:15];
@@ -102,7 +134,7 @@
         _UserEventsLabel.text =@"3";
         _UserEventsAttendedLabel.font = [UIFont fontWithName:@"Roboto" size:20];
         _UserEventsAttendedLabel.text =@"27";
-        [_UserFacebookFriendsLabel setTitle:@"1,272" forState:(UIControlStateNormal)];
+        [_UserFacebookFriendsLabel setTitle:friendscount forState:(UIControlStateNormal)];
        // [_UserFacebookFriendsLabel setValue:[UIFont fontWithName:@"Roboto" size:20] forKeyPath:@"_UserFacebookFriendsLabel.font"];
         _UserRewardsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
         _UserRewardsLabel.text =@"6";
