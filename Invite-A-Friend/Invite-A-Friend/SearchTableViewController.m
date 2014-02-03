@@ -26,6 +26,39 @@
     return self;
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    searchText = self.searchBar.text;
+    
+    if (searchText.length > 2) {
+    
+    
+    [tableV setUserInteractionEnabled:YES];
+    indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [indicator setFrame:CGRectMake(tableV.frame.size.width/2-50, tableV.frame.size.height/2-50, 100, 100)];
+    [indicator setBackgroundColor:[UIColor blackColor]];
+    [indicator setAlpha:0.7f];
+    indicator.layer.cornerRadius = 10.0f;
+    [self.tableV addSubview:indicator];
+    [indicator startAnimating];
+    NSLog(@"Search button pressed");
+    NSString *search = self.searchBar.text;
+    
+    NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/search/%@", search];
+    [searchString replaceOccurrencesOfString:@"@" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
+    /*[searchString replaceOccurrencesOfString:@" " withString:@"%20" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
+     [searchString replaceOccurrencesOfString:@"@" withString:@"%40" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])]; */
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
+    [NSURLConnection connectionWithRequest:request delegate:self];
+    //[self.searchBar resignFirstResponder];
+
+    } else {
+        
+    }
+    
+    
+    
+}
 //Called when user presses Search, sends query to server
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{ 
     
@@ -191,6 +224,8 @@
     // Return the number of rows in the section.
     return [tweets count];
 }
+
+
 
 
 //Configuring cell design upon request from table
