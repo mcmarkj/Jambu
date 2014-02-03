@@ -135,6 +135,7 @@
         _UserEventsAttendedLabel.font = [UIFont fontWithName:@"Roboto" size:20];
         _UserEventsAttendedLabel.text =@"27";
         [_UserFacebookFriendsLabel setTitle:friendscount forState:(UIControlStateNormal)];
+        _UserFacebookFriendsLabel.titleLabel.font = [UIFont fontWithName:@"Roboto" size:20];
        // [_UserFacebookFriendsLabel setValue:[UIFont fontWithName:@"Roboto" size:20] forKeyPath:@"_UserFacebookFriendsLabel.font"];
         _UserRewardsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
         _UserRewardsLabel.text =@"6";
