@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface CONINVITEViewFriendViewController : UIViewController
+{
+        IBOutlet UIButton *addFriend;
+}
 @property (strong, nonatomic) IBOutlet UIImageView *profilecolourimage;
 
 @property (strong, nonatomic) IBOutlet UIImageView *UserImage;

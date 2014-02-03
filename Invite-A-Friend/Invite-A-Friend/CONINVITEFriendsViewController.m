@@ -54,6 +54,8 @@
          _profilecolourimage.image = [UIImage imageNamed:@"purple@2.png"];
     } else if ([profilecolour  isEqual: @"pink"]) {
        _profilecolourimage.image = [UIImage imageNamed:@"pink@2.png"];
+    } else if ([profilecolour  isEqual: @"blue"]) {
+        _profilecolourimage.image = [UIImage imageNamed:@"blue-profile@2.png"];
     }
     
     

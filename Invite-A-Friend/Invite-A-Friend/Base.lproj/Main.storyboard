@@ -25,7 +25,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LmV-Jc-iio">
-                                <rect key="frame" x="12" y="124" width="85" height="85"/>
+                                <rect key="frame" x="20" y="132" width="68" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's happening today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0M-8w-YkP">
@@ -116,13 +116,6 @@
                                 <color key="textColor" red="0.41568630933761597" green="0.41568630933761597" blue="0.41568630933761597" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGB-rL-Ydp">
-                                <rect key="frame" x="163" y="258" width="81" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.78039222955703735" blue="0.84313732385635376" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U1-fw-Wbl">
                                 <rect key="frame" x="242" y="258" width="81" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -159,6 +152,17 @@
                                     <action selector="logout:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="cEw-7w-gqK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9n-Lz-vhi">
+                                <rect key="frame" x="180" y="254" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="...">
+                                    <color key="titleColor" red="0.0" green="0.78039222955703735" blue="0.84313732385635376" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFriends:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="9Tj-6V-9Lv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47058826684951782" green="0.47058826684951782" blue="0.47058826684951782" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -171,7 +175,7 @@
                         <outlet property="UserCardSplitLabels3" destination="Zf3-a7-z2w" id="uOt-IT-0Ej"/>
                         <outlet property="UserEventsAttendedLabel" destination="x8q-VM-pEj" id="aAT-ww-NRe"/>
                         <outlet property="UserEventsLabel" destination="An5-UF-K2i" id="o5h-qT-khf"/>
-                        <outlet property="UserFacebookFriendsLabel" destination="nGB-rL-Ydp" id="WOK-NQ-CkH"/>
+                        <outlet property="UserFacebookFriendsLabel" destination="Z9n-Lz-vhi" id="FWW-bm-OHG"/>
                         <outlet property="UserImage" destination="LmV-Jc-iio" id="jbe-rN-RZt"/>
                         <outlet property="UserIndicatorButton" destination="a5F-BJ-oBU" id="Sde-ix-RKw"/>
                         <outlet property="UserNameLabel" destination="BSe-nV-uvv" id="nV1-ms-EHK"/>
@@ -184,11 +188,30 @@
                         <outlet property="overlaylabel" destination="J0M-8w-YkP" id="mOu-eP-I4o"/>
                         <outlet property="overlaynexteventlabel" destination="aeM-ag-UQ7" id="Tqv-N4-IpI"/>
                         <segue destination="bvd-Vy-cXL" kind="modal" identifier="LoginPage" modalTransitionStyle="flipHorizontal" id="9UP-zD-xGT"/>
+                        <segue destination="Igf-oW-Ztn" kind="modal" identifier="showFriends" id="slv-3R-j6T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tso-lq-sgs">
+            <objects>
+                <viewController id="Igf-oW-Ztn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fKy-T5-uKo"/>
+                        <viewControllerLayoutGuide type="bottom" id="SnM-jo-F1F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1a9-Kw-SKb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMv-Id-Crh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="-189"/>
         </scene>
         <!--Login View Controller - loginScreen-->
         <scene sceneID="g5x-VW-yj7">
@@ -452,7 +475,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZTl-IM-YGm">
-                                <rect key="frame" x="101" y="82" width="119" height="110"/>
+                                <rect key="frame" x="109" y="82" width="104" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green-profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="zDH-0S-zUZ">
@@ -695,13 +718,6 @@
                                 <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJz-Rh-Ro4">
-                                <rect key="frame" x="190" y="148" width="31" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="EditProfile@2.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alj-M1-2EP">
                                 <rect key="frame" x="95" y="92" width="31" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -735,6 +751,7 @@
                         <outlet property="UserImage" destination="PQ9-C0-foz" id="mEU-C1-Fgz"/>
                         <outlet property="UserName" destination="DGR-Yy-uDN" id="4ty-RS-aq8"/>
                         <outlet property="UserTwitterName" destination="Xoo-Yk-Sn7" id="iYE-QY-bKU"/>
+                        <outlet property="addFriend" destination="alj-M1-2EP" id="6iU-js-l1b"/>
                         <outlet property="profilecolourimage" destination="JNa-zd-efP" id="0vi-LQ-8iP"/>
                     </connections>
                 </viewController>
@@ -843,7 +860,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Zhn-aS-CVs"/>
+        <segue reference="9UP-zD-xGT"/>
         <segue reference="M3E-Y3-Wu6"/>
     </inferredMetricsTieBreakers>
 </document>

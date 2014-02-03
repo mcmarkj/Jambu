@@ -19,13 +19,14 @@
 @property (strong, nonatomic) IBOutlet UIImageView *UserImage;
 @property (strong, nonatomic) IBOutlet UILabel *UserEventsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *UserEventsAttendedLabel;
-@property (strong, nonatomic) IBOutlet UILabel *UserFacebookFriendsLabel;
+@property (strong, nonatomic) IBOutlet UIButton *UserFacebookFriendsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *UserRewardsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *UserCardSplitLabels;
 @property (strong, nonatomic) IBOutlet UILabel *UserCardSplitLabels1;
 @property (strong, nonatomic) IBOutlet UILabel *UserCardSplitLabels2;
 @property (strong, nonatomic) IBOutlet UILabel *UserCardSplitLabels3;
 
+- (IBAction)showFriends:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *UserIndicatorImage;
 @property (strong, nonatomic) IBOutlet UIButton *UserIndicatorButton;

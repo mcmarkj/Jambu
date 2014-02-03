@@ -18,7 +18,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *inviteindicator;
 @property (strong, nonatomic) IBOutlet UIImageView *inviteindicatorback;
 @property (strong, nonatomic) IBOutlet UILabel *UserTNameLabel;
-
+@property (nonatomic, retain) IBOutletCollection(UIButton) NSArray *_UserFacebookFriendsLabel;
 
 @end
 
@@ -51,6 +51,13 @@
         NSURLResponse *response;
         NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+        
+        if (json == [NSNull null]) {
+            NSLog(@"Response is Null, user's been deleted");
+            [self showLogin:Nil];
+        } else {
+            NSLog(@"Response is not Null, User is active - let's request data");
+
         
         //Checking if the user has any pending events, let's enable / disable the indicator in response to this.
         if([json valueForKey:@"pendingevents"] > 0){
@@ -95,8 +102,8 @@
         _UserEventsLabel.text =@"3";
         _UserEventsAttendedLabel.font = [UIFont fontWithName:@"Roboto" size:20];
         _UserEventsAttendedLabel.text =@"27";
-        _UserFacebookFriendsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
-        _UserFacebookFriendsLabel.text =@"1,272";
+        [_UserFacebookFriendsLabel setTitle:@"1,272" forState:(UIControlStateNormal)];
+       // [_UserFacebookFriendsLabel setValue:[UIFont fontWithName:@"Roboto" size:20] forKeyPath:@"_UserFacebookFriendsLabel.font"];
         _UserRewardsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
         _UserRewardsLabel.text =@"6";
         _UserCardSplitLabels.font = [UIFont fontWithName:@"Roboto-Light" size:10];
@@ -115,7 +122,7 @@
         
         //[self.view setNeedsDisplay];
         
-    }
+        } }
     
     else {
         
@@ -237,15 +244,39 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (IBAction)showLogin:(UIButton *)sender {
+    NSLog(@"Need to log out");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[NSNumber numberWithBool:NO] forKey:@"InviteLog"];
+    [defaults setObject:@"NULL" forKey:@"Con96TUID"];
+    [defaults synchronize];
+    [self  performSegueWithIdentifier:@"LoginPage" sender:self];
+    
+}
 
 - (IBAction)logout:(UIButton *)sender {
     NSLog(@"Need to log out");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signing Out"
+                                                    message:@"I've been told to delete all locally stored info. I'm going to close down, please reopen me to login again."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil
+                          ];
+    [alert performSelectorOnMainThread:@selector(show)
+                            withObject:nil
+                         waitUntilDone:NO];
+    
+    
+    
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[NSNumber numberWithBool:NO] forKey:@"InviteLog"];
     [defaults setObject:@"NULL" forKey:@"Con96TUID"];
     [defaults synchronize];
     exit(0);
 
+}
+- (IBAction)showFriends:(id)sender {
+    
 }
 @end

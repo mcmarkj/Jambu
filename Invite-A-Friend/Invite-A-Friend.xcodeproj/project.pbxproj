@@ -20,6 +20,8 @@
 		4142F2C2189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2C1189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m */; };
 		4142F2C5189E9EB8002ECA92 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C3189E9EB7002ECA92 /* close.png */; };
 		4142F2C6189E9EB8002ECA92 /* close@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C4189E9EB8002ECA92 /* close@2.png */; };
+		4142F2C9189FA836002ECA92 /* blue-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C7189FA836002ECA92 /* blue-profile.png */; };
+		4142F2CA189FA836002ECA92 /* blue-profile@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C8189FA836002ECA92 /* blue-profile@2.png */; };
 		414AA81A188AE743001B3301 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA819188AE743001B3301 /* Foundation.framework */; };
 		414AA81C188AE743001B3301 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA81B188AE743001B3301 /* CoreGraphics.framework */; };
 		414AA81E188AE743001B3301 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA81D188AE743001B3301 /* UIKit.framework */; };
@@ -163,6 +165,8 @@
 		4142F2C1189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEViewFriendViewController.m; sourceTree = "<group>"; };
 		4142F2C3189E9EB7002ECA92 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		4142F2C4189E9EB8002ECA92 /* close@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2.png"; sourceTree = "<group>"; };
+		4142F2C7189FA836002ECA92 /* blue-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-profile.png"; sourceTree = "<group>"; };
+		4142F2C8189FA836002ECA92 /* blue-profile@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-profile@2.png"; sourceTree = "<group>"; };
 		414AA816188AE743001B3301 /* ProjectInvite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectInvite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		414AA819188AE743001B3301 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		414AA81B188AE743001B3301 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -420,6 +424,8 @@
 			children = (
 				41F27C0F1893E25000E64CC1 /* newhere.png */,
 				4142F2C3189E9EB7002ECA92 /* close.png */,
+				4142F2C7189FA836002ECA92 /* blue-profile.png */,
+				4142F2C8189FA836002ECA92 /* blue-profile@2.png */,
 				4142F2C4189E9EB8002ECA92 /* close@2.png */,
 				41F27C131893E3FD00E64CC1 /* facebooklogin.png */,
 				4142F27A189D993E002ECA92 /* AddFriend.png */,
@@ -727,7 +733,9 @@
 				41F597E9188C602B00DAF315 /* Icon-Small-50@2x.png in Resources */,
 				41F597F8188C602B00DAF315 /* friendback.png in Resources */,
 				41F59804188C602B00DAF315 /* launch-small.psd in Resources */,
+				4142F2CA189FA836002ECA92 /* blue-profile@2.png in Resources */,
 				41F597F4188C602B00DAF315 /* ContactCardBase.png in Resources */,
+				4142F2C9189FA836002ECA92 /* blue-profile.png in Resources */,
 				41F59805188C602B00DAF315 /* launch.png in Resources */,
 				41E8FB6D189D8314000D43F4 /* pink@2.png in Resources */,
 				4142F27D189D993E002ECA92 /* AddFriend@2.png in Resources */,

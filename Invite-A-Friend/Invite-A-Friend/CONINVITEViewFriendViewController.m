@@ -9,17 +9,18 @@
 #import "CONINVITEViewFriendViewController.h"
 
 @interface CONINVITEViewFriendViewController ()
-
+- (IBAction)addFriend:(id)sender;
 @end
 
 @implementation CONINVITEViewFriendViewController
 - (IBAction)addFriend:(id)sender {
     
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", @""]];
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships%@", @""]];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *MID = [defaults objectForKey:@"Con96AID"];
     NSString *AID = [defaults objectForKey:@"Con96FAID"];
+
     
     NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: MID, @"user_id", AID, @"friend_id",  nil];
     
@@ -45,7 +46,19 @@
     NSLog(@"We're now collecting to the API");
     [connection start];
     NSLog(@"Completed API Request");
-
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Friend Added"
+                                                    message:@"You're now friends!"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil
+                          ];
+    [alert performSelectorOnMainThread:@selector(show)
+                            withObject:nil
+                         waitUntilDone:NO];
+    
+    addFriend.hidden=YES;
+    
 };
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -88,6 +101,8 @@
         _profilecolourimage.image = [UIImage imageNamed:@"purple@2.png"];
     } else if ([profilecolour  isEqual: @"pink"]) {
         _profilecolourimage.image = [UIImage imageNamed:@"pink@2.png"];
+    } else if ([profilecolour  isEqual: @"blue"]) {
+                _profilecolourimage.image = [UIImage imageNamed:@"blue-profile@2.png"];
     }
     
     
