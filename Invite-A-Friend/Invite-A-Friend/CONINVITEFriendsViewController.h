@@ -18,5 +18,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *UserFriendCount;
 @property (strong, nonatomic) IBOutlet UILabel *UserEventsAttended;
 - (IBAction)searchPress:(id)sender;
+- (IBAction)editpress:(id)sender;
 
 @end

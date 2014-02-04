@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewTwoViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *UserName;
-@property (strong, nonatomic) IBOutlet UILabel *ProgressLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *SpinnerImage;
-@property (strong, nonatomic) IBOutlet UIImageView *UsersImage;
+@property (strong, nonatomic) IBOutlet UIImageView *UserImage1;
+@property (strong, nonatomic) IBOutlet UIImageView *UserImage3;
+@property (strong, nonatomic) IBOutlet UIImageView *UserImage2;
+@property (strong, nonatomic) IBOutlet UIImageView *UserImage4;
+@property (strong, nonatomic) IBOutlet UIImageView *UserImage5;
+
+- (IBAction)setRed:(id)sender;
+- (IBAction)setBlue:(id)sender;
+- (IBAction)setPink:(id)sender;
+- (IBAction)setGreen:(id)sender;
+- (IBAction)setPurple:(id)sender;
+
 
 @end

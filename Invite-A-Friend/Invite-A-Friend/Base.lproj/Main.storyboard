@@ -189,6 +189,7 @@
                         <outlet property="overlaynexteventlabel" destination="aeM-ag-UQ7" id="Tqv-N4-IpI"/>
                         <segue destination="bvd-Vy-cXL" kind="modal" identifier="LoginPage" modalTransitionStyle="flipHorizontal" id="9UP-zD-xGT"/>
                         <segue destination="Igf-oW-Ztn" kind="modal" identifier="showFriends" id="slv-3R-j6T"/>
+                        <segue destination="Pkv-4c-iiK" kind="modal" identifier="setcolour" id="PwJ-sI-xxm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
@@ -292,7 +293,6 @@
                         <outlet property="spinningimage" destination="E5A-Hl-Juc" id="6Lb-xh-iTl"/>
                         <outlet property="twitterlogin" destination="i0i-3u-odt" id="PzF-mg-8jg"/>
                         <segue destination="CZ4-MO-1fc" kind="modal" identifier="LoginPage" modalTransitionStyle="flipHorizontal" id="M3E-Y3-Wu6"/>
-                        <segue destination="Pkv-4c-iiK" kind="modal" identifier="LoginPageTwo" modalTransitionStyle="coverVertical" id="d2n-Y3-2nb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sJ-lk-E4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -311,51 +311,120 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Vw-TD-hd2">
-                                <rect key="frame" x="82" y="236" width="157" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1F-Hu-eeG">
-                                <rect key="frame" x="134" y="283" width="61" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newhere.png" translatesAutoresizingMaskIntoConstraints="NO" id="3NQ-ng-XLo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lognporgresstwo.png" translatesAutoresizingMaskIntoConstraints="NO" id="wZd-yv-Ujr">
-                                <rect key="frame" x="40" y="171" width="240" height="279"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LB4-P0-Vvq">
+                                <rect key="frame" x="44" y="95" width="63" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name Last Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31t-nE-BKT">
-                                <rect key="frame" x="78" y="196" width="172" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="174-yi-Elr">
+                                <rect key="frame" x="44" y="438" width="63" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dO6-aP-6TU">
+                                <rect key="frame" x="214" y="269" width="63" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AyM-un-5AJ">
+                                <rect key="frame" x="44" y="269" width="63" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCb-Ar-Mll">
+                                <rect key="frame" x="214" y="95" width="63" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myv-VD-WEI">
+                                <rect key="frame" x="139" y="81" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spinner.png" translatesAutoresizingMaskIntoConstraints="NO" id="bsS-do-k5j">
-                                <rect key="frame" x="88" y="234" width="157" height="153"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTS-Pm-lQC">
+                                <rect key="frame" x="62" y="10" width="186" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit your profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1V-7R-J0p">
+                                        <rect key="frame" x="-11" y="8" width="234" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose a colour!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufp-OC-Iwk">
+                                        <rect key="frame" x="-53" y="25" width="319" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O21-zL-C77">
+                                <rect key="frame" x="1" y="64" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="red-profile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setRed:" destination="Pkv-4c-iiK" eventType="touchUpInside" id="AMw-vD-bA8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vA-mf-QfU">
+                                <rect key="frame" x="1" y="242" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="blue-profile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setBlue:" destination="Pkv-4c-iiK" eventType="touchUpInside" id="bqe-O1-MG7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nze-nq-H3O">
+                                <rect key="frame" x="0.0" y="410" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="green-profile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setGreen:" destination="Pkv-4c-iiK" eventType="touchUpInside" id="FmJ-yM-XfK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAo-1s-olP">
+                                <rect key="frame" x="170" y="242" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="pink.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setPink:" destination="Pkv-4c-iiK" eventType="touchUpInside" id="vgm-P3-gdt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t47-ER-vxb">
+                                <rect key="frame" x="170" y="64" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="purple.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setPurple:" destination="Pkv-4c-iiK" eventType="touchUpInside" id="WuM-iq-LQC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47058826679999999" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
-                        <outlet property="ProgressLabel" destination="P1F-Hu-eeG" id="2JA-0O-Qpb"/>
-                        <outlet property="SpinnerImage" destination="bsS-do-k5j" id="1JD-Za-8YC"/>
-                        <outlet property="UserName" destination="31t-nE-BKT" id="p2r-lD-EQk"/>
-                        <outlet property="UsersImage" destination="0Vw-TD-hd2" id="ZpG-Q0-Ld4"/>
-                        <segue destination="bvd-Vy-cXL" kind="modal" identifier="LoginPageTwo" modalTransitionStyle="coverVertical" id="Zhn-aS-CVs"/>
-                        <segue destination="8YX-ce-x5E" kind="modal" identifier="LoginPageTwo" modalTransitionStyle="coverVertical" id="0Oo-3d-XoO"/>
+                        <outlet property="UserImage1" destination="LB4-P0-Vvq" id="MzN-kZ-dHN"/>
+                        <outlet property="UserImage2" destination="174-yi-Elr" id="B0f-wD-UBJ"/>
+                        <outlet property="UserImage3" destination="dO6-aP-6TU" id="De6-UB-dYN"/>
+                        <outlet property="UserImage4" destination="AyM-un-5AJ" id="ubH-Qn-mg2"/>
+                        <outlet property="UserImage5" destination="aCb-Ar-Mll" id="iBS-Pm-KAc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QN7-un-hbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544" y="1259"/>
+            <point key="canvasLocation" x="1268" y="1399"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">
@@ -560,6 +629,9 @@
                                 <state key="normal" image="EditProfile@2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="editpress:" destination="K2D-YF-ez9" eventType="touchUpInside" id="trd-cL-BBH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47058826684951782" green="0.47058826684951782" blue="0.47058826684951782" alpha="1" colorSpace="deviceRGB"/>
@@ -577,6 +649,7 @@
                         <outlet property="profilecolourimage" destination="zDH-0S-zUZ" id="abe-0U-YNP"/>
                         <segue destination="cOO-aC-mHq" kind="modal" identifier="searchFriends" id="RqU-fW-hYd"/>
                         <segue destination="Igf-oW-Ztn" kind="modal" identifier="showFriends" id="5ds-UG-5L4"/>
+                        <segue destination="Pkv-4c-iiK" kind="modal" identifier="editprofile" id="eR1-s8-gg5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q7O-eu-Ocx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -862,14 +935,17 @@
         <image name="ContactCardBase.png" width="320" height="210"/>
         <image name="EditProfile@2.png" width="62" height="62"/>
         <image name="InviteIndicator.png" width="40" height="29"/>
+        <image name="blue-profile.png" width="220" height="227"/>
         <image name="close@2.png" width="41" height="40"/>
         <image name="first" width="30" height="30"/>
         <image name="green-profile.png" width="320" height="339"/>
         <image name="loginprogress.png" width="223" height="273"/>
-        <image name="lognporgresstwo.png" width="236" height="279"/>
         <image name="menuicon.png" width="20" height="20"/>
         <image name="newhere.png" width="320" height="65"/>
         <image name="overlay.png" width="320" height="150"/>
+        <image name="pink.png" width="320" height="339"/>
+        <image name="purple.png" width="320" height="339"/>
+        <image name="red-profile.png" width="320" height="339"/>
         <image name="search@2.png" width="41" height="40"/>
         <image name="second" width="30" height="30"/>
         <image name="spinner.png" width="142" height="133"/>
@@ -884,6 +960,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="9UP-zD-xGT"/>
         <segue reference="M3E-Y3-Wu6"/>
-        <segue reference="Bgi-A0-rbf"/>
+        <segue reference="5ds-UG-5L4"/>
+        <segue reference="eR1-s8-gg5"/>
     </inferredMetricsTieBreakers>
 </document>

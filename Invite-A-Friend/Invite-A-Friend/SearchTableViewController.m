@@ -75,6 +75,8 @@
     NSString *search = self.searchBar.text;
     
     NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/search/%@", search];
+    
+     //Uncomment this line to make it so that it searches a different API for twitter usernames
     [searchString replaceOccurrencesOfString:@"@" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
     /*[searchString replaceOccurrencesOfString:@" " withString:@"%20" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
     [searchString replaceOccurrencesOfString:@"@" withString:@"%40" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])]; */
@@ -245,14 +247,14 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"username"]];
 	cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
     
-    NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_url"];
+    NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_thumbnail"];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     NSURLResponse *response;
     NSError *error;
     NSData *rawImage = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-   // cell.imageView.image = [UIImage imageNamed:@"friendback.png"];
+
     cell.imageView.image = [UIImage imageWithData:rawImage];
-    
+       //cell.imageView.image = [UIImage imageNamed:@"searchcircle.png"];
     
     return cell;
 }

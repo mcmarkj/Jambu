@@ -83,6 +83,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    [self viewDidLoad];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *AID = [defaults objectForKey:@"Con96AID"];
     //Get number of friends info
@@ -124,5 +125,9 @@
 
 - (IBAction)searchPress:(UIButton*)sender {
         [self  performSegueWithIdentifier:@"searchFriends" sender:self];
+}
+
+- (IBAction)editpress:(id)sender {
+        [self  performSegueWithIdentifier:@"editprofile" sender:self];
 }
 @end

@@ -161,6 +161,9 @@
                     
                     NSString *altprof_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
                                                          withString:@""];
+                    
+                    NSString *thumb_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
+                                                                                withString:@"_bigger"];
                     //NSLog(nooffollwers);
                 
                 //
@@ -171,7 +174,7 @@
                     NSString *twitterusername = twitterAccount.username;
                     
                 //build an info object and convert to json
-                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: altprof_img, @"image_url", @"twitter", @"provider", twitterid, @"uid", @"pink",  @"colour", twitterusername, @"username", name, @"full_name",  nil];
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: altprof_img, @"image_url", @"twitter", @"provider", thumb_img, @"image_thumbnail" , twitterid, @"uid", @"NONE",  @"colour", twitterusername, @"username", name, @"full_name",  nil];
                     
                     
                     
@@ -185,7 +188,7 @@
                    // NSLog(@"Here's the output for the JSON:");
                    // NSLog(finaldata);
                 
-                    
+            
                 
                 NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
                 [request setURL:url];
