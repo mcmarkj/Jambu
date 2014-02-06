@@ -253,6 +253,8 @@
     NSError *error;
     NSData *rawImage = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 
+    //_UserImage.image = [UIImage imageWithData:rawImage];
+    
     cell.imageView.image = [UIImage imageWithData:rawImage];
        //cell.imageView.image = [UIImage imageNamed:@"searchcircle.png"];
     
@@ -316,13 +318,20 @@
     NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
     NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *MID = [defaults objectForKey:@"Con96AID"];
     [defaults setObject:UID forKey:@"Con96FID"];
     [defaults setObject:AID forKey:@"Con96FAID"];
     [defaults synchronize];
     
     //Navigation logic may go here. Create and push another view controller.
+    NSString *FinalAID = [NSString stringWithFormat:@"%@", AID];
+    NSString *FinalMId = [NSString stringWithFormat:@"%@", MID];
     
-        [self  performSegueWithIdentifier:@"showFriend" sender:self];
+    if ([FinalAID isEqualToString:FinalMId]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+    [self  performSegueWithIdentifier:@"showFriend" sender:self];
+    }
     
 }
 

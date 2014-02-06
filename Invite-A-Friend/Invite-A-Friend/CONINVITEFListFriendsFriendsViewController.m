@@ -1,22 +1,20 @@
 //
-//  CONINVITESListFriendsViewController.m
+//  CONINVITEFListFriendsFriendsViewController.m
 //  Invite-A-Friend
 //
-//  Created by Mark McWhirter on 03/02/2014.
+//  Created by Mark McWhirter on 06/02/2014.
 //  Copyright (c) 2014 Concept96. All rights reserved.
 //
 
-#import "CONINVITESListFriendsViewController.h"
+#import "CONINVITEFListFriendsFriendsViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "JSON.h"
 
-@interface CONINVITESListFriendsViewController ()
+@interface CONINVITEFListFriendsFriendsViewController ()
 - (IBAction)closeView:(id)sender;
-
 @end
 
-@implementation CONINVITESListFriendsViewController
-
+@implementation CONINVITEFListFriendsFriendsViewController
 @synthesize tweets;
 @synthesize searchBar;
 @synthesize tableV;
@@ -136,7 +134,7 @@
     [indicator startAnimating];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *UID = [defaults objectForKey:@"Con96AID"];
+    NSString *UID = [defaults objectForKey:@"Con96FAID"];
     
     NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@",UID];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
@@ -298,6 +296,6 @@
 }
 
 - (IBAction)closeView:(id)sender {
-            [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

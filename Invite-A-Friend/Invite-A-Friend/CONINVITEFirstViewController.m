@@ -310,6 +310,7 @@
 
 }
 - (IBAction)showFriends:(id)sender {
+        [self  performSegueWithIdentifier:@"showFriends" sender:self];
     
 }
 @end

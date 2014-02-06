@@ -22,6 +22,7 @@
 		4142F2C6189E9EB8002ECA92 /* close@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C4189E9EB8002ECA92 /* close@2.png */; };
 		4142F2C9189FA836002ECA92 /* blue-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C7189FA836002ECA92 /* blue-profile.png */; };
 		4142F2CA189FA836002ECA92 /* blue-profile@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C8189FA836002ECA92 /* blue-profile@2.png */; };
+		4144D37E18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4144D37D18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		414AA81A188AE743001B3301 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA819188AE743001B3301 /* Foundation.framework */; };
 		414AA81C188AE743001B3301 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA81B188AE743001B3301 /* CoreGraphics.framework */; };
 		414AA81E188AE743001B3301 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414AA81D188AE743001B3301 /* UIKit.framework */; };
@@ -171,6 +172,8 @@
 		4142F2C4189E9EB8002ECA92 /* close@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2.png"; sourceTree = "<group>"; };
 		4142F2C7189FA836002ECA92 /* blue-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-profile.png"; sourceTree = "<group>"; };
 		4142F2C8189FA836002ECA92 /* blue-profile@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-profile@2.png"; sourceTree = "<group>"; };
+		4144D37C18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFListFriendsFriendsViewController.h; sourceTree = "<group>"; };
+		4144D37D18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEFListFriendsFriendsViewController.m; sourceTree = "<group>"; };
 		414AA816188AE743001B3301 /* ProjectInvite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectInvite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		414AA819188AE743001B3301 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		414AA81B188AE743001B3301 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -402,6 +405,8 @@
 				414AA828188AE743001B3301 /* CONINVITEAppDelegate.h */,
 				414AA829188AE743001B3301 /* CONINVITEAppDelegate.m */,
 				414AA82B188AE743001B3301 /* Main.storyboard */,
+				4144D37C18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.h */,
+				4144D37D18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.m */,
 				4142F2A6189E8904002ECA92 /* CONINVITEFriendsSearchViewController.h */,
 				4142F2A7189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m */,
 				4142F2A9189E8C04002ECA92 /* SearchTableViewController.h */,
@@ -814,6 +819,7 @@
 				41F27C1D1893EA4D00E64CC1 /* LoginViewTwoViewController.m in Sources */,
 				414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */,
 				4189935E189066090089AC7E /* JSONAPI.m in Sources */,
+				4144D37E18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.m in Sources */,
 				4142F2C2189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m in Sources */,
 				4189935D189066090089AC7E /* NSArray+JSONModel.m in Sources */,
 				41899361189066090089AC7E /* JSONKeyMapper.m in Sources */,
