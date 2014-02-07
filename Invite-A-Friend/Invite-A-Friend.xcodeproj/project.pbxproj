@@ -98,7 +98,6 @@
 		41F27C1A1893E9CE00E64CC1 /* spinner.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F27C191893E9CE00E64CC1 /* spinner.png */; };
 		41F27C1D1893EA4D00E64CC1 /* LoginViewTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F27C1C1893EA4D00E64CC1 /* LoginViewTwoViewController.m */; };
 		41F27C201893EED800E64CC1 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F27C1F1893EED800E64CC1 /* UICountingLabel.m */; };
-		41F27C221895916800E64CC1 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F27C211895916700E64CC1 /* FacebookSDK.framework */; };
 		41F3227918A008D8001E07EB /* CONINVITESListFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F3227818A008D8001E07EB /* CONINVITESListFriendsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		41F3227C18A1A296001E07EB /* searchhole.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F3227B18A1A296001E07EB /* searchhole.png */; };
 		41F3227F18A1A343001E07EB /* searchcircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F3227D18A1A343001E07EB /* searchcircle.png */; };
@@ -275,7 +274,6 @@
 		41F27C1C1893EA4D00E64CC1 /* LoginViewTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewTwoViewController.m; sourceTree = "<group>"; };
 		41F27C1E1893EED800E64CC1 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		41F27C1F1893EED800E64CC1 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
-		41F27C211895916700E64CC1 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		41F3227718A008D7001E07EB /* CONINVITESListFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITESListFriendsViewController.h; sourceTree = "<group>"; };
 		41F3227818A008D8001E07EB /* CONINVITESListFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITESListFriendsViewController.m; sourceTree = "<group>"; };
 		41F3227B18A1A296001E07EB /* searchhole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchhole.png; sourceTree = "<group>"; };
@@ -336,7 +334,6 @@
 				418AAE371891BF6E001D8FE1 /* Social.framework in Frameworks */,
 				418AAE351891B471001D8FE1 /* Accounts.framework in Frameworks */,
 				414AA81C188AE743001B3301 /* CoreGraphics.framework in Frameworks */,
-				41F27C221895916800E64CC1 /* FacebookSDK.framework in Frameworks */,
 				414AA81E188AE743001B3301 /* UIKit.framework in Frameworks */,
 				414AA81A188AE743001B3301 /* Foundation.framework in Frameworks */,
 			);
@@ -386,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				41E8FB44189D1198000D43F4 /* libz.dylib */,
-				41F27C211895916700E64CC1 /* FacebookSDK.framework */,
 				418AAE3A1891CB24001D8FE1 /* Twitter.framework */,
 				418AAE381891BF86001D8FE1 /* QuartzCore.framework */,
 				418AAE361891BF6E001D8FE1 /* Social.framework */,
