@@ -51,6 +51,9 @@
 		414AA8B2188B0274001B3301 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 414AA8A0188B0274001B3301 /* RobotoCondensed-Light.ttf */; };
 		414AA8B3188B0274001B3301 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 414AA8A1188B0274001B3301 /* RobotoCondensed-LightItalic.ttf */; };
 		414AA8B4188B0274001B3301 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 414AA8A2188B0274001B3301 /* RobotoCondensed-Regular.ttf */; };
+		416B25B118A4E0C7000587E2 /* addedButton@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 416B25AF18A4E0C7000587E2 /* addedButton@2.png */; };
+		416B25B218A4E0C7000587E2 /* addedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 416B25B018A4E0C7000587E2 /* addedButton.png */; };
+		416B25B418A4E7F5000587E2 /* worker-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 416B25B318A4E7F5000587E2 /* worker-512.png */; };
 		41899359189066090089AC7E /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899342189066090089AC7E /* JSONModel.m */; };
 		4189935A189066090089AC7E /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899344189066090089AC7E /* JSONModelArray.m */; };
 		4189935B189066090089AC7E /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899346189066090089AC7E /* JSONModelClassProperty.m */; };
@@ -205,6 +208,9 @@
 		414AA8A0188B0274001B3301 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		414AA8A1188B0274001B3301 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		414AA8A2188B0274001B3301 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		416B25AF18A4E0C7000587E2 /* addedButton@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addedButton@2.png"; sourceTree = "<group>"; };
+		416B25B018A4E0C7000587E2 /* addedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addedButton.png; sourceTree = "<group>"; };
+		416B25B318A4E7F5000587E2 /* worker-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "worker-512.png"; sourceTree = "<group>"; };
 		41899341189066090089AC7E /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
 		41899342189066090089AC7E /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
 		41899343189066090089AC7E /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
@@ -418,6 +424,8 @@
 				418AAE3D1892EF2D001D8FE1 /* LoginViewController.m */,
 				414AA831188AE743001B3301 /* CONINVITESecondViewController.h */,
 				414AA832188AE743001B3301 /* CONINVITESecondViewController.m */,
+				416B25B018A4E0C7000587E2 /* addedButton.png */,
+				416B25AF18A4E0C7000587E2 /* addedButton@2.png */,
 				419BB6A6188C37EB00B7D403 /* TWTSideMenuViewController.h */,
 				41F27C1E1893EED800E64CC1 /* UICountingLabel.h */,
 				41F27C1F1893EED800E64CC1 /* UICountingLabel.m */,
@@ -433,6 +441,7 @@
 			children = (
 				41F27C0F1893E25000E64CC1 /* newhere.png */,
 				41F3227D18A1A343001E07EB /* searchcircle.png */,
+				416B25B318A4E7F5000587E2 /* worker-512.png */,
 				41F3227E18A1A343001E07EB /* searchcircle@2.png */,
 				4142F2C3189E9EB7002ECA92 /* close.png */,
 				41F3227B18A1A296001E07EB /* searchhole.png */,
@@ -692,6 +701,7 @@
 			files = (
 				41F59809188C602B00DAF315 /* overlay.png in Resources */,
 				414AA8AC188B0274001B3301 /* Roboto-Regular.ttf in Resources */,
+				416B25B118A4E0C7000587E2 /* addedButton@2.png in Resources */,
 				41F5980B188C602B00DAF315 /* twittersync.png in Resources */,
 				41E8FB72189D88FC000D43F4 /* EditProfile.png in Resources */,
 				41F27C101893E25000E64CC1 /* newhere.png in Resources */,
@@ -705,6 +715,7 @@
 				414AA8B2188B0274001B3301 /* RobotoCondensed-Light.ttf in Resources */,
 				414AA8AB188B0274001B3301 /* Roboto-MediumItalic.ttf in Resources */,
 				41F597F7188C602B00DAF315 /* facebooksync.png in Resources */,
+				416B25B218A4E0C7000587E2 /* addedButton.png in Resources */,
 				414AA835188AE743001B3301 /* Images.xcassets in Resources */,
 				41F5980A188C602B00DAF315 /* topbanner.png in Resources */,
 				414AA8AA188B0274001B3301 /* Roboto-Medium.ttf in Resources */,
@@ -732,6 +743,7 @@
 				41F597E0188C602B00DAF315 /* Icon-40.png in Resources */,
 				41E8FB4D189D4A3B000D43F4 /* diary@2.png in Resources */,
 				41E8FB6C189D8314000D43F4 /* green-profile@2.png in Resources */,
+				416B25B418A4E7F5000587E2 /* worker-512.png in Resources */,
 				41F27C1A1893E9CE00E64CC1 /* spinner.png in Resources */,
 				41F597E5188C602B00DAF315 /* Icon-72@2x.png in Resources */,
 				414AA8A6188B0274001B3301 /* Roboto-BoldItalic.ttf in Resources */,

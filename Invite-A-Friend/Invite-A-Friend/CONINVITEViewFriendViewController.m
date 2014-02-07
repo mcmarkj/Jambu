@@ -9,10 +9,14 @@
 #import "CONINVITEViewFriendViewController.h"
 
 @interface CONINVITEViewFriendViewController ()
+@property (strong, nonatomic) IBOutlet UIButton *addedButton;
 - (IBAction)addFriend:(id)sender;
 @end
 
 @implementation CONINVITEViewFriendViewController
+- (IBAction)deleteFriend:(id)sender {
+    [self showConfirmAlert];
+}
 - (IBAction)addFriend:(id)sender {
     
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships%@", @""]];
@@ -72,9 +76,91 @@
     return self;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
+- (void)showConfirmAlert
+{
+    UIAlertView *alert = [[UIAlertView alloc] init];
+    [alert setTitle:@"Remove as Friend?"];
+    [alert setMessage:@"Do you want to remove this friend?"];
+    [alert setDelegate:self];
+    [alert addButtonWithTitle:@"Yes"];
+    [alert addButtonWithTitle:@"No"];
+    [alert show];
+
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        // Yes, do something
+        NSLog(@"I've been told to delete them as a friend");
+        addFriend.hidden=NO;
+        _addedButton.hidden=YES;
+    }
+    else if (buttonIndex == 1)
+    {
+        //Do nothing...
+    }
+}
+
+
+
+-(void)checkIfFriends{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *AID = [defaults objectForKey:@"Con96FAID"];
+    NSString *MIS = [defaults objectForKey:@"Con96AID"];
+    
+    NSURL *friendsurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", MIS]];
+    NSMutableURLRequest *friendsrequest = [NSMutableURLRequest requestWithURL:friendsurl];
+    
+    [friendsrequest setURL:friendsurl];
+    [friendsrequest setHTTPMethod:@"GET"];
+    [friendsrequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSError *error;
+    NSURLResponse *friendsresponse;
+    NSData *friendsdata = [NSURLConnection sendSynchronousRequest:friendsrequest returningResponse:&friendsresponse error:&error];
+    NSArray *friendsjson = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingAllowFragments error:nil];
+    
+    NSLog(@"JSON Output : %@", friendsjson);
+    NSLog(@"From URL : %@", friendsurl);
+    
+    
+    NSMutableDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingMutableContainers error:&error];
+    NSDictionary *results = [responseJSON valueForKey:@"friendships"];
+    NSArray *friends = [results valueForKey:@"id"];
+    
+    BOOL isTheObjectThere = [friends containsObject:AID];
+    
+    if (isTheObjectThere) {
+        NSLog(@"Friend Exists");
+        addFriend.hidden = YES;
+        _addedButton.hidden = NO;
+        
+    } else {
+        NSLog(@"Friend Doesn't Exist");
+                _addedButton.hidden = YES;
+        addFriend.hidden = NO;
+    }
+    
+    
+    /* if ([[results objectForKey:@"id"] isEqualToString:AID]) {
+     
+     NSLog(@"Friend Exists");
+     } else {
+     NSLog(@"Friend Doesn't Exist");
+     } */
+
+
+
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [self checkIfFriends];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *AID = [defaults objectForKey:@"Con96FAID"];
+
     //Get number of friends info
     NSURL *friendsurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", AID]];
     NSMutableURLRequest *friendsrequest = [NSMutableURLRequest requestWithURL:friendsurl];
@@ -94,6 +180,9 @@
     
     NSMutableDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingMutableContainers error:&error];
     NSDictionary *results = [responseJSON valueForKey:@"friendships"];
+
+        
+
     
     
     // 6.1 - Load JSON into internal variable
@@ -110,6 +199,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        [self checkIfFriends];
 	// Do any additional setup after loading the view.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *UID = [defaults objectForKey:@"Con96FID"];

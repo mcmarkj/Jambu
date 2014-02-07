@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LmV-Jc-iio">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="worker-512.png" translatesAutoresizingMaskIntoConstraints="NO" id="LmV-Jc-iio">
                                 <rect key="frame" x="20" y="132" width="68" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -153,7 +153,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9n-Lz-vhi">
-                                <rect key="frame" x="180" y="254" width="46" height="30"/>
+                                <rect key="frame" x="163" y="241" width="82" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="...">
@@ -238,7 +238,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cto-mG-RnU">
-                                <rect key="frame" x="9" y="27" width="40" height="30"/>
+                                <rect key="frame" x="-5" y="1" width="97" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Close">
@@ -303,7 +303,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhe-ol-hrq">
-                                <rect key="frame" x="9" y="27" width="40" height="30"/>
+                                <rect key="frame" x="-5" y="1" width="107" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Close">
@@ -709,10 +709,10 @@
                                     <action selector="searchPress:" destination="K2D-YF-ez9" eventType="touchUpInside" id="Bmj-NE-XkU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztY-x2-DVU">
-                                <rect key="frame" x="190" y="148" width="31" height="31"/>
+                            <button opaque="NO" contentMode="redraw" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztY-x2-DVU">
+                                <rect key="frame" x="177" y="133" width="65" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="EditProfile@2.png">
+                                <state key="normal" image="EditProfile.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -904,7 +904,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alj-M1-2EP">
-                                <rect key="frame" x="95" y="92" width="31" height="31"/>
+                                <rect key="frame" x="95" y="93" width="31" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="AddFriend@2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -924,7 +924,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLf-si-jQe">
-                                <rect key="frame" x="136" y="287" width="46" height="30"/>
+                                <rect key="frame" x="121" y="271" width="83" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
                                 <state key="normal" title="0">
@@ -933,6 +933,19 @@
                                 </state>
                                 <connections>
                                     <action selector="showFriends:" destination="XVJ-lt-9MX" eventType="touchUpInside" id="6f3-Tv-KRg"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVS-Dk-g0S">
+                                <rect key="frame" x="98" y="96" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".LucidaGrandeUI" family=".Lucida Grande UI" pointSize="11"/>
+                                <state key="normal" image="addedButton@2.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" image="Addedbutton.png"/>
+                                <connections>
+                                    <action selector="deleteFriend:" destination="XVJ-lt-9MX" eventType="touchUpInside" id="Ha9-LN-3bG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -949,6 +962,7 @@
                         <outlet property="UserName" destination="DGR-Yy-uDN" id="4ty-RS-aq8"/>
                         <outlet property="UserTwitterName" destination="Xoo-Yk-Sn7" id="iYE-QY-bKU"/>
                         <outlet property="addFriend" destination="alj-M1-2EP" id="6iU-js-l1b"/>
+                        <outlet property="addedButton" destination="oVS-Dk-g0S" id="pTf-01-Jlz"/>
                         <outlet property="profilecolourimage" destination="JNa-zd-efP" id="0vi-LQ-8iP"/>
                         <segue destination="Igf-oW-Ztn" kind="modal" identifier="showFriends" id="Bgi-A0-rbf"/>
                         <segue destination="8of-OM-Z7p" kind="modal" identifier="showFriendsFriends" id="LJc-TY-5MB"/>
@@ -1058,9 +1072,11 @@
     </scenes>
     <resources>
         <image name="AddFriend@2.png" width="62" height="62"/>
+        <image name="Addedbutton.png" width="320" height="150"/>
         <image name="ContactCardBase.png" width="320" height="210"/>
-        <image name="EditProfile@2.png" width="62" height="62"/>
+        <image name="EditProfile.png" width="31" height="31"/>
         <image name="InviteIndicator.png" width="40" height="29"/>
+        <image name="addedButton@2.png" width="41" height="41"/>
         <image name="blue-profile.png" width="220" height="227"/>
         <image name="close@2.png" width="41" height="40"/>
         <image name="first" width="30" height="30"/>
@@ -1079,6 +1095,7 @@
         <image name="spinner.png" width="142" height="133"/>
         <image name="topbanner.png" width="320" height="64"/>
         <image name="twitterlogin.png" width="55" height="53"/>
+        <image name="worker-512.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1087,9 +1104,9 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Ojr-Ml-8dI"/>
-        <segue reference="Bgi-A0-rbf"/>
-        <segue reference="eR1-s8-gg5"/>
+        <segue reference="PwJ-sI-xxm"/>
         <segue reference="M3E-Y3-Wu6"/>
         <segue reference="9UP-zD-xGT"/>
+        <segue reference="slv-3R-j6T"/>
     </inferredMetricsTieBreakers>
 </document>
