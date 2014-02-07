@@ -71,7 +71,7 @@
     _UserEventInvites.text = @"121";
     _UserEventInvites.font = [UIFont fontWithName:@"Roboto-Light" size:20];
 
-    _UserFriendCount.font = [UIFont fontWithName:@"Roboto-Light" size:20];
+    _UserFriendCount.titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     _UserEventsAttended.text = @"76";
     _UserEventsAttended.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     
@@ -113,7 +113,7 @@
     
     NSLog(@"count : %d",shows);
     NSString *friendscount = [NSString stringWithFormat:@"%d",shows];
-    _UserFriendCount.text = friendscount;
+    [_UserFriendCount setTitle:friendscount forState:UIControlStateNormal];
 }
 
 
@@ -129,5 +129,9 @@
 
 - (IBAction)editpress:(id)sender {
         [self  performSegueWithIdentifier:@"editprofile" sender:self];
+}
+
+- (IBAction)listfriends:(id)sender {
+            [self  performSegueWithIdentifier:@"showFriends" sender:self];
 }
 @end

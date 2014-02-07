@@ -135,8 +135,9 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *UID = [defaults objectForKey:@"Con96FAID"];
+    NSString *FUID = UID;
     
-    NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@",UID];
+    NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@",FUID];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
     [NSURLConnection connectionWithRequest:request delegate:self];
     [self.searchBar resignFirstResponder];
@@ -298,4 +299,5 @@
 - (IBAction)closeView:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 @end

@@ -131,13 +131,10 @@
 		41F597FB188C602B00DAF315 /* Heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597CE188C602B00DAF315 /* Heart.png */; };
 		41F597FC188C602B00DAF315 /* Heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597CF188C602B00DAF315 /* Heart@2x.png */; };
 		41F597FF188C602B00DAF315 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597D2188C602B00DAF315 /* icon2.png */; };
-		41F59800188C602B00DAF315 /* icon2.psd in Resources */ = {isa = PBXBuildFile; fileRef = 41F597D3188C602B00DAF315 /* icon2.psd */; };
 		41F59801188C602B00DAF315 /* invite.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597D4188C602B00DAF315 /* invite.png */; };
 		41F59802188C602B00DAF315 /* invite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597D5188C602B00DAF315 /* invite@2x.png */; };
 		41F59803188C602B00DAF315 /* InviteIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597D6188C602B00DAF315 /* InviteIndicator.png */; };
-		41F59804188C602B00DAF315 /* launch-small.psd in Resources */ = {isa = PBXBuildFile; fileRef = 41F597D7188C602B00DAF315 /* launch-small.psd */; };
 		41F59805188C602B00DAF315 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597D8188C602B00DAF315 /* launch.png */; };
-		41F59806188C602B00DAF315 /* launch.psd in Resources */ = {isa = PBXBuildFile; fileRef = 41F597D9188C602B00DAF315 /* launch.psd */; };
 		41F59807188C602B00DAF315 /* launch@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DA188C602B00DAF315 /* launch@2.png */; };
 		41F59808188C602B00DAF315 /* menuicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DB188C602B00DAF315 /* menuicon.png */; };
 		41F59809188C602B00DAF315 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DC188C602B00DAF315 /* overlay.png */; };
@@ -737,7 +734,6 @@
 				41E8FB6C189D8314000D43F4 /* green-profile@2.png in Resources */,
 				41F27C1A1893E9CE00E64CC1 /* spinner.png in Resources */,
 				41F597E5188C602B00DAF315 /* Icon-72@2x.png in Resources */,
-				41F59800188C602B00DAF315 /* icon2.psd in Resources */,
 				414AA8A6188B0274001B3301 /* Roboto-BoldItalic.ttf in Resources */,
 				414AA8AF188B0274001B3301 /* RobotoCondensed-Bold.ttf in Resources */,
 				4142F2C5189E9EB8002ECA92 /* close.png in Resources */,
@@ -748,7 +744,6 @@
 				41E8FB55189D5263000D43F4 /* purple.png in Resources */,
 				41F597E9188C602B00DAF315 /* Icon-Small-50@2x.png in Resources */,
 				41F597F8188C602B00DAF315 /* friendback.png in Resources */,
-				41F59804188C602B00DAF315 /* launch-small.psd in Resources */,
 				4142F2CA189FA836002ECA92 /* blue-profile@2.png in Resources */,
 				41F597F4188C602B00DAF315 /* ContactCardBase.png in Resources */,
 				4142F2C9189FA836002ECA92 /* blue-profile.png in Resources */,
@@ -764,7 +759,6 @@
 				41F597EB188C602B00DAF315 /* Icon-Small@2x.png in Resources */,
 				41F597F3188C602B00DAF315 /* chat@2x.png in Resources */,
 				414AA8A5188B0274001B3301 /* Roboto-Bold.ttf in Resources */,
-				41F59806188C602B00DAF315 /* launch.psd in Resources */,
 				41F597F1188C602B00DAF315 /* launch@2.png in Resources */,
 				4142F2C6189E9EB8002ECA92 /* close@2.png in Resources */,
 				414AA8A7188B0274001B3301 /* Roboto-Italic.ttf in Resources */,

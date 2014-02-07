@@ -18,8 +18,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *UserName;
 @property (strong, nonatomic) IBOutlet UILabel *UserTwitterName;
 @property (strong, nonatomic) IBOutlet UILabel *UserEventInvites;
-@property (strong, nonatomic) IBOutlet UILabel *UserFriendCount;
+@property (strong, nonatomic) IBOutlet UIButton *UserFriendCount;
 @property (strong, nonatomic) IBOutlet UILabel *UserEventsAttended;
 - (IBAction)searchPress:(id)sender;
 - (IBAction)closeView:(id)sender;
+
+- (IBAction)showFriends:(id)sender;
+
 @end

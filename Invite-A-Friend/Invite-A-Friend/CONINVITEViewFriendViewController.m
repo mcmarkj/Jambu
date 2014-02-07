@@ -102,7 +102,7 @@
     
     NSLog(@"count : %d",shows);
     NSString *friendscount = [NSString stringWithFormat:@"%d",shows];
-    _UserFriendCount.text = friendscount;
+    [_UserFriendCount setTitle:friendscount forState:UIControlStateNormal];
 }
 
 
@@ -151,7 +151,7 @@
     
     _UserEventInvites.text = @"121";
     _UserEventInvites.font = [UIFont fontWithName:@"Roboto-Light" size:20];
-    _UserFriendCount.font = [UIFont fontWithName:@"Roboto-Light" size:20];
+    _UserFriendCount.titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     _UserEventsAttended.text = @"76";
     _UserEventsAttended.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     
@@ -176,5 +176,10 @@
 
 - (IBAction)closeView:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)showFriends:(id)sender {
+    
+    [self  performSegueWithIdentifier:@"showFriendsFriends" sender:self];
 }
 @end

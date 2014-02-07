@@ -22,6 +22,7 @@
 @property (assign) NSMutableData *responseData;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIImageView *yourimageview;
+- (IBAction)closeView:(id)sender;
 
 
 @end
