@@ -197,7 +197,7 @@
 - (void)updateCountdown {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd"];
-    NSDate *endingDate = [dateFormatter dateFromString:@"2014-01-31"];
+    NSDate *endingDate = [dateFormatter dateFromString:@"2014-12-31"];
     NSDate *startingDate = [NSDate date];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -310,7 +310,13 @@
 
 }
 - (IBAction)showFriends:(id)sender {
+        NSString *title = [_UserFacebookFriendsLabel currentTitle];
+    
+    if ([title isEqualToString:@"0"]) {
+        NSLog(@"User has no friends");
+    } else {
         [self  performSegueWithIdentifier:@"showFriends" sender:self];
+    }
     
 }
 @end

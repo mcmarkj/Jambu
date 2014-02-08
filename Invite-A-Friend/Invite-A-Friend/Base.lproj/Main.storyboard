@@ -344,14 +344,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginprogress.png" translatesAutoresizingMaskIntoConstraints="NO" id="qyQ-oz-13r">
-                                <rect key="frame" x="40" y="173" width="240" height="273"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundlogin.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sW6-fB-tN2">
+                                <rect key="frame" x="0.0" y="60" width="322" height="508"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-3u-odt">
-                                <rect key="frame" x="106" y="383" width="108" height="53"/>
+                                <rect key="frame" x="45" y="471" width="230" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="twitterlogin.png">
+                                <state key="normal" image="twitter_login.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -363,14 +363,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eb9-uk-xpd" customClass="UICountingLabel">
-                                <rect key="frame" x="112" y="250" width="106" height="34"/>
+                                <rect key="frame" x="113" y="147" width="106" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spinner.png" translatesAutoresizingMaskIntoConstraints="NO" id="E5A-Hl-Juc">
-                                <rect key="frame" x="89" y="209" width="142" height="133"/>
+                                <rect key="frame" x="90" y="97" width="142" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Twp-7p-jiE">
@@ -1082,13 +1082,13 @@
         <image name="EditProfile.png" width="31" height="31"/>
         <image name="InviteIndicator.png" width="40" height="29"/>
         <image name="addedButton@2.png" width="41" height="41"/>
+        <image name="backgroundlogin.jpg" width="322" height="508"/>
         <image name="blue-profile.png" width="220" height="227"/>
         <image name="close@2.png" width="41" height="40"/>
         <image name="first" width="30" height="30"/>
         <image name="friendback.png" width="320" height="61"/>
         <image name="friendshead.png" width="320" height="66"/>
         <image name="green-profile.png" width="320" height="339"/>
-        <image name="loginprogress.png" width="223" height="273"/>
         <image name="menuicon.png" width="20" height="20"/>
         <image name="newhere.png" width="320" height="65"/>
         <image name="overlay.png" width="320" height="150"/>
@@ -1099,7 +1099,7 @@
         <image name="second" width="30" height="30"/>
         <image name="spinner.png" width="142" height="133"/>
         <image name="topbanner.png" width="320" height="64"/>
-        <image name="twitterlogin.png" width="55" height="53"/>
+        <image name="twitter_login.png" width="249" height="49"/>
         <image name="worker-512.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
