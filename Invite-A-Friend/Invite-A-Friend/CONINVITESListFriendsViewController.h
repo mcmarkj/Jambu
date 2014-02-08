@@ -10,6 +10,7 @@
 
 @interface CONINVITESListFriendsViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>{
     NSArray *tweets;
+        NSArray *friends;
     UISearchBar *searchBar;
     UITableView *tableV;
     NSMutableData *responseData;
@@ -17,6 +18,7 @@
 }
 
 @property (retain) NSArray *tweets;
+@property (retain) NSArray *friends;
 @property (retain) IBOutlet UISearchBar *searchBar;
 @property (retain) IBOutlet UITableView *tableV;
 @property (assign) NSMutableData *responseData;

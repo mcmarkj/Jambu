@@ -130,6 +130,7 @@
     [responseString release];
 	
 	NSArray *allTweets = [results objectForKey:@"users"];
+    
 	[self setTweets:allTweets];
 	
 	[self.tableV reloadData];

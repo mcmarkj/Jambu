@@ -73,27 +73,28 @@
 
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *FriendID = [defaults objectForKey:@"Con96FriendID"];
+    NSString *FriendID = [defaults objectForKey:@"Con96DBFID"];
+    NSString *AlterID = [NSString stringWithFormat:@"%@", FriendID];
     
-        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", FriendID]];
-    
+        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", AlterID]];
+        NSLog(@"URL : %@", url);
     NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: nil];
     
     NSError *error;
     
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
     
-    NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+    NSString *editeddata = [NSString stringWithFormat:@"%@", @""];
     
     NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    NSLog(@"JSON Output : %@", finaldata);
+    NSLog(@"JSON Output : %@", editeddata);
     
     [request setURL:url];
     [request setHTTPMethod:@"DELETE"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+   // [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:finaldata];
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
