@@ -67,6 +67,57 @@
     
 };
 
+
+- (IBAction)deleteFriendReq{
+    
+
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *FriendID = [defaults objectForKey:@"Con96FriendID"];
+    
+        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", FriendID]];
+    
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: nil];
+    
+    NSError *error;
+    
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+    
+    NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+    
+    NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    NSLog(@"JSON Output : %@", finaldata);
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"DELETE"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:finaldata];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    // DISABLED WHILE WE CONFIGURE STUFF
+    
+    NSLog(@"We're now collecting to the API");
+    [connection start];
+    NSLog(@"Completed API Request");
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Deleted"
+                                                    message:@"Friend Deleted"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil
+                          ];
+    [alert performSelectorOnMainThread:@selector(show)
+                            withObject:nil
+                         waitUntilDone:NO];
+    
+    addFriend.hidden=YES;
+    
+};
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -94,6 +145,7 @@
     {
         // Yes, do something
         NSLog(@"I've been told to delete them as a friend");
+        [self deleteFriendReq];
         addFriend.hidden=NO;
         _addedButton.hidden=YES;
     }

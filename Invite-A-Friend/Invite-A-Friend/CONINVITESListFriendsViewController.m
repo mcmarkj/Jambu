@@ -211,6 +211,7 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"username"]];
 	cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
     
+    
     NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_thumbnail"];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     NSURLResponse *response;
@@ -278,9 +279,11 @@
 {
     // Pass the selected object to the new view controller.
     NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
+        NSString *FriendID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"id"]];
     NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:UID forKey:@"Con96FID"];
+        [defaults setObject:FriendID forKey:@"Con96FriendID"];
     [defaults setObject:AID forKey:@"Con96FAID"];
     [defaults synchronize];
     
