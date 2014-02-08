@@ -184,16 +184,24 @@
     
     BOOL isTheObjectThere = [friends containsObject:AID];
     
+    NSString *altID1 = [NSString stringWithFormat:@"%@", AID];
+    NSString *altID2 = [NSString stringWithFormat:@"%@", MIS];
+    
     if (isTheObjectThere) {
         NSLog(@"Friend Exists");
         addFriend.hidden = YES;
         _addedButton.hidden = NO;
         
     } else {
-        NSLog(@"Friend Doesn't Exist");
+            if ([altID1 isEqualToString:altID2]) {
+                addFriend.hidden = YES;
                 _addedButton.hidden = YES;
-        addFriend.hidden = NO;
-    }
+                } else {
+            NSLog(@"Friend Doesn't Exist");
+            _addedButton.hidden = YES;
+            addFriend.hidden = NO;
+                        }
+            }
     
     
     /* if ([[results objectForKey:@"id"] isEqualToString:AID]) {
@@ -212,6 +220,7 @@
     [self checkIfFriends];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *AID = [defaults objectForKey:@"Con96FAID"];
+        NSString *MIS = [defaults objectForKey:@"Con96AID"];
 
     //Get number of friends info
     NSURL *friendsurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", AID]];
@@ -255,6 +264,11 @@
 	// Do any additional setup after loading the view.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *UID = [defaults objectForKey:@"Con96FID"];
+       NSString *MIS = [defaults objectForKey:@"Con96AID"];
+        NSString *FID = [defaults objectForKey:@"Con96FAID"];
+    
+    NSString *altID1 = [NSString stringWithFormat:@"%@", FID];
+    NSString *altID2 = [NSString stringWithFormat:@"%@", MIS];
     
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -287,8 +301,13 @@
     
     _UserName.font = [UIFont fontWithName:@"Roboto" size:20];
     _UserTwitterName.font = [UIFont fontWithName:@"Roboto-Light" size:14];
+    NSString *usersName = [json valueForKey:@"full_name"];
     
+    if ([altID2 isEqualToString:altID1]) {
+    _UserName.text = [NSString stringWithFormat:@"%@ (you)",usersName];
+    } else {
     _UserName.text = [json valueForKey:@"full_name"];
+    }
     _UserTwitterName.text = [NSString stringWithFormat:@"@%@",twitterusername];
     
     _UserEventInvites.text = @"121";

@@ -345,11 +345,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundlogin.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sW6-fB-tN2">
-                                <rect key="frame" x="0.0" y="60" width="322" height="508"/>
+                                <rect key="frame" x="-109" y="-7" width="449" height="708"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-3u-odt">
-                                <rect key="frame" x="45" y="471" width="230" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-3u-odt">
+                                <rect key="frame" x="42" y="471" width="249" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="twitter_login.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -358,10 +358,6 @@
                                     <action selector="twitterlogin:" destination="bvd-Vy-cXL" eventType="touchUpInside" id="Zms-fY-B0d"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newhere.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZMO-bB-aCb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eb9-uk-xpd" customClass="UICountingLabel">
                                 <rect key="frame" x="113" y="147" width="106" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -378,13 +374,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Yt-Yl-8Rf">
-                                <rect key="frame" x="57" y="6" width="203" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.47058826684951782" green="0.47058826684951782" blue="0.47058826684951782" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="mdQ-ed-5yZ" firstAttribute="top" secondItem="i0i-3u-odt" secondAttribute="bottom" constant="47" id="Yz7-bR-4Xn"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="currentpercentage" destination="eb9-uk-xpd" id="azb-kh-mN0"/>
@@ -1082,7 +1076,7 @@
         <image name="EditProfile.png" width="31" height="31"/>
         <image name="InviteIndicator.png" width="40" height="29"/>
         <image name="addedButton@2.png" width="41" height="41"/>
-        <image name="backgroundlogin.jpg" width="322" height="508"/>
+        <image name="backgroundlogin.jpg" width="449" height="708"/>
         <image name="blue-profile.png" width="220" height="227"/>
         <image name="close@2.png" width="41" height="40"/>
         <image name="first" width="30" height="30"/>
