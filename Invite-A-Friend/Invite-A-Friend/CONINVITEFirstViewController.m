@@ -94,34 +94,24 @@
         //SET IMAGE
         _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"image_url"]]]];
         
-        
+            NSString *userUID = UID;
             //Get number of friends info
-            NSURL *friendsurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", AID]];
-            NSMutableURLRequest *friendsrequest = [NSMutableURLRequest requestWithURL:friendsurl];
             
-            [friendsrequest setURL:friendsurl];
-            [friendsrequest setHTTPMethod:@"GET"];
-            [friendsrequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            NSURL *friendurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/count/%@", userUID]];
+            
+            NSMutableURLRequest *frequest = [NSMutableURLRequest requestWithURL:friendurl];
+            
+            [frequest setURL:friendurl];
+            [frequest setHTTPMethod:@"GET"];
+            [frequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
             
             NSError *error;
-            NSURLResponse *friendsresponse;
-            NSData *friendsdata = [NSURLConnection sendSynchronousRequest:friendsrequest returningResponse:&friendsresponse error:&error];
-            NSArray *friendsjson = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingAllowFragments error:nil];
-
-                        NSLog(@"JSON Output : %@", friendsjson);
-            NSLog(@"From URL : %@", friendsurl);
+            NSURLResponse *fresponse;
+            NSData *fjsondata = [NSURLConnection sendSynchronousRequest:frequest returningResponse:&fresponse error:&error];
+            NSArray *friendsjson = [NSJSONSerialization JSONObjectWithData:fjsondata options:NSJSONReadingAllowFragments error:nil];
             
             
-            NSMutableDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingMutableContainers error:&error];
-            NSDictionary *results = [responseJSON valueForKey:@"friendships"];
-            
-            
-            // 6.1 - Load JSON into internal variable
-            // 6.2 - Get the number of shows (post)
-            int shows = results.count;
-            
-            NSLog(@"count : %d",shows);
-        NSString *friendscount = [NSString stringWithFormat:@"%d",shows];
+            NSString *friendscount = [NSString stringWithFormat:@"%@",[friendsjson valueForKey:@"friends"]];;
         _overlaylabel.font = [UIFont fontWithName:@"Roboto-Light" size:28];
         
         _overlaynexteventlabel.font = [UIFont fontWithName:@"Roboto-Light" size:15];

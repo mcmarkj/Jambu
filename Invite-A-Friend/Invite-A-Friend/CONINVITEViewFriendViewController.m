@@ -78,11 +78,11 @@
     
         NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", AlterID]];
         NSLog(@"URL : %@", url);
-    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: nil];
+    //NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: nil];
     
-    NSError *error;
+    //NSError *error;
     
-    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+    //NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
     
     NSString *editeddata = [NSString stringWithFormat:@"%@", @""];
     
@@ -182,8 +182,8 @@
     NSMutableDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingMutableContainers error:&error];
     NSDictionary *results = [responseJSON valueForKey:@"friendships"];
     NSArray *friends = [results valueForKey:@"id"];
-    NSDictionary *idresults = [responseJSON valueForKey:@"friendshipids"];
-    NSArray *friendsids = [idresults valueForKey:@"id"];
+//    NSDictionary *idresults = [responseJSON valueForKey:@"friendshipids"];
+  //  NSArray *friendsids = [idresults valueForKey:@"id"];
     
     
     
@@ -224,40 +224,26 @@
 - (void)viewDidAppear:(BOOL)animated{
     [self checkIfFriends];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *AID = [defaults objectForKey:@"Con96FAID"];
-        NSString *MIS = [defaults objectForKey:@"Con96AID"];
-
+  //  NSString *AID = [defaults objectForKey:@"Con96FAID"];
+    //    NSString *MIS = [defaults objectForKey:@"Con96AID"];
+        NSString *UID = [defaults objectForKey:@"Con96FID"];
     //Get number of friends info
-    NSURL *friendsurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", AID]];
-    NSMutableURLRequest *friendsrequest = [NSMutableURLRequest requestWithURL:friendsurl];
     
-    [friendsrequest setURL:friendsurl];
-    [friendsrequest setHTTPMethod:@"GET"];
-    [friendsrequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSURL *friendurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/count/%@", UID]];
+
+    NSMutableURLRequest *frequest = [NSMutableURLRequest requestWithURL:friendurl];
+    
+    [frequest setURL:friendurl];
+    [frequest setHTTPMethod:@"GET"];
+    [frequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     NSError *error;
-    NSURLResponse *friendsresponse;
-    NSData *friendsdata = [NSURLConnection sendSynchronousRequest:friendsrequest returningResponse:&friendsresponse error:&error];
-    NSArray *friendsjson = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingAllowFragments error:nil];
-    
-    NSLog(@"JSON Output : %@", friendsjson);
-    NSLog(@"From URL : %@", friendsurl);
+    NSURLResponse *fresponse;
+    NSData *fjsondata = [NSURLConnection sendSynchronousRequest:frequest returningResponse:&fresponse error:&error];
+    NSArray *friendsjson = [NSJSONSerialization JSONObjectWithData:fjsondata options:NSJSONReadingAllowFragments error:nil];
     
     
-    NSMutableDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingMutableContainers error:&error];
-    NSDictionary *results = [responseJSON valueForKey:@"friendships"];
-
-        
-
-    
-    
-    // 6.1 - Load JSON into internal variable
-    // 6.2 - Get the number of shows (post)
-    int shows = results.count;
-    
-    NSLog(@"count : %d",shows);
-    NSString *friendscount = [NSString stringWithFormat:@"%d",shows];
-    [_UserFriendCount setTitle:friendscount forState:UIControlStateNormal];
+    NSString *friendscount = [NSString stringWithFormat:@"%@",[friendsjson valueForKey:@"friends"]];;    [_UserFriendCount setTitle:friendscount forState:UIControlStateNormal];
 }
 
 
