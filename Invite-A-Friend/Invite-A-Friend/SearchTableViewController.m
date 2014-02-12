@@ -146,9 +146,26 @@
 
 #pragma mark - View lifecycle
 
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        // iOS 7
+        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+    } else {
+        // iOS 6
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    }
+    
+    for (UIView *v in searchBar.subviews) {
+        if ([v isKindOfClass:[UIControl class]]) {
+            ((UIControl *)v).enabled = YES;
+        }
+    }
     
     // Search bar
     searchBar.delegate = self;
@@ -307,6 +324,9 @@
 */
 
 #pragma mark - Table view delegate
+- (IBAction)cancelview:(id)sender {
+        [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {

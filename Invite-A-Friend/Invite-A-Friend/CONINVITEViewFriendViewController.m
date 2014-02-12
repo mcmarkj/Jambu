@@ -182,6 +182,10 @@
     NSMutableDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:friendsdata options:NSJSONReadingMutableContainers error:&error];
     NSDictionary *results = [responseJSON valueForKey:@"friendships"];
     NSArray *friends = [results valueForKey:@"id"];
+    NSDictionary *idresults = [responseJSON valueForKey:@"friendshipids"];
+    NSArray *friendsids = [idresults valueForKey:@"id"];
+    
+    
     
     BOOL isTheObjectThere = [friends containsObject:AID];
     
