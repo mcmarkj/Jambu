@@ -73,12 +73,15 @@
     [indicator startAnimating];
     NSLog(@"Search button pressed");
     NSString *search = self.searchBar.text;
+
     
     NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/search/%@", search];
-    
+        [searchString replaceOccurrencesOfString:@" " withString:@"%20" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
+        [searchString replaceOccurrencesOfString:@"@" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
+    /*
      //Uncomment this line to make it so that it searches a different API for twitter usernames
     [searchString replaceOccurrencesOfString:@"@" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
-    /*[searchString replaceOccurrencesOfString:@" " withString:@"%20" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
+
     [searchString replaceOccurrencesOfString:@"@" withString:@"%40" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])]; */
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
     [NSURLConnection connectionWithRequest:request delegate:self];
