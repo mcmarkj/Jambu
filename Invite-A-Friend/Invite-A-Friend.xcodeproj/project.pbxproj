@@ -71,6 +71,8 @@
 		418AAE391891BF86001D8FE1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418AAE381891BF86001D8FE1 /* QuartzCore.framework */; };
 		418AAE3B1891CB24001D8FE1 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418AAE3A1891CB24001D8FE1 /* Twitter.framework */; };
 		418AAE3E1892EF2D001D8FE1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418AAE3D1892EF2D001D8FE1 /* LoginViewController.m */; };
+		41991E7018B0220500FFCB95 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 41991E6F18B0220500FFCB95 /* Reachability.m */; };
+		41991E7218B0222100FFCB95 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41991E7118B0222100FFCB95 /* SystemConfiguration.framework */; };
 		419BB6A8188C37EB00B7D403 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */; };
 		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; };
 		41E8FB41189D1005000D43F4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E8FB3B189D1005000D43F4 /* libTestFlight.a */; };
@@ -242,6 +244,9 @@
 		418AAE3A1891CB24001D8FE1 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		418AAE3C1892EF2D001D8FE1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		418AAE3D1892EF2D001D8FE1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		41991E6E18B0220500FFCB95 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		41991E6F18B0220500FFCB95 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		41991E7118B0222100FFCB95 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		419BB6A6188C37EB00B7D403 /* TWTSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTSideMenuViewController.h; sourceTree = "<group>"; };
 		419BB6A7188C37EB00B7D403 /* TWTSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTSideMenuViewController.m; sourceTree = "<group>"; };
 		419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsViewController.h; sourceTree = "<group>"; };
@@ -334,6 +339,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41991E7218B0222100FFCB95 /* SystemConfiguration.framework in Frameworks */,
 				41E8FB45189D1198000D43F4 /* libz.dylib in Frameworks */,
 				41E8FB41189D1005000D43F4 /* libTestFlight.a in Frameworks */,
 				418AAE3B1891CB24001D8FE1 /* Twitter.framework in Frameworks */,
@@ -389,6 +395,7 @@
 		414AA818188AE743001B3301 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41991E7118B0222100FFCB95 /* SystemConfiguration.framework */,
 				41E8FB44189D1198000D43F4 /* libz.dylib */,
 				418AAE3A1891CB24001D8FE1 /* Twitter.framework */,
 				418AAE381891BF86001D8FE1 /* QuartzCore.framework */,
@@ -422,6 +429,8 @@
 				4142F2C1189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m */,
 				414AA82F188AE743001B3301 /* CONINVITEFirstViewController.m */,
 				419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */,
+				41991E6E18B0220500FFCB95 /* Reachability.h */,
+				41991E6F18B0220500FFCB95 /* Reachability.m */,
 				41F27C1B1893EA4D00E64CC1 /* LoginViewTwoViewController.h */,
 				41F27C1C1893EA4D00E64CC1 /* LoginViewTwoViewController.m */,
 				418AAE3C1892EF2D001D8FE1 /* LoginViewController.h */,
@@ -825,6 +834,7 @@
 				41899362189066090089AC7E /* JSONValueTransformer.m in Sources */,
 				4142F2BB189E8C26002ECA92 /* NSString+SBJSON.m in Sources */,
 				41F27C201893EED800E64CC1 /* UICountingLabel.m in Sources */,
+				41991E7018B0220500FFCB95 /* Reachability.m in Sources */,
 				418AAE3E1892EF2D001D8FE1 /* LoginViewController.m in Sources */,
 				41F27C1D1893EA4D00E64CC1 /* LoginViewTwoViewController.m in Sources */,
 				414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */,

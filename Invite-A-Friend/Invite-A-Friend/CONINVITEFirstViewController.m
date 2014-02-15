@@ -10,6 +10,7 @@
 #import <Quartzcore/QuartzCore.h>
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
+#import "Reachability.h"
 
 @interface CONINVITEFirstViewController () {
         UIView *setNeedsDisplay;
@@ -32,6 +33,40 @@
 
 {
     
+}
+
+-(void)checkfornetwork
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        NSLog(@"There IS NO internet connection");
+        [defaults setObject:@"False" forKey:@"NetConn"];
+        [defaults synchronize];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Issue"
+                                                        message:@"Unable to connect to the internet. Please ensure you're connected to either the internet over Wifi or have a 3G connection."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil
+                              ];
+        [alert performSelectorOnMainThread:@selector(show)
+                                withObject:nil
+                             waitUntilDone:NO];
+
+        
+    } else {
+        
+        NSLog(@"There IS internet connection");
+        [defaults setObject:@"True" forKey:@"NetConn"];
+        [defaults synchronize];
+        
+        
+        
+    }        
+
 }
 
 -(void)checktwitterupdate
@@ -228,10 +263,10 @@
      ];}
 
 - (void)viewDidAppear:(BOOL)animated{
-    
+    [self checkfornetwork];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString *UID = [defaults objectForKey:@"Con96TUID"];
-    
+    if ([[defaults objectForKey:@"NetConn"]  isEqual: @"True"]) {
     if ([[defaults objectForKey:@"Con96TUID"]boolValue]) {
         
         NSLog(@"user is logged in - do nothing");
@@ -345,7 +380,7 @@
         
         
         //[self.view setNeedsDisplay];
-            [self checktwitterupdate];
+
         } }
     
     else {
@@ -356,16 +391,27 @@
         
         
     }
+    } else {
+        NSLog(@"Not Connected to the network");
+        [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:FALSE];
+        [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:FALSE];
+                [[[[self.tabBarController tabBar]items]objectAtIndex:0]setEnabled:FALSE];
+
+                [self  performSegueWithIdentifier:@"noConnection" sender:self];
+        
+    }
 }
 
 
 - (void)viewDidLoad
 {
+        [self checkfornetwork];
     [super viewDidLoad];
+        NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     
-    
+        if ([[userdefaults objectForKey:@"NetConn"]  isEqual: @"True"]) {
             [self performSelector:@selector(fadein) withObject:nil afterDelay:-10];
-    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+
     
     NSString *UID = [userdefaults objectForKey:@"Con96TUID"];
     
@@ -379,10 +425,14 @@
 
 
         [self performSelector:@selector(updateCountdown) withObject:nil afterDelay:1];
-
+            [self checktwitterupdate];
+    }
+    } else {
+        
+    }
     
 	// Do any additional setup after loading the view, typically from a nib.
-    }}
+    }
 
 
 - (void)updateCountdown {

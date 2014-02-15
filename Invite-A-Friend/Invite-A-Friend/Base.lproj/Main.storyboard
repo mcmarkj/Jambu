@@ -166,6 +166,7 @@
                                 </state>
                                 <connections>
                                     <action selector="showFriends:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="9Tj-6V-9Lv"/>
+                                    <segue destination="9qu-RQ-wJe" kind="modal" identifier="noConnection" id="hPz-Rq-MgS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -531,6 +532,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QN7-un-hbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1268" y="1399"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QAc-p9-afd">
+            <objects>
+                <viewController id="9qu-RQ-wJe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fRW-FC-lQc"/>
+                        <viewControllerLayoutGuide type="bottom" id="GRV-u3-xKe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bpL-Ee-fqX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No network connection :'(" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrZ-yC-vAh">
+                                <rect key="frame" x="61" y="198" width="198" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="347" translatesAutoresizingMaskIntoConstraints="NO" id="xCV-bn-LFq">
+                                <rect key="frame" x="38" y="227" width="347" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Connect to the internet then reopen the app. ">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xPP-go-9z7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="1268"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">
@@ -1135,10 +1176,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Bgi-A0-rbf"/>
+        <segue reference="9UP-zD-xGT"/>
+        <segue reference="M3E-Y3-Wu6"/>
+        <segue reference="PwJ-sI-xxm"/>
+        <segue reference="slv-3R-j6T"/>
         <segue reference="Ojr-Ml-8dI"/>
-        <segue reference="eR1-s8-gg5"/>
-        <segue reference="TE3-BG-HGX"/>
-        <segue reference="SUk-Ux-ee1"/>
     </inferredMetricsTieBreakers>
 </document>
