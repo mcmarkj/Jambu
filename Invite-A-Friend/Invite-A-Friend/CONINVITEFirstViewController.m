@@ -530,7 +530,7 @@
 
 - (IBAction)logout:(UIButton *)sender {
     NSLog(@"Need to log out");
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signing Out"
+    /*UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signing Out"
                                                     message:@"I've been told to delete all locally stored info. I'm going to close down, please reopen me to login again."
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
@@ -542,13 +542,12 @@
     
     
     
-
+*/
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[NSNumber numberWithBool:NO] forKey:@"InviteLog"];
     [defaults setObject:@"NULL" forKey:@"Con96TUID"];
     [defaults synchronize];
-    exit(0);
-
+    [self  performSegueWithIdentifier:@"LoginPage" sender:self];
 }
 - (IBAction)showFriends:(id)sender {
         NSString *title = [_UserFacebookFriendsLabel currentTitle];

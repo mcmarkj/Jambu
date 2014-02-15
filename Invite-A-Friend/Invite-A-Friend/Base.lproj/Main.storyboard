@@ -166,7 +166,6 @@
                                 </state>
                                 <connections>
                                     <action selector="showFriends:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="9Tj-6V-9Lv"/>
-                                    <segue destination="9qu-RQ-wJe" kind="modal" identifier="noConnection" id="hPz-Rq-MgS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -194,8 +193,9 @@
                         <outlet property="overlaylabel" destination="J0M-8w-YkP" id="mOu-eP-I4o"/>
                         <outlet property="overlaynexteventlabel" destination="aeM-ag-UQ7" id="Tqv-N4-IpI"/>
                         <segue destination="bvd-Vy-cXL" kind="modal" identifier="LoginPage" modalTransitionStyle="flipHorizontal" id="9UP-zD-xGT"/>
-                        <segue destination="Igf-oW-Ztn" kind="modal" identifier="showFriends" id="slv-3R-j6T"/>
+                        <segue destination="Igf-oW-Ztn" kind="modal" identifier="showFriends" modalTransitionStyle="flipHorizontal" id="slv-3R-j6T"/>
                         <segue destination="Pkv-4c-iiK" kind="modal" identifier="setcolour" id="PwJ-sI-xxm"/>
+                        <segue destination="9qu-RQ-wJe" kind="modal" identifier="noConnection" id="HRK-lu-OdZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
