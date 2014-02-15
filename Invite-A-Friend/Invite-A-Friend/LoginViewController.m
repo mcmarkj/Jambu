@@ -94,6 +94,7 @@
     [_spinningimage.layer addAnimation:fullRotation forKey:@"360"];
 }
 
+
 - (IBAction)twitterlogin:(id)sender
 {
     twitterlogin.hidden=YES;

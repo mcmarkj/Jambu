@@ -7,6 +7,9 @@
 //
 
 #import "CONINVITEFirstViewController.h"
+#import <Quartzcore/QuartzCore.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 
 @interface CONINVITEFirstViewController () {
         UIView *setNeedsDisplay;
@@ -30,6 +33,200 @@
 {
     
 }
+
+-(void)checktwitterupdate
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *user_img = [defaults objectForKey:@"Con96UIMG"];
+    NSString *currenttwitter_username = [defaults objectForKey:@"Con96TUNAME"];
+
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
+    ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
+
+
+    
+    NSURL *twitterurl = [NSURL URLWithString:@"https://api.twitter.com/1.1/users/show.json"];
+    NSDictionary *params = @{@"screen_name" : twitterAccount.username
+                             };
+    SLRequest *request =
+    [SLRequest requestForServiceType:SLServiceTypeTwitter
+                       requestMethod:SLRequestMethodGET
+                                 URL:twitterurl
+                          parameters:params];
+    
+    //  Attach an account to the request
+    [request setAccount:[accountsArray lastObject]];
+    
+    //  Step 3:  Execute the request
+    [request performRequestWithHandler:^(NSData *responseData,
+                                         NSHTTPURLResponse *urlResponse,
+                                         NSError *error) {
+        
+        
+        
+        // Let's translate it so we can use it later mate
+        
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:responseData //1
+                              options:NSJSONReadingAllowFragments
+                              error:&error];
+
+        NSString *currentName = _UserNameLabel.text;
+        NSString *name = [json objectForKey:@"name"];
+        NSString *prof_img = [json objectForKey:@"profile_image_url"];
+        
+        
+        NSString *altprof_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
+                                                                    withString:@""];
+        NSString *altprofthum_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
+                                                                    withString:@"_bigger"];
+            if([currenttwitter_username isEqualToString:twitterAccount.username]) {
+                NSLog(@"Twitter Username is up-to-date");
+            } else {
+                NSLog(@"Twitter Username is Out-Of-Date");
+                                _UserTNameLabel.text = [NSString stringWithFormat:@"@%@",twitterAccount.username];
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                NSString *MID = [defaults objectForKey:@"Con96AID"];
+                
+                NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", MID]];
+                
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: twitterAccount.username, @"username", nil];
+                
+                NSError *error;
+                
+                NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+                
+                NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+                
+                NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+                
+                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+                
+                [request setURL:url];
+                [request setHTTPMethod:@"PUT"];
+                [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                [request setHTTPBody:finaldata];
+                
+                NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+                
+                // DISABLED WHILE WE CONFIGURE STUFF
+                
+                NSLog(@"We're now collecting to the API");
+                
+                [connection start];
+
+
+                
+                
+                
+            }
+        
+        if([user_img isEqualToString:altprof_img]) {
+            //It's all good do nothing
+            NSLog(@"User Image is up to date");
+        } else {
+            if(altprof_img == NULL) {
+                NSLog(@"The image is Null... Don't update!");
+            } else {
+                        NSLog(@"User Image is outofdate");
+                        _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:altprof_img]]];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString *MID = [defaults objectForKey:@"Con96AID"];
+            
+            NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", MID]];
+            
+            NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: altprof_img, @"image_url", altprofthum_img, @"image_thumbnail", nil];
+            
+            NSError *error;
+            
+            NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+            
+            NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+            
+            NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+            
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+            
+            [request setURL:url];
+            [request setHTTPMethod:@"PUT"];
+            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            [request setHTTPBody:finaldata];
+            
+            NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            
+            // DISABLED WHILE WE CONFIGURE STUFF
+            
+            NSLog(@"We're now collecting to the API");
+            
+            [connection start];
+            
+
+            }
+        }
+        
+        if([currentName isEqualToString:name]) {
+            //Do nothing
+                        NSLog(@"User name is up to date");
+        } else {
+            if(name == NULL) {
+                NSLog(@"The Name's Null... Don't update!");
+                NSLog(@"Twitter Issue");
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Twitter Issue"
+                                                                message:@"There's been an issue... If you've recently changed your @twitter account username please update it in your settings... We're unable to get any information from twitter!"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil
+                                      ];
+                [alert performSelectorOnMainThread:@selector(show)
+                                        withObject:nil
+                                     waitUntilDone:NO];
+
+            } else {
+                        NSLog(@"User name is out of date");
+            _UserNameLabel.text = name;
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString *MID = [defaults objectForKey:@"Con96AID"];
+            
+            NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", MID]];
+            
+            NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: name, @"full_name", nil];
+            
+            NSError *error;
+            
+            NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+            
+            NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+            
+            NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+            
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+            
+            [request setURL:url];
+            [request setHTTPMethod:@"PUT"];
+            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            [request setHTTPBody:finaldata];
+            
+            NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            
+            // DISABLED WHILE WE CONFIGURE STUFF
+            
+            NSLog(@"We're now collecting to the API");
+            
+            [connection start];
+            
+            }
+            
+            
+        }
+
+        //NSString *nooffollwers = [json objectForKey:@"follower_count"];
+        
+    }
+     
+     ];}
+
 - (void)viewDidAppear:(BOOL)animated{
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -76,9 +273,12 @@
         
         NSString *twitterusername = [json valueForKey:@"username"];
         NSString *AID = [json valueForKey:@"id"];
-        
+            NSString *imgurl = [json valueForKey:@"image_url"];
+            
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:AID forKey:@"Con96AID"];
+        [defaults setObject:twitterusername forKey:@"Con96TUNAME"];
+        [defaults setObject:imgurl forKey:@"Con96UIMG"];
         [defaults synchronize];
         
             
@@ -96,6 +296,7 @@
         
             NSString *userUID = UID;
             //Get number of friends info
+
             
             NSURL *friendurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/count/%@", userUID]];
             
@@ -144,7 +345,7 @@
         
         
         //[self.view setNeedsDisplay];
-        
+            [self checktwitterupdate];
         } }
     
     else {
