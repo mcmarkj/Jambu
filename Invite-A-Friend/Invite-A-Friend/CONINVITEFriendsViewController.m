@@ -31,7 +31,9 @@
     NSString *UID = [defaults objectForKey:@"Con96TUID"];
 
     
+    
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     [request setURL:url];
@@ -42,10 +44,15 @@
     NSURLResponse *response;
     NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
-
-     NSString *twitterusername = [json valueForKey:@"username"];
     
-    NSString *profilecolour = [json valueForKey:@"colour"];
+    NSArray *userInfo = [json valueForKey:@"user"];
+    
+    
+    NSArray *countInfo = [json valueForKey:@"counts"];
+    
+     NSString *twitterusername = [userInfo valueForKey:@"username"];
+    
+    NSString *profilecolour = [userInfo valueForKey:@"colour"];
     
     if ([profilecolour  isEqual: @"red"]) {
         _profilecolourimage.image = [UIImage imageNamed:@"red-profile@2.png"];
@@ -65,17 +72,18 @@
     _UserName.font = [UIFont fontWithName:@"Roboto" size:20];
     _UserTwitterName.font = [UIFont fontWithName:@"Roboto-Light" size:14];
     
-    _UserName.text = [json valueForKey:@"full_name"];
+    _UserName.text = [userInfo valueForKey:@"full_name"];
     _UserTwitterName.text = [NSString stringWithFormat:@"@%@",twitterusername];
-    
-    _UserEventInvites.text = @"121";
+        NSString *eventinvites = [countInfo valueForKey:@"event_invites_pending"];
+   _UserEventInvites.text = [NSString stringWithFormat:@"%@",eventinvites];;
     _UserEventInvites.font = [UIFont fontWithName:@"Roboto-Light" size:20];
 
     _UserFriendCount.titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
-    _UserEventsAttended.text = @"76";
+    NSString *eventsattended = [countInfo valueForKey:@"events_attended"];
+   _UserEventsAttended.text = [NSString stringWithFormat:@"%@",eventsattended];;
     _UserEventsAttended.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     
-    _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"image_url"]]]];
+    _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userInfo valueForKey:@"image_url"]]]];
     
     
     
@@ -88,7 +96,7 @@
         NSString *UID = [defaults objectForKey:@"Con96TUID"];
     //Get number of friends info
     
-    NSURL *friendurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/count/%@", UID]];
+    NSURL *friendurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
     
     NSMutableURLRequest *frequest = [NSMutableURLRequest requestWithURL:friendurl];
     
@@ -101,8 +109,9 @@
     NSData *fjsondata = [NSURLConnection sendSynchronousRequest:frequest returningResponse:&fresponse error:&error];
     NSArray *friendsjson = [NSJSONSerialization JSONObjectWithData:fjsondata options:NSJSONReadingAllowFragments error:nil];
     
+            NSArray *countInfo = [friendsjson valueForKey:@"counts"];
     
-    NSString *friendscount = [NSString stringWithFormat:@"%@",[friendsjson valueForKey:@"friends"]];;
+    NSString *friendscount = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"friends"]];;
     [_UserFriendCount setTitle:friendscount forState:UIControlStateNormal];
 }
 

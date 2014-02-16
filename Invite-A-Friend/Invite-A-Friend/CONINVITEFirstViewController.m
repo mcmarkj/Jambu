@@ -201,7 +201,7 @@
             }
         }
         
-        if([currentName isEqualToString:name]) {
+    /*    if([currentName isEqualToString:name]) {
             //Do nothing
                         NSLog(@"User name is up to date");
         } else {
@@ -254,7 +254,7 @@
             }
             
             
-        }
+        } */
 
         //NSString *nooffollwers = [json objectForKey:@"follower_count"];
         
@@ -285,6 +285,10 @@
         NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
         
+        NSArray *userInfo = [json valueForKey:@"user"];
+        
+        
+        NSArray *countInfo = [json valueForKey:@"counts"];
         
         //Check if the response is valid or not - stops the app from crashing
         if (json == [NSNull null]) {
@@ -295,20 +299,23 @@
 
         
         //Checking if the user has any pending events, let's enable / disable the indicator in response to this.
-        if([json valueForKey:@"pendingevents"] > 0){
-            _inviteindicatorback.hidden = false;
-            _inviteindicator.hidden = false;
-            //Change the button's value to match the number of pending events pulled from the JSON.
-            [_inviteindicator setTitle:[json valueForKey:@"pendingevents"] forState:UIControlStateNormal];
-        } else {
+            NSString *eventInvitesPrend = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"event_invites_pending"]];
+            
+               //   int level = [eventInvitesPrend intValue];
+            
+        if([eventInvitesPrend isEqual:@"0"]){
             //Since they have no events we'll hide the indicator and the button.
             _inviteindicatorback.hidden = true;
             _inviteindicator.hidden = true;
+        } else {
+            _inviteindicatorback.hidden = false;
+            _inviteindicator.hidden = false;
+            //Change the button's value to match the number of pending events pulled from the JSON.
+            [_inviteindicator setTitle:eventInvitesPrend forState:UIControlStateNormal];
         }
-        
-        NSString *twitterusername = [json valueForKey:@"username"];
-        NSString *AID = [json valueForKey:@"id"];
-            NSString *imgurl = [json valueForKey:@"image_url"];
+        NSString *twitterusername = [userInfo valueForKey:@"username"];
+        NSString *AID = [userInfo valueForKey:@"id"];
+            NSString *imgurl = [userInfo valueForKey:@"image_url"];
             
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:AID forKey:@"Con96AID"];
@@ -322,12 +329,12 @@
             
         //_UserTwitterLabel.text = [json valueForKey:@"username"];
         //Set Full Name of User
-        _UserNameLabel.text = [json valueForKey:@"full_name"];
+        _UserNameLabel.text = [userInfo valueForKey:@"full_name"];
         //Set twitter name
         _UserTNameLabel.text = [NSString stringWithFormat:@"@%@",twitterusername];
         
         //SET IMAGE
-        _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"image_url"]]]];
+        _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userInfo valueForKey:@"image_url"]]]];
         
             NSString *userUID = UID;
             //Get number of friends info
@@ -347,7 +354,7 @@
             NSArray *friendsjson = [NSJSONSerialization JSONObjectWithData:fjsondata options:NSJSONReadingAllowFragments error:nil];
             
             
-            NSString *friendscount = [NSString stringWithFormat:@"%@",[friendsjson valueForKey:@"friends"]];;
+            NSString *friendscount = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"friends"]];;
         _overlaylabel.font = [UIFont fontWithName:@"Roboto-Light" size:28];
         
         _overlaynexteventlabel.font = [UIFont fontWithName:@"Roboto-Light" size:15];
@@ -357,19 +364,19 @@
         _UserNameLabel.font = [UIFont fontWithName:@"Roboto" size:20];
         _UserTNameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:13];
         _UserEventsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
-        _UserEventsLabel.text =@"3";
+        _UserEventsLabel.text = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"events_created"]];
         _UserEventsAttendedLabel.font = [UIFont fontWithName:@"Roboto" size:20];
-        _UserEventsAttendedLabel.text =@"27";
+        _UserEventsAttendedLabel.text = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"events_attended"]];;
         [_UserFacebookFriendsLabel setTitle:friendscount forState:(UIControlStateNormal)];
         _UserFacebookFriendsLabel.titleLabel.font = [UIFont fontWithName:@"Roboto" size:20];
        // [_UserFacebookFriendsLabel setValue:[UIFont fontWithName:@"Roboto" size:20] forKeyPath:@"_UserFacebookFriendsLabel.font"];
         _UserRewardsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
-        _UserRewardsLabel.text =@"6";
+        _UserRewardsLabel.text = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"added_as_friend"]];
         _UserCardSplitLabels.font = [UIFont fontWithName:@"Roboto-Light" size:10];
         _UserCardSplitLabels1.font = [UIFont fontWithName:@"Roboto-Light" size:12];
         _UserCardSplitLabels2.font = [UIFont fontWithName:@"Roboto-Light" size:12];
         
-        _UserCardSplitLabels3.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+        _UserCardSplitLabels3.font = [UIFont fontWithName:@"Roboto-Light" size:10];
         
         [self performSelector:@selector(updateCountdown) withObject:nil afterDelay:1];
         

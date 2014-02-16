@@ -249,7 +249,41 @@
     return [tweets count];
 }
 
-
+-(UIColor*)colorWithHexString:(NSString*)hex
+{
+    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    
+    // String should be 6 or 8 characters
+    if ([cString length] < 6) return [UIColor grayColor];
+    
+    // strip 0X if it appears
+    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
+    
+    if ([cString length] != 6) return  [UIColor grayColor];
+    
+    // Separate into r, g, b substrings
+    NSRange range;
+    range.location = 0;
+    range.length = 2;
+    NSString *rString = [cString substringWithRange:range];
+    
+    range.location = 2;
+    NSString *gString = [cString substringWithRange:range];
+    
+    range.location = 4;
+    NSString *bString = [cString substringWithRange:range];
+    
+    // Scan values
+    unsigned int r, g, b;
+    [[NSScanner scannerWithString:rString] scanHexInt:&r];
+    [[NSScanner scannerWithString:gString] scanHexInt:&g];
+    [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    
+    return [UIColor colorWithRed:((float) r / 255.0f)
+                           green:((float) g / 255.0f)
+                            blue:((float) b / 255.0f)
+                           alpha:1.0f];
+}
 
 
 //Configuring cell design upon request from table
@@ -263,13 +297,25 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomFriendCells" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    if([[[tweets objectAtIndex:[indexPath row]] objectForKey:@"colour"]  isEqual: @"blue"]) {
+    [cell.backgroundColour setBackgroundColor:[self colorWithHexString:@"2fa6cd"]];
+    } else if([[[tweets objectAtIndex:[indexPath row]] objectForKey:@"colour"]  isEqual: @"red"]) {
+            [cell.backgroundColour setBackgroundColor:[self colorWithHexString:@"cb3635"]];
+    } else if([[[tweets objectAtIndex:[indexPath row]] objectForKey:@"colour"]  isEqual: @"pink"]) {
+            [cell.backgroundColour setBackgroundColor:[self colorWithHexString:@"e06091"]];
+    } else if ([[[tweets objectAtIndex:[indexPath row]] objectForKey:@"colour"]  isEqual: @"purple"]) {
+            [cell.backgroundColour setBackgroundColor:[self colorWithHexString:@"5a4077"]];
+    } else if ([[[tweets objectAtIndex:[indexPath row]] objectForKey:@"colour"]  isEqual: @"green"]) {
+            [cell.backgroundColour setBackgroundColor:[self colorWithHexString:@"9ad2c2"]];
+    }
+    
     cell.nameLabel.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"full_name"];
 	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
 	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
 	cell.nameLabel.numberOfLines = 2;
-    cell.nameLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
+    //cell.nameLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
     cell.twitternameLabel.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"username"]];
-	cell.twitternameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:15];
+	cell.twitternameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:10];
     
     NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_thumbnail"];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];

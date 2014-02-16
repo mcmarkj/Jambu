@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomFriendCells : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIView *backgroundColour;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *twitternameLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
