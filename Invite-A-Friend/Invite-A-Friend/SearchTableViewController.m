@@ -9,7 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SearchTableViewController.h"
 #import "JSON.h"
-#import "CustomFriendCells.m"
+#include "CustomFriendCells.h"
 
 @implementation SearchTableViewController
 
@@ -257,19 +257,19 @@
 {
     static NSString *simpleTableIdentifier = @"CustomFriendCells";
     
-    SimpleTableCell *cell = (SimpleTableCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomFriendCells" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     cell.nameLabel.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"full_name"];
-	//cell.nameLabel.adjustsFontSizeToFitWidth = YES;
-	//cell.nameLabel.font = [UIFont systemFontOfSize:12];
-	//cell.nameLabel.numberOfLines = 2;
-    //cell.nameLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
+	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
+	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
+	cell.nameLabel.numberOfLines = 2;
+    cell.nameLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
     cell.twitternameLabel.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"username"]];
-	//cell.twitternameLabel.font = [UIFont systemFontOfSize:10];
+	cell.twitternameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:15];
     
     NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_thumbnail"];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
@@ -287,7 +287,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tabelView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 80.0f;
+	return 61;
 }
 
 /*
