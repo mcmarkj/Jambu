@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SearchTableViewController.h"
 #import "JSON.h"
+#import "CustomFriendCells.m"
 
 @implementation SearchTableViewController
 
@@ -254,19 +255,21 @@
 //Configuring cell design upon request from table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *simpleTableIdentifier = @"CustomFriendCells";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    SimpleTableCell *cell = (SimpleTableCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomFriendCells" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
-    cell.textLabel.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"full_name"];
-	cell.textLabel.adjustsFontSizeToFitWidth = YES;
-	cell.textLabel.font = [UIFont systemFontOfSize:12];
-	cell.textLabel.numberOfLines = 2;
-    cell.textLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"username"]];
-	cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
+    cell.nameLabel.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"full_name"];
+	//cell.nameLabel.adjustsFontSizeToFitWidth = YES;
+	//cell.nameLabel.font = [UIFont systemFontOfSize:12];
+	//cell.nameLabel.numberOfLines = 2;
+    //cell.nameLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
+    cell.twitternameLabel.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"username"]];
+	//cell.twitternameLabel.font = [UIFont systemFontOfSize:10];
     
     NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_thumbnail"];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
@@ -276,7 +279,7 @@
 
     //_UserImage.image = [UIImage imageWithData:rawImage];
     
-    cell.imageView.image = [UIImage imageWithData:rawImage];
+    cell.thumbnailImageView.image = [UIImage imageWithData:rawImage];
        //cell.imageView.image = [UIImage imageNamed:@"searchcircle.png"];
     
     return cell;

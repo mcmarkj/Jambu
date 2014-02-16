@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		413326EB18B110D60070517B /* CustomFriendCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413326EA18B110D60070517B /* CustomFriendCells.xib */; };
+		413326F118B115F50070517B /* CustomFriendCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 413326F018B115F50070517B /* CustomFriendCells.m */; };
 		4142F27C189D993E002ECA92 /* AddFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F27A189D993E002ECA92 /* AddFriend.png */; };
 		4142F27D189D993E002ECA92 /* AddFriend@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F27B189D993E002ECA92 /* AddFriend@2.png */; };
 		4142F2A8189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2A7189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m */; };
@@ -150,6 +152,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		413326EA18B110D60070517B /* CustomFriendCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomFriendCells.xib; sourceTree = "<group>"; };
+		413326EF18B115F50070517B /* CustomFriendCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFriendCells.h; sourceTree = "<group>"; };
+		413326F018B115F50070517B /* CustomFriendCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFriendCells.m; sourceTree = "<group>"; };
 		4142F27A189D993E002ECA92 /* AddFriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddFriend.png; sourceTree = "<group>"; };
 		4142F27B189D993E002ECA92 /* AddFriend@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AddFriend@2.png"; sourceTree = "<group>"; };
 		4142F2A6189E8904002ECA92 /* CONINVITEFriendsSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsSearchViewController.h; sourceTree = "<group>"; };
@@ -415,6 +420,9 @@
 				414AA828188AE743001B3301 /* CONINVITEAppDelegate.h */,
 				414AA829188AE743001B3301 /* CONINVITEAppDelegate.m */,
 				414AA82B188AE743001B3301 /* Main.storyboard */,
+				413326EF18B115F50070517B /* CustomFriendCells.h */,
+				413326F018B115F50070517B /* CustomFriendCells.m */,
+				413326EA18B110D60070517B /* CustomFriendCells.xib */,
 				4144D37C18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.h */,
 				4144D37D18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.m */,
 				4142F2A6189E8904002ECA92 /* CONINVITEFriendsSearchViewController.h */,
@@ -714,6 +722,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				413326EB18B110D60070517B /* CustomFriendCells.xib in Resources */,
 				41F59809188C602B00DAF315 /* overlay.png in Resources */,
 				414AA8AC188B0274001B3301 /* Roboto-Regular.ttf in Resources */,
 				416B25B118A4E0C7000587E2 /* addedButton@2.png in Resources */,
@@ -836,6 +845,7 @@
 				41F27C201893EED800E64CC1 /* UICountingLabel.m in Sources */,
 				41991E7018B0220500FFCB95 /* Reachability.m in Sources */,
 				418AAE3E1892EF2D001D8FE1 /* LoginViewController.m in Sources */,
+				413326F118B115F50070517B /* CustomFriendCells.m in Sources */,
 				41F27C1D1893EA4D00E64CC1 /* LoginViewTwoViewController.m in Sources */,
 				414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */,
 				4189935E189066090089AC7E /* JSONAPI.m in Sources */,
