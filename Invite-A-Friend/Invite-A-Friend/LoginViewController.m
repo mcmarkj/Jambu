@@ -254,7 +254,11 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
     NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
     
-    NSString *DBNAME = [json valueForKey:@"full_name"];
+    NSArray *userInfo = [json valueForKey:@"user"];
+    
+
+    
+    NSString *DBNAME = [userInfo valueForKey:@"full_name"];
     
     //Do some checks to make sure the returned values are correct.
     
