@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CONINVITESecondViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *eventHour;
+@property (strong, nonatomic) IBOutlet UILabel *eventMinute;
 
 @end

@@ -9,6 +9,10 @@
 #import "CONINVITESecondViewController.h"
 
 @interface CONINVITESecondViewController ()
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *hoursLabel;
+@property (strong, nonatomic) IBOutlet UILabel *minsLabel;
+@property (strong, nonatomic) IBOutlet UIScrollView *Scroller;
 
 @end
 
@@ -16,8 +20,41 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+
+    
+
+    self.Scroller.contentSize =CGSizeMake(324, 464);
+        [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    _titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:28];
+    _hoursLabel.font = [UIFont fontWithName:@"Roboto-Light" size:18];
+    _minsLabel.font = [UIFont fontWithName:@"Roboto-Light" size:18];
+    NSString *eventHour = @"0";
+    NSString *eventMin = @"0";
+    
+    if([eventHour isEqual:@"0"]) {
+      //we're not doing anything as we want it to stay as 0
+                    _hoursLabel.text = @"Hour";
+    } else {
+        if([eventHour isEqual:@"1"]){
+            _hoursLabel.text = @"Hour";
+        }
+        _eventHour.text = eventHour;
+        _eventHour.textColor = [UIColor whiteColor];
+    }
+    
+    if([eventMin isEqual:@"0"]) {
+                    _minsLabel.text = @"Minute";
+     //we're not doing aything as we want it to stay as 0
+    } else {
+        if([eventMin isEqual:@"1"]){
+            _minsLabel.text = @"Minute";
+        }
+
+        _eventMinute.textColor = [UIColor whiteColor];
+        _eventMinute.text = eventMin;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -58,6 +58,8 @@
 		416B25B418A4E7F5000587E2 /* worker-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 416B25B318A4E7F5000587E2 /* worker-512.png */; };
 		416B25B618A69C4F000587E2 /* twitter_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 416B25B518A69C4F000587E2 /* twitter_login.png */; };
 		416B25B818A69E62000587E2 /* backgroundlogin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 416B25B718A69E62000587E2 /* backgroundlogin.jpg */; };
+		4173460D18B8F7B700F84676 /* myinvites.png in Resources */ = {isa = PBXBuildFile; fileRef = 4173460B18B8F7B700F84676 /* myinvites.png */; };
+		4173460E18B8F7B700F84676 /* myinvites@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4173460C18B8F7B700F84676 /* myinvites@2.png */; };
 		41899359189066090089AC7E /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899342189066090089AC7E /* JSONModel.m */; };
 		4189935A189066090089AC7E /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899344189066090089AC7E /* JSONModelArray.m */; };
 		4189935B189066090089AC7E /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899346189066090089AC7E /* JSONModelClassProperty.m */; };
@@ -222,6 +224,8 @@
 		416B25B318A4E7F5000587E2 /* worker-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "worker-512.png"; sourceTree = "<group>"; };
 		416B25B518A69C4F000587E2 /* twitter_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_login.png; sourceTree = "<group>"; };
 		416B25B718A69E62000587E2 /* backgroundlogin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundlogin.jpg; sourceTree = "<group>"; };
+		4173460B18B8F7B700F84676 /* myinvites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myinvites.png; sourceTree = "<group>"; };
+		4173460C18B8F7B700F84676 /* myinvites@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myinvites@2.png"; sourceTree = "<group>"; };
 		41899341189066090089AC7E /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
 		41899342189066090089AC7E /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
 		41899343189066090089AC7E /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
@@ -427,6 +431,8 @@
 				4144D37D18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.m */,
 				4142F2A6189E8904002ECA92 /* CONINVITEFriendsSearchViewController.h */,
 				4142F2A7189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m */,
+				4173460B18B8F7B700F84676 /* myinvites.png */,
+				4173460C18B8F7B700F84676 /* myinvites@2.png */,
 				4142F2A9189E8C04002ECA92 /* SearchTableViewController.h */,
 				4142F2AA189E8C04002ECA92 /* SearchTableViewController.m */,
 				41F3227718A008D7001E07EB /* CONINVITESListFriendsViewController.h */,
@@ -738,7 +744,9 @@
 				41F3227F18A1A343001E07EB /* searchcircle.png in Resources */,
 				414AA8B2188B0274001B3301 /* RobotoCondensed-Light.ttf in Resources */,
 				414AA8AB188B0274001B3301 /* Roboto-MediumItalic.ttf in Resources */,
+				4173460E18B8F7B700F84676 /* myinvites@2.png in Resources */,
 				41F597F7188C602B00DAF315 /* facebooksync.png in Resources */,
+				4173460D18B8F7B700F84676 /* myinvites.png in Resources */,
 				416B25B218A4E0C7000587E2 /* addedButton.png in Resources */,
 				414AA835188AE743001B3301 /* Images.xcassets in Resources */,
 				41F5980A188C602B00DAF315 /* topbanner.png in Resources */,
