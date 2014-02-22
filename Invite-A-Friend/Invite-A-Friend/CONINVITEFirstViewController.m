@@ -15,6 +15,11 @@
 @interface CONINVITEFirstViewController () {
         UIView *setNeedsDisplay;
 }
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *imageLoader;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *eventsLoader;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *eventsLoader2;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *eventsLoader3;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *eventsLoader4;
 @property (strong, nonatomic) IBOutlet UILabel *overlaylabel;
 @property (strong, nonatomic) IBOutlet UILabel *overlaynexteventlabel;
 @property (strong, nonatomic) IBOutlet UILabel *overlayeventdatelabel;
@@ -414,6 +419,11 @@
 {
         [self checkfornetwork];
     [super viewDidLoad];
+  [self.eventsLoader startAnimating];
+      [self.eventsLoader2 startAnimating];
+      [self.eventsLoader3 startAnimating];
+      [self.eventsLoader4 startAnimating];
+      [self.imageLoader startAnimating];
         NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     
         if ([[userdefaults objectForKey:@"NetConn"]  isEqual: @"True"]) {
@@ -463,6 +473,18 @@
 
 -(void) fadein
 {
+    [self.eventsLoader stopAnimating];
+    [self.eventsLoader2 stopAnimating];
+    [self.eventsLoader3 stopAnimating];
+    [self.eventsLoader4 stopAnimating];
+        [self.imageLoader stopAnimating];
+    
+    _eventsLoader.hidden = YES;
+    _eventsLoader2.hidden = YES;
+    _eventsLoader3.hidden = YES;
+    _eventsLoader4.hidden = YES;
+    _imageLoader.hidden = YES;
+    
     _overlaynexteventlabel.alpha = 0;
     _overlaylabel.alpha = 0;
     _UserIndicatorButton.alpha=0;

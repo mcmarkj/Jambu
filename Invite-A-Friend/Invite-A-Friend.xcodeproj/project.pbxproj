@@ -60,6 +60,7 @@
 		416B25B818A69E62000587E2 /* backgroundlogin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 416B25B718A69E62000587E2 /* backgroundlogin.jpg */; };
 		4173460D18B8F7B700F84676 /* myinvites.png in Resources */ = {isa = PBXBuildFile; fileRef = 4173460B18B8F7B700F84676 /* myinvites.png */; };
 		4173460E18B8F7B700F84676 /* myinvites@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4173460C18B8F7B700F84676 /* myinvites@2.png */; };
+		4173461018B91C1500F84676 /* fb-profile.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4173460F18B91C1500F84676 /* fb-profile.gif */; };
 		41899359189066090089AC7E /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899342189066090089AC7E /* JSONModel.m */; };
 		4189935A189066090089AC7E /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899344189066090089AC7E /* JSONModelArray.m */; };
 		4189935B189066090089AC7E /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899346189066090089AC7E /* JSONModelClassProperty.m */; };
@@ -226,6 +227,7 @@
 		416B25B718A69E62000587E2 /* backgroundlogin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundlogin.jpg; sourceTree = "<group>"; };
 		4173460B18B8F7B700F84676 /* myinvites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myinvites.png; sourceTree = "<group>"; };
 		4173460C18B8F7B700F84676 /* myinvites@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myinvites@2.png"; sourceTree = "<group>"; };
+		4173460F18B91C1500F84676 /* fb-profile.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "fb-profile.gif"; sourceTree = "<group>"; };
 		41899341189066090089AC7E /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
 		41899342189066090089AC7E /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
 		41899343189066090089AC7E /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 				41F3227718A008D7001E07EB /* CONINVITESListFriendsViewController.h */,
 				41F3227818A008D8001E07EB /* CONINVITESListFriendsViewController.m */,
 				414AA82E188AE743001B3301 /* CONINVITEFirstViewController.h */,
+				4173460F18B91C1500F84676 /* fb-profile.gif */,
 				419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */,
 				4142F2C0189E9ABC002ECA92 /* CONINVITEViewFriendViewController.h */,
 				4142F2C1189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m */,
@@ -733,6 +736,7 @@
 				414AA8AC188B0274001B3301 /* Roboto-Regular.ttf in Resources */,
 				416B25B118A4E0C7000587E2 /* addedButton@2.png in Resources */,
 				41F5980B188C602B00DAF315 /* twittersync.png in Resources */,
+				4173461018B91C1500F84676 /* fb-profile.gif in Resources */,
 				41E8FB72189D88FC000D43F4 /* EditProfile.png in Resources */,
 				41F27C101893E25000E64CC1 /* newhere.png in Resources */,
 				41E8FB73189D88FC000D43F4 /* EditProfile@2.png in Resources */,

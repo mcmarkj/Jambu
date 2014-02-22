@@ -43,7 +43,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="worker-512.png" translatesAutoresizingMaskIntoConstraints="NO" id="LmV-Jc-iio">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fb-profile.gif" translatesAutoresizingMaskIntoConstraints="NO" id="LmV-Jc-iio">
                                 <rect key="frame" x="20" y="132" width="68" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -121,7 +121,7 @@
                                 <color key="textColor" red="0.41568630933761597" green="0.41568630933761597" blue="0.41568630933761597" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="An5-UF-K2i">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="An5-UF-K2i">
                                 <rect key="frame" x="0.0" y="258" width="81" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -176,6 +176,27 @@
                                     <action selector="showFriends:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="9Tj-6V-9Lv"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VfJ-WK-d5F">
+                                <rect key="frame" x="30" y="261" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cl3-eP-3uG">
+                                <rect key="frame" x="113" y="261" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="S1J-Ji-Fq8">
+                                <rect key="frame" x="194" y="264" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="o4o-Fg-RCm">
+                                <rect key="frame" x="273" y="261" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7GK-21-CW7">
+                                <rect key="frame" x="36" y="145" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.47058826684951782" green="0.47058826684951782" blue="0.47058826684951782" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -194,6 +215,11 @@
                         <outlet property="UserNameLabel" destination="BSe-nV-uvv" id="nV1-ms-EHK"/>
                         <outlet property="UserRewardsLabel" destination="0U1-fw-Wbl" id="Le7-JJ-RGv"/>
                         <outlet property="UserTNameLabel" destination="EUd-a8-Xam" id="yVa-GU-7eP"/>
+                        <outlet property="eventsLoader" destination="cl3-eP-3uG" id="a41-k8-Qax"/>
+                        <outlet property="eventsLoader2" destination="VfJ-WK-d5F" id="qaI-sx-MvV"/>
+                        <outlet property="eventsLoader3" destination="S1J-Ji-Fq8" id="Mgr-qI-zua"/>
+                        <outlet property="eventsLoader4" destination="o4o-Fg-RCm" id="SzD-N1-Ee5"/>
+                        <outlet property="imageLoader" destination="7GK-21-CW7" id="X0t-Jq-exK"/>
                         <outlet property="inviteindicator" destination="a5F-BJ-oBU" id="QdW-Bt-iDy"/>
                         <outlet property="inviteindicatorback" destination="uAv-f4-yn9" id="LzK-TL-Iw5"/>
                         <outlet property="overlayeventattendeeslabel" destination="rVA-yK-KNS" id="c4y-Rc-LnE"/>
@@ -1215,6 +1241,7 @@
         <image name="backgroundlogin.jpg" width="449" height="708"/>
         <image name="blue-profile.png" width="220" height="227"/>
         <image name="close@2.png" width="41" height="40"/>
+        <image name="fb-profile.gif" width="58" height="50"/>
         <image name="first" width="30" height="30"/>
         <image name="friendback.png" width="320" height="61"/>
         <image name="friendshead.png" width="320" height="66"/>
@@ -1230,7 +1257,6 @@
         <image name="spinner.png" width="142" height="133"/>
         <image name="topbanner.png" width="320" height="64"/>
         <image name="twitter_login.png" width="249" height="49"/>
-        <image name="worker-512.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
