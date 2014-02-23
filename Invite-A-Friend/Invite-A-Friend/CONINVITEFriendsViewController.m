@@ -10,7 +10,7 @@
 #import "MBProgressHUD.h"
 #import <QuartzCore/QuartzCore.h>
 #import "JSON.h"
-#include "FriendFeed.h"
+#include "FriendFeedCell.h"
 
 @interface CONINVITEFriendsViewController ()
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *LoadingIndicator;
@@ -204,12 +204,12 @@
 //Configuring cell design upon request from table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"FriendFeed";
+    static NSString *simpleTableIdentifier = @"FriendFeedCell";
     
-    CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    SimpleTableCell *cell = (SimpleTableCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FriendFeed" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FriendFeedCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		413326EB18B110D60070517B /* CustomFriendCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413326EA18B110D60070517B /* CustomFriendCells.xib */; };
 		413326F118B115F50070517B /* CustomFriendCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 413326F018B115F50070517B /* CustomFriendCells.m */; };
 		4142F27C189D993E002ECA92 /* AddFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F27A189D993E002ECA92 /* AddFriend.png */; };
 		4142F27D189D993E002ECA92 /* AddFriend@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F27B189D993E002ECA92 /* AddFriend@2.png */; };
@@ -80,8 +79,7 @@
 		41991E7018B0220500FFCB95 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 41991E6F18B0220500FFCB95 /* Reachability.m */; };
 		41991E7218B0222100FFCB95 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41991E7118B0222100FFCB95 /* SystemConfiguration.framework */; };
 		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		41D068D818BA648100F29CD0 /* FriendFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D068D618BA648100F29CD0 /* FriendFeed.m */; };
-		41D068D918BA648100F29CD0 /* FriendFeed.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D068D718BA648100F29CD0 /* FriendFeed.xib */; };
+		41D068D818BA648100F29CD0 /* FriendFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D068D618BA648100F29CD0 /* FriendFeedCell.m */; };
 		41E8FB41189D1005000D43F4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E8FB3B189D1005000D43F4 /* libTestFlight.a */; };
 		41E8FB42189D1005000D43F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 41E8FB3C189D1005000D43F4 /* README.md */; };
 		41E8FB43189D1005000D43F4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 41E8FB3D189D1005000D43F4 /* release_notes.md */; };
@@ -255,9 +253,9 @@
 		41991E7118B0222100FFCB95 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsViewController.h; sourceTree = "<group>"; };
 		419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEFriendsViewController.m; sourceTree = "<group>"; };
-		41D068D518BA648100F29CD0 /* FriendFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendFeed.h; sourceTree = "<group>"; };
-		41D068D618BA648100F29CD0 /* FriendFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendFeed.m; sourceTree = "<group>"; };
-		41D068D718BA648100F29CD0 /* FriendFeed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendFeed.xib; sourceTree = "<group>"; };
+		41D068D518BA648100F29CD0 /* FriendFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendFeedCell.h; sourceTree = "<group>"; };
+		41D068D618BA648100F29CD0 /* FriendFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendFeedCell.m; sourceTree = "<group>"; };
+		41D068D718BA648100F29CD0 /* FriendFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendFeedCell.xib; sourceTree = "<group>"; };
 		41E8FB3B189D1005000D43F4 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		41E8FB3C189D1005000D43F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		41E8FB3D189D1005000D43F4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -481,9 +479,9 @@
 			children = (
 				419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */,
 				419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */,
-				41D068D518BA648100F29CD0 /* FriendFeed.h */,
-				41D068D618BA648100F29CD0 /* FriendFeed.m */,
-				41D068D718BA648100F29CD0 /* FriendFeed.xib */,
+				41D068D518BA648100F29CD0 /* FriendFeedCell.h */,
+				41D068D618BA648100F29CD0 /* FriendFeedCell.m */,
+				41D068D718BA648100F29CD0 /* FriendFeedCell.xib */,
 			);
 			name = "Third View (profile)";
 			sourceTree = "<group>";
@@ -813,7 +811,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				413326EB18B110D60070517B /* CustomFriendCells.xib in Resources */,
 				41F59809188C602B00DAF315 /* overlay.png in Resources */,
 				414AA8AC188B0274001B3301 /* Roboto-Regular.ttf in Resources */,
 				416B25B118A4E0C7000587E2 /* addedButton@2.png in Resources */,
@@ -900,7 +897,6 @@
 				41F27C161893E3FD00E64CC1 /* twitterlogin.png in Resources */,
 				414AA8AD188B0274001B3301 /* Roboto-Thin.ttf in Resources */,
 				41E8FB49189D4A2A000D43F4 /* home@2.png in Resources */,
-				41D068D918BA648100F29CD0 /* FriendFeed.xib in Resources */,
 				414AA8B3188B0274001B3301 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				41F597E1188C602B00DAF315 /* Icon-40@2x.png in Resources */,
 				41F597DF188C602B00DAF315 /* SampleImage.jpg in Resources */,
@@ -925,7 +921,7 @@
 				41F3227918A008D8001E07EB /* CONINVITESListFriendsViewController.m in Sources */,
 				4189935B189066090089AC7E /* JSONModelClassProperty.m in Sources */,
 				4142F2BD189E8C26002ECA92 /* SBJsonBase.m in Sources */,
-				41D068D818BA648100F29CD0 /* FriendFeed.m in Sources */,
+				41D068D818BA648100F29CD0 /* FriendFeedCell.m in Sources */,
 				41899362189066090089AC7E /* JSONValueTransformer.m in Sources */,
 				4142F2BB189E8C26002ECA92 /* NSString+SBJSON.m in Sources */,
 				41F27C201893EED800E64CC1 /* UICountingLabel.m in Sources */,

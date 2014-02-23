@@ -1,14 +1,14 @@
 //
-//  CustomFriendCells.m
+//  FriendFeed.m
 //  Invite-A-Friend
 //
 //  Created by Mark McWhirter on 16/02/2014.
 //  Copyright (c) 2014 Concept96. All rights reserved.
 //
 
-#import "CustomFriendCells.h"
+#import "FriendFeedCell.h"
 
-@implementation CustomFriendCells
+@implementation FriendFeedCell
 @synthesize nameLabel = _nameLabel;
 @synthesize twitternameLabel = _prepTimeLabel;
 @synthesize thumbnailImageView = _thumbnailImageView;

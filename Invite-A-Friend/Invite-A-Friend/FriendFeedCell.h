@@ -1,5 +1,5 @@
 //
-//  CustomFriendCells.h
+//  FriendFeed.h
 //  Invite-A-Friend
 //
 //  Created by Mark McWhirter on 16/02/2014.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomFriendCells : UITableViewCell
+@interface FriendFeedCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *twitternameLabel;
