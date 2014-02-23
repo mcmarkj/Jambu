@@ -205,6 +205,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"FriendFeedCell";
+
     
     FriendFeedCell *cell = (FriendFeedCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
@@ -214,15 +215,25 @@
     }
 
     NSString *action = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"action"];
+        NSString *actionname = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"name"];
     NSString *outputAction = @"";
     NSString *atribute = [[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"];
     if([action isEqualToString:@"friend added"]) {
-        outputAction = [NSString stringWithFormat:@"%@ added %@ as a Friend", _UserName.text, atribute];
+        outputAction = [NSString stringWithFormat:@"%@ added %@ as a friend", _UserName.text, actionname];
+    } else if([action isEqualToString:@"user updated"]) {
+         outputAction = [NSString stringWithFormat:@"%@ Updated their %@", _UserName.text, atribute];
+    } else if([action isEqualToString:@"event created"]) {
+        outputAction = [NSString stringWithFormat:@"%@ created an event \"%@\"", _UserName.text, atribute];
+    } else if([action isEqualToString:@"event created"]) {
+        outputAction = [NSString stringWithFormat:@"%@ updated their event \"%@\"", _UserName.text, atribute];
     }
     
-    cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", _UserName.text, _UserTwitterName.text];
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", _UserName.text, @""];
 	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
-	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
+	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:15];
+    cell.twitterUserName.text = _UserTwitterName.text;
+    cell.twitterUserName.adjustsFontSizeToFitWidth = YES;
+	cell.twitterUserName.font = [UIFont fontWithName:@"Roboto-Light" size:10];
 	cell.nameLabel.numberOfLines = 2;
     cell.twitternameLabel.text = outputAction;
 	cell.twitternameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:10];
@@ -243,8 +254,9 @@
 
 
 - (CGFloat)tableView:(UITableView *)tabelView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 80.0f;
+	return 61;
 }
+
 
 /*
  // Override to support conditional editing of the table view.
@@ -338,6 +350,8 @@
     NSString *friendscount = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"friends"]];;
     [_UserFriendCount setTitle:friendscount forState:UIControlStateNormal];
 }
+
+
 
 - (IBAction)searchPress:(UIButton*)sender {
         [self  performSegueWithIdentifier:@"searchFriends" sender:self];

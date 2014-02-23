@@ -26,19 +26,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name, Last Name " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6i-iS-ida">
-                        <rect key="frame" x="83" y="10" width="181" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Last Name " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6i-iS-ida">
+                        <rect key="frame" x="84" y="6" width="141" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mP-76-7cb">
-                        <rect key="frame" x="83" y="33" width="250" height="21"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNb-bh-IjT">
+                        <rect key="frame" x="80" y="20" width="237" height="37"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyJ-L9-gkO">
+                        <rect key="frame" x="200" y="6" width="120" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,7 +53,8 @@
             <connections>
                 <outlet property="nameLabel" destination="S6i-iS-ida" id="ibo-JD-tbK"/>
                 <outlet property="thumbnailImageView" destination="wfC-xM-GaQ" id="00J-oY-pHT"/>
-                <outlet property="twitternameLabel" destination="8mP-76-7cb" id="FX8-MH-Kuf"/>
+                <outlet property="twitterUserName" destination="RyJ-L9-gkO" id="gpX-Oy-KJp"/>
+                <outlet property="twitternameLabel" destination="CNb-bh-IjT" id="Whj-zB-mX6"/>
             </connections>
         </tableViewCell>
     </objects>

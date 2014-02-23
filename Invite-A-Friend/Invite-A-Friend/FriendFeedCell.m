@@ -12,7 +12,7 @@
 @synthesize nameLabel = _nameLabel;
 @synthesize twitternameLabel = _prepTimeLabel;
 @synthesize thumbnailImageView = _thumbnailImageView;
-
+@synthesize twitterUserName = _twitterUserName;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

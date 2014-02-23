@@ -10,7 +10,9 @@
 
 @interface FriendFeedCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UITextView *twitternameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *twitternameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *twitterUserName;
+
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 @end
