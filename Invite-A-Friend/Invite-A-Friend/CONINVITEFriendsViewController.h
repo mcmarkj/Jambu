@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CONINVITEFriendsViewController : UIViewController
+@interface CONINVITEFriendsViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>{
+    NSArray *tweets;
+    UISearchBar *searchBar;
+    UITableView *tableV;
+    NSMutableData *responseData;
+    UIActivityIndicatorView *indicator;
+}
+
 @property (strong, nonatomic) IBOutlet UIImageView *profilecolourimage;
 
 @property (strong, nonatomic) IBOutlet UIImageView *UserImage;
@@ -17,6 +24,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *UserEventInvites;
 @property (strong, nonatomic) IBOutlet UIButton *UserFriendCount;
 @property (strong, nonatomic) IBOutlet UILabel *UserEventsAttended;
+@property (retain) NSArray *tweets;
+@property (retain) IBOutlet UISearchBar *searchBar;
+@property (retain) IBOutlet UITableView *tableV;
+@property (assign) NSMutableData *responseData;
 - (IBAction)searchPress:(id)sender;
 - (IBAction)editpress:(id)sender;
 - (IBAction)listfriends:(id)sender;

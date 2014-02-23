@@ -58,6 +58,7 @@
 		416B25B418A4E7F5000587E2 /* worker-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 416B25B318A4E7F5000587E2 /* worker-512.png */; };
 		416B25B618A69C4F000587E2 /* twitter_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 416B25B518A69C4F000587E2 /* twitter_login.png */; };
 		416B25B818A69E62000587E2 /* backgroundlogin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 416B25B718A69E62000587E2 /* backgroundlogin.jpg */; };
+		416C616D18BA2494009E53AB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 416C616C18BA2494009E53AB /* MBProgressHUD.m */; };
 		4173460D18B8F7B700F84676 /* myinvites.png in Resources */ = {isa = PBXBuildFile; fileRef = 4173460B18B8F7B700F84676 /* myinvites.png */; };
 		4173460E18B8F7B700F84676 /* myinvites@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4173460C18B8F7B700F84676 /* myinvites@2.png */; };
 		4173461018B91C1500F84676 /* fb-profile.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4173460F18B91C1500F84676 /* fb-profile.gif */; };
@@ -78,7 +79,9 @@
 		418AAE3E1892EF2D001D8FE1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418AAE3D1892EF2D001D8FE1 /* LoginViewController.m */; };
 		41991E7018B0220500FFCB95 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 41991E6F18B0220500FFCB95 /* Reachability.m */; };
 		41991E7218B0222100FFCB95 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41991E7118B0222100FFCB95 /* SystemConfiguration.framework */; };
-		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; };
+		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		41D068D818BA648100F29CD0 /* FriendFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D068D618BA648100F29CD0 /* FriendFeed.m */; };
+		41D068D918BA648100F29CD0 /* FriendFeed.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D068D718BA648100F29CD0 /* FriendFeed.xib */; };
 		41E8FB41189D1005000D43F4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E8FB3B189D1005000D43F4 /* libTestFlight.a */; };
 		41E8FB42189D1005000D43F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 41E8FB3C189D1005000D43F4 /* README.md */; };
 		41E8FB43189D1005000D43F4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 41E8FB3D189D1005000D43F4 /* release_notes.md */; };
@@ -215,6 +218,8 @@
 		416B25B318A4E7F5000587E2 /* worker-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "worker-512.png"; sourceTree = "<group>"; };
 		416B25B518A69C4F000587E2 /* twitter_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_login.png; sourceTree = "<group>"; };
 		416B25B718A69E62000587E2 /* backgroundlogin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundlogin.jpg; sourceTree = "<group>"; };
+		416C616B18BA2494009E53AB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		416C616C18BA2494009E53AB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		4173460B18B8F7B700F84676 /* myinvites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myinvites.png; sourceTree = "<group>"; };
 		4173460C18B8F7B700F84676 /* myinvites@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myinvites@2.png"; sourceTree = "<group>"; };
 		4173460F18B91C1500F84676 /* fb-profile.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "fb-profile.gif"; sourceTree = "<group>"; };
@@ -250,6 +255,9 @@
 		41991E7118B0222100FFCB95 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsViewController.h; sourceTree = "<group>"; };
 		419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEFriendsViewController.m; sourceTree = "<group>"; };
+		41D068D518BA648100F29CD0 /* FriendFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendFeed.h; sourceTree = "<group>"; };
+		41D068D618BA648100F29CD0 /* FriendFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendFeed.m; sourceTree = "<group>"; };
+		41D068D718BA648100F29CD0 /* FriendFeed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendFeed.xib; sourceTree = "<group>"; };
 		41E8FB3B189D1005000D43F4 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		41E8FB3C189D1005000D43F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		41E8FB3D189D1005000D43F4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -419,6 +427,8 @@
 			children = (
 				41F27C1E1893EED800E64CC1 /* UICountingLabel.h */,
 				41F27C1F1893EED800E64CC1 /* UICountingLabel.m */,
+				416C616B18BA2494009E53AB /* MBProgressHUD.h */,
+				416C616C18BA2494009E53AB /* MBProgressHUD.m */,
 				41991E6E18B0220500FFCB95 /* Reachability.h */,
 				41991E6F18B0220500FFCB95 /* Reachability.m */,
 				416C616418BA18FA009E53AB /* Images */,
@@ -471,6 +481,9 @@
 			children = (
 				419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */,
 				419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */,
+				41D068D518BA648100F29CD0 /* FriendFeed.h */,
+				41D068D618BA648100F29CD0 /* FriendFeed.m */,
+				41D068D718BA648100F29CD0 /* FriendFeed.xib */,
 			);
 			name = "Third View (profile)";
 			sourceTree = "<group>";
@@ -887,6 +900,7 @@
 				41F27C161893E3FD00E64CC1 /* twitterlogin.png in Resources */,
 				414AA8AD188B0274001B3301 /* Roboto-Thin.ttf in Resources */,
 				41E8FB49189D4A2A000D43F4 /* home@2.png in Resources */,
+				41D068D918BA648100F29CD0 /* FriendFeed.xib in Resources */,
 				414AA8B3188B0274001B3301 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				41F597E1188C602B00DAF315 /* Icon-40@2x.png in Resources */,
 				41F597DF188C602B00DAF315 /* SampleImage.jpg in Resources */,
@@ -911,6 +925,7 @@
 				41F3227918A008D8001E07EB /* CONINVITESListFriendsViewController.m in Sources */,
 				4189935B189066090089AC7E /* JSONModelClassProperty.m in Sources */,
 				4142F2BD189E8C26002ECA92 /* SBJsonBase.m in Sources */,
+				41D068D818BA648100F29CD0 /* FriendFeed.m in Sources */,
 				41899362189066090089AC7E /* JSONValueTransformer.m in Sources */,
 				4142F2BB189E8C26002ECA92 /* NSString+SBJSON.m in Sources */,
 				41F27C201893EED800E64CC1 /* UICountingLabel.m in Sources */,
@@ -919,6 +934,7 @@
 				413326F118B115F50070517B /* CustomFriendCells.m in Sources */,
 				41F27C1D1893EA4D00E64CC1 /* LoginViewTwoViewController.m in Sources */,
 				414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */,
+				416C616D18BA2494009E53AB /* MBProgressHUD.m in Sources */,
 				4189935E189066090089AC7E /* JSONAPI.m in Sources */,
 				4144D37E18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.m in Sources */,
 				4142F2C2189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m in Sources */,
