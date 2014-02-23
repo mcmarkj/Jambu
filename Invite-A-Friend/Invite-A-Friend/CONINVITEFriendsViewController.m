@@ -9,6 +9,7 @@
 #import "CONINVITEFriendsViewController.h"
 
 @interface CONINVITEFriendsViewController ()
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *LoadingIndicator;
 
 @end
 
@@ -25,6 +26,7 @@
 
 - (void)viewDidLoad
 {
+        [self.LoadingIndicator startAnimating];
     //setfonts
     _UserEventsAttended.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     _UserFriendCount.titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
@@ -92,7 +94,8 @@
 
     
     _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userInfo valueForKey:@"image_url"]]]];
-
+ [self.LoadingIndicator stopAnimating];
+    _LoadingIndicator.hidden = YES;
 
 }
 

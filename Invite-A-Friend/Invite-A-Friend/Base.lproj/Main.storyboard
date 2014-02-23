@@ -875,7 +875,7 @@
                                     <action selector="listfriends:" destination="K2D-YF-ez9" eventType="touchUpInside" id="7Yg-Mg-u0E"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GPQ-zK-Yed">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GPQ-zK-Yed">
                                 <rect key="frame" x="143" y="119" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
@@ -886,6 +886,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="LoadingIndicator" destination="GPQ-zK-Yed" id="eM2-T5-Shw"/>
                         <outlet property="UserEventInvites" destination="c7C-g6-9B6" id="nFY-Jm-VH8"/>
                         <outlet property="UserEventsAttended" destination="ifb-BP-7Qp" id="OPs-p9-wII"/>
                         <outlet property="UserFriendCount" destination="GNk-ct-LOt" id="VhK-1u-egw"/>
@@ -1269,10 +1270,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9UP-zD-xGT"/>
-        <segue reference="M3E-Y3-Wu6"/>
-        <segue reference="PwJ-sI-xxm"/>
-        <segue reference="slv-3R-j6T"/>
         <segue reference="Ojr-Ml-8dI"/>
+        <segue reference="eR1-s8-gg5"/>
+        <segue reference="5ds-UG-5L4"/>
+        <segue reference="M3E-Y3-Wu6"/>
+        <segue reference="9UP-zD-xGT"/>
     </inferredMetricsTieBreakers>
 </document>
