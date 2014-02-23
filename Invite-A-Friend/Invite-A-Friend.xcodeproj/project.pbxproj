@@ -83,6 +83,7 @@
 		41D068DD18BA6BFE00F29CD0 /* FriendFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D068D718BA648100F29CD0 /* FriendFeedCell.xib */; };
 		41D068E018BA6E4200F29CD0 /* cellback.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D068DE18BA6E4200F29CD0 /* cellback.png */; };
 		41D068E118BA6E4200F29CD0 /* cellback@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D068DF18BA6E4200F29CD0 /* cellback@2.png */; };
+		41D068E218BAA59800F29CD0 /* CustomFriendCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413326EA18B110D60070517B /* CustomFriendCells.xib */; };
 		41E8FB41189D1005000D43F4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E8FB3B189D1005000D43F4 /* libTestFlight.a */; };
 		41E8FB42189D1005000D43F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 41E8FB3C189D1005000D43F4 /* README.md */; };
 		41E8FB43189D1005000D43F4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 41E8FB3D189D1005000D43F4 /* release_notes.md */; };
@@ -818,6 +819,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D068E218BAA59800F29CD0 /* CustomFriendCells.xib in Resources */,
 				41D068DD18BA6BFE00F29CD0 /* FriendFeedCell.xib in Resources */,
 				41F59809188C602B00DAF315 /* overlay.png in Resources */,
 				414AA8AC188B0274001B3301 /* Roboto-Regular.ttf in Resources */,
