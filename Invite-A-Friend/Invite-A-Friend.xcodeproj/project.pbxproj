@@ -80,6 +80,9 @@
 		41991E7218B0222100FFCB95 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41991E7118B0222100FFCB95 /* SystemConfiguration.framework */; };
 		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		41D068D818BA648100F29CD0 /* FriendFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D068D618BA648100F29CD0 /* FriendFeedCell.m */; };
+		41D068DD18BA6BFE00F29CD0 /* FriendFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D068D718BA648100F29CD0 /* FriendFeedCell.xib */; };
+		41D068E018BA6E4200F29CD0 /* cellback.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D068DE18BA6E4200F29CD0 /* cellback.png */; };
+		41D068E118BA6E4200F29CD0 /* cellback@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D068DF18BA6E4200F29CD0 /* cellback@2.png */; };
 		41E8FB41189D1005000D43F4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E8FB3B189D1005000D43F4 /* libTestFlight.a */; };
 		41E8FB42189D1005000D43F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 41E8FB3C189D1005000D43F4 /* README.md */; };
 		41E8FB43189D1005000D43F4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 41E8FB3D189D1005000D43F4 /* release_notes.md */; };
@@ -256,6 +259,8 @@
 		41D068D518BA648100F29CD0 /* FriendFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendFeedCell.h; sourceTree = "<group>"; };
 		41D068D618BA648100F29CD0 /* FriendFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendFeedCell.m; sourceTree = "<group>"; };
 		41D068D718BA648100F29CD0 /* FriendFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendFeedCell.xib; sourceTree = "<group>"; };
+		41D068DE18BA6E4200F29CD0 /* cellback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellback.png; sourceTree = "<group>"; };
+		41D068DF18BA6E4200F29CD0 /* cellback@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellback@2.png"; sourceTree = "<group>"; };
 		41E8FB3B189D1005000D43F4 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		41E8FB3C189D1005000D43F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		41E8FB3D189D1005000D43F4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -604,6 +609,8 @@
 		416C616818BA1A21009E53AB /* Backgrounds etc */ = {
 			isa = PBXGroup;
 			children = (
+				41D068DE18BA6E4200F29CD0 /* cellback.png */,
+				41D068DF18BA6E4200F29CD0 /* cellback@2.png */,
 				4173460F18B91C1500F84676 /* fb-profile.gif */,
 				4173460B18B8F7B700F84676 /* myinvites.png */,
 				4173460C18B8F7B700F84676 /* myinvites@2.png */,
@@ -811,6 +818,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D068DD18BA6BFE00F29CD0 /* FriendFeedCell.xib in Resources */,
 				41F59809188C602B00DAF315 /* overlay.png in Resources */,
 				414AA8AC188B0274001B3301 /* Roboto-Regular.ttf in Resources */,
 				416B25B118A4E0C7000587E2 /* addedButton@2.png in Resources */,
@@ -834,6 +842,7 @@
 				41F5980A188C602B00DAF315 /* topbanner.png in Resources */,
 				414AA8AA188B0274001B3301 /* Roboto-Medium.ttf in Resources */,
 				41F27C151893E3FD00E64CC1 /* facebooklogin.png in Resources */,
+				41D068E018BA6E4200F29CD0 /* cellback.png in Resources */,
 				41F59808188C602B00DAF315 /* menuicon.png in Resources */,
 				41F27C121893E31200E64CC1 /* loginprogress.png in Resources */,
 				414AA8A8188B0274001B3301 /* Roboto-Light.ttf in Resources */,
@@ -877,6 +886,7 @@
 				4142F27C189D993E002ECA92 /* AddFriend.png in Resources */,
 				41F597E3188C602B00DAF315 /* Icon-60@2x.png in Resources */,
 				41F597EE188C602B00DAF315 /* iTunesArtwork.png in Resources */,
+				41D068E118BA6E4200F29CD0 /* cellback@2.png in Resources */,
 				41E8FB6E189D8314000D43F4 /* purple@2.png in Resources */,
 				414AA8A3188B0274001B3301 /* Roboto-Black.ttf in Resources */,
 				41E8FB65189D7FA5000D43F4 /* search.png in Resources */,

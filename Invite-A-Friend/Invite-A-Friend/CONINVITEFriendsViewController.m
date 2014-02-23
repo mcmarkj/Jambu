@@ -206,7 +206,7 @@
 {
     static NSString *simpleTableIdentifier = @"FriendFeedCell";
     
-    SimpleTableCell *cell = (SimpleTableCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    FriendFeedCell *cell = (FriendFeedCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FriendFeedCell" owner:self options:nil];
@@ -220,12 +220,14 @@
         outputAction = [NSString stringWithFormat:@"%@ added %@ as a Friend", _UserName.text, atribute];
     }
     
-    cell.nameLabel.text = _UserName.text;
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", _UserName.text, _UserTwitterName.text];
 	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
 	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
 	cell.nameLabel.numberOfLines = 2;
     cell.twitternameLabel.text = outputAction;
 	cell.twitternameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:10];
+    cell.thumbnailImageView.image = _UserImage.image;
+    
     
     /*NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_thumbnail"];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
