@@ -831,6 +831,7 @@
                         <segue destination="cOO-aC-mHq" kind="modal" identifier="searchFriends" id="RqU-fW-hYd"/>
                         <segue destination="Igf-oW-Ztn" kind="modal" identifier="showFriends" id="5ds-UG-5L4"/>
                         <segue destination="Pkv-4c-iiK" kind="modal" identifier="editprofile" id="eR1-s8-gg5"/>
+                        <segue destination="XVJ-lt-9MX" kind="modal" identifier="feedFriend" id="H4t-LS-p5U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q7O-eu-Ocx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1145,7 +1146,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1935" y="703"/>
+            <point key="canvasLocation" x="1915" y="239"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -1204,9 +1205,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="H4t-LS-p5U"/>
         <segue reference="5ds-UG-5L4"/>
         <segue reference="eR1-s8-gg5"/>
-        <segue reference="HyW-k8-GWO"/>
         <segue reference="M3E-Y3-Wu6"/>
         <segue reference="9UP-zD-xGT"/>
     </inferredMetricsTieBreakers>
