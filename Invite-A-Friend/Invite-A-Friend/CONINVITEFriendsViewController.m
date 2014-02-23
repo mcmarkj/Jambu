@@ -308,7 +308,7 @@
 {
     // Pass the selected object to the new view controller.
     NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"]];
-    NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
+    NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:UID forKey:@"Con96FID"];
     [defaults setObject:AID forKey:@"Con96FAID"];

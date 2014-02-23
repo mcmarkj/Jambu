@@ -285,6 +285,9 @@
     
     NSString *profilecolour = [userInfo valueForKey:@"colour"];
     
+    NSString *friendID = [userInfo valueForKey:@"id"];
+    [defaults setObject:friendID forKey:@"Con96FAID"];
+    [defaults synchronize];
     
     if ([profilecolour  isEqual: @"red"]) {
         _profilecolourimage.image = [UIImage imageNamed:@"red-profile@2.png"];
