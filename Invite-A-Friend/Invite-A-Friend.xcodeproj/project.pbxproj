@@ -1049,7 +1049,7 @@
 				INFOPLIST_FILE = "Invite-A-Friend/Invite-A-Friend-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend/Invite-A-Friend/Resources/TestFlightSDK2.2.1",
+					"./Invite-A-Friend/Resources/TestFlightSDK2.2.1/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1073,7 +1073,7 @@
 				INFOPLIST_FILE = "Invite-A-Friend/Invite-A-Friend-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend/Invite-A-Friend/Resources/TestFlightSDK2.2.1",
+					"./Invite-A-Friend/Resources/TestFlightSDK2.2.1/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
