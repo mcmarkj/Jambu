@@ -397,8 +397,8 @@
                                 <rect key="frame" x="-109" y="-7" width="449" height="708"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-3u-odt">
-                                <rect key="frame" x="0.0" y="451" width="320" height="97"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-3u-odt">
+                                <rect key="frame" x="34" y="472" width="249" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="twitter_login.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -426,6 +426,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.47058826684951782" green="0.47058826684951782" blue="0.47058826684951782" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
+                            <constraint firstItem="i0i-3u-odt" firstAttribute="leading" secondItem="S1O-Xf-QeI" secondAttribute="leading" constant="34" id="2lx-6r-Xc6"/>
                             <constraint firstItem="mdQ-ed-5yZ" firstAttribute="top" secondItem="i0i-3u-odt" secondAttribute="bottom" constant="47" id="Yz7-bR-4Xn"/>
                         </constraints>
                     </view>
@@ -874,6 +875,10 @@
                                     <action selector="listfriends:" destination="K2D-YF-ez9" eventType="touchUpInside" id="7Yg-Mg-u0E"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GPQ-zK-Yed">
+                                <rect key="frame" x="143" y="119" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.47058826684951782" green="0.47058826684951782" blue="0.47058826684951782" alpha="1" colorSpace="deviceRGB"/>
                     </view>

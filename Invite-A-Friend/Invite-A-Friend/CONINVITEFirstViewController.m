@@ -113,8 +113,7 @@
                               options:NSJSONReadingAllowFragments
                               error:&error];
 
-        NSString *currentName = _UserNameLabel.text;
-        NSString *name = [json objectForKey:@"name"];
+
         NSString *prof_img = [json objectForKey:@"profile_image_url"];
         
         
@@ -353,10 +352,9 @@
             [frequest setHTTPMethod:@"GET"];
             [frequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
             
-            NSError *error;
-            NSURLResponse *fresponse;
-            NSData *fjsondata = [NSURLConnection sendSynchronousRequest:frequest returningResponse:&fresponse error:&error];
-            NSArray *friendsjson = [NSJSONSerialization JSONObjectWithData:fjsondata options:NSJSONReadingAllowFragments error:nil];
+
+           
+            
             
             
             NSString *friendscount = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"friends"]];;
