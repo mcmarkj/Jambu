@@ -974,6 +974,7 @@
                         <outlet property="tableV" destination="Q63-Cu-H76" id="Rjo-iO-bfk"/>
                         <segue destination="Igf-oW-Ztn" kind="modal" identifier="showFriends" id="Bgi-A0-rbf"/>
                         <segue destination="8of-OM-Z7p" kind="modal" identifier="showFriendsFriends" id="LJc-TY-5MB"/>
+                        <segue destination="0fF-WR-sE6" kind="modal" identifier="feedFriend" id="71z-8Y-E18"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gw-BY-Q2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1094,6 +1095,147 @@
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
+        <!--View Friend View Controller - Item-->
+        <scene sceneID="Cz4-vF-gbo">
+            <objects>
+                <viewController id="0fF-WR-sE6" customClass="CONINVITEViewFriendViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sKy-n6-ljo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ger-NZ-xXe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cE7-V8-olJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hI8-80-J2B">
+                                <rect key="frame" x="0.0" y="236" width="320" height="332"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3pR-yi-fxw">
+                                        <rect key="frame" x="0.0" y="103" width="320" height="229"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="0fF-WR-sE6" id="AAF-IB-Ctt"/>
+                                            <outlet property="delegate" destination="0fF-WR-sE6" id="pXg-Ok-yXW"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nuC-8j-lvC">
+                                <rect key="frame" x="101" y="82" width="119" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green-profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="imC-WS-LO4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="339"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkd-Mg-PeJ">
+                                <rect key="frame" x="0.0" y="207" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIf-zc-zgw">
+                                <rect key="frame" x="0.0" y="230" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                <color key="textColor" red="0.25490197539999998" green="0.15686275059999999" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvW-kY-LIr">
+                                <rect key="frame" x="0.0" y="289" width="106" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="23"/>
+                                <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbe-gy-9WC">
+                                <rect key="frame" x="214" y="289" width="106" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="23"/>
+                                <color key="textColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User's Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkQ-W6-Guc">
+                                <rect key="frame" x="88" y="24" width="144" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fr5-DI-dhB">
+                                <rect key="frame" x="95" y="93" width="31" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="AddFriend@2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFriend:" destination="0fF-WR-sE6" eventType="touchUpInside" id="Va2-aB-TRR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Im1-aU-jVB">
+                                <rect key="frame" x="5" y="10" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="13" minY="13" maxX="13" maxY="13"/>
+                                <state key="normal" image="close@2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeView:" destination="0fF-WR-sE6" eventType="touchUpInside" id="ris-DJ-fNC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qW-67-4Nm">
+                                <rect key="frame" x="121" y="271" width="83" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFriends:" destination="0fF-WR-sE6" eventType="touchUpInside" id="n7v-tN-iYw"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DiL-2I-8AE">
+                                <rect key="frame" x="98" y="96" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".LucidaGrandeUI" family=".Lucida Grande UI" pointSize="11"/>
+                                <state key="normal" image="addedButton@2.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" image="Addedbutton.png"/>
+                                <connections>
+                                    <action selector="deleteFriend:" destination="0fF-WR-sE6" eventType="touchUpInside" id="QPe-Qy-6JY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47058826679999999" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="SWA-qY-v9c"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="UserEventInvites" destination="pvW-kY-LIr" id="MvX-34-fyf"/>
+                        <outlet property="UserEventsAttended" destination="Rbe-gy-9WC" id="G9n-uB-4QC"/>
+                        <outlet property="UserFriendCount" destination="1qW-67-4Nm" id="i13-J5-3QT"/>
+                        <outlet property="UserImage" destination="nuC-8j-lvC" id="rP2-ZA-ZMf"/>
+                        <outlet property="UserName" destination="nkd-Mg-PeJ" id="n1W-8P-cPL"/>
+                        <outlet property="UserTwitterName" destination="DIf-zc-zgw" id="sVD-Xd-EWy"/>
+                        <outlet property="addFriend" destination="fr5-DI-dhB" id="13c-Ua-zJj"/>
+                        <outlet property="addedButton" destination="DiL-2I-8AE" id="ySn-n4-2le"/>
+                        <outlet property="profilecolourimage" destination="imC-WS-LO4" id="B82-Yd-dxz"/>
+                        <outlet property="tableV" destination="3pR-yi-fxw" id="Ks9-37-LHJ"/>
+                        <segue destination="XVJ-lt-9MX" kind="modal" identifier="feedFriend" id="Y49-Y4-P4Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0nE-Vp-T43" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3093" y="1249"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AddFriend@2.png" width="62" height="62"/>
@@ -1128,8 +1270,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Y49-Y4-P4Y"/>
         <segue reference="Bgi-A0-rbf"/>
-        <segue reference="H4t-LS-p5U"/>
         <segue reference="eR1-s8-gg5"/>
         <segue reference="M3E-Y3-Wu6"/>
         <segue reference="9UP-zD-xGT"/>
