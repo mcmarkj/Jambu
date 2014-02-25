@@ -226,7 +226,10 @@
         outputAction = [NSString stringWithFormat:@"%@ created an event \"%@\"", _UserName.text, actionname];
     } else if([action isEqualToString:@"event created"]) {
         outputAction = [NSString stringWithFormat:@"%@ updated their event \"%@\"", _UserName.text, actionname];
+    } else if([action isEqualToString:@"user created"]) {
+        outputAction = [NSString stringWithFormat:@"%@ signed up to project invite", _UserName.text];
     }
+
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", _UserName.text, @""];
 	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
@@ -306,17 +309,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString *action = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"action"];
+    
+    
     // Pass the selected object to the new view controller.
-    NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"]];
-    NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:UID forKey:@"Con96FID"];
-    [defaults setObject:AID forKey:@"Con96FAID"];
-    [defaults synchronize];
+
     
     //Navigation logic may go here. Create and push another view controller.
     
-    [self  performSegueWithIdentifier:@"feedFriend" sender:self];
+    if([action isEqualToString:@"friend added"]) {
+        NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"]];
+        NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:UID forKey:@"Con96FID"];
+        [defaults setObject:AID forKey:@"Con96FAID"];
+        [defaults synchronize];
+        [self  performSegueWithIdentifier:@"feedFriend" sender:self];
+    }
+    
     
 }
 
