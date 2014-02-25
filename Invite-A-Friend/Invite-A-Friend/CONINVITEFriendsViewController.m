@@ -221,11 +221,11 @@
     if([action isEqualToString:@"friend added"]) {
         outputAction = [NSString stringWithFormat:@"%@ added %@ as a friend", _UserName.text, actionname];
     } else if([action isEqualToString:@"user updated"]) {
-         outputAction = [NSString stringWithFormat:@"%@ Updated their %@", _UserName.text, atribute];
+         outputAction = [NSString stringWithFormat:@"%@ Updated their %@", _UserName.text, actionname];
     } else if([action isEqualToString:@"event created"]) {
-        outputAction = [NSString stringWithFormat:@"%@ created an event \"%@\"", _UserName.text, atribute];
+        outputAction = [NSString stringWithFormat:@"%@ created an event \"%@\"", _UserName.text, actionname];
     } else if([action isEqualToString:@"event created"]) {
-        outputAction = [NSString stringWithFormat:@"%@ updated their event \"%@\"", _UserName.text, atribute];
+        outputAction = [NSString stringWithFormat:@"%@ updated their event \"%@\"", _UserName.text, actionname];
     }
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", _UserName.text, @""];

@@ -18,7 +18,7 @@
 		4142F2BD189E8C26002ECA92 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2B5189E8C26002ECA92 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4142F2BE189E8C26002ECA92 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2B7189E8C26002ECA92 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4142F2BF189E8C26002ECA92 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2B9189E8C26002ECA92 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		4142F2C2189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2C1189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m */; };
+		4142F2C2189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142F2C1189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4142F2C5189E9EB8002ECA92 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C3189E9EB7002ECA92 /* close.png */; };
 		4142F2C6189E9EB8002ECA92 /* close@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C4189E9EB8002ECA92 /* close@2.png */; };
 		4142F2C9189FA836002ECA92 /* blue-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F2C7189FA836002ECA92 /* blue-profile.png */; };
