@@ -289,6 +289,7 @@
 //Configuring cell design upon request from table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *simpleTableIdentifier = @"CustomFriendCells";
     
     CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -308,7 +309,7 @@
     } else if ([[[tweets objectAtIndex:[indexPath row]] objectForKey:@"colour"]  isEqual: @"green"]) {
             [cell.backgroundColour setBackgroundColor:[self colorWithHexString:@"9ad2c2"]];
     }
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.nameLabel.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"full_name"];
 	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
 	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
