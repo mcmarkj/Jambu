@@ -329,6 +329,15 @@
     cell.thumbnailImageView.image = [UIImage imageWithData:rawImage];
        //cell.imageView.image = [UIImage imageNamed:@"searchcircle.png"];
     
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    
+    //set the position of the button
+    button.frame = CGRectMake(cell.frame.origin.x + 100, cell.frame.origin.y + 20, 100, 30);
+    [button setTitle:@"World" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(tableView:) forControlEvents:UIControlEventTouchUpInside];
+    button.backgroundColor= [UIColor clearColor];
+    [cell.contentView addSubview:button];
+    
     return cell;
 }
 
@@ -409,11 +418,21 @@
     
 }
 
+- (void)tableView:(UITableView *)tableView{
+    static NSString *simpleTableIdentifier = @"CustomFriendCells";
+    
+    CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    NSIndexPath *indexPath = [self.tableV indexPathForCell:cell];
+
+    NSLog(@"IndexPathRow %d",indexPath.row);
+}
+
 -(void)dealloc{
     [tweets release];
     [responseData release];
     [indicator release];
     [super dealloc];
 }
+
 
 @end

@@ -162,6 +162,7 @@
                     
                     NSString *altprof_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
                                                          withString:@""];
+                   // NSString *alttwitID = [twitterid stringByReplacingOccurrencesOfString:@"long" withString:@""];
                     
                     NSString *thumb_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
                                                                                 withString:@"_bigger"];
@@ -170,9 +171,11 @@
                 //
                 
                 
-                NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users%@", @""]];
+                NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", @""]];
                 
                     NSString *twitterusername = twitterAccount.username;
+                    
+                    
                     
                 //build an info object and convert to json
                 NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: altprof_img, @"image_url", @"twitter", @"provider", thumb_img, @"image_thumbnail" , twitterid, @"uid", @"NONE",  @"colour", twitterusername, @"username", name, @"full_name",  nil];
@@ -198,7 +201,7 @@
                 [request setHTTPBody:finaldata];
                 
                 // print json:
-                
+                    NSLog([NSString stringWithFormat:@"%@", editeddata]);
                 NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
                 // DISABLED WHILE WE CONFIGURE STUFF
                     NSLog(@"We're now collecting to the API");

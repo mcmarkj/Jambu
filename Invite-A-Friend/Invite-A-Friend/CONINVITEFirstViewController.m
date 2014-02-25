@@ -76,6 +76,7 @@
 
 -(void)checktwitterupdate
 {
+    NSLog(@"Checking twitter for updates");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *user_img = [defaults objectForKey:@"Con96UIMG"];
     NSString *currenttwitter_username = [defaults objectForKey:@"Con96TUNAME"];
@@ -295,7 +296,7 @@
         NSArray *countInfo = [json valueForKey:@"counts"];
         
         //Check if the response is valid or not - stops the app from crashing
-        if (json == [NSNull null]) {
+        if (userInfo == nil) {
             NSLog(@"Response is Null, user's been deleted");
             [self showLogin:Nil];
         } else {
@@ -385,9 +386,7 @@
         
 
         
-        
-        
-        
+                    [self checktwitterupdate];
         
         //[self.view setNeedsDisplay];
 
@@ -440,7 +439,7 @@
 
 
         [self performSelector:@selector(updateCountdown) withObject:nil afterDelay:1];
-            [self checktwitterupdate];
+
     }
     } else {
         

@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIView *backgroundColour;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *twitternameLabel;
+- (IBAction)buttonPressed:(id)sender;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 @end
