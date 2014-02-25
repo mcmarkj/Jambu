@@ -229,7 +229,7 @@
     } else if([action isEqualToString:@"user created"]) {
         outputAction = [NSString stringWithFormat:@"%@ signed up to project invite", _UserName.text];
     }
-
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", _UserName.text, @""];
 	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
