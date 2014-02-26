@@ -281,7 +281,10 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
         [defaults setObject:UID forKey:@"Con96ID"];
         [defaults synchronize];
         
-        {
+        if(deviceToken == nil){
+
+        } else{ {
+            
 
 
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -319,7 +322,7 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
         
         
         
-    }
+        }}
         
         
         
