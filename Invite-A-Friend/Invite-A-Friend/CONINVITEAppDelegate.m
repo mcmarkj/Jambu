@@ -56,11 +56,14 @@
 
     - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken 
     {
-      /*  // Convert the binary data token into an NSString (see below for the implementation of this function)
-        NSString *deviceTokenAsString = stringFromDeviceTokenData(deviceToken);
-
-        // Show the device token obtained from apple to the log
-        NSLog(@"deviceToken: %@", deviceTokenAsString); */
+        NSUInteger capacity = [deviceToken length] * 2;
+        NSMutableString *stringBuffer = [NSMutableString stringWithCapacity:capacity];
+        const unsigned char *dataBuffer = [deviceToken bytes];
+        NSInteger i;
+        for (i=0; i<[deviceToken length]; ++i) {
+            [stringBuffer appendFormat:@"%02X", (NSUInteger)dataBuffer[i]];
+        }
+        NSLog(@"token string buffer is %@",stringBuffer);
     }
   
 							
