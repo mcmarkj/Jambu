@@ -19,7 +19,7 @@
           UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge)];
 
         // Your app startup logic...
-        return YES;
+        
      [TestFlight takeOff:@"dae0430e-bac8-49e4-9857-14f024fb9b28"];
     
     // Assign tab bar item with titles
