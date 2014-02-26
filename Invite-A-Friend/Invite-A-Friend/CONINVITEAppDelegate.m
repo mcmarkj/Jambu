@@ -14,7 +14,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-        
+                // Register with apple that this app will use push notification
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | 
+          UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge)];
+
      [TestFlight takeOff:@"dae0430e-bac8-49e4-9857-14f024fb9b28"];
     
     // Assign tab bar item with titles
@@ -48,16 +51,6 @@
 
     return YES;
 }
-
-    - (void)applicationDidFinishLaunching:(UIApplication *)application 
-    {    
-        // Register with apple that this app will use push notification
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | 
-          UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge)];
-
-        // Your app startup logic...
-        return YES;
-    }
 
 
 
