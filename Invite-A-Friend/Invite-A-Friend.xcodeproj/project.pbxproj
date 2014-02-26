@@ -180,7 +180,7 @@
 		4142F2C8189FA836002ECA92 /* blue-profile@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-profile@2.png"; sourceTree = "<group>"; };
 		4144D37C18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFListFriendsFriendsViewController.h; sourceTree = "<group>"; };
 		4144D37D18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEFListFriendsFriendsViewController.m; sourceTree = "<group>"; };
-		414AA816188AE743001B3301 /* ProjectInvite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectInvite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		414AA816188AE743001B3301 /* inviteproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inviteproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		414AA819188AE743001B3301 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		414AA81B188AE743001B3301 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		414AA81D188AE743001B3301 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -387,7 +387,7 @@
 		414AA817188AE743001B3301 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				414AA816188AE743001B3301 /* ProjectInvite.app */,
+				414AA816188AE743001B3301 /* inviteproject.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -778,7 +778,7 @@
 			);
 			name = inviteproject;
 			productName = "Invite-A-Friend";
-			productReference = 414AA816188AE743001B3301 /* ProjectInvite.app */;
+			productReference = 414AA816188AE743001B3301 /* inviteproject.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1001,7 +1001,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark McWhirter (9ZG5XABN3Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark McWhirter (9ZG5XABN3Z)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1019,6 +1020,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "48A66D8C-C7C2-4B11-B9D2-770637DE24AB";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1040,7 +1042,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark McWhirter (9ZG5XABN3Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark McWhirter (9ZG5XABN3Z)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1051,6 +1054,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "48A66D8C-C7C2-4B11-B9D2-770637DE24AB";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1062,8 +1066,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark McWhirter (9ZG5XABN3Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark McWhirter (9ZG5XABN3Z)";
 				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1077,7 +1081,7 @@
 					"./Invite-A-Friend/Resources/TestFlightSDK2.2.1/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "826A9CB7-A14B-4449-AEBA-803D9EAA6118";
+				PROVISIONING_PROFILE = "48A66D8C-C7C2-4B11-B9D2-770637DE24AB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1088,8 +1092,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark McWhirter (9ZG5XABN3Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mark McWhirter (9ZG5XABN3Z)";
 				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1103,7 +1107,7 @@
 					"./Invite-A-Friend/Resources/TestFlightSDK2.2.1/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "826A9CB7-A14B-4449-AEBA-803D9EAA6118";
+				PROVISIONING_PROFILE = "48A66D8C-C7C2-4B11-B9D2-770637DE24AB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

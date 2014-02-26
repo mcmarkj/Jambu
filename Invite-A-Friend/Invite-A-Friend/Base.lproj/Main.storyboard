@@ -107,14 +107,14 @@
                                 <color key="textColor" red="0.41568630933761597" green="0.41568630933761597" blue="0.41568630933761597" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxY-a8-zJ7">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxY-a8-zJ7">
                                 <rect key="frame" x="166" y="281" width="75" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.79215693473815918" blue="0.85098046064376831" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Befriended You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf3-a7-z2w">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Follows You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf3-a7-z2w">
                                 <rect key="frame" x="243" y="281" width="80" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -812,6 +812,27 @@
                                 <rect key="frame" x="143" y="119" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Events Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mF-jL-yQn">
+                                <rect key="frame" x="1" y="315" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AT-83-jaq">
+                                <rect key="frame" x="105" y="315" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Events Attended" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIg-hw-c8k">
+                                <rect key="frame" x="214" y="315" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.47058826684951782" green="0.47058826684951782" blue="0.47058826684951782" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -827,7 +848,11 @@
                         <outlet property="UserName" destination="cYK-Gu-h9U" id="QU5-6p-Qj0"/>
                         <outlet property="UserTwitterName" destination="ozR-oI-Am7" id="deJ-1F-FoX"/>
                         <outlet property="profilecolourimage" destination="zDH-0S-zUZ" id="abe-0U-YNP"/>
+                        <outlet property="profilelabel1" destination="9mF-jL-yQn" id="2kh-cr-VyP"/>
+                        <outlet property="profilelabel2" destination="1AT-83-jaq" id="eKs-nM-bdP"/>
+                        <outlet property="profilelabel3" destination="vIg-hw-c8k" id="7WE-I7-ahh"/>
                         <outlet property="tableV" destination="Wk3-da-Apq" id="5Ls-mn-FdM"/>
+                        <outlet property="toptitle" destination="Nlv-0z-rO3" id="rhw-b2-wgx"/>
                         <segue destination="cOO-aC-mHq" kind="modal" identifier="searchFriends" id="RqU-fW-hYd"/>
                         <segue destination="Igf-oW-Ztn" kind="modal" identifier="showFriends" id="5ds-UG-5L4"/>
                         <segue destination="Pkv-4c-iiK" kind="modal" identifier="editprofile" id="eR1-s8-gg5"/>
@@ -955,6 +980,27 @@
                                     <action selector="deleteFriend:" destination="XVJ-lt-9MX" eventType="touchUpInside" id="Ha9-LN-3bG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Events Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ok9-Pe-CQu">
+                                <rect key="frame" x="0.0" y="314" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Events Attended" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iQ-sv-Wcf">
+                                <rect key="frame" x="214" y="314" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWX-iM-WHx">
+                                <rect key="frame" x="105" y="314" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.47058826679999999" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -970,8 +1016,12 @@
                         <outlet property="UserTwitterName" destination="Xoo-Yk-Sn7" id="iYE-QY-bKU"/>
                         <outlet property="addFriend" destination="alj-M1-2EP" id="6iU-js-l1b"/>
                         <outlet property="addedButton" destination="oVS-Dk-g0S" id="pTf-01-Jlz"/>
+                        <outlet property="friendlabel1" destination="Ok9-Pe-CQu" id="vjO-lZ-FPd"/>
+                        <outlet property="friendlabel2" destination="jWX-iM-WHx" id="21u-Io-rQM"/>
+                        <outlet property="friendlabel3" destination="2iQ-sv-Wcf" id="b3l-TD-2Bv"/>
                         <outlet property="profilecolourimage" destination="JNa-zd-efP" id="0vi-LQ-8iP"/>
                         <outlet property="tableV" destination="Q63-Cu-H76" id="Rjo-iO-bfk"/>
+                        <outlet property="titleLabel" destination="pag-bm-esz" id="vIk-80-6ca"/>
                         <segue destination="Igf-oW-Ztn" kind="modal" identifier="showFriends" id="Bgi-A0-rbf"/>
                         <segue destination="8of-OM-Z7p" kind="modal" identifier="showFriendsFriends" id="LJc-TY-5MB"/>
                         <segue destination="0fF-WR-sE6" kind="modal" identifier="feedFriend" id="71z-8Y-E18"/>
@@ -1270,9 +1320,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="n1E-Iw-f0j"/>
-        <segue reference="eR1-s8-gg5"/>
+        <segue reference="Y49-Y4-P4Y"/>
         <segue reference="Bgi-A0-rbf"/>
+        <segue reference="eR1-s8-gg5"/>
         <segue reference="M3E-Y3-Wu6"/>
         <segue reference="9UP-zD-xGT"/>
     </inferredMetricsTieBreakers>

@@ -380,8 +380,11 @@
     
     _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userInfo valueForKey:@"image_url"]]]];
 
-    
-    
+    _friendlabel1.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+    _friendlabel2.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+    _friendlabel3.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+    _titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
+
     
     
 }
@@ -439,7 +442,7 @@
     if([action isEqualToString:@"friend added"]) {
         outputAction = [NSString stringWithFormat:@"%@ added %@ as a friend", _UserName.text, actionname];
     } else if([action isEqualToString:@"user updated"]) {
-        outputAction = [NSString stringWithFormat:@"%@ Updated their %@", _UserName.text, actionname];
+        outputAction = [NSString stringWithFormat:@"%@ Updated their profile", _UserName.text];
     } else if([action isEqualToString:@"event created"]) {
         outputAction = [NSString stringWithFormat:@"%@ created an event \"%@\"", _UserName.text, actionname];
     } else if([action isEqualToString:@"event created"]) {

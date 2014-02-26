@@ -17,7 +17,11 @@
 }
 
 @property (strong, nonatomic) IBOutlet UIImageView *profilecolourimage;
+@property (strong, nonatomic) IBOutlet UILabel *toptitle;
 
+@property (strong, nonatomic) IBOutlet UILabel *profilelabel1;
+@property (strong, nonatomic) IBOutlet UILabel *profilelabel2;
+@property (strong, nonatomic) IBOutlet UILabel *profilelabel3;
 @property (strong, nonatomic) IBOutlet UIImageView *UserImage;
 @property (strong, nonatomic) IBOutlet UILabel *UserName;
 @property (strong, nonatomic) IBOutlet UILabel *UserTwitterName;

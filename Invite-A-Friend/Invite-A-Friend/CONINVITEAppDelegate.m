@@ -64,6 +64,11 @@
             [stringBuffer appendFormat:@"%02X", (NSUInteger)dataBuffer[i]];
         }
         NSLog(@"token string buffer is %@",stringBuffer);
+        NSLog(@"token is %@",deviceToken);
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:stringBuffer forKey:@"conDeviceToken"];
+        [defaults synchronize];
     }
   
 							

@@ -95,6 +95,7 @@
 }
 
 
+
 - (IBAction)twitterlogin:(id)sender
 {
     twitterlogin.hidden=YES;
@@ -178,7 +179,7 @@
                     
                     
                 //build an info object and convert to json
-                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: altprof_img, @"image_url", @"twitter", @"provider", thumb_img, @"image_thumbnail" , twitterid, @"uid", @"NONE",  @"colour", twitterusername, @"username", name, @"full_name",  nil];
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: altprof_img, @"image_url", @"twitter", @"provider", @"NONE", @"device_token",thumb_img, @"image_thumbnail" , twitterid, @"uid", @"NONE",  @"colour", twitterusername, @"username", name, @"full_name",  nil];
                     
                     
                     
@@ -276,8 +277,43 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
             NSLog(@"Apparently the account was made");
         //save this user id so we can now log the user in
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                    NSString *deviceToken = [defaults objectForKey:@"conDeviceToken"];
         [defaults setObject:UID forKey:@"Con96ID"];
         [defaults synchronize];
+        
+    
+
+        NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: deviceToken, @"device_token", nil];
+        
+        NSError *error;
+        
+        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+        
+        NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        
+        NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        
+        [request setURL:url];
+        [request setHTTPMethod:@"PUT"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:finaldata];
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        // DISABLED WHILE WE CONFIGURE STUFF
+        
+        NSLog(@"We're now collecting to the API");
+        
+        [connection start];
+        
+        
+        
+        
+        
+    
+
         
         //lets mark the user as logged in for the future.
 

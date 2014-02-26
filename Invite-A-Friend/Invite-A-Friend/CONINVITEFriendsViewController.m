@@ -98,9 +98,10 @@
     _UserEventInvites.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     _UserName.font = [UIFont fontWithName:@"Roboto" size:20];
     _UserTwitterName.font = [UIFont fontWithName:@"Roboto-Light" size:14];
-    
-    
-    
+    _profilelabel1.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+        _profilelabel2.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+        _profilelabel3.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+    _toptitle.font = [UIFont fontWithName:@"Roboto-Light" size:20];
 }
 
 - (void)getProfileColourImage{
@@ -221,7 +222,7 @@
     if([action isEqualToString:@"friend added"]) {
         outputAction = [NSString stringWithFormat:@"%@ added %@ as a friend", _UserName.text, actionname];
     } else if([action isEqualToString:@"user updated"]) {
-         outputAction = [NSString stringWithFormat:@"%@ Updated their %@", _UserName.text, actionname];
+         outputAction = [NSString stringWithFormat:@"%@ Updated their profile", _UserName.text];
     } else if([action isEqualToString:@"event created"]) {
         outputAction = [NSString stringWithFormat:@"%@ created an event \"%@\"", _UserName.text, actionname];
     } else if([action isEqualToString:@"event created"]) {

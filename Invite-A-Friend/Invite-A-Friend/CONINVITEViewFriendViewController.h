@@ -18,6 +18,10 @@
         IBOutlet UIButton *addFriend;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *profilecolourimage;
+@property (strong, nonatomic) IBOutlet UILabel *friendlabel1;
+@property (strong, nonatomic) IBOutlet UILabel *friendlabel2;
+@property (strong, nonatomic) IBOutlet UILabel *friendlabel3;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (strong, nonatomic) IBOutlet UIImageView *UserImage;
 @property (strong, nonatomic) IBOutlet UILabel *UserName;
