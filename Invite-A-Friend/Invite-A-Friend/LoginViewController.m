@@ -273,7 +273,7 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
     
         
     if([DBNAME isEqualToString:fname]){
-                  [self performSelector:@selector(closeview) withObject:nil afterDelay:5.0];
+                  [self performSelector:@selector(closeview) withObject:nil afterDelay:10.0];
             NSLog(@"Apparently the account was made");
         //save this user id so we can now log the user in
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
