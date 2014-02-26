@@ -281,9 +281,16 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
         [defaults setObject:UID forKey:@"Con96ID"];
         [defaults synchronize];
         
-    
+        {
 
+
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *MID = [defaults objectForKey:@"Con96AID"];
+        
+        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", MID]];
+        
         NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: deviceToken, @"device_token", nil];
+        
         
         NSError *error;
         
@@ -307,6 +314,12 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
         NSLog(@"We're now collecting to the API");
         
         [connection start];
+        
+        
+        
+        
+        
+    }
         
         
         
