@@ -10,13 +10,12 @@
 #import "SearchTableViewController.h"
 #import "JSON.h"
 #include "CustomFriendCells.h"
-
 @implementation SearchTableViewController
-
 @synthesize tweets;
 @synthesize searchBar;
 @synthesize tableV;
 @synthesize responseData;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,8 +30,8 @@
     
     searchText = self.searchBar.text;
     
-    if (searchText.length > 2) {
-    
+    if (searchText.length >= 4) {
+       int resultscount = 0;
     
     [tableV setUserInteractionEnabled:YES];
     indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -44,8 +43,21 @@
     [indicator startAnimating];
     NSLog(@"Search button pressed");
     NSString *search = self.searchBar.text;
-    
-    NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/search/%@", search];
+        NSString *resultsstring = [NSString stringWithFormat:@"%d", resultscount];
+        
+
+        
+        NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        
+        if (standardUserDefaults) {
+            [standardUserDefaults setObject:[NSNumber numberWithInt:resultscount] forKey:@"resultscount"];
+            [standardUserDefaults synchronize];
+        }
+        
+        
+        NSLog(@"results is now %@", resultsstring);
+        
+        NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/search/%@?results=%@", search, resultsstring];
     [searchString replaceOccurrencesOfString:@"@" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
     /*[searchString replaceOccurrencesOfString:@" " withString:@"%20" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
      [searchString replaceOccurrencesOfString:@"@" withString:@"%40" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])]; */
@@ -246,12 +258,15 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [tweets count];
+    
+    
+    return [tweets count] + 1;
 }
 
 -(UIColor*)colorWithHexString:(NSString*)hex
 {
     NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    
     
     // String should be 6 or 8 characters
     if ([cString length] < 6) return [UIColor grayColor];
@@ -285,10 +300,82 @@
                            alpha:1.0f];
 }
 
+-(void)nextsearch{
+    [tableV setUserInteractionEnabled:YES];
+    indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [indicator setFrame:CGRectMake(tableV.frame.size.width/2-50, tableV.frame.size.height/2-50, 100, 100)];
+    [indicator setBackgroundColor:[UIColor blackColor]];
+    [indicator setAlpha:0.7f];
+    indicator.layer.cornerRadius = 10.0f;
+    [self.tableV addSubview:indicator];
+    [indicator startAnimating];
+    NSLog(@"Search button pressed");
+    NSString *search = self.searchBar.text;
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+
+        NSString *resultscount = [standardUserDefaults objectForKey:@"resultscount"];
+    
+    
+
+    
+
+
+    
+    int actualresult = [resultscount intValue];
+    
+    int nextresult = actualresult + 10;
+
+
+    
+    NSString *resultsstring = [NSString stringWithFormat:@"%d", nextresult];
+        NSLog(@"results is now %d", nextresult);
+    
+    if (standardUserDefaults) {
+        [standardUserDefaults setObject:[NSNumber numberWithInt:nextresult] forKey:@"resultscount"];
+        [standardUserDefaults synchronize];
+    }
+    
+    NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/search/%@?results=%@", search, resultsstring];
+    [searchString replaceOccurrencesOfString:@"@" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
+    /*[searchString replaceOccurrencesOfString:@" " withString:@"%20" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])];
+     [searchString replaceOccurrencesOfString:@"@" withString:@"%40" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchString length])]; */
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
+    [NSURLConnection connectionWithRequest:request delegate:self];
+    //[self.searchBar resignFirstResponder];
+[self.tableV setContentOffset:CGPointZero animated:NO];
+
+}
+
+-(void)scrollViewDidScroll: (UIScrollView*)scrollView
+{
+    float scrollViewHeight = scrollView.frame.size.height;
+    float scrollContentSizeHeight = scrollView.contentSize.height;
+    float scrollOffset = scrollView.contentOffset.y;
+    
+    if (scrollOffset == 0)
+    {
+        NSLog(@"we're at the top mate");
+        // then we are at the top
+    }
+    else if (scrollOffset + scrollViewHeight == scrollContentSizeHeight)
+    {
+        NSLog(@"we're at the bottom mate");
+        int count = [tweets count];
+        NSLog(@"@%", count);
+        if(count >= 10) {
+                    [self nextsearch];
+        }
+        
+        
+    }
+}
+
 
 //Configuring cell design upon request from table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+  
     
     static NSString *simpleTableIdentifier = @"CustomFriendCells";
     
@@ -336,8 +423,27 @@
     [button setTitle:@"World" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(tableView:) forControlEvents:UIControlEventTouchUpInside];
     button.backgroundColor= [UIColor clearColor];
-    [cell.contentView addSubview:button];
+  //  [cell.contentView addSubview:button];
     
+    int rownum = indexPath.row;
+    int totnum = [tweets count] - 1;
+    
+    if(rownum == totnum){
+       
+        static NSString *simpleTableIdentifier = @"friendfeedcell";
+        
+        CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FriendFeedCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        // Reset previous content of the cell, I have these defined in a UITableCell subclass, change them where needed
+         // Here we create the ‘Load more’ cell
+    
+
+    }
+
     return cell;
 }
 

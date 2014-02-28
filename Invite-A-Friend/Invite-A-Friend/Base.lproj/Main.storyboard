@@ -1060,21 +1060,20 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="60N-D7-R7g">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nextPage" rowHeight="60" id="pNe-4X-rhE">
                                         <rect key="frame" x="0.0" y="97" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="60N-D7-R7g" id="niC-v1-pKa">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pNe-4X-rhE" id="hqj-m5-bvF">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Zl-ko-mmn">
-                                                    <rect key="frame" x="14" y="8" width="44" height="44"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ieb-pF-sgs">
+                                                    <rect key="frame" x="124" y="15" width="72" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="friendback.png" translatesAutoresizingMaskIntoConstraints="NO" id="neJ-CA-tqK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
+                                                    <state key="normal" title="Next Page">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1103,8 +1102,6 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="UserImage" destination="4Zl-ko-mmn" id="C4a-Lg-6F6"/>
-                        <outlet property="imageView" destination="4Zl-ko-mmn" id="IS0-YQ-lhT"/>
                         <outlet property="searchBar" destination="LOK-ah-SrS" id="Cs0-qV-rWL"/>
                         <outlet property="searchDisplayController" destination="X8c-yj-AdO" id="zL1-VE-B2z"/>
                         <outlet property="tableV" destination="1hq-Q7-Elu" id="WBY-Sx-vQT"/>
@@ -1299,7 +1296,6 @@
         <image name="close@2.png" width="41" height="40"/>
         <image name="fb-profile.gif" width="58" height="50"/>
         <image name="first" width="30" height="30"/>
-        <image name="friendback.png" width="320" height="61"/>
         <image name="friendshead.png" width="320" height="66"/>
         <image name="green-profile.png" width="320" height="339"/>
         <image name="myinvites.png" width="329" height="117"/>
@@ -1320,10 +1316,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="H4t-LS-p5U"/>
         <segue reference="M3E-Y3-Wu6"/>
         <segue reference="9UP-zD-xGT"/>
-        <segue reference="slv-3R-j6T"/>
         <segue reference="PwJ-sI-xxm"/>
+        <segue reference="slv-3R-j6T"/>
+        <segue reference="n1E-Iw-f0j"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,7 @@
     UITableView *tableV;
     NSMutableData *responseData;
     UIActivityIndicatorView *indicator;
+    
 }
 
 @property (retain) NSArray *tweets;
@@ -23,5 +24,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIImageView *yourimageview;
 @property (strong, nonatomic) IBOutlet UIImageView *UserImage;
+extern int resultscount;
 
 @end

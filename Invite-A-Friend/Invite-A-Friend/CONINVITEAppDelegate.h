@@ -11,5 +11,6 @@
 @interface CONINVITEAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+extern int resultscount;
 
 @end

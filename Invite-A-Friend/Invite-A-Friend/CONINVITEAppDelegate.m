@@ -17,8 +17,13 @@
                 // Register with apple that this app will use push notification
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | 
           UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge)];
-
      [TestFlight takeOff:@"dae0430e-bac8-49e4-9857-14f024fb9b28"];
+    
+    NSString *buildversion = @"1.0 Beta 1";
+    NSLog(@"Welcome to Concept96's Project Invite, you're are on v%@", buildversion);
+    
+    
+    
     
     // Assign tab bar item with titles
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
