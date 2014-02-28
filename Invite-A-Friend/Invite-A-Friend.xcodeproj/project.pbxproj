@@ -147,6 +147,7 @@
 		41F59809188C602B00DAF315 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DC188C602B00DAF315 /* overlay.png */; };
 		41F5980A188C602B00DAF315 /* topbanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DD188C602B00DAF315 /* topbanner.png */; };
 		41F5980B188C602B00DAF315 /* twittersync.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DE188C602B00DAF315 /* twittersync.png */; };
+		E018EAD218C10FDF00A56B43 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E018EAD118C10FDF00A56B43 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -331,6 +332,7 @@
 		41F597DC188C602B00DAF315 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overlay.png; path = Resources/overlay.png; sourceTree = "<group>"; };
 		41F597DD188C602B00DAF315 /* topbanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topbanner.png; path = Resources/topbanner.png; sourceTree = "<group>"; };
 		41F597DE188C602B00DAF315 /* twittersync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twittersync.png; path = ../twittersync.png; sourceTree = "<group>"; };
+		E018EAD118C10FDF00A56B43 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +350,7 @@
 				414AA81C188AE743001B3301 /* CoreGraphics.framework in Frameworks */,
 				414AA81E188AE743001B3301 /* UIKit.framework in Frameworks */,
 				414AA81A188AE743001B3301 /* Foundation.framework in Frameworks */,
+				E018EAD218C10FDF00A56B43 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +398,7 @@
 		414AA818188AE743001B3301 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E018EAD118C10FDF00A56B43 /* Crashlytics.framework */,
 				41991E7118B0222100FFCB95 /* SystemConfiguration.framework */,
 				41E8FB44189D1198000D43F4 /* libz.dylib */,
 				418AAE3A1891CB24001D8FE1 /* Twitter.framework */,
@@ -771,6 +775,7 @@
 				414AA812188AE743001B3301 /* Sources */,
 				414AA813188AE743001B3301 /* Frameworks */,
 				414AA814188AE743001B3301 /* Resources */,
+				E018EAD018C10F9B00A56B43 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -920,6 +925,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E018EAD018C10F9B00A56B43 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 55c3ecc37a3b972e490db29a097513baf77b6aea 04ae9e89f3059c0ba087960c646c7fbefa1e2dfd419ef1d80e96c2941b32c27d";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		414AA812188AE743001B3301 /* Sources */ = {
@@ -1072,6 +1093,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend",
+					"/Users/bradleyallen/Documents/iOS/InviteProject/Invite-A-Friend/invite-a-friend-ios/Invite-A-Friend",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
@@ -1098,6 +1120,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend",
+					"/Users/bradleyallen/Documents/iOS/InviteProject/Invite-A-Friend/invite-a-friend-ios/Invite-A-Friend",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
