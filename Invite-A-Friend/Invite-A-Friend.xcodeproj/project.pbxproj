@@ -147,7 +147,7 @@
 		41F59809188C602B00DAF315 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DC188C602B00DAF315 /* overlay.png */; };
 		41F5980A188C602B00DAF315 /* topbanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DD188C602B00DAF315 /* topbanner.png */; };
 		41F5980B188C602B00DAF315 /* twittersync.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DE188C602B00DAF315 /* twittersync.png */; };
-		E018EAD218C10FDF00A56B43 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E018EAD118C10FDF00A56B43 /* Crashlytics.framework */; };
+		E018EAD218C10FDF00A56B43 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E018EAD118C10FDF00A56B43 /* Crashlytics.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1093,7 +1093,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend",
-					"/Users/bradleyallen/Documents/iOS/InviteProject/Invite-A-Friend/invite-a-friend-ios/Invite-A-Friend",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
@@ -1120,7 +1119,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend",
-					"/Users/bradleyallen/Documents/iOS/InviteProject/Invite-A-Friend/invite-a-friend-ios/Invite-A-Friend",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
