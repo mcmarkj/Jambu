@@ -109,9 +109,9 @@
     NSLog(@"We're now collecting to the API");
     [connection start];
     NSLog(@"Completed API Request");
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Friend Added"
-                                                    message:@"You're now friends!"
+    NSString *addedmessage = [NSString stringWithFormat:@"You're now following %@", _UserName.text];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Follower Added"
+                                                    message:addedmessage
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil
@@ -130,7 +130,7 @@
 
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *FriendID = [defaults objectForKey:@"Con96DBFID"];
+    NSString *FriendID = [defaults objectForKey:@"ConFriendshipID"];
     NSString *AlterID = [NSString stringWithFormat:@"%@", FriendID];
     
         NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@", AlterID]];
@@ -163,7 +163,7 @@
     NSLog(@"Completed API Request");
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Deleted"
-                                                    message:@"Friend Deleted"
+                                                    message:@"Deleted Follower"
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil
@@ -187,9 +187,10 @@
 
 - (void)showConfirmAlert
 {
+    NSString *deletemessage = [NSString stringWithFormat:@"Do you want to stop following %@?", _UserName.text];
     UIAlertView *alert = [[UIAlertView alloc] init];
-    [alert setTitle:@"Remove as Friend?"];
-    [alert setMessage:@"Do you want to remove this friend?"];
+    [alert setTitle:@"Stop Following?"];
+    [alert setMessage:deletemessage];
     [alert setDelegate:self];
     [alert addButtonWithTitle:@"Yes"];
     [alert addButtonWithTitle:@"No"];
@@ -284,9 +285,10 @@
   //  NSString *AID = [defaults objectForKey:@"Con96FAID"];
     //    NSString *MIS = [defaults objectForKey:@"Con96AID"];
         NSString *UID = [defaults objectForKey:@"Con96FID"];
+    NSString *MID = [defaults objectForKey:@"Con96TUID"];
     //Get number of friends info
     
-    NSURL *friendurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
+    NSURL *friendurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@?requestor=%@", UID, MID]];
                         
 
     NSMutableURLRequest *frequest = [NSMutableURLRequest requestWithURL:friendurl];
@@ -302,8 +304,11 @@
     
     
         NSArray *countInfo = [friendsjson valueForKey:@"counts"];
-    
-    NSString *friendscount = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"friends"]];;    [_UserFriendCount setTitle:friendscount forState:UIControlStateNormal];
+ 
+
+    NSString *friendscount = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"friends"]];;
+  
+    [_UserFriendCount setTitle:friendscount forState:UIControlStateNormal];
 }
 
 
@@ -311,20 +316,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        [self checkIfFriends];
+     //   [self checkIfFriends];
     [self loadFeed];
 	// Do any additional setup after loading the view.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *UID = [defaults objectForKey:@"Con96FID"];
        NSString *MIS = [defaults objectForKey:@"Con96AID"];
         NSString *FID = [defaults objectForKey:@"Con96FAID"];
+        NSString *MID = [defaults objectForKey:@"Con96TUID"];
     
     NSString *altID1 = [NSString stringWithFormat:@"%@", FID];
     NSString *altID2 = [NSString stringWithFormat:@"%@", MIS];
     
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
+       NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@?requestor=%@", UID, MID]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
+    NSLog(@"The url we're requesting from is: %@", url);
     [request setURL:url];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -338,7 +344,8 @@
     
     
     NSArray *countInfo = [json valueForKey:@"counts"];
-    
+    NSArray *friendidinfo = [json valueForKey:@"friend_id"];
+
     NSString *twitterusername = [userInfo valueForKey:@"username"];
     
     NSString *profilecolour = [userInfo valueForKey:@"colour"];
@@ -346,6 +353,30 @@
     NSString *friendID = [userInfo valueForKey:@"id"];
     [defaults setObject:friendID forKey:@"Con96FAID"];
     [defaults synchronize];
+
+    NSString *friendshipID = [NSString stringWithFormat:@"%@", [json valueForKey:@"friend_id"]];
+    
+    if([friendshipID isEqual: @"NULL"]){
+        //not friends
+        NSLog(@"Not friends");
+        if ([altID1 isEqualToString:altID2]) {
+            addFriend.hidden = YES;
+            _addedButton.hidden = YES;
+        } else {
+            NSLog(@"Friend Doesn't Exist");
+            _addedButton.hidden = YES;
+            addFriend.hidden = NO;
+        }
+    } else {
+        //friends
+        NSLog(@"Friends!!");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:friendshipID forKey:@"ConFriendshipID"];
+        [defaults synchronize];
+        NSLog(@"Friend Exists");
+        addFriend.hidden = YES;
+        _addedButton.hidden = NO;
+    }
     
     if ([profilecolour  isEqual: @"red"]) {
         _profilecolourimage.image = [UIImage imageNamed:@"red-profile@2.png"];

@@ -260,7 +260,7 @@
     // Return the number of rows in the section.
     
     
-    return [tweets count] + 1;
+    return [tweets count];
 }
 
 -(UIColor*)colorWithHexString:(NSString*)hex
