@@ -121,6 +121,7 @@
                          waitUntilDone:NO];
     
     addFriend.hidden=YES;
+    _addedButton.hidden=NO;
     
 };
 
