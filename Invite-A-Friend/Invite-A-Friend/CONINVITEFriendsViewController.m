@@ -234,13 +234,13 @@
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", _UserName.text, @""];
 	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
-	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:15];
+	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:12];
     cell.twitterUserName.text = _UserTwitterName.text;
     cell.twitterUserName.adjustsFontSizeToFitWidth = YES;
 	cell.twitterUserName.font = [UIFont fontWithName:@"Roboto-Light" size:10];
 	cell.nameLabel.numberOfLines = 2;
     cell.twitternameLabel.text = outputAction;
-	cell.twitternameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:10];
+	cell.twitternameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:8];
     cell.thumbnailImageView.image = _UserImage.image;
     
     

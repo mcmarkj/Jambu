@@ -29,7 +29,7 @@
     _titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:28];
     _hoursLabel.font = [UIFont fontWithName:@"Roboto-Light" size:18];
     _minsLabel.font = [UIFont fontWithName:@"Roboto-Light" size:18];
-    NSString *eventHour = @"0";
+    NSString *eventHour = @"11";
     NSString *eventMin = @"0";
     
     if([eventHour isEqual:@"0"]) {

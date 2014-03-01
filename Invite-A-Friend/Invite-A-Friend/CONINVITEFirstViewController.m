@@ -374,8 +374,9 @@
         [_UserFacebookFriendsLabel setTitle:friendscount forState:(UIControlStateNormal)];
         _UserFacebookFriendsLabel.titleLabel.font = [UIFont fontWithName:@"Roboto" size:20];
        // [_UserFacebookFriendsLabel setValue:[UIFont fontWithName:@"Roboto" size:20] forKeyPath:@"_UserFacebookFriendsLabel.font"];
-        _UserRewardsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
-        _UserRewardsLabel.text = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"added_as_friend"]];
+            NSString *followercount = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"added_as_friend"]];;
+        [_UserFollowersButton setTitle:followercount forState:(UIControlStateNormal)];
+        _UserFollowersButton.titleLabel.font = [UIFont fontWithName:@"Roboto" size:20];
         _UserCardSplitLabels.font = [UIFont fontWithName:@"Roboto-Light" size:10];
         _UserCardSplitLabels1.font = [UIFont fontWithName:@"Roboto-Light" size:12];
         _UserCardSplitLabels2.font = [UIFont fontWithName:@"Roboto-Light" size:12];
@@ -486,7 +487,7 @@
     _overlaylabel.alpha = 0;
     _UserIndicatorButton.alpha=0;
     _UserIndicatorImage.alpha=0;
-    _UserRewardsLabel.alpha=0;
+    _UserFollowersButton.alpha=0;
     _UserEventsLabel.alpha=0;
     _UserNameLabel.alpha=1;
     _UserTwitterLabel.alpha=1;
@@ -504,7 +505,7 @@
     _overlaylabel.alpha = 1;
     _UserIndicatorButton.alpha=1;
     _UserIndicatorImage.alpha=1;
-    _UserRewardsLabel.alpha=1;
+    _UserFollowersButton.alpha=1;
     _UserEventsLabel.alpha=1;
     _UserNameLabel.alpha=1;
     _UserTwitterLabel.alpha=1;
@@ -526,7 +527,7 @@
         _overlaylabel.alpha = 1;
         _UserIndicatorButton.alpha=1;
         _UserIndicatorImage.alpha=1;
-        _UserRewardsLabel.alpha=1;
+        _UserFollowersButton.alpha=1;
         _UserEventsLabel.alpha=1;
         _UserNameLabel.alpha=1;
         _UserTwitterLabel.alpha=1;
@@ -574,6 +575,17 @@
     [defaults setObject:@"NULL" forKey:@"Con96TUID"];
     [defaults synchronize];
     [self  performSegueWithIdentifier:@"LoginPage" sender:self];
+}
+
+- (IBAction)viewFollowers:(id)sender {
+    NSString *title = [_UserFollowersButton currentTitle];
+    
+    if ([title isEqualToString:@"0"]) {
+        NSLog(@"User has no followers");
+    } else {
+        [self  performSegueWithIdentifier:@"listFollowers" sender:self];
+    }
+
 }
 - (IBAction)showFriends:(id)sender {
         NSString *title = [_UserFacebookFriendsLabel currentTitle];
