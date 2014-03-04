@@ -168,7 +168,34 @@
                     NSString *thumb_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
                                                                                 withString:@"_bigger"];
                     //NSLog(nooffollwers);
-                
+                    int exists = 0;
+                     //  checking for an already present account
+                        
+                        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", twitterid]];
+                        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+                        
+                        [request setURL:url];
+                        [request setHTTPMethod:@"GET"];
+                        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                        
+                        NSError *cerror;
+                        NSURLResponse *response;
+                        NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&cerror];
+                        NSArray *cjson = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+                        
+
+                        //if the response is NULL then we'll continue making the request, otherwise we'll close the view now!
+                        NSString *errormessage = [cjson valueForKey:@"error"];
+                        if([errormessage  isEqualToString: @"User does not exist!"]){
+                            exists = 1;
+                        
+                        } else { exists = 0; }
+                            
+                    
+                    
+                    if(exists == 1){
+                    
+                    
                 //
                 
                 
@@ -201,14 +228,14 @@
                 [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
                 [request setHTTPBody:finaldata];
                 
-                // print json:
-                    NSLog([NSString stringWithFormat:@"%@", editeddata]);
                 NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
                 // DISABLED WHILE WE CONFIGURE STUFF
                     NSLog(@"We're now collecting to the API");
                 [connection start];
                     NSLog(@"Completed API Request");
-
+                    } else {
+                        [self checkuser];
+                    }
                 // If there are no accounts, we need to pop up an alert
                 
                 }];
@@ -236,8 +263,8 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
             
             
         }
-    }];
-    
+                 }];
+                
 }
 
 -(void)checkapisuccess {
@@ -323,17 +350,7 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
         
         
         }}
-        
-        
-        
-        
-        
-    
-
-        
         //lets mark the user as logged in for the future.
-
-        
     } else {
         NSLog(@"The API hasn't returned a correct ID, something mustn't have worked");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
@@ -349,6 +366,107 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
 
     }}
 }
+
+-(void)checkuser {
+    NSLog(@"Checking the api if the account was made okay");
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *UID = [defaults objectForKey:@"Con96TUID"];
+    NSString *fname = [defaults objectForKey:@"Con96fname"];
+    
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSError *error;
+    NSURLResponse *response;
+    NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+    
+    NSArray *userInfo = [json valueForKey:@"user"];
+    
+    
+    
+    NSString *DBNAME = [userInfo valueForKey:@"full_name"];
+    
+    //Do some checks to make sure the returned values are correct.
+    
+    if([json  isEqual: @"null"]){
+        NSLog(@"It's Null Mark");
+        
+    }else{
+        
+        
+        if([DBNAME isEqualToString:fname]){
+            [self performSelector:@selector(closeview) withObject:nil afterDelay:2.0];
+            NSLog(@"Apparently the account was made");
+            //save this user id so we can now log the user in
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString *deviceToken = [defaults objectForKey:@"conDeviceToken"];
+            [defaults setObject:UID forKey:@"Con96ID"];
+            [defaults synchronize];
+            
+            if(deviceToken == nil){
+                
+            } else{ {
+                
+                
+                
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                NSString *MID = [defaults objectForKey:@"Con96AID"];
+                
+                NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", MID]];
+                
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: deviceToken, @"device_token", nil];
+                
+                
+                NSError *error;
+                
+                NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+                
+                NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+                
+                NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+                
+                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+                
+                [request setURL:url];
+                [request setHTTPMethod:@"PUT"];
+                [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                [request setHTTPBody:finaldata];
+                
+                NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+                
+                // DISABLED WHILE WE CONFIGURE STUFF
+                
+                NSLog(@"We're now collecting to the API");
+                
+                [connection start];
+                
+                
+                
+                
+                
+            }}
+            //lets mark the user as logged in for the future.
+        } else {
+            NSLog(@"The API hasn't returned a correct ID, something mustn't have worked");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                            message:@"Something's gone wrong... Your account with Concept96 hasn't been able to create. Please try again... If this issues continues contact Concept96 Support."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil
+                                  ];
+            [alert performSelectorOnMainThread:@selector(show)
+                                    withObject:nil
+                                 waitUntilDone:NO];
+            twitterlogin.hidden=NO;
+            
+        }}
+}
+
 
 
 
