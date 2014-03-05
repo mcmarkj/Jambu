@@ -313,27 +313,27 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
         } else{ {
             
 
-
+        /*We're now going to add the device token to our DB so they're notified*/
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString *MID = [defaults objectForKey:@"Con96AID"];
         
-        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", MID]];
+        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/device_tokens/%@", @""]];
         
-        NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: deviceToken, @"device_token", nil];
+        NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: deviceToken, @"token", @"iOS", @"os", MID, @"user_id", nil];
         
         
         NSError *error;
         
         NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
         
-        NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        NSString *editeddata = [NSString stringWithFormat:@"{\"device_token\":%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
         
         NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
         
         [request setURL:url];
-        [request setHTTPMethod:@"PUT"];
+        [request setHTTPMethod:@"POST"];
         [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         [request setHTTPBody:finaldata];
         
@@ -417,23 +417,23 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                 NSString *MID = [defaults objectForKey:@"Con96AID"];
                 
-                NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", MID]];
+                NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/device_tokens/%@", @""]];
                 
-                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: deviceToken, @"device_token", nil];
+                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: deviceToken, @"token", @"iOS", @"os", MID, @"user_id", nil];
                 
                 
                 NSError *error;
                 
                 NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
                 
-                NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+                NSString *editeddata = [NSString stringWithFormat:@"{\"device_token\":%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
                 
                 NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
                 
                 NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
                 
                 [request setURL:url];
-                [request setHTTPMethod:@"PUT"];
+                [request setHTTPMethod:@"POST"];
                 [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
                 [request setHTTPBody:finaldata];
                 

@@ -424,7 +424,6 @@
 				414AA829188AE743001B3301 /* CONINVITEAppDelegate.m */,
 				414AA82B188AE743001B3301 /* Main.storyboard */,
 				416C616118BA18AC009E53AB /* User Search */,
-				416C616218BA18CF009E53AB /* Lists (Friends etc) */,
 				416C616318BA18E1009E53AB /* View Friends */,
 				416C616918BA1A57009E53AB /* Logins */,
 				414AA834188AE743001B3301 /* Images.xcassets */,
@@ -511,10 +510,11 @@
 		416C616118BA18AC009E53AB /* User Search */ = {
 			isa = PBXGroup;
 			children = (
-				4142F2A6189E8904002ECA92 /* CONINVITEFriendsSearchViewController.h */,
+				416C616218BA18CF009E53AB /* Lists (Friends etc) */,
 				4142F2A7189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m */,
 				413326EF18B115F50070517B /* CustomFriendCells.h */,
 				413326F018B115F50070517B /* CustomFriendCells.m */,
+				4142F2A6189E8904002ECA92 /* CONINVITEFriendsSearchViewController.h */,
 				413326EA18B110D60070517B /* CustomFriendCells.xib */,
 				4142F2A9189E8C04002ECA92 /* SearchTableViewController.h */,
 				4142F2AA189E8C04002ECA92 /* SearchTableViewController.m */,
