@@ -80,6 +80,7 @@
 		41991E7018B0220500FFCB95 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 41991E6F18B0220500FFCB95 /* Reachability.m */; };
 		41991E7218B0222100FFCB95 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41991E7118B0222100FFCB95 /* SystemConfiguration.framework */; };
 		419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		41A6AE5B18CA5CBE008416EA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A6AE5A18CA5CBE008416EA /* Crashlytics.framework */; };
 		41D068D818BA648100F29CD0 /* FriendFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D068D618BA648100F29CD0 /* FriendFeedCell.m */; };
 		41D068DD18BA6BFE00F29CD0 /* FriendFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D068D718BA648100F29CD0 /* FriendFeedCell.xib */; };
 		41D068E018BA6E4200F29CD0 /* cellback.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D068DE18BA6E4200F29CD0 /* cellback.png */; };
@@ -261,6 +262,7 @@
 		41991E7118B0222100FFCB95 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFriendsViewController.h; sourceTree = "<group>"; };
 		419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEFriendsViewController.m; sourceTree = "<group>"; };
+		41A6AE5A18CA5CBE008416EA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		41D068D518BA648100F29CD0 /* FriendFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendFeedCell.h; sourceTree = "<group>"; };
 		41D068D618BA648100F29CD0 /* FriendFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendFeedCell.m; sourceTree = "<group>"; };
 		41D068D718BA648100F29CD0 /* FriendFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendFeedCell.xib; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				414AA81C188AE743001B3301 /* CoreGraphics.framework in Frameworks */,
 				414AA81E188AE743001B3301 /* UIKit.framework in Frameworks */,
 				414AA81A188AE743001B3301 /* Foundation.framework in Frameworks */,
+				41A6AE5B18CA5CBE008416EA /* Crashlytics.framework in Frameworks */,
 				E018EAD218C10FDF00A56B43 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +404,7 @@
 		414AA818188AE743001B3301 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41A6AE5A18CA5CBE008416EA /* Crashlytics.framework */,
 				E018EAD118C10FDF00A56B43 /* Crashlytics.framework */,
 				41991E7118B0222100FFCB95 /* SystemConfiguration.framework */,
 				41E8FB44189D1198000D43F4 /* libz.dylib */,
@@ -1108,7 +1112,7 @@
 					"./Invite-A-Friend/Resources/TestFlightSDK2.2.1/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "48A66D8C-C7C2-4B11-B9D2-770637DE24AB";
+				PROVISIONING_PROFILE = "63C604BA-E71F-41FC-9077-0784A314C3EB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1134,7 +1138,7 @@
 					"./Invite-A-Friend/Resources/TestFlightSDK2.2.1/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "48A66D8C-C7C2-4B11-B9D2-770637DE24AB";
+				PROVISIONING_PROFILE = "63C604BA-E71F-41FC-9077-0784A314C3EB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

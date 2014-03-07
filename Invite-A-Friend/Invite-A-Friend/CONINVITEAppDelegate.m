@@ -15,7 +15,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Crashlytics startWithAPIKey:@"55c3ecc37a3b972e490db29a097513baf77b6aea"];
+   [Crashlytics startWithAPIKey:@"55c3ecc37a3b972e490db29a097513baf77b6aea"];
                 // Register with apple that this app will use push notification
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | 
           UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge)];
@@ -23,8 +23,8 @@
     
     NSString *buildversion = @"1.0 Beta 1";
     NSLog(@"Welcome to Concept96's Project Invite, you're are on v%@", buildversion);
-    
-    
+  /*  [[Crashlytics sharedInstance] crash];
+    1/0; */
     
     
     // Assign tab bar item with titles
