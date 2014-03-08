@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4126560818CB650D00368BB1 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4126560718CB650C00368BB1 /* GoogleMaps.framework */; };
 		413326F118B115F50070517B /* CustomFriendCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 413326F018B115F50070517B /* CustomFriendCells.m */; };
 		4142F27C189D993E002ECA92 /* AddFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F27A189D993E002ECA92 /* AddFriend.png */; };
 		4142F27D189D993E002ECA92 /* AddFriend@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F27B189D993E002ECA92 /* AddFriend@2.png */; };
@@ -161,6 +162,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4126560718CB650C00368BB1 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		413326EA18B110D60070517B /* CustomFriendCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomFriendCells.xib; sourceTree = "<group>"; };
 		413326EF18B115F50070517B /* CustomFriendCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFriendCells.h; sourceTree = "<group>"; };
 		413326F018B115F50070517B /* CustomFriendCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFriendCells.m; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				418AAE351891B471001D8FE1 /* Accounts.framework in Frameworks */,
 				414AA81C188AE743001B3301 /* CoreGraphics.framework in Frameworks */,
 				414AA81E188AE743001B3301 /* UIKit.framework in Frameworks */,
+				4126560818CB650D00368BB1 /* GoogleMaps.framework in Frameworks */,
 				414AA81A188AE743001B3301 /* Foundation.framework in Frameworks */,
 				41A6AE5B18CA5CBE008416EA /* Crashlytics.framework in Frameworks */,
 				E018EAD218C10FDF00A56B43 /* Crashlytics.framework in Frameworks */,
@@ -422,6 +425,7 @@
 		414AA818188AE743001B3301 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4126560718CB650C00368BB1 /* GoogleMaps.framework */,
 				41A6AE5A18CA5CBE008416EA /* Crashlytics.framework */,
 				E018EAD118C10FDF00A56B43 /* Crashlytics.framework */,
 				41991E7118B0222100FFCB95 /* SystemConfiguration.framework */,

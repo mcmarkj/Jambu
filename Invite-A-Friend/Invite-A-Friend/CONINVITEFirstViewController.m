@@ -453,7 +453,7 @@
 - (void)updateCountdown {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd"];
-    NSDate *endingDate = [dateFormatter dateFromString:@"2014-12-31"];
+    NSDate *endingDate = [dateFormatter dateFromString:@"2014-03-07"];
     NSDate *startingDate = [NSDate date];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -462,9 +462,14 @@
     
     NSInteger hours    = [dateComponents hour];
     
+    if(hours < 0){
+        NSString *countdownText = [NSString stringWithFormat:@"No upcoming events :[ %@", @""];
+        _overlaynexteventlabel.text = countdownText;
+    } else {
+    
         NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Hours", (long)hours];
         _overlaynexteventlabel.text = countdownText;
-    
+    }
 }
 
 
