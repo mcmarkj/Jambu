@@ -613,6 +613,59 @@
             </objects>
             <point key="canvasLocation" x="-26" y="1268"/>
         </scene>
+        <!--Nearby Event View Controller-->
+        <scene sceneID="NZ6-j3-cxf">
+            <objects>
+                <viewController id="Gmm-C0-fLu" customClass="CONINVITENearbyEventViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zvp-PC-eYr"/>
+                        <viewControllerLayoutGuide type="bottom" id="YRe-Na-RJt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jiw-bY-M1e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nearby events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NC-8n-WG9">
+                                <rect key="frame" x="139" y="155" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHO-q8-2mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1495" y="1884"/>
+        </scene>
+        <!--Create Event View Controller-->
+        <scene sceneID="Azn-tx-pDO">
+            <objects>
+                <viewController id="1Rz-Ju-li4" customClass="CONINVITECreateEventViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uiu-7Z-vp2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q6v-9o-dQH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eXm-0V-ph4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New Event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXK-FK-VFM">
+                                <rect key="frame" x="91" y="207" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxx-dT-rkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-711" y="1872"/>
+        </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">
             <objects>
@@ -640,6 +693,31 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlW-oE-Wlj">
+                                        <rect key="frame" x="284" y="232" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="plus2@2.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createEvent:" destination="QUy-BD-bpt" eventType="touchUpInside" id="4Sc-X7-pM7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mf0-n6-t1h">
+                                        <rect key="frame" x="13" y="232" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="street_view@2.png">
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nearbyevents:" destination="QUy-BD-bpt" eventType="touchUpInside" id="O5k-sP-gDp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18823529411764706" green="0.60784313725490191" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -692,11 +770,13 @@
                         <outlet property="hoursLabel" destination="mzx-fu-F0z" id="s59-gd-MrJ"/>
                         <outlet property="minsLabel" destination="3bb-B2-lse" id="cUe-FX-dym"/>
                         <outlet property="titleLabel" destination="UWQ-oo-BKP" id="DFj-6M-Vey"/>
+                        <segue destination="Gmm-C0-fLu" kind="modal" identifier="showNearby" modalTransitionStyle="coverVertical" id="BAh-AL-ujr"/>
+                        <segue destination="1Rz-Ju-li4" kind="modal" identifier="newEvent" modalTransitionStyle="coverVertical" id="MOT-Jn-Ywg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="1487"/>
+            <point key="canvasLocation" x="-998" y="975"/>
         </scene>
         <!--Friends View Controller - Item-->
         <scene sceneID="2cb-ve-7Y9">
@@ -1407,11 +1487,13 @@
         <image name="newhere.png" width="320" height="65"/>
         <image name="overlay.png" width="320" height="150"/>
         <image name="pink.png" width="320" height="339"/>
+        <image name="plus2@2.png" width="64" height="64"/>
         <image name="purple.png" width="320" height="339"/>
         <image name="red-profile.png" width="320" height="339"/>
         <image name="search@2.png" width="41" height="40"/>
         <image name="second" width="30" height="30"/>
         <image name="spinner.png" width="142" height="133"/>
+        <image name="street_view@2.png" width="75" height="75"/>
         <image name="topbanner.png" width="320" height="64"/>
         <image name="twitter_login.png" width="249" height="49"/>
     </resources>

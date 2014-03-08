@@ -10,6 +10,8 @@
 
 @interface CONINVITESecondViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+- (IBAction)createEvent:(id)sender;
+- (IBAction)nearbyevents:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *hoursLabel;
 @property (strong, nonatomic) IBOutlet UILabel *minsLabel;
 @property (strong, nonatomic) IBOutlet UIScrollView *Scroller;
@@ -63,4 +65,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)createEvent:(id)sender {
+        [self  performSegueWithIdentifier:@"newEvent" sender:self];
+}
+
+- (IBAction)nearbyevents:(id)sender {
+        [self  performSegueWithIdentifier:@"showNearby" sender:self];
+}
 @end
