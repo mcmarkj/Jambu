@@ -30,6 +30,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *eventLocationLabel;
 @property (nonatomic, strong) IBOutlet GMSMapView *mapView;
 @property (nonatomic, strong) IBOutlet GMSCameraPosition *camera;
+- (IBAction)openMap:(id)sender;
 
 @end
 
@@ -37,8 +38,8 @@
 
 - (void)viewDidLoad
 {
-    self.camera = [GMSCameraPosition cameraWithLatitude:53.792336
-                                              longitude:-1.534171 zoom:18
+    self.camera = [GMSCameraPosition cameraWithLatitude:53.762250
+                                              longitude:-1.575251 zoom:18
                                                 bearing:0
                                            viewingAngle:0
                    ];
@@ -47,9 +48,9 @@
     
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(53.792336, -1.534171);
-    marker.title = @"Mark's Flat";
-    marker.snippet = @"Leeds";
+    marker.position = CLLocationCoordinate2DMake(53.762250, -1.575251);
+    marker.title = _EventName.text;
+    marker.snippet = _eventLocationLabel.text;
     marker.map = _mapView;
     
     
@@ -121,5 +122,9 @@
 
 - (IBAction)nearbyevents:(id)sender {
         [self  performSegueWithIdentifier:@"showNearby" sender:self];
+}
+- (IBAction)openMap:(id)sender {
+    NSLog(@"Button pressed");
+    exit(0);
 }
 @end

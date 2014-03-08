@@ -855,6 +855,10 @@
                                 <rect key="frame" x="12" y="375" width="302" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xth-Dr-Evy" appends="YES" id="edB-Bj-aSy"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97211814413265307" green="0.97211814413265307" blue="0.97211814413265307" alpha="1" colorSpace="calibratedRGB"/>
@@ -882,6 +886,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xth-Dr-Evy">
+                    <connections>
+                        <action selector="openMap:" destination="QUy-BD-bpt" id="EbR-LJ-hza"/>
+                        <outlet property="delegate" destination="hzu-3V-TB6" id="pEg-wq-JgM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-998" y="975"/>
         </scene>
