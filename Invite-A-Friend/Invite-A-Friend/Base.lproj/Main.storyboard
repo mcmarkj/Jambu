@@ -760,19 +760,19 @@
                                 <color key="textColor" red="0.42352941179999998" green="0.69803921570000005" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="next_detail@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Swx-WN-tPb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="next_detail.png" translatesAutoresizingMaskIntoConstraints="NO" id="Swx-WN-tPb">
                                 <rect key="frame" x="6" y="195" width="150" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="next_detail@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="D9E-Qb-a9k">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="next_detail.png" translatesAutoresizingMaskIntoConstraints="NO" id="D9E-Qb-a9k">
                                 <rect key="frame" x="164" y="195" width="150" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="cQ8-04-7uf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="cQ8-04-7uf">
                                 <rect key="frame" x="115" y="218" width="30" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="endclock@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="avt-3j-wOL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="endclock.png" translatesAutoresizingMaskIntoConstraints="NO" id="avt-3j-wOL">
                                 <rect key="frame" x="270" y="218" width="30" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -822,11 +822,11 @@
                                 <rect key="frame" x="12" y="276" width="66" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="event_detail@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="SIt-kM-n7b">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="event_detail@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="SIt-kM-n7b">
                                 <rect key="frame" x="4" y="270" width="313" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_detail@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="TEO-0e-Tzf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_detail@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="TEO-0e-Tzf">
                                 <rect key="frame" x="4" y="368" width="313" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1585,18 +1585,18 @@
         <image name="addedButton@2.png" width="41" height="41"/>
         <image name="backgroundlogin.jpg" width="449" height="708"/>
         <image name="blue-profile.png" width="220" height="227"/>
-        <image name="clock@2.png" width="60" height="55"/>
+        <image name="clock.png" width="30" height="27"/>
         <image name="close@2.png" width="41" height="40"/>
-        <image name="endclock@2.png" width="60" height="55"/>
-        <image name="event_detail@2.png" width="626" height="135"/>
+        <image name="endclock.png" width="30" height="27"/>
+        <image name="event_detail@2x.png" width="320" height="150"/>
         <image name="fb-profile.gif" width="58" height="50"/>
         <image name="first" width="30" height="30"/>
         <image name="friendshead.png" width="320" height="66"/>
         <image name="green-profile.png" width="320" height="339"/>
-        <image name="map_detail@2.png" width="626" height="135"/>
+        <image name="map_detail@2x.png" width="320" height="150"/>
         <image name="myinvites.png" width="329" height="117"/>
         <image name="newhere.png" width="320" height="65"/>
-        <image name="next_detail@2.png" width="313" height="135"/>
+        <image name="next_detail.png" width="156" height="67"/>
         <image name="overlay.png" width="320" height="150"/>
         <image name="pink.png" width="320" height="339"/>
         <image name="plus2@2.png" width="64" height="64"/>
