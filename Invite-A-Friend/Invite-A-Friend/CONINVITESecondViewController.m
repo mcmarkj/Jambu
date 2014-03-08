@@ -7,14 +7,29 @@
 //
 
 #import "CONINVITESecondViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface CONINVITESecondViewController ()
+@interface CONINVITESecondViewController (
+    
+)
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 - (IBAction)createEvent:(id)sender;
 - (IBAction)nearbyevents:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *hoursLabel;
+@property (strong, nonatomic) IBOutlet UILabel *EventName;
+@property (strong, nonatomic) IBOutlet UILabel *eventDetails;
+@property (strong, nonatomic) IBOutlet UIImageView *invitee_image;
 @property (strong, nonatomic) IBOutlet UILabel *minsLabel;
 @property (strong, nonatomic) IBOutlet UIScrollView *Scroller;
+@property (strong, nonatomic) IBOutlet UILabel *eventStartslabel;
+@property (strong, nonatomic) IBOutlet UILabel *eventEndslabel;
+@property (strong, nonatomic) IBOutlet UILabel *eventDaylabel;
+@property (strong, nonatomic) IBOutlet UILabel *eventEnddaylabel;
+@property (strong, nonatomic) IBOutlet UILabel *eventStartTimelabel;
+@property (strong, nonatomic) IBOutlet UILabel *eventEndTimelabel;
+@property (strong, nonatomic) IBOutlet UILabel *eventLocationLabel;
+@property (nonatomic, strong) IBOutlet GMSMapView *mapView;
+@property (nonatomic, strong) IBOutlet GMSCameraPosition *camera;
 
 @end
 
@@ -22,15 +37,47 @@
 
 - (void)viewDidLoad
 {
+    self.camera = [GMSCameraPosition cameraWithLatitude:53.792336
+                                              longitude:-1.534171 zoom:18
+                                                bearing:0
+                                           viewingAngle:0
+                   ];
+    
+    self.mapView = [GMSMapView mapWithFrame:_viewForMap.bounds camera:_camera];
+    
+    // Creates a marker in the center of the map.
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = CLLocationCoordinate2DMake(53.792336, -1.534171);
+    marker.title = @"Mark's Flat";
+    marker.snippet = @"Leeds";
+    marker.map = _mapView;
+    
+    
+    self.mapView.delegate = self;
 
     
-
-    self.Scroller.contentSize =CGSizeMake(324, 464);
+    [self.viewForMap addSubview:_mapView];
+    
         [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     _titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:28];
     _hoursLabel.font = [UIFont fontWithName:@"Roboto-Light" size:18];
     _minsLabel.font = [UIFont fontWithName:@"Roboto-Light" size:18];
+    _EventName.font = [UIFont fontWithName:@"Roboto-Light" size:22];
+    _eventLocationLabel.font = [UIFont fontWithName:@"Roboto-Thin" size:18];
+    _eventDaylabel.font = [UIFont fontWithName:@"Roboto-Medium" size:13];
+    _eventDetails.font = [UIFont fontWithName:@"Roboto-Light" size:11];
+    _eventEnddaylabel.font = [UIFont fontWithName:@"Roboto-Medium" size:3];
+    _eventEnddaylabel.enabled = TRUE;
+    _eventEndslabel.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+    _eventEndTimelabel.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+    _eventStartslabel.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+    _eventStartTimelabel.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+    
+     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *imageurl = [userdefaults objectForKey:@"Con96UIMG"];
+    _invitee_image.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageurl]]];
     NSString *eventHour = @"11";
     NSString *eventMin = @"0";
     
@@ -58,7 +105,10 @@
     }
     
 }
-
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

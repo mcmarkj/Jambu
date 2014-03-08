@@ -39,7 +39,10 @@
 {
     
 }
-
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 -(void)checkfornetwork
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

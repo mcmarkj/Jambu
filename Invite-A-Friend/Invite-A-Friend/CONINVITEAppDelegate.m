@@ -10,11 +10,14 @@
 #import "CONINVITEFirstViewController.h"
 #import "TestFlight.h"
 #import <Crashlytics/Crashlytics.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation CONINVITEAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [GMSServices provideAPIKey:@"AIzaSyDZrNf8eUHU7VAQuf1unCGvKrDewHooeaY"];
    [Crashlytics startWithAPIKey:@"55c3ecc37a3b972e490db29a097513baf77b6aea"];
                 // Register with apple that this app will use push notification
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | 

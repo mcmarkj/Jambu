@@ -11,5 +11,6 @@
 @interface CONINVITESecondViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *eventHour;
 @property (strong, nonatomic) IBOutlet UILabel *eventMinute;
+@property (strong, nonatomic) IBOutlet UIView *viewForMap;
 
 @end
