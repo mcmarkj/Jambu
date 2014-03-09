@@ -22,7 +22,7 @@
                         <rect key="frame" x="19" y="0.0" width="57" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cellback@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ozF-w8-wGN">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cellback.png" translatesAutoresizingMaskIntoConstraints="NO" id="ozF-w8-wGN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
@@ -60,6 +60,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="cellback@2.png" width="640" height="112"/>
+        <image name="cellback.png" width="320" height="56"/>
     </resources>
 </document>

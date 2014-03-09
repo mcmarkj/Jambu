@@ -136,15 +136,15 @@
     NSString *profilecolour = [userInfo valueForKey:@"colour"];
     
     if ([profilecolour  isEqual: @"red"]) {
-        _profilecolourimage.image = [UIImage imageNamed:@"red-profile@2.png"];
+        _profilecolourimage.image = [UIImage imageNamed:@"red-profile@2x.png"];
     } else if ([profilecolour  isEqual: @"green"]) {
-        _profilecolourimage.image = [UIImage imageNamed:@"green-profile@2.png"];
+        _profilecolourimage.image = [UIImage imageNamed:@"green-profile@2x.png"];
     } else if ([profilecolour  isEqual: @"purple"]) {
-        _profilecolourimage.image = [UIImage imageNamed:@"purple@2.png"];
+        _profilecolourimage.image = [UIImage imageNamed:@"purple@2x.png"];
     } else if ([profilecolour  isEqual: @"pink"]) {
-        _profilecolourimage.image = [UIImage imageNamed:@"pink@2.png"];
+        _profilecolourimage.image = [UIImage imageNamed:@"pink@2x.png"];
     } else if ([profilecolour  isEqual: @"blue"]) {
-        _profilecolourimage.image = [UIImage imageNamed:@"blue-profile@2.png"];
+        _profilecolourimage.image = [UIImage imageNamed:@"blue-profile@2x.png"];
     }
     
     

@@ -297,7 +297,7 @@
         
         
         NSArray *countInfo = [json valueForKey:@"counts"];
-        
+        NSArray *next_event = [json valueForKey:@"next_event"];
         //Check if the response is valid or not - stops the app from crashing
         if (userInfo == nil) {
             NSLog(@"Response is Null, user's been deleted");
@@ -321,16 +321,69 @@
             //Change the button's value to match the number of pending events pulled from the JSON.
             [_inviteindicator setTitle:eventInvitesPrend forState:UIControlStateNormal];
         }
+            
+            
         NSString *twitterusername = [userInfo valueForKey:@"username"];
         NSString *AID = [userInfo valueForKey:@"id"];
             NSString *imgurl = [userInfo valueForKey:@"image_url"];
+            NSString *eventTitle = [next_event valueForKey:@"title"];
+            NSString *endTime = [next_event valueForKey:@"time_of_event_end"];
+            NSString *lat = [next_event valueForKey:@"lat"];
+            NSString *lng = [next_event valueForKey:@"long"];
+            int latat = [lat intValue];
+            int longa = [lng intValue];
+            NSString *desc = [next_event valueForKey:@"description"];
+            NSString *event_userID = [next_event valueForKey:@"user_id"];
+            NSString *event_ID = [next_event valueForKey:@"id"];
+            
+            
+            
+            
+            
+            
+            //Let's convert the unix timestamp
+            double timestampval = [[next_event valueForKey:@"time_of_event"] doubleValue];
+            NSTimeInterval timestamp = (NSTimeInterval)timestampval;
+            NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
+            NSDateFormatter *dateformatter=[[NSDateFormatter alloc]init];
+            [dateformatter setLocale:[NSLocale currentLocale]];
+            [dateformatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+            
+            NSString *dateString=[dateformatter stringFromDate:date];
+            // end of conversion
+            
+            
+            {
+            //Let's convert the unix timestamp
+            double timestampval = [[next_event valueForKey:@"time_of_event_end"] doubleValue];
+            NSTimeInterval timestamp = (NSTimeInterval)timestampval;
+            NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
+            NSDateFormatter *dateformatter=[[NSDateFormatter alloc]init];
+            [dateformatter setLocale:[NSLocale currentLocale]];
+            [dateformatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+            
+            NSString *enddateString=[dateformatter stringFromDate:date];
+            // end of conversion
+            
+            
+            
             
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:AID forKey:@"Con96AID"];
         [defaults setObject:twitterusername forKey:@"Con96TUNAME"];
         [defaults setObject:imgurl forKey:@"Con96UIMG"];
+            [defaults setObject:dateString forKey:@"ConNextEDate"];
+            [defaults setObject:eventTitle forKey:@"ConNextTitle"];
+            [defaults setObject:enddateString forKey:@"ConNextEnd"];
+            [defaults setObject:lat forKey:@"ConNextLat"];
+            [defaults setObject:lng forKey:@"ConNextLong"];
+            [defaults setObject:desc forKey:@"ConNextDesc"];
+            [defaults setObject:event_userID forKey:@"ConNextUID"];
+            [defaults setObject:event_ID forKey:@"ConNextEID"];
+            
+
         [defaults synchronize];
-        
+            }
             
 
             
@@ -455,26 +508,56 @@
 
 - (void)updateCountdown {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
-    NSDate *endingDate = [dateFormatter dateFromString:@"2014-03-07"];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *eventdate = [defaults objectForKey:@"ConNextEDate"];
+    NSDate *endingDate = [dateFormatter dateFromString:eventdate];
     NSDate *startingDate = [NSDate date];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSUInteger unitFlags = NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit;
     NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:startingDate toDate:endingDate options:0];
-    
-    NSInteger hours    = [dateComponents hour];
-    
-    if(hours < 0){
-        NSString *countdownText = [NSString stringWithFormat:@"No upcoming events :[ %@", @""];
+    NSInteger hours = [dateComponents hour];
+    NSInteger mins    = [dateComponents minute];
+    NSInteger days = [dateComponents day];
+
+    if(days>=1){
+        NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Days, %ld Hours, and %ld Mins", (long)days, (long)hours, (long)mins];
         _overlaynexteventlabel.text = countdownText;
     } else {
     
-        NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Hours", (long)hours];
+    
+    if(hours <= 0){
+        if(mins <=0){
+        NSString *countdownText = [NSString stringWithFormat:@"No upcoming events :[ %@", @""];
         _overlaynexteventlabel.text = countdownText;
+        } else if (mins >=1) {
+            NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Mins", (long)mins];
+            _overlaynexteventlabel.text = countdownText;
+            
+            NSString *hours = [NSString stringWithFormat:@"%ld", (long)hours];
+            NSString *mins = [NSString stringWithFormat:@"%ld", (long)mins];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:hours forKey:@"CONEHours"];
+            [defaults setObject:mins forKey:@"CONEMins"];
+            [defaults synchronize];
+            
+        }
+    } else {
+    
+        NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Hours, and %ld Mins", (long)hours, (long)mins];
+        _overlaynexteventlabel.text = countdownText;
+        
+        NSString *hours = [NSString stringWithFormat:@"%ld", (long)hours];
+        NSString *mins = [NSString stringWithFormat:@"%ld", (long)mins];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:hours forKey:@"CONEHours"];
+        [defaults setObject:mins forKey:@"CONEMins"];
+        [defaults synchronize];
+        
     }
 }
-
+}
 
 
 -(void) fadein

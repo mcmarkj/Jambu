@@ -981,7 +981,7 @@
                                 <rect key="frame" x="263" y="15" width="48" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="11" minY="7" maxX="13" maxY="8"/>
-                                <state key="normal" image="search@2.png">
+                                <state key="normal" image="search.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1139,7 +1139,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alj-M1-2EP">
                                 <rect key="frame" x="95" y="93" width="31" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="AddFriend@2.png">
+                                <state key="normal" image="AddFriend.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1150,7 +1150,7 @@
                                 <rect key="frame" x="5" y="10" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="13" minY="13" maxX="13" maxY="13"/>
-                                <state key="normal" image="close@2.png">
+                                <state key="normal" image="close.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1173,7 +1173,7 @@
                                 <rect key="frame" x="98" y="96" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".LucidaGrandeUI" family=".Lucida Grande UI" pointSize="11"/>
-                                <state key="normal" image="addedButton@2.png">
+                                <state key="normal" image="addedButton.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1418,7 +1418,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fr5-DI-dhB">
                                 <rect key="frame" x="95" y="93" width="31" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="AddFriend@2.png">
+                                <state key="normal" image="AddFriend.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1429,7 +1429,7 @@
                                 <rect key="frame" x="5" y="10" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="13" minY="13" maxX="13" maxY="13"/>
-                                <state key="normal" image="close@2.png">
+                                <state key="normal" image="close.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1452,7 +1452,7 @@
                                 <rect key="frame" x="98" y="96" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".LucidaGrandeUI" family=".Lucida Grande UI" pointSize="11"/>
-                                <state key="normal" image="addedButton@2.png">
+                                <state key="normal" image="addedButton.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1587,16 +1587,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AddFriend@2.png" width="62" height="62"/>
+        <image name="AddFriend.png" width="31" height="31"/>
         <image name="Addedbutton.png" width="320" height="150"/>
         <image name="ContactCardBase.png" width="320" height="210"/>
         <image name="EditProfile.png" width="31" height="31"/>
         <image name="InviteIndicator.png" width="40" height="29"/>
-        <image name="addedButton@2.png" width="41" height="41"/>
+        <image name="addedButton.png" width="20" height="20"/>
         <image name="backgroundlogin.jpg" width="449" height="708"/>
         <image name="blue-profile.png" width="220" height="227"/>
         <image name="clock.png" width="30" height="27"/>
-        <image name="close@2.png" width="41" height="40"/>
+        <image name="close.png" width="20" height="20"/>
         <image name="endclock.png" width="30" height="27"/>
         <image name="event_detail.png" width="313" height="67"/>
         <image name="fb-profile.gif" width="58" height="50"/>
@@ -1612,7 +1612,7 @@
         <image name="plus2@2.png" width="64" height="64"/>
         <image name="purple.png" width="320" height="339"/>
         <image name="red-profile.png" width="320" height="339"/>
-        <image name="search@2.png" width="41" height="40"/>
+        <image name="search.png" width="20" height="20"/>
         <image name="second" width="30" height="30"/>
         <image name="spinner.png" width="142" height="133"/>
         <image name="street_view@2.png" width="75" height="75"/>
@@ -1625,10 +1625,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9UP-zD-xGT"/>
-        <segue reference="M3E-Y3-Wu6"/>
-        <segue reference="PwJ-sI-xxm"/>
         <segue reference="Y49-Y4-P4Y"/>
         <segue reference="Bgi-A0-rbf"/>
+        <segue reference="eR1-s8-gg5"/>
+        <segue reference="M3E-Y3-Wu6"/>
+        <segue reference="9UP-zD-xGT"/>
     </inferredMetricsTieBreakers>
 </document>
