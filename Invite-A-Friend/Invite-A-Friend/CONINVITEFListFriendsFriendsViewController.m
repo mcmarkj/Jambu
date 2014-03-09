@@ -9,6 +9,7 @@
 #import "CONINVITEFListFriendsFriendsViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "JSON.h"
+#include "CustomFriendCells.h"
 
 @interface CONINVITEFListFriendsFriendsViewController ()
 - (IBAction)closeView:(id)sender;
@@ -196,35 +197,63 @@
 //Configuring cell design upon request from table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    
+    static NSString *simpleTableIdentifier = @"CustomFriendCells";
+    
+    CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomFriendCells" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
-    cell.textLabel.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"full_name"];
-	cell.textLabel.adjustsFontSizeToFitWidth = YES;
-	cell.textLabel.font = [UIFont systemFontOfSize:12];
-	cell.textLabel.numberOfLines = 2;
-    cell.textLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"username"]];
-	cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.nameLabel.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"full_name"];
+	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
+	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
+	cell.nameLabel.numberOfLines = 2;
+    //cell.nameLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
+    cell.twitternameLabel.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"username"]];
+	cell.twitternameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:10];
     
     NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_thumbnail"];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     NSURLResponse *response;
     NSError *error;
     NSData *rawImage = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    // cell.imageView.image = [UIImage imageNamed:@"friendback.png"];
-    cell.imageView.image = [UIImage imageWithData:rawImage];
     
+    //_UserImage.image = [UIImage imageWithData:rawImage];
+    
+    cell.thumbnailImageView.image = [UIImage imageWithData:rawImage];
+    //cell.imageView.image = [UIImage imageNamed:@"searchcircle.png"];
+    
+    
+    int rownum = indexPath.row;
+    int totnum = [tweets count] - 1;
+    
+    if(rownum == totnum){
+        
+        static NSString *simpleTableIdentifier = @"friendfeedcell";
+        
+        CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FriendFeedCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        // Reset previous content of the cell, I have these defined in a UITableCell subclass, change them where needed
+        // Here we create the ‘Load more’ cell
+        
+        
+    }
     
     return cell;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tabelView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 80.0f;
+    
+        return 61;
 }
 
 /*
