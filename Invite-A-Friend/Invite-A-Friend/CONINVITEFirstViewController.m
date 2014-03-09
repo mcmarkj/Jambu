@@ -326,12 +326,12 @@
         NSString *twitterusername = [userInfo valueForKey:@"username"];
         NSString *AID = [userInfo valueForKey:@"id"];
             NSString *imgurl = [userInfo valueForKey:@"image_url"];
+            
             NSString *eventTitle = [next_event valueForKey:@"title"];
-            NSString *endTime = [next_event valueForKey:@"time_of_event_end"];
+            //Not using this yet for some reason?
+            //NSString *endTime = [next_event valueForKey:@"time_of_event_end"];
             NSString *lat = [next_event valueForKey:@"lat"];
             NSString *lng = [next_event valueForKey:@"long"];
-            int latat = [lat intValue];
-            int longa = [lng intValue];
             NSString *desc = [next_event valueForKey:@"description"];
             NSString *event_userID = [next_event valueForKey:@"user_id"];
             NSString *event_ID = [next_event valueForKey:@"id"];

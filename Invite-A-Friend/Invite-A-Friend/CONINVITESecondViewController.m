@@ -43,7 +43,7 @@
 {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     
-    NSString *imageurl = [userdefaults objectForKey:@"Con96UIMG"];
+    //NSString *imageurl = [userdefaults objectForKey:@"Con96UIMG"];
     
     NSString *lat = [userdefaults objectForKey:@"ConNextLat"];
         NSString *lng = [userdefaults objectForKey:@"ConNextLong"];

@@ -13,5 +13,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *twitternameLabel;
 - (IBAction)buttonPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *friends_button;
+@property (strong, nonatomic) IBOutlet UIButton *not_friends;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 @end

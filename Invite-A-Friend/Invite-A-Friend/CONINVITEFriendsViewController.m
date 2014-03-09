@@ -221,7 +221,7 @@
     NSString *action = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"action"];
         NSString *actionname = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"name"];
     NSString *outputAction = @"";
-    NSString *atribute = [[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"];
+   // NSString *atribute = [[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"];
     if([action isEqualToString:@"friend added"]) {
         outputAction = [NSString stringWithFormat:@"%@ added %@ as a friend", _UserName.text, actionname];
     } else if([action isEqualToString:@"user updated"]) {
@@ -305,11 +305,6 @@
  */
 
 #pragma mark - Table view delegate
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

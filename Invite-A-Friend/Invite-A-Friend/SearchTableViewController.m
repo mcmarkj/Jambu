@@ -445,6 +445,38 @@
     
 
     }
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    NSString *UserUID = [defaults objectForKey:@"Con96AID"];
+    
+    NSString *FriendAID = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"id"];
+    
+    
+    {
+    NSURL *friendurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/is_friends/%@?user=%@", UserUID, FriendAID]];
+    
+    NSMutableURLRequest *frequest = [NSMutableURLRequest requestWithURL:friendurl];
+    
+    [frequest setURL:friendurl];
+    [frequest setHTTPMethod:@"GET"];
+    [frequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSError *error;
+    NSURLResponse *response;
+    NSData *jsondata = [NSURLConnection sendSynchronousRequest:frequest returningResponse:&response error:&error];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+    
+        NSString *FriendID = [json valueForKey:@"friendship_id"];
+        
+        if([FriendID isEqual:@"Not Friends"]){
+            cell.friends_button.hidden = YES;
+            cell.not_friends.hidden = NO;
+        } else {
+            cell.friends_button.hidden = NO;
+            cell.not_friends.hidden = YES;
+        }
+        
+}
 
     return cell;
 }

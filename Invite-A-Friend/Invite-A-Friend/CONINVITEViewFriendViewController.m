@@ -25,6 +25,7 @@
 @synthesize responseData;
 - (IBAction)deleteFriend:(id)sender {
     [self showConfirmAlert];
+    [self loadFeed];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -109,6 +110,7 @@
     NSLog(@"We're now collecting to the API");
     [connection start];
     NSLog(@"Completed API Request");
+    [self loadFeed];
     NSString *addedmessage = [NSString stringWithFormat:@"You're now following %@", _UserName.text];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Follower Added"
                                                     message:addedmessage
@@ -119,10 +121,10 @@
     [alert performSelectorOnMainThread:@selector(show)
                             withObject:nil
                          waitUntilDone:NO];
-    
     addFriend.hidden=YES;
     _addedButton.hidden=NO;
-    
+    //[self loadFeed];
+    //[self performSelectorOnMainThread:@selector(loadfeed) withObject:nil waitUntilDone:NO];
 };
 
 
@@ -162,6 +164,7 @@
     NSLog(@"We're now collecting to the API");
     [connection start];
     NSLog(@"Completed API Request");
+    [self loadFeed];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Deleted"
                                                     message:@"Deleted Follower"
@@ -172,8 +175,9 @@
     [alert performSelectorOnMainThread:@selector(show)
                             withObject:nil
                          waitUntilDone:NO];
-    
+
     addFriend.hidden=YES;
+  //      [self loadFeed];
     
 };
 
@@ -345,7 +349,7 @@
     
     
     NSArray *countInfo = [json valueForKey:@"counts"];
-    NSArray *friendidinfo = [json valueForKey:@"friend_id"];
+    //NSArray *friendidinfo = [json valueForKey:@"friend_id"];
 
     NSString *twitterusername = [userInfo valueForKey:@"username"];
     
@@ -438,7 +442,7 @@
     NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/feed/%@",UID];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
     [NSURLConnection connectionWithRequest:request delegate:self];
-    [self.searchBar resignFirstResponder];
+    //[self.searchBar resignFirstResponder];
     
 }
 
@@ -471,7 +475,7 @@
     NSString *action = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"action"];
     NSString *actionname = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"name"];
     NSString *outputAction = @"";
-    NSString *atribute = [[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"];
+   // NSString *atribute = [[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"];
     if([action isEqualToString:@"friend added"]) {
         outputAction = [NSString stringWithFormat:@"%@ added %@ as a friend", _UserName.text, actionname];
     } else if([action isEqualToString:@"user updated"]) {
