@@ -32,6 +32,8 @@
 @property (nonatomic, strong) IBOutlet GMSMapView *mapView;
 @property (nonatomic, strong) IBOutlet GMSCameraPosition *camera;
 - (IBAction)openMap:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *eventHider;
+@property (strong, nonatomic) IBOutlet UIImageView *nope_image;
 
 @end
 
@@ -84,6 +86,7 @@
     _hoursLabel.font = [UIFont fontWithName:@"Roboto-Light" size:18];
     _minsLabel.font = [UIFont fontWithName:@"Roboto-Light" size:18];
     _EventName.font = [UIFont fontWithName:@"Roboto-Light" size:22];
+   
     _EventName.text = [userdefaults objectForKey:@"ConNextTitle"];
     
     
@@ -249,7 +252,17 @@
         _eventMinute.text = eventMin;
     }
     
-    } }
+    }
+
+    NSString *theTitle = [defaults objectForKey:@"ConNextUID"];
+    if(theTitle == Nil){
+        _eventHider.hidden = NO;
+    } else {
+    _eventHider.hidden = YES;
+    _nope_image.hidden = YES;
+    }
+
+}
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;

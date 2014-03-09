@@ -168,6 +168,8 @@
 }
 - (void)viewDidLoad
 {
+    searchBar.searchBarStyle = UISearchBarStyleMinimal;
+        [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor whiteColor]];
     [super viewDidLoad];
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
         // iOS 7
@@ -399,7 +401,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.nameLabel.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"full_name"];
 	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
-	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:20];
+	cell.nameLabel.font = [UIFont fontWithName:@"Myriad-Pro" size:20];
 	cell.nameLabel.numberOfLines = 2;
     //cell.nameLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
     cell.twitternameLabel.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"username"]];
@@ -449,7 +451,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tabelView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 61;
+	return 73;
 }
 
 /*

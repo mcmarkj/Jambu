@@ -860,6 +860,17 @@
                                     <outletCollection property="gestureRecognizers" destination="xth-Dr-Evy" appends="YES" id="edB-Bj-aSy"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4K3-gL-sze">
+                                <rect key="frame" x="0.0" y="182" width="320" height="335"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noevents@2.png" translatesAutoresizingMaskIntoConstraints="NO" id="7z6-9Z-2XM">
+                                        <rect key="frame" x="44" y="111" width="236" height="149"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97211814413265307" green="0.97211814413265307" blue="0.97211814413265307" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -871,6 +882,7 @@
                         <outlet property="eventEndTimelabel" destination="hRe-zJ-aT8" id="hLB-i0-vZy"/>
                         <outlet property="eventEnddaylabel" destination="hkV-Le-HdN" id="y5r-2j-DML"/>
                         <outlet property="eventEndslabel" destination="8Zr-HD-8Pn" id="pfI-C2-nKP"/>
+                        <outlet property="eventHider" destination="4K3-gL-sze" id="ivj-f9-KUR"/>
                         <outlet property="eventHour" destination="097-Uj-SHt" id="HGg-6T-7pB"/>
                         <outlet property="eventLocationLabel" destination="PQN-ok-6bV" id="kWY-Yt-8mg"/>
                         <outlet property="eventMinute" destination="2FV-tm-4tJ" id="201-RQ-Vpk"/>
@@ -879,6 +891,7 @@
                         <outlet property="hoursLabel" destination="mzx-fu-F0z" id="s59-gd-MrJ"/>
                         <outlet property="invitee_image" destination="KPt-8s-iwE" id="9x7-Qr-ckL"/>
                         <outlet property="minsLabel" destination="3bb-B2-lse" id="cUe-FX-dym"/>
+                        <outlet property="nope_image" destination="7z6-9Z-2XM" id="OFV-IT-doN"/>
                         <outlet property="titleLabel" destination="UWQ-oo-BKP" id="DFj-6M-Vey"/>
                         <outlet property="viewForMap" destination="hzu-3V-TB6" id="VIV-7t-5GU"/>
                         <segue destination="Gmm-C0-fLu" kind="modal" identifier="showNearby" modalTransitionStyle="coverVertical" id="BAh-AL-ujr"/>
@@ -1245,25 +1258,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ab-4n-CJN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyd-yj-x0E">
+                                        <rect key="frame" x="120" y="246" width="80" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.18823529410000001" green="0.60784313729999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1hq-Q7-Elu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="561"/>
+                                <rect key="frame" x="0.0" y="43" width="320" height="500"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="prominent" prompt="Search by name:" showsCancelButton="YES" id="LOK-ah-SrS">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                <searchBar key="tableHeaderView" opaque="NO" contentMode="redraw" searchBarStyle="minimal" placeholder="Full Name / Twitter Username" translucent="NO" id="LOK-ah-SrS">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no"/>
-                                    <scopeButtonTitles>
-                                        <string>Title</string>
-                                        <string>Title</string>
-                                    </scopeButtonTitles>
+                                    <color key="backgroundColor" red="0.18823529410000001" green="0.60784313729999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="barTintColor" red="0.25882352941176467" green="0.30588235294117649" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="yes"/>
                                     <connections>
                                         <outlet property="delegate" destination="cOO-aC-mHq" id="dgw-VF-OcG"/>
                                     </connections>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nextPage" rowHeight="60" id="pNe-4X-rhE">
-                                        <rect key="frame" x="0.0" y="97" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="66" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pNe-4X-rhE" id="hqj-m5-bvF">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
@@ -1287,10 +1312,11 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGN-5S-ccQ">
-                                <rect key="frame" x="254" y="36" width="65" height="32"/>
+                                <rect key="frame" x="254" y="6" width="65" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1607,6 +1633,7 @@
         <image name="myinvites.png" width="329" height="117"/>
         <image name="newhere.png" width="320" height="65"/>
         <image name="next_detail.png" width="156" height="67"/>
+        <image name="noevents@2.png" width="509" height="327"/>
         <image name="overlay.png" width="320" height="150"/>
         <image name="pink.png" width="320" height="339"/>
         <image name="plus2@2.png" width="64" height="64"/>
@@ -1625,9 +1652,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Y49-Y4-P4Y"/>
-        <segue reference="Bgi-A0-rbf"/>
+        <segue reference="n1E-Iw-f0j"/>
         <segue reference="eR1-s8-gg5"/>
+        <segue reference="Bgi-A0-rbf"/>
         <segue reference="M3E-Y3-Wu6"/>
         <segue reference="9UP-zD-xGT"/>
     </inferredMetricsTieBreakers>

@@ -24,6 +24,12 @@
 		4126562818CBA6DC00368BB1 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4126562718CBA6DC00368BB1 /* libicucore.dylib */; };
 		4126562A18CBA6EB00368BB1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4126562918CBA6EB00368BB1 /* OpenGLES.framework */; };
 		4126562E18CBAA4200368BB1 /* GoogleMaps.Framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4126562D18CBAA4200368BB1 /* GoogleMaps.Framework */; };
+		4126563018CC937E00368BB1 /* searchbk@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126562F18CC937E00368BB1 /* searchbk@2.png */; };
+		4126563318CC9D5A00368BB1 /* notfriends.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126563118CC9D5A00368BB1 /* notfriends.png */; };
+		4126563418CC9D5A00368BB1 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126563218CC9D5A00368BB1 /* tick.png */; };
+		4126563618CCAAAF00368BB1 /* searchbarbk@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126563518CCAAAE00368BB1 /* searchbarbk@2.png */; };
+		4126563818CCAB7E00368BB1 /* searchbarbk.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126563718CCAB7E00368BB1 /* searchbarbk.png */; };
+		4126563A18CCB67900368BB1 /* noevents@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126563918CCB67900368BB1 /* noevents@2.png */; };
 		413326F118B115F50070517B /* CustomFriendCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 413326F018B115F50070517B /* CustomFriendCells.m */; };
 		4142F27C189D993E002ECA92 /* AddFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F27A189D993E002ECA92 /* AddFriend.png */; };
 		4142F27D189D993E002ECA92 /* AddFriend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F27B189D993E002ECA92 /* AddFriend@2x.png */; };
@@ -195,6 +201,12 @@
 		4126562718CBA6DC00368BB1 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		4126562918CBA6EB00368BB1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		4126562D18CBAA4200368BB1 /* GoogleMaps.Framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.Framework; sourceTree = "<group>"; };
+		4126562F18CC937E00368BB1 /* searchbk@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchbk@2.png"; sourceTree = "<group>"; };
+		4126563118CC9D5A00368BB1 /* notfriends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notfriends.png; sourceTree = "<group>"; };
+		4126563218CC9D5A00368BB1 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		4126563518CCAAAE00368BB1 /* searchbarbk@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchbarbk@2.png"; sourceTree = "<group>"; };
+		4126563718CCAB7E00368BB1 /* searchbarbk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchbarbk.png; sourceTree = "<group>"; };
+		4126563918CCB67900368BB1 /* noevents@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noevents@2.png"; sourceTree = "<group>"; };
 		413326EA18B110D60070517B /* CustomFriendCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomFriendCells.xib; sourceTree = "<group>"; };
 		413326EF18B115F50070517B /* CustomFriendCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFriendCells.h; sourceTree = "<group>"; };
 		413326F018B115F50070517B /* CustomFriendCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFriendCells.m; sourceTree = "<group>"; };
@@ -704,6 +716,7 @@
 				41D068DF18BA6E4200F29CD0 /* cellback@2x.png */,
 				4173460F18B91C1500F84676 /* fb-profile.gif */,
 				4173460B18B8F7B700F84676 /* myinvites.png */,
+				4126562F18CC937E00368BB1 /* searchbk@2.png */,
 				4173460C18B8F7B700F84676 /* myinvites@2x.png */,
 				41F597B1188C602B00DAF315 /* SampleImage.jpg */,
 				41F597CB188C602B00DAF315 /* friendback.png */,
@@ -848,7 +861,11 @@
 				41F597DA188C602B00DAF315 /* launch@2x.png */,
 				41F597DB188C602B00DAF315 /* menuicon.png */,
 				41F597DE188C602B00DAF315 /* twittersync.png */,
+				4126563118CC9D5A00368BB1 /* notfriends.png */,
+				4126563718CCAB7E00368BB1 /* searchbarbk.png */,
+				4126563218CC9D5A00368BB1 /* tick.png */,
 				41F597B3188C602B00DAF315 /* Icon-40.png */,
+				4126563918CCB67900368BB1 /* noevents@2.png */,
 				41F597B4188C602B00DAF315 /* Icon-40@2x.png */,
 				41F597B5188C602B00DAF315 /* Icon-60.png */,
 				41F597B6188C602B00DAF315 /* Icon-60@2x.png */,
@@ -860,6 +877,7 @@
 				41F597BC188C602B00DAF315 /* Icon-Small-50@2x.png */,
 				4126561118CB903000368BB1 /* event_detail@2x.png */,
 				41F597BD188C602B00DAF315 /* Icon-Small.png */,
+				4126563518CCAAAE00368BB1 /* searchbarbk@2.png */,
 				41F597BE188C602B00DAF315 /* Icon-Small@2x.png */,
 				4126560D18CB888500368BB1 /* clock@2x.png */,
 				4126561318CB9B2B00368BB1 /* map_detail@2x.png */,
@@ -965,6 +983,8 @@
 				414AA835188AE743001B3301 /* Images.xcassets in Resources */,
 				41F5980A188C602B00DAF315 /* topbanner.png in Resources */,
 				414AA8AA188B0274001B3301 /* Roboto-Medium.ttf in Resources */,
+				4126563818CCAB7E00368BB1 /* searchbarbk.png in Resources */,
+				4126563418CC9D5A00368BB1 /* tick.png in Resources */,
 				41F27C151893E3FD00E64CC1 /* facebooklogin.png in Resources */,
 				41D068E018BA6E4200F29CD0 /* cellback.png in Resources */,
 				41F59808188C602B00DAF315 /* menuicon.png in Resources */,
@@ -977,6 +997,7 @@
 				41F597F0188C602B00DAF315 /* launch.png in Resources */,
 				41E8FB5B189D666E000D43F4 /* green-profile.png in Resources */,
 				41A6AE6718CA8DBC008416EA /* plus2@2x.png in Resources */,
+				4126563A18CCB67900368BB1 /* noevents@2.png in Resources */,
 				41F597E4188C602B00DAF315 /* Icon-72.png in Resources */,
 				41E8FB6F189D8314000D43F4 /* red-profile@2x.png in Resources */,
 				416B25B618A69C4F000587E2 /* twitter_login.png in Resources */,
@@ -990,6 +1011,7 @@
 				41E8FB6C189D8314000D43F4 /* green-profile@2x.png in Resources */,
 				416B25B418A4E7F5000587E2 /* worker-512.png in Resources */,
 				41F27C1A1893E9CE00E64CC1 /* spinner.png in Resources */,
+				4126563018CC937E00368BB1 /* searchbk@2.png in Resources */,
 				4126561418CB9B2B00368BB1 /* map_detail@2x.png in Resources */,
 				41F597E5188C602B00DAF315 /* Icon-72@2x.png in Resources */,
 				414AA8A6188B0274001B3301 /* Roboto-BoldItalic.ttf in Resources */,
@@ -1004,6 +1026,7 @@
 				41F597E9188C602B00DAF315 /* Icon-Small-50@2x.png in Resources */,
 				41F597F8188C602B00DAF315 /* friendback.png in Resources */,
 				4142F2CA189FA836002ECA92 /* blue-profile@2x.png in Resources */,
+				4126563618CCAAAF00368BB1 /* searchbarbk@2.png in Resources */,
 				41F597F4188C602B00DAF315 /* ContactCardBase.png in Resources */,
 				416B25B818A69E62000587E2 /* backgroundlogin.jpg in Resources */,
 				4142F2C9189FA836002ECA92 /* blue-profile.png in Resources */,
@@ -1030,6 +1053,7 @@
 				4126561818CBA67400368BB1 /* GoogleMaps.bundle in Resources */,
 				41E8FB42189D1005000D43F4 /* README.md in Resources */,
 				414AA82D188AE743001B3301 /* Main.storyboard in Resources */,
+				4126563318CC9D5A00368BB1 /* notfriends.png in Resources */,
 				414AA8AE188B0274001B3301 /* Roboto-ThinItalic.ttf in Resources */,
 				41F3228018A1A343001E07EB /* searchcircle@2x.png in Resources */,
 				41E8FB67189D7FF0000D43F4 /* search@2x.png in Resources */,
