@@ -94,9 +94,7 @@
     [responseString release];
 	
 	NSArray *allTweets = [results objectForKey:@"friendships"];
-    NSArray *allfriends = [results objectForKey:@"friendshipids"];
 	[self setTweets:allTweets];
-		[self setFriends:allfriends];
 	[self.tableV reloadData];
 }
 
@@ -279,15 +277,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Pass the selected object to the new view controller.
     NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
-        NSString *FriendID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"id"]];
     NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
-    NSString *DBFID = [[friends objectAtIndex:indexPath.row] objectForKey:@"id"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:UID forKey:@"Con96FID"];
-    [defaults setObject:DBFID forKey:@"Con96DBFID"];
-        [defaults setObject:FriendID forKey:@"Con96FriendID"];
     [defaults setObject:AID forKey:@"Con96FAID"];
     [defaults synchronize];
     
