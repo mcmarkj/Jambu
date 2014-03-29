@@ -39,11 +39,13 @@
 
     
     
-    tabBarItem1.title = @"";
-    tabBarItem2.title = @"";
-    tabBarItem3.title = @"";
+   tabBarItem1.title = @"Home";
+    tabBarItem2.title = @"Events";
+    tabBarItem3.title = @"My Profile";
     
-    
+      /* tabBarItem1.title = @"";
+     tabBarItem2.title = @"";
+     tabBarItem3.title = @""; */
     
     tabBarItem1.image = [UIImage imageNamed:@"home.png"];
     
@@ -51,7 +53,9 @@
     
     tabBarItem3.image = [UIImage imageNamed:@"profile.png"];
     
-    
+    tabBarItem1.selectedImage = [UIImage imageNamed:@"home.png"];
+    tabBarItem2.selectedImage = [UIImage imageNamed:@"diary.png"];
+    tabBarItem3.selectedImage = [UIImage imageNamed:@"profile.png"];
    
     
     UIImage* tabBarBackground = [UIImage imageNamed:@"tab-back.png"];

@@ -29,6 +29,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *UserTNameLabel;
 @property (nonatomic, retain) IBOutletCollection(UIButton) NSArray *_UserFacebookFriendsLabel;
 
+@property NSString *steve;
+
+
 @end
 
 @implementation CONINVITEFirstViewController
@@ -39,6 +42,8 @@
 {
     
 }
+
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -471,8 +476,10 @@
 
 - (void)viewDidLoad
 {
+
         [self checkfornetwork];
     [super viewDidLoad];
+
   [self.eventsLoader startAnimating];
       [self.eventsLoader2 startAnimating];
       [self.eventsLoader3 startAnimating];
