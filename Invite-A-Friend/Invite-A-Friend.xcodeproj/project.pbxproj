@@ -1248,6 +1248,7 @@
 					"$(inherited)",
 					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend",
 					"/Users/markmcwhirter/Downloads/GoogleMaps-iOS-1.7.1",
+					"/Users/bradleyallen/Downloads/GoogleMaps-iOS-1.7.1",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
@@ -1277,6 +1278,7 @@
 					"$(inherited)",
 					"/Users/markmcwhirter/Desktop/Online/Invite/invite-a-friend-ios/Invite-A-Friend",
 					"/Users/markmcwhirter/Downloads/GoogleMaps-iOS-1.7.1",
+					"/Users/bradleyallen/Downloads/GoogleMaps-iOS-1.7.1",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Invite-A-Friend/Invite-A-Friend-Prefix.pch";
