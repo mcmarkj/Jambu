@@ -352,7 +352,7 @@
             NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
             NSDateFormatter *dateformatter=[[NSDateFormatter alloc]init];
             [dateformatter setLocale:[NSLocale currentLocale]];
-            [dateformatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+            [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             
             NSString *dateString=[dateformatter stringFromDate:date];
             // end of conversion
@@ -365,7 +365,7 @@
             NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
             NSDateFormatter *dateformatter=[[NSDateFormatter alloc]init];
             [dateformatter setLocale:[NSLocale currentLocale]];
-            [dateformatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+            [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             
             NSString *enddateString=[dateformatter stringFromDate:date];
             // end of conversion
@@ -515,7 +515,7 @@
 
 - (void)updateCountdown {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *eventdate = [defaults objectForKey:@"ConNextEDate"];
     NSDate *endingDate = [dateFormatter dateFromString:eventdate];
