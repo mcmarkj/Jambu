@@ -7,7 +7,6 @@
 //
 
 #import "CONINVITESecondViewController.h"
-#import <GoogleMaps/GoogleMaps.h>
 #include <math.h>
 
 @interface CONINVITESecondViewController (

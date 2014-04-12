@@ -75,7 +75,7 @@
         const unsigned char *dataBuffer = [deviceToken bytes];
         NSInteger i;
         for (i=0; i<[deviceToken length]; ++i) {
-            [stringBuffer appendFormat:@"%02X", (NSUInteger)dataBuffer[i]];
+            [stringBuffer appendFormat:@"%02lX", (unsigned long)dataBuffer[i]];
         }
         NSLog(@"token string buffer is %@",stringBuffer);
         NSLog(@"token is %@",deviceToken);

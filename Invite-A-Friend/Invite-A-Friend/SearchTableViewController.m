@@ -363,7 +363,7 @@
     {
         NSLog(@"we're at the bottom mate");
         int count = [tweets count];
-        NSLog(@"@%", count);
+        //NSLog(@"@%", count);
         if(count >= 10) {
                     [self nextsearch];
         }

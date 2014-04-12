@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface CONINVITESecondViewController : UIViewController
+
+@interface CONINVITESecondViewController : UIViewController <GMSMapViewDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *eventHour;
 @property (strong, nonatomic) IBOutlet UILabel *eventMinute;
 @property (strong, nonatomic) IBOutlet UIView *viewForMap;

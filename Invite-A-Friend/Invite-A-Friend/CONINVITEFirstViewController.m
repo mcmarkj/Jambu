@@ -27,7 +27,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *inviteindicator;
 @property (strong, nonatomic) IBOutlet UIImageView *inviteindicatorback;
 @property (strong, nonatomic) IBOutlet UILabel *UserTNameLabel;
-@property (nonatomic, retain) IBOutletCollection(UIButton) NSArray *_UserFacebookFriendsLabel;
+//@property (nonatomic, retain) IBOutletCollection(UIButton) NSArray *_UserFacebookFriendsLabel;
 
 @property NSString *steve;
 
@@ -542,11 +542,11 @@
             NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Mins", (long)mins];
             _overlaynexteventlabel.text = countdownText;
             
-            NSString *hours = [NSString stringWithFormat:@"%ld", (long)hours];
-            NSString *mins = [NSString stringWithFormat:@"%ld", (long)mins];
+            NSString *shours = [NSString stringWithFormat:@"%ld", (long)hours];
+            NSString *smins = [NSString stringWithFormat:@"%ld", (long)mins];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setObject:hours forKey:@"CONEHours"];
-            [defaults setObject:mins forKey:@"CONEMins"];
+            [defaults setObject:shours forKey:@"CONEHours"];
+            [defaults setObject:smins forKey:@"CONEMins"];
             [defaults synchronize];
             
         }
@@ -555,11 +555,11 @@
         NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Hours, and %ld Mins", (long)hours, (long)mins];
         _overlaynexteventlabel.text = countdownText;
         
-        NSString *hours = [NSString stringWithFormat:@"%ld", (long)hours];
-        NSString *mins = [NSString stringWithFormat:@"%ld", (long)mins];
+        NSString *shours = [NSString stringWithFormat:@"%ld", (long)hours];
+        NSString *smins = [NSString stringWithFormat:@"%ld", (long)mins];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:hours forKey:@"CONEHours"];
-        [defaults setObject:mins forKey:@"CONEMins"];
+        [defaults setObject:shours forKey:@"CONEHours"];
+        [defaults setObject:smins forKey:@"CONEMins"];
         [defaults synchronize];
         
     }
