@@ -912,7 +912,22 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="closeView:" destination="JPh-O6-dsn" eventType="touchUpInside" id="91J-6B-IJg"/>
                                             <action selector="closeView:" destination="Igf-oW-Ztn" eventType="touchUpInside" id="z9d-9m-0Xq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUH-N7-dlJ">
+                                        <rect key="frame" x="227" y="10" width="97" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Invite!">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeView:" destination="Igf-oW-Ztn" eventType="touchUpInside" id="hjv-oC-HQi"/>
+                                            <action selector="inviteFollowers:" destination="JPh-O6-dsn" eventType="touchUpInside" id="cm1-W1-Np4"/>
+                                            <action selector="inviteFriends:" destination="JPh-O6-dsn" eventType="touchUpInside" id="WF8-8M-2Mq"/>
                                         </connections>
                                     </button>
                                 </subviews>

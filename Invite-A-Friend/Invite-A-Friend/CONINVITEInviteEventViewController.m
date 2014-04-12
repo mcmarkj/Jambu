@@ -12,10 +12,13 @@
 #include "CustomFriendCells.h"
 
 @interface CONINVITEInviteEventViewController ()
+- (IBAction)inviteFollowers:(id)sender;
 - (IBAction)closeView:(id)sender;
 @end
 
 @implementation CONINVITEInviteEventViewController
+- (IBAction)inviteFriends:(id)sender {
+}
 
 @synthesize tweets;
 @synthesize friends;
@@ -328,7 +331,23 @@
     [super dealloc];
 }
 
+- (IBAction)inviteFollowers:(id)sender {
+    //Save Array to NSUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"" forKey:@"CONInviteUIDS"];
+    [defaults setObject:@"" forKey:@"CONIniteUIDSUAT"];
+    [defaults synchronize];
+    
+    
+    //Close View
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)closeView:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"" forKey:@"CONInviteUIDS"];
+    [defaults setObject:@"" forKey:@"CONIniteUIDSUAT"];
+    [defaults synchronize];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
