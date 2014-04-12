@@ -632,21 +632,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y8y-bU-bst">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgY-oO-Xw8">
+                                <rect key="frame" x="0.0" y="-201" width="320" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQU-hy-psA">
-                                        <rect key="frame" x="-20" y="29" width="77" height="45"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVm-bf-SP5">
+                                        <rect key="frame" x="66" y="229" width="188" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                        <state key="normal" image="close.png"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5W-fw-M4n">
+                                        <rect key="frame" x="13" y="232" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="street_view.png">
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
-                                            <action selector="closeView:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="HWg-v3-BRK"/>
+                                            <action selector="nearbyevents:" destination="QUy-BD-bpt" eventType="touchUpInside" id="qeg-0k-J2D"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLl-Ji-2ri">
-                                        <rect key="frame" x="32" y="29" width="256" height="45"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Owner: Mark McWhirter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="dIz-EX-Oyb">
+                                        <rect key="frame" x="29" y="249" width="262" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -655,15 +665,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.60784313729999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVS-Yb-REp">
-                                <rect key="frame" x="0.0" y="114" width="320" height="284"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="event name" clearsOnBeginEditing="YES" minimumFontSize="17" background="input_box.png" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ooV-ja-SzZ">
+                                <rect key="frame" x="20" y="87" width="280" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="event name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ooV-ja-SzZ">
-                                <rect key="frame" x="54" y="202" width="212" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.69803921568627447" green="0.73333333333333328" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.2627450980392157" green="0.29019607843137252" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -671,58 +676,141 @@
                                     <action selector="eventNamefinished:" destination="1Rz-Ju-li4" eventType="editingDidEnd" id="Dwa-Jo-p4I"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="pcd-Ai-Fpu">
-                                <rect key="frame" x="2" y="219" width="320" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ny-ig-7nh">
+                                <rect key="frame" x="22" y="300" width="276" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="p71-1J-aKp">
-                                <rect key="frame" x="2" y="254" width="320" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="event date / time" backgroundImage="button.png">
+                                    <color key="titleColor" red="1" green="0.9998662886200842" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPicker:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="xte-jA-4sx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9x8-W4-M4I">
+                                <rect key="frame" x="22" y="364" width="276" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="meeting point" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iFa-bP-3Wz">
-                                <rect key="frame" x="56" y="244" width="212" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="privacy: Anyone Can Attend" backgroundImage="button.png">
+                                    <color key="titleColor" red="1" green="0.99986628860000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="choosePrivicy:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="l7U-80-MIW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3di-g5-m3I">
+                                <rect key="frame" x="22" y="430" width="276" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.69803921570000005" green="0.73333333329999995" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="invite friends" backgroundImage="button.png">
+                                    <color key="titleColor" red="1" green="0.99986628860000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="inviteFriends:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="YXm-fR-XBu"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="event location" clearsOnBeginEditing="YES" minimumFontSize="17" background="input_box.png" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GGY-Mb-dLL">
+                                <rect key="frame" x="20" y="144" width="280" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.26274509800000001" green="0.2901960784" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="eventPointChanged:" destination="1Rz-Ju-li4" eventType="editingDidBegin" id="Aku-2C-SQ0"/>
-                                    <action selector="eventPointfinished:" destination="1Rz-Ju-li4" eventType="editingDidEnd" id="aNj-6p-kCA"/>
-                                </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="AZl-um-Xec">
-                                <rect key="frame" x="2" y="293" width="320" height="36"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text=" event description" translatesAutoresizingMaskIntoConstraints="NO" id="G2X-Ds-QJg">
+                                <rect key="frame" x="22" y="200" width="276" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="location" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ruu-VC-kv4">
-                                <rect key="frame" x="54" y="281" width="212" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.69803921570000005" green="0.73333333329999995" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.26274509800000001" green="0.2901960784" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1N-wb-iHW">
+                                <rect key="frame" x="78" y="505" width="165" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="CREATE EVENT" backgroundImage="submit_red.png">
+                                    <color key="titleColor" red="1" green="0.99986628860000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="eventLocationChanged:" destination="1Rz-Ju-li4" eventType="editingDidBegin" id="lio-XS-8t2"/>
-                                    <action selector="eventLocationfinished:" destination="1Rz-Ju-li4" eventType="editingDidEnd" id="mRc-Qi-dxV"/>
+                                    <action selector="showPicker:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="IlG-dY-XXQ"/>
                                 </connections>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="p3N-AP-geg">
-                                <rect key="frame" x="0.0" y="330" width="320" height="36"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="EnU-RU-ENi">
+                                <rect key="frame" x="258" y="320" width="10" height="10"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="DX6-9k-gFY">
-                                <rect key="frame" x="0.0" y="406" width="320" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="417805234.049779">
-                                    <!--2014-03-29 17:00:34 +0000-->
-                                </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="410270400">
-                                    <!--2014-01-01 12:00:00 +0000-->
-                                </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
-                                    <!--2037-12-31 11:00:00 +0000-->
-                                </date>
-                                <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <data key="data">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="Awg-pn-WY6">
+                                <rect key="frame" x="258" y="384" width="10" height="10"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="uCl-ym-6Qu">
+                                <rect key="frame" x="258" y="450" width="10" height="10"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Paj-dl-uAj">
+                                <rect key="frame" x="22" y="364" width="276" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HO1-eF-ZX6">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Choose Privicy">
+                                            <color key="titleColor" red="0.22352941176470587" green="0.24705882352941178" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.22352941176470587" green="0.24705882352941178" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closePrivicy:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="27L-Mr-XzX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srp-W7-4U9">
+                                        <rect key="frame" x="52" y="57" width="129" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Anyone can attend">
+                                            <color key="titleColor" red="0.22352941176470587" green="0.24705882352941178" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.22352941176470587" green="0.24705882352941178" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="privacyAnyone:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="9oh-Fz-vys"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELR-bk-yIp">
+                                        <rect key="frame" x="52" y="95" width="93" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Only Invitee's">
+                                            <color key="titleColor" red="0.22352941176470587" green="0.24705882352941178" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.22352941176470587" green="0.24705882352941178" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="privacyInvite:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="i24-zG-83m"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qT-Mh-PsV">
+                                        <rect key="frame" x="52" y="128" width="57" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Just Me">
+                                            <color key="titleColor" red="0.22352941176470587" green="0.24705882352941178" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.22352941176470587" green="0.24705882352941178" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="privacyMe:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="gZq-AF-N2G"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kb1-hm-oLq">
+                                <rect key="frame" x="-4" y="387" width="331" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="XkY-aA-K02">
+                                        <rect key="frame" x="0.0" y="20" width="331" height="162"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="419015831.17298198">
+                                            <!--2014-04-12 17:17:11 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="en"/>
+                                        <timeZone key="timeZone" name="America/Los_Angeles">
+                                            <mutableData key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -740,31 +828,39 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</data>
-                                </timeZone>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ny-ig-7nh">
-                                <rect key="frame" x="118" y="319" width="89" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="date / time">
-                                    <color key="titleColor" red="0.69803921568627447" green="0.73333333333333328" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="showPicker:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="xte-jA-4sx"/>
-                                </connections>
-                            </button>
+</mutableData>
+                                        </timeZone>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8a-5a-cG1">
+                                        <rect key="frame" x="271" y="-2" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="0.22352941176470587" green="0.24705882352941178" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.22352941176470587" green="0.24705882352941178" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dateDone:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="0hn-92-7Kd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.12941176470588234" green="0.14117647058823529" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="eventLocation" destination="ruu-VC-kv4" id="OXC-A5-Mkj"/>
-                        <outlet property="eventMPoint" destination="iFa-bP-3Wz" id="Oy8-7g-ft7"/>
-                        <outlet property="eventPicker" destination="DX6-9k-gFY" id="Srt-mq-jjr"/>
+                        <outlet property="attendButton" destination="3di-g5-m3I" id="dxR-T0-2WQ"/>
+                        <outlet property="datePicker" destination="XkY-aA-K02" id="Ocz-qh-aeY"/>
+                        <outlet property="dtButton" destination="4Ny-ig-7nh" id="a8M-Wp-Zdh"/>
+                        <outlet property="eventDescription" destination="G2X-Ds-QJg" id="isb-Pb-XwA"/>
+                        <outlet property="eventLocation" destination="GGY-Mb-dLL" id="Hgk-yO-yRb"/>
+                        <outlet property="eventOwner" destination="dIz-EX-Oyb" id="hyv-qm-UM1"/>
                         <outlet property="eventTitle" destination="ooV-ja-SzZ" id="WKC-Vw-Xpc"/>
                         <outlet property="pickerLabel" destination="4Ny-ig-7nh" id="bnB-HV-eV0"/>
-                        <outlet property="titleLabel" destination="fLl-Ji-2ri" id="A4K-6u-rEy"/>
+                        <outlet property="privButton" destination="9x8-W4-M4I" id="nby-uT-t5F"/>
+                        <outlet property="privicyMenu" destination="Paj-dl-uAj" id="F0G-9S-5mF"/>
+                        <outlet property="thedatePicker" destination="kb1-hm-oLq" id="5He-U6-4M6"/>
+                        <outlet property="titleLabel" destination="AVm-bf-SP5" id="OfG-KQ-arf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxx-dT-rkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1685,8 +1781,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="EditProfile.png" width="31" height="31"/>
         <image name="InviteIndicator.png" width="40" height="29"/>
         <image name="addedButton.png" width="20" height="20"/>
+        <image name="arrow_button.png" width="5" height="11"/>
         <image name="backgroundlogin.jpg" width="449" height="708"/>
         <image name="blue-profile.png" width="220" height="227"/>
+        <image name="button.png" width="276" height="49"/>
         <image name="clock.png" width="30" height="27"/>
         <image name="close.png" width="20" height="20"/>
         <image name="endclock.png" width="30" height="27"/>
@@ -1695,7 +1793,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="first" width="30" height="30"/>
         <image name="friendshead.png" width="320" height="66"/>
         <image name="green-profile.png" width="320" height="339"/>
-        <image name="line.png" width="640" height="36"/>
+        <image name="input_box.png" width="254" height="47"/>
         <image name="map_detail.png" width="313" height="67"/>
         <image name="myinvites.png" width="329" height="117"/>
         <image name="newhere.png" width="320" height="65"/>
@@ -1710,6 +1808,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="second" width="30" height="30"/>
         <image name="spinner.png" width="142" height="133"/>
         <image name="street_view.png" width="25" height="25"/>
+        <image name="submit_red.png" width="165" height="34"/>
         <image name="topbanner.png" width="320" height="64"/>
         <image name="twitter_login.png" width="249" height="49"/>
     </resources>

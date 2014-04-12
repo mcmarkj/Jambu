@@ -9,10 +9,25 @@
 #import "CONINVITECreateEventViewController.h"
 
 @interface CONINVITECreateEventViewController ()
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (strong, nonatomic) IBOutlet UIView *thedatePicker;
+- (IBAction)dateDone:(id)sender;
+- (IBAction)inviteFriends:(id)sender;
+- (IBAction)privacyMe:(id)sender;
+- (IBAction)privacyInvite:(id)sender;
+- (IBAction)privacyAnyone:(id)sender;
+- (IBAction)closePrivicy:(id)sender;
+- (IBAction)choosePrivicy:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *privicyMenu;
+@property (strong, nonatomic) IBOutlet UIButton *attendButton;
+@property (strong, nonatomic) IBOutlet UIButton *privButton;
+@property (strong, nonatomic) IBOutlet UIButton *dtButton;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIDatePicker *eventPicker;
 - (IBAction)closeView:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextView *eventDescription;
 - (IBAction)showPicker:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *eventOwner;
 - (IBAction)eventNameChanged:(id)sender;
 - (IBAction)eventPointChanged:(id)sender;
 - (IBAction)eventLocationChanged:(id)sender;
@@ -39,9 +54,31 @@
 
 - (void)viewDidLoad
 {
-        _titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:28];
+    
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
+    UIView *paddingsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
+        _titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:18];
     [super viewDidLoad];
+    _eventOwner.font = [UIFont fontWithName:@"Roboto-Light" size:8];
+    _eventDescription.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed: @"event_description.png"]];
+    _eventTitle.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+    _eventTitle.leftView = paddingView;
+    _eventTitle.leftViewMode = UITextFieldViewModeAlways;
+    _eventLocation.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+    _eventLocation.leftView = paddingsView;
+    _eventLocation.leftViewMode = UITextFieldViewModeAlways;
+    _eventDescription.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+    [_dtButton.titleLabel setFont: [UIFont fontWithName:@"Roboto-Light" size:12]];
+    _dtButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    _dtButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+        [_privButton.titleLabel setFont: [UIFont fontWithName:@"Roboto-Light" size:12]];
+    _privButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    _privButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+        [_attendButton.titleLabel setFont: [UIFont fontWithName:@"Roboto-Light" size:12]];
+    _attendButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    _attendButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
 	// Do any additional setup after loading the view.
+    [paddingView release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,7 +92,7 @@
 }
 
 - (IBAction)showPicker:(id)sender {
-    _eventPicker.hidden = NO;
+    _thedatePicker.hidden = NO;
 }
 
 - (IBAction)eventNameChanged:(id)sender {
@@ -104,5 +141,85 @@
     } else {
         
     }
+}
+- (IBAction)dateDone:(id)sender {
+        _thedatePicker.hidden = YES;
+    UIDatePicker *datePicker = _datePicker;
+    NSDate *pickerdate = [datePicker date];
+    
+    NSString *pickeraltdate = [NSString stringWithFormat:@"%@", pickerdate];
+    
+    NSTimeInterval timestamp = [pickerdate timeIntervalSince1970];
+
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
+    NSString *eventdate = pickeraltdate;
+    NSDate *date = [dateFormatter dateFromString:eventdate];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit) fromDate:date];
+    NSInteger hour = [components hour];
+    NSInteger day = [components day];
+    NSInteger daymonth = [components month];
+   // NSInteger DayYear = [components year];
+    NSInteger minute = [components minute];
+
+    
+    
+    
+    {
+        NSString *suffix;
+        int ones = day % 10;
+        int temp = floor(day/10.0);
+        int tens = temp%10;
+        
+        if (tens ==1) {
+            suffix = @"th";
+        } else if (ones ==1){
+            suffix = @"st";
+        } else if (ones ==2){
+            suffix = @"nd";
+        } else if (ones ==3){
+            suffix = @"rd";
+        } else {
+            suffix = @"th";
+        }
+
+ //   NSString *completeAsString = [NSString stringWithFormat:@"%d%@",day,suffix];
+    
+    
+        NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+        NSString *monthName = [[df monthSymbols] objectAtIndex:(daymonth-1)];
+        
+        NSString *newDate = [NSString stringWithFormat:@"event on: %d%@ %@ at %d:%d",day,suffix,monthName,hour,minute];
+    
+    [_dtButton setTitle:newDate forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)inviteFriends:(id)sender {
+}
+
+- (IBAction)privacyMe:(id)sender {
+ [_privButton setTitle:@"privacy: Only Me" forState:UIControlStateNormal];
+        _privicyMenu.hidden = YES;
+}
+
+- (IBAction)privacyInvite:(id)sender {
+    [_privButton setTitle:@"privacy: Only People I Invite" forState:UIControlStateNormal];
+        _privicyMenu.hidden = YES;
+}
+
+- (IBAction)privacyAnyone:(id)sender {
+    [_privButton setTitle:@"privacy: Anyone Can Attend" forState:UIControlStateNormal];
+        _privicyMenu.hidden = YES;
+}
+
+- (IBAction)closePrivicy:(id)sender {
+    _privicyMenu.hidden = YES;
+}
+
+- (IBAction)choosePrivicy:(id)sender {
+    _privicyMenu.hidden = NO;
 }
 @end
