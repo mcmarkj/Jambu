@@ -208,6 +208,7 @@
 }
 
 - (IBAction)inviteFriends:(id)sender {
+         [self  performSegueWithIdentifier:@"showInvites" sender:self];
 }
 
 - (IBAction)privacyMe:(id)sender {

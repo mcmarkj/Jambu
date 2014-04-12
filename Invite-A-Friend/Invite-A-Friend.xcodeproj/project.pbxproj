@@ -194,6 +194,7 @@
 		41FFD98118F9A2A200CC85E5 /* arrow_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FFD97F18F9A2A200CC85E5 /* arrow_button@2x.png */; };
 		41FFD98418F9A3D700CC85E5 /* arrow_button2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FFD98218F9A3D700CC85E5 /* arrow_button2.png */; };
 		41FFD98518F9A3D700CC85E5 /* arrow_button2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FFD98318F9A3D700CC85E5 /* arrow_button2@2x.png */; };
+		41FFD98918F9C3AA00CC85E5 /* CONINVITEInviteEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FFD98818F9C3A900CC85E5 /* CONINVITEInviteEventViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -428,6 +429,8 @@
 		41FFD97F18F9A2A200CC85E5 /* arrow_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_button@2x.png"; sourceTree = "<group>"; };
 		41FFD98218F9A3D700CC85E5 /* arrow_button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_button2.png; sourceTree = "<group>"; };
 		41FFD98318F9A3D700CC85E5 /* arrow_button2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_button2@2x.png"; sourceTree = "<group>"; };
+		41FFD98718F9C3A900CC85E5 /* CONINVITEInviteEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEInviteEventViewController.h; sourceTree = "<group>"; };
+		41FFD98818F9C3A900CC85E5 /* CONINVITEInviteEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEInviteEventViewController.m; sourceTree = "<group>"; };
 		E018EAD118C10FDF00A56B43 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -837,6 +840,7 @@
 		41A6AE6818CA9030008416EA /* CreateEvent */ = {
 			isa = PBXGroup;
 			children = (
+				41FFD98618F9C38800CC85E5 /* Invitees */,
 				41A6AE6D18CA9092008416EA /* CONINVITECreateEventViewController.h */,
 				41A6AE6E18CA9092008416EA /* CONINVITECreateEventViewController.m */,
 			);
@@ -935,6 +939,15 @@
 			);
 			name = appicons;
 			path = Resources/appicons;
+			sourceTree = "<group>";
+		};
+		41FFD98618F9C38800CC85E5 /* Invitees */ = {
+			isa = PBXGroup;
+			children = (
+				41FFD98718F9C3A900CC85E5 /* CONINVITEInviteEventViewController.h */,
+				41FFD98818F9C3A900CC85E5 /* CONINVITEInviteEventViewController.m */,
+			);
+			name = Invitees;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1183,6 +1196,7 @@
 				4142F2BC189E8C26002ECA92 /* SBJSON.m in Sources */,
 				414AA826188AE743001B3301 /* main.m in Sources */,
 				4142F2BF189E8C26002ECA92 /* SBJsonWriter.m in Sources */,
+				41FFD98918F9C3AA00CC85E5 /* CONINVITEInviteEventViewController.m in Sources */,
 				4142F2A8189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m in Sources */,
 				4189935C189066090089AC7E /* JSONModelError.m in Sources */,
 				41899359189066090089AC7E /* JSONModel.m in Sources */,

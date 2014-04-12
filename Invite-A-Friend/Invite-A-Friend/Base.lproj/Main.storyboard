@@ -861,11 +861,73 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="privicyMenu" destination="Paj-dl-uAj" id="F0G-9S-5mF"/>
                         <outlet property="thedatePicker" destination="kb1-hm-oLq" id="5He-U6-4M6"/>
                         <outlet property="titleLabel" destination="AVm-bf-SP5" id="OfG-KQ-arf"/>
+                        <segue destination="JPh-O6-dsn" kind="modal" identifier="showInvites" modalTransitionStyle="coverVertical" id="3GC-NE-ueb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxx-dT-rkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-708" y="1889"/>
+        </scene>
+        <!--Invite Event View Controller-->
+        <scene sceneID="Pko-r0-Ef4">
+            <objects>
+                <viewController id="JPh-O6-dsn" customClass="CONINVITEInviteEventViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lXb-12-0uZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ToW-57-IsL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CdU-mw-cY9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nt3-ZL-XHC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GhI-IA-BJB">
+                                        <rect key="frame" x="0.0" y="67" width="320" height="501"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <sections/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="JPh-O6-dsn" id="Tq9-Nh-InK"/>
+                                            <outlet property="delegate" destination="JPh-O6-dsn" id="nye-LJ-K0x"/>
+                                        </connections>
+                                    </tableView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="friendshead.png" translatesAutoresizingMaskIntoConstraints="NO" id="tCd-Kf-9YO">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ppQ-pV-9lq">
+                                        <rect key="frame" x="264" y="4" width="56" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUn-c5-zGq">
+                                        <rect key="frame" x="-1" y="10" width="97" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeView:" destination="Igf-oW-Ztn" eventType="touchUpInside" id="z9d-9m-0Xq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableV" destination="GhI-IA-BJB" id="GkD-sU-JZL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AzP-We-MgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-329" y="1892"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">
@@ -1818,10 +1880,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="5ds-UG-5L4"/>
         <segue reference="SUk-Ux-ee1"/>
         <segue reference="TE3-BG-HGX"/>
-        <segue reference="5ds-UG-5L4"/>
         <segue reference="eR1-s8-gg5"/>
-        <segue reference="Ojr-Ml-8dI"/>
+        <segue reference="HyW-k8-GWO"/>
     </inferredMetricsTieBreakers>
 </document>
