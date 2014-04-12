@@ -191,7 +191,17 @@
         NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
         NSString *monthName = [[df monthSymbols] objectAtIndex:(daymonth-1)];
         
-        NSString *newDate = [NSString stringWithFormat:@"event on: %d%@ %@ at %d:%d",day,suffix,monthName,hour,minute];
+        //we need to format it if it's 05 past or 00 minutes past
+        
+        NSString *altmin = [NSString stringWithFormat:@"%d",minute];
+        
+            if ([altmin isEqualToString:@"5"]) {
+                altmin = @"05";
+            } else if ([altmin isEqualToString:@"0"]) {
+                altmin = @"00";
+            }
+        
+        NSString *newDate = [NSString stringWithFormat:@"event on: %d%@ %@ at %d:%@",day,suffix,monthName,hour,altmin];
     
     [_dtButton setTitle:newDate forState:UIControlStateNormal];
     }
