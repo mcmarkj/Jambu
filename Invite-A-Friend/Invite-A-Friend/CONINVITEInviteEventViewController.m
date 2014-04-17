@@ -12,10 +12,12 @@
 #include "CustomFriendCells.h"
 
 @interface CONINVITEInviteEventViewController ()
+
+
 - (IBAction)inviteFollowers:(id)sender;
 - (IBAction)closeView:(id)sender;
 @end
-
+    NSMutableArray *InviteArray;
 @implementation CONINVITEInviteEventViewController
 - (IBAction)inviteFriends:(id)sender {
 }
@@ -25,6 +27,7 @@
 @synthesize searchBar;
 @synthesize tableV;
 @synthesize responseData;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -114,8 +117,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Search bar
+        // Search bar
     searchBar.delegate = self;
     [searchBar setAutocorrectionType:UITextAutocorrectionTypeNo];
     
@@ -234,10 +236,10 @@
     //cell.imageView.image = [UIImage imageNamed:@"searchcircle.png"];
     
     
-    int rownum = indexPath.row;
-    int totnum = [tweets count] - 1;
+    //int rownum = indexPath.row;
+    //int totnum = [tweets count] - 1;
     
-    if(rownum == totnum){
+    /*if(rownum == totnum){
         
         static NSString *simpleTableIdentifier = @"friendfeedcell";
         
@@ -251,7 +253,7 @@
         // Here we create the ‘Load more’ cell
         
         
-    }
+    }*/
     
     return cell;
     
@@ -261,6 +263,8 @@
 - (CGFloat)tableView:(UITableView *)tabelView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 73;
+    
+    
 }
 
 /*
@@ -313,14 +317,42 @@
 {
     NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
     NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:UID forKey:@"Con96FID"];
-    [defaults setObject:AID forKey:@"Con96FAID"];
-    [defaults synchronize];
+    NSLog(@"Twitter UID: %@", UID);
+    NSLog(@"API UserID: %@", AID);
+    
+   //NSMutableArray * InvitesArray = [NSMutableArray arrayWithArray:InviteArray];
+    NSMutableArray *InviteArray = [[NSMutableArray alloc] init];
+
+
+    [InviteArray addObject:UID];
+    
+    for (id obj in InviteArray) {
+        NSLog(@"%@", obj);
+    }
+    NSLog(@"Object Added to Array");
+    
+    
     
     //Navigation logic may go here. Create and push another view controller.
     
-    [self  performSegueWithIdentifier:@"showFriend" sender:self];
+    //[self  performSegueWithIdentifier:@"showFriend" sender:self];
+    /*
+    static NSString *simpleTableIdentifier = @"CustomFriendCells";
+    
+    CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomFriendCells" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.friends_button.hidden = NO;
+    cell.not_friends.hidden = YES;
+    
+    [self.tableV reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
+*/
+    
+
     
 }
 
@@ -328,6 +360,7 @@
     [tweets release];
     [responseData release];
     [indicator release];
+   // [InviteArray release];
     [super dealloc];
 }
 
@@ -348,6 +381,9 @@
     [defaults setObject:@"" forKey:@"CONInviteUIDS"];
     [defaults setObject:@"" forKey:@"CONIniteUIDSUAT"];
     [defaults synchronize];
+    
+        NSLog(@"Array Contents: %@", InviteArray);
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

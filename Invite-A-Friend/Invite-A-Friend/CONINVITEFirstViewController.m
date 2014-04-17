@@ -15,6 +15,7 @@
 @interface CONINVITEFirstViewController () {
         UIView *setNeedsDisplay;
 }
+- (IBAction)showInvites:(id)sender;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *imageLoader;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *eventsLoader;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *eventsLoader2;
@@ -694,5 +695,8 @@
         [self  performSegueWithIdentifier:@"showFriends" sender:self];
     }
     
+}
+- (IBAction)showInvites:(id)sender {
+       [self  performSegueWithIdentifier:@"pendingInvites" sender:self];
 }
 @end

@@ -9,6 +9,7 @@
 #import "CONINVITECreateEventViewController.h"
 
 @interface CONINVITECreateEventViewController ()
+- (IBAction)createEvent:(id)sender;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (strong, nonatomic) IBOutlet UIView *thedatePicker;
 - (IBAction)dateDone:(id)sender;
@@ -149,7 +150,7 @@
     
     NSString *pickeraltdate = [NSString stringWithFormat:@"%@", pickerdate];
     
-    NSTimeInterval timestamp = [pickerdate timeIntervalSince1970];
+   // NSTimeInterval timestamp = [pickerdate timeIntervalSince1970];
 
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -193,7 +194,7 @@
         
         //we need to format it if it's 05 past or 00 minutes past
         
-        NSString *altmin = [NSString stringWithFormat:@"%d",minute];
+        NSString *altmin = [NSString stringWithFormat:@"%ld",(long)minute];
         
             if ([altmin isEqualToString:@"5"]) {
                 altmin = @"05";
@@ -201,7 +202,7 @@
                 altmin = @"00";
             }
         
-        NSString *newDate = [NSString stringWithFormat:@"event on: %d%@ %@ at %d:%@",day,suffix,monthName,hour,altmin];
+        NSString *newDate = [NSString stringWithFormat:@"event on: %ld%@ %@ at %ld:%@",(long)day,suffix,monthName,(long)hour,altmin];
     
     [_dtButton setTitle:newDate forState:UIControlStateNormal];
     }
@@ -232,5 +233,9 @@
 
 - (IBAction)choosePrivicy:(id)sender {
     _privicyMenu.hidden = NO;
+}
+- (IBAction)createEvent:(id)sender {
+    NSLog(@"Time to create the event");
+    
 }
 @end

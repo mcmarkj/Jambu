@@ -179,6 +179,8 @@
 		41F59809188C602B00DAF315 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DC188C602B00DAF315 /* overlay.png */; };
 		41F5980A188C602B00DAF315 /* topbanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DD188C602B00DAF315 /* topbanner.png */; };
 		41F5980B188C602B00DAF315 /* twittersync.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DE188C602B00DAF315 /* twittersync.png */; };
+		41FA39CB18FEDD6E00CEEE9E /* CONINVITEViewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FA39CA18FEDD6E00CEEE9E /* CONINVITEViewEventViewController.m */; };
+		41FA39D11900045900CEEE9E /* CONINVITEViewInvitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FA39D01900045900CEEE9E /* CONINVITEViewInvitesViewController.m */; };
 		41FFD96918F9654C00CC85E5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FFD96818F9654C00CC85E5 /* GoogleMaps.framework */; };
 		41FFD96B18F9657600CC85E5 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 41FFD96A18F9657600CC85E5 /* GoogleMaps.bundle */; };
 		41FFD96D18F9913500CC85E5 /* create.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FFD96C18F9913500CC85E5 /* create.png */; };
@@ -414,6 +416,10 @@
 		41F597DC188C602B00DAF315 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overlay.png; path = Resources/overlay.png; sourceTree = "<group>"; };
 		41F597DD188C602B00DAF315 /* topbanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topbanner.png; path = Resources/topbanner.png; sourceTree = "<group>"; };
 		41F597DE188C602B00DAF315 /* twittersync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twittersync.png; path = ../twittersync.png; sourceTree = "<group>"; };
+		41FA39C918FEDD6E00CEEE9E /* CONINVITEViewEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEViewEventViewController.h; sourceTree = "<group>"; };
+		41FA39CA18FEDD6E00CEEE9E /* CONINVITEViewEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEViewEventViewController.m; sourceTree = "<group>"; };
+		41FA39CF1900045900CEEE9E /* CONINVITEViewInvitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEViewInvitesViewController.h; sourceTree = "<group>"; };
+		41FA39D01900045900CEEE9E /* CONINVITEViewInvitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEViewInvitesViewController.m; sourceTree = "<group>"; };
 		41FFD96818F9654C00CC85E5 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		41FFD96A18F9657600CC85E5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		41FFD96C18F9913500CC85E5 /* create.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create.png; sourceTree = "<group>"; };
@@ -619,10 +625,12 @@
 		416C616018BA1883009E53AB /* Second View (Events) */ = {
 			isa = PBXGroup;
 			children = (
+				41FA39CC18FEDD8100CEEE9E /* ViewEvent */,
 				41A6AE6918CA903D008416EA /* NearbyEvents */,
 				41A6AE6818CA9030008416EA /* CreateEvent */,
 				414AA831188AE743001B3301 /* CONINVITESecondViewController.h */,
 				414AA832188AE743001B3301 /* CONINVITESecondViewController.m */,
+				41FA39D21900045D00CEEE9E /* ViewInvites */,
 			);
 			name = "Second View (Events)";
 			sourceTree = "<group>";
@@ -941,6 +949,24 @@
 			path = Resources/appicons;
 			sourceTree = "<group>";
 		};
+		41FA39CC18FEDD8100CEEE9E /* ViewEvent */ = {
+			isa = PBXGroup;
+			children = (
+				41FA39C918FEDD6E00CEEE9E /* CONINVITEViewEventViewController.h */,
+				41FA39CA18FEDD6E00CEEE9E /* CONINVITEViewEventViewController.m */,
+			);
+			name = ViewEvent;
+			sourceTree = "<group>";
+		};
+		41FA39D21900045D00CEEE9E /* ViewInvites */ = {
+			isa = PBXGroup;
+			children = (
+				41FA39CF1900045900CEEE9E /* CONINVITEViewInvitesViewController.h */,
+				41FA39D01900045900CEEE9E /* CONINVITEViewInvitesViewController.m */,
+			);
+			name = ViewInvites;
+			sourceTree = "<group>";
+		};
 		41FFD98618F9C38800CC85E5 /* Invitees */ = {
 			isa = PBXGroup;
 			children = (
@@ -1167,6 +1193,7 @@
 			files = (
 				414AA833188AE743001B3301 /* CONINVITESecondViewController.m in Sources */,
 				41899360189066090089AC7E /* JSONModel+networking.m in Sources */,
+				41FA39D11900045900CEEE9E /* CONINVITEViewInvitesViewController.m in Sources */,
 				419BB6B5188C454700B7D403 /* CONINVITEFriendsViewController.m in Sources */,
 				4189935F189066090089AC7E /* JSONHTTPClient.m in Sources */,
 				41F3227918A008D8001E07EB /* CONINVITESListFriendsViewController.m in Sources */,
@@ -1179,6 +1206,7 @@
 				41F27C201893EED800E64CC1 /* UICountingLabel.m in Sources */,
 				41991E7018B0220500FFCB95 /* Reachability.m in Sources */,
 				418AAE3E1892EF2D001D8FE1 /* LoginViewController.m in Sources */,
+				41FA39CB18FEDD6E00CEEE9E /* CONINVITEViewEventViewController.m in Sources */,
 				413326F118B115F50070517B /* CustomFriendCells.m in Sources */,
 				41F27C1D1893EA4D00E64CC1 /* LoginViewTwoViewController.m in Sources */,
 				414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */,

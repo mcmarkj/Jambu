@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8B3E6B8E-36A9-441D-A544-42D219523284</string>
+	<string>FAC5E277-0BA2-4928-A406-6AFCAB5FF64E</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Invite-A-Friend</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C67CB840-B50D-4764-AA9B-9B470932ED5D</key>
-		<string>ssh://jenny.concept96.co.uk/concept96-invite-a-friend/invite-a-friend-ios.git</string>
+		<key>684CB888-746D-46F5-BBFA-5D6FE67BA902</key>
+		<string>ssh://jenny.concept96.co.uk/concept96-invite-a-friend/ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Invite-A-Friend/Invite-A-Friend.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C67CB840-B50D-4764-AA9B-9B470932ED5D</key>
+		<key>684CB888-746D-46F5-BBFA-5D6FE67BA902</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://jenny.concept96.co.uk/concept96-invite-a-friend/invite-a-friend-ios.git</string>
+	<string>ssh://jenny.concept96.co.uk/concept96-invite-a-friend/ios.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C67CB840-B50D-4764-AA9B-9B470932ED5D</string>
+	<string>684CB888-746D-46F5-BBFA-5D6FE67BA902</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C67CB840-B50D-4764-AA9B-9B470932ED5D</string>
+			<string>684CB888-746D-46F5-BBFA-5D6FE67BA902</string>
 			<key>IDESourceControlWCCName</key>
-			<string>invite-a-friend-ios</string>
+			<string>Xcode Project</string>
 		</dict>
 	</array>
 </dict>
