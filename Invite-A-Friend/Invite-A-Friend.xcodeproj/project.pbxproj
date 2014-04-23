@@ -108,7 +108,7 @@
 		41A6AE6318CA8D0F008416EA /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A6AE6118CA8D0F008416EA /* plus@2x.png */; };
 		41A6AE6618CA8DBC008416EA /* plus2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A6AE6418CA8DBC008416EA /* plus2.png */; };
 		41A6AE6718CA8DBC008416EA /* plus2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A6AE6518CA8DBC008416EA /* plus2@2x.png */; };
-		41A6AE6C18CA905C008416EA /* CONINVITENearbyEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A6AE6B18CA905C008416EA /* CONINVITENearbyEventViewController.m */; };
+		41A6AE6C18CA905C008416EA /* CONINVITENearbyEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A6AE6B18CA905C008416EA /* CONINVITENearbyEventViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		41A6AE6F18CA9092008416EA /* CONINVITECreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A6AE6E18CA9092008416EA /* CONINVITECreateEventViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		41D068D818BA648100F29CD0 /* FriendFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D068D618BA648100F29CD0 /* FriendFeedCell.m */; };
 		41D068DD18BA6BFE00F29CD0 /* FriendFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D068D718BA648100F29CD0 /* FriendFeedCell.xib */; };

@@ -9,77 +9,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Invite-A-Friend/CONINVITECreateEventViewController.m"
-            timestampString = "419077952.0041"
+            filePath = "Invite-A-Friend/CONINVITENearbyEventViewController.m"
+            timestampString = "419951763.130464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "-dateDone:"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Invite-A-Friend/CONINVITECreateEventViewController.m"
-            timestampString = "419077952.0041"
+            filePath = "Invite-A-Friend/CONINVITENearbyEventViewController.m"
+            timestampString = "419951928.76492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
-            landmarkName = "-dateDone:"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Invite-A-Friend/CONINVITECreateEventViewController.m"
-            timestampString = "419077952.0041"
+            filePath = "Invite-A-Friend/CONINVITENearbyEventViewController.m"
+            timestampString = "419951928.76492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
-            landmarkName = "-dateDone:"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Invite-A-Friend/CONINVITECreateEventViewController.m"
-            timestampString = "419077952.0041"
+            filePath = "Invite-A-Friend/CONINVITENearbyEventViewController.m"
+            timestampString = "419951919.34874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "-dateDone:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Invite-A-Friend/CONINVITEInviteEventViewController.m"
-            timestampString = "419081056.541304"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
