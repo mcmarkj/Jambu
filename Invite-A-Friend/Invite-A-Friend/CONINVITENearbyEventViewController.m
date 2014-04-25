@@ -9,7 +9,7 @@
 #import "CONINVITENearbyEventViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "JSON.h"
-#include "CustomFriendCells.h"
+#include "EventListCell.h"
 
 @interface CONINVITENearbyEventViewController ()
 @property (strong, nonatomic) IBOutlet UISlider *distanceSlider;
@@ -96,7 +96,7 @@ CLLocationManager *locationManager;
     
     [responseString release];
 	
-	NSArray *allTweets = [results objectForKey:@"friendships"];
+	NSArray *allTweets = [results objectForKey:@"events"];
 	[self setTweets:allTweets];
 	
 	[self.tableV reloadData];
@@ -145,7 +145,16 @@ CLLocationManager *locationManager;
     float latitude = locationManager.location.coordinate.latitude;
     float longitude = locationManager.location.coordinate.longitude;
 	// Do any additional setup after loading the view.
+
     
+    NSString *longa = [NSString stringWithFormat:@"%f", longitude];
+    
+    NSString *lata = [NSString stringWithFormat:@"%f", latitude];
+    
+    NSString *sliderV = [NSString stringWithFormat:@"%d", sliderValue];
+    
+    
+    NSString *submit = [NSString stringWithFormat:@"lat=%@&long=%@&distance=%@",lata, longa, sliderV];
     
     // Search bar
     searchBar.delegate = self;
@@ -170,47 +179,17 @@ CLLocationManager *locationManager;
     [self.tableV addSubview:indicator];
     [indicator startAnimating];
     
-    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //NSString *UID = [defaults objectForKey:@"Con96FAID"];
-   // NSString *FUID = UID;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *UID = [defaults objectForKey:@"Con96TUID"];
     
-    NSURL *searchString = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/nearby_events%@", @""]];
-    
-    
-    NSString *longa = [NSString stringWithFormat:@"%f", longitude];
-    
-    NSString *lata = [NSString stringWithFormat:@"%f", latitude];
-    
-    NSString *sliderV = [NSString stringWithFormat:@"%d", sliderValue];
-    
-    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: lata,  @"lat", longa, @"long", sliderV, @"distance",  nil];
-    
-    NSError *error;
-    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
-    
-    
-   // NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
-   // NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"Here's the output for the JSON:");
-    NSLog(@"%@", newDatasetInfo);
-
-    
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:searchString];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:jsonData];
-
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    // DISABLED WHILE WE CONFIGURE STUFF
-    NSLog(@"We're now collecting to the API");
-    [connection start];
-    
-    
+    NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/nearby_events?lat=%@&long=%@&distance=%@",lata, longa, sliderV];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
+    [NSURLConnection connectionWithRequest:request delegate:self];
     [self.searchBar resignFirstResponder];
     
 }
+
+
 
 - (IBAction)sliderChanged:(id)sender {
     int sliderValue = _searchDistanceSlider.value;
@@ -226,7 +205,48 @@ CLLocationManager *locationManager;
 
     float latitude = locationManager.location.coordinate.latitude;
     float longitude = locationManager.location.coordinate.longitude;
+	// Do any additional setup after loading the view.
     
+    
+    NSString *longa = [NSString stringWithFormat:@"%f", longitude];
+    
+    NSString *lata = [NSString stringWithFormat:@"%f", latitude];
+    
+    NSString *sliderV = [NSString stringWithFormat:@"%d", sliderValue];
+    
+    
+   /* NSString *submit = [NSString stringWithFormat:@"lat=%@&long=%@&distance=%@",lata, longa, sliderV];
+    
+    // Search bar
+    searchBar.delegate = self;
+    [searchBar setAutocorrectionType:UITextAutocorrectionTypeNo];
+    
+    // Title
+    self.title = @"Twitter search";
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    [tableV setUserInteractionEnabled:NO];
+    indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [indicator setFrame:CGRectMake(tableV.frame.size.width/2-50, tableV.frame.size.height/2-50, 100, 100)];
+    [indicator setBackgroundColor:[UIColor blackColor]];
+    [indicator setAlpha:0.7f];
+    indicator.layer.cornerRadius = 10.0f;
+    [self.tableV addSubview:indicator];
+    [indicator startAnimating];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *UID = [defaults objectForKey:@"Con96TUID"];
+    
+    NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/nearby_events?lat=%@&long=%@&distance=%@",lata, longa, sliderV];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
+    [NSURLConnection connectionWithRequest:request delegate:self];
+    [self.searchBar resignFirstResponder];*/
     
 }
 
@@ -251,62 +271,122 @@ CLLocationManager *locationManager;
 {
     
     
-    static NSString *simpleTableIdentifier = @"CustomFriendCells";
+    static NSString *simpleTableIdentifier = @"EventListCell";
     
-    CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    EventListCell *cell = (EventListCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomFriendCells" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"EventListCells" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.nameLabel.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"full_name"];
-	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
-	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Black" size:20];
+    cell.eventName.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"title"];
+	cell.eventName.adjustsFontSizeToFitWidth = YES;
+	cell.eventName.font = [UIFont fontWithName:@"Roboto-Light" size:20];
     
-	cell.nameLabel.numberOfLines = 2;
+	cell.eventName.numberOfLines = 2;
     //cell.nameLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
-    cell.twitternameLabel.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"username"]];
-	cell.twitternameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:10];
+    cell.eventTime.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"time_of_event"]];
+	cell.eventTime.font = [UIFont fontWithName:@"Roboto-Light" size:10];
     
-    NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_thumbnail"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    NSURLResponse *response;
-    NSError *error;
-    NSData *rawImage = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+
+    
+    float latitude = locationManager.location.coordinate.latitude;
+    float longitude = locationManager.location.coordinate.longitude;
+    
+    float latitude1 = [[[tweets objectAtIndex:indexPath.row] objectForKey:@"lat"] floatValue];
+    float long1 = [[[tweets objectAtIndex:indexPath.row] objectForKey:@"long"] floatValue];
+    
+    CLLocation *location1 = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+    CLLocation *location2 = [[CLLocation alloc] initWithLatitude:latitude1 longitude:long1];
+    
+    float KMdistance = [location1 distanceFromLocation:location2]*0.000621371192;
+     float metdistance = [location1 distanceFromLocation:location2]*0.000621371192;
+            int meterdistance = (int)metdistance;
+    
+        int finaldistance = (int)KMdistance;
+    if(finaldistance == 0) {
+     //   NSString *finaldistance = @">5";
+        cell.distanceLabel.text = [NSString stringWithFormat:@"%d meters away", meterdistance];
+    } else {
+    
+   // float newDistance = ((KMdistance + 5)/10)*10;
+
+            cell.distanceLabel.text = [NSString stringWithFormat:@"%d miles away", finaldistance];
+    }
+
+                               cell.distanceLabel.font = [UIFont fontWithName:@"Roboto-Light" size:10];
+    
+    [location1 release];
+    [location2 release];
+    
+    
+   // NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_thumbnail"];
+ //   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+ //   NSURLResponse *response;
+//    NSError *error;
+ //   NSData *rawImage = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
     //_UserImage.image = [UIImage imageWithData:rawImage];
     
-    cell.thumbnailImageView.image = [UIImage imageWithData:rawImage];
+    //cell.thumbnailImageView.image = [UIImage imageWithData:rawImage];
     //cell.imageView.image = [UIImage imageNamed:@"searchcircle.png"];
-    
-    
-    int rownum = indexPath.row;
-    int totnum = [tweets count] - 1;
-    
-    if(rownum == totnum){
-        
-        static NSString *simpleTableIdentifier = @"friendfeedcell";
-        
-        CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FriendFeedCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        // Reset previous content of the cell, I have these defined in a UITableCell subclass, change them where needed
-        // Here we create the ‘Load more’ cell
-        
-        
-    }
     
     return cell;
 }
 
+- (IBAction)updateDistance:(id)sender {
+    
+    float latitude = locationManager.location.coordinate.latitude;
+    float longitude = locationManager.location.coordinate.longitude;
+	// Do any additional setup after loading the view.
+    
+    
+    NSString *longa = [NSString stringWithFormat:@"%f", longitude];
+    
+    NSString *lata = [NSString stringWithFormat:@"%f", latitude];
+    int sliderValue = _searchDistanceSlider.value;
+    
+    NSString *sliderV = [NSString stringWithFormat:@"%d",sliderValue];
+    
+    
+    NSString *submit = [NSString stringWithFormat:@"lat=%@&long=%@&distance=%@",lata, longa, sliderV];
+    
+    // Search bar
+    searchBar.delegate = self;
+    [searchBar setAutocorrectionType:UITextAutocorrectionTypeNo];
+    
+    // Title
+    self.title = @"Twitter search";
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    [tableV setUserInteractionEnabled:NO];
+    indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [indicator setFrame:CGRectMake(tableV.frame.size.width/2-50, tableV.frame.size.height/2-50, 100, 100)];
+    [indicator setBackgroundColor:[UIColor blackColor]];
+    [indicator setAlpha:0.7f];
+    indicator.layer.cornerRadius = 10.0f;
+    [self.tableV addSubview:indicator];
+    [indicator startAnimating];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *UID = [defaults objectForKey:@"Con96TUID"];
+    
+    NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/nearby_events?lat=%@&long=%@&distance=%@",lata, longa, sliderV];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
+    [NSURLConnection connectionWithRequest:request delegate:self];
+    [self.searchBar resignFirstResponder];
+}
 
 - (CGFloat)tableView:(UITableView *)tabelView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 73;
+    return 60;
 }
 
 -(void)dealloc{

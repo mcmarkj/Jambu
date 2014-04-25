@@ -647,6 +647,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKh-Tg-zOg">
+                                        <rect key="frame" x="0.0" y="182" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="close.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeView:" destination="Gmm-C0-fLu" eventType="touchUpInside" id="Emz-DS-Ehg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.60784313729999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -673,6 +683,10 @@
                                 <color key="thumbTintColor" red="0.18823529410000001" green="0.60784313729999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="sliderChanged:" destination="Gmm-C0-fLu" eventType="valueChanged" id="Zda-8o-U1V"/>
+                                    <action selector="updateDistance:" destination="Gmm-C0-fLu" eventType="touchUpInside" id="ObM-5v-pYx"/>
+                                    <action selector="updateDistance:" destination="Gmm-C0-fLu" eventType="touchUpOutside" id="RBR-fv-ofw"/>
+                                    <action selector="updateDistance:" destination="Gmm-C0-fLu" eventType="touchDragExit" id="dSt-TV-xjp"/>
+                                    <action selector="updateDistance:" destination="Gmm-C0-fLu" eventType="editingDidEnd" id="t10-p0-qli"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Distance:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7L-At-GqO">
