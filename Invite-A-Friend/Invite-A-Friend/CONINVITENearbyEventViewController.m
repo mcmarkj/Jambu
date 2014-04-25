@@ -301,7 +301,7 @@ CLLocationManager *locationManager;
     CLLocation *location2 = [[CLLocation alloc] initWithLatitude:latitude1 longitude:long1];
     
     float KMdistance = [location1 distanceFromLocation:location2]*0.000621371192;
-     float metdistance = [location1 distanceFromLocation:location2]*0.000621371192;
+     float metdistance = [location1 distanceFromLocation:location2];
             int meterdistance = (int)metdistance;
     
         int finaldistance = (int)KMdistance;
