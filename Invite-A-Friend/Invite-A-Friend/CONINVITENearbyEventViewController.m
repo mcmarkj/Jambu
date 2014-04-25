@@ -134,13 +134,16 @@ CLLocationManager *locationManager;
     if(sliderValue == 25){
         
             _distanceLabel.text = [NSString stringWithFormat:@"%d+ Miles", sliderValue];
+        sliderValue = 26;
         
     }else{
     
     
     _distanceLabel.text = [NSString stringWithFormat:@"%d Miles", sliderValue];
+        sliderValue = sliderValue + 1;
     }
     
+    int sliderVal = sliderValue + 1;
     
     float latitude = locationManager.location.coordinate.latitude;
     float longitude = locationManager.location.coordinate.longitude;
@@ -151,7 +154,7 @@ CLLocationManager *locationManager;
     
     NSString *lata = [NSString stringWithFormat:@"%f", latitude];
     
-    NSString *sliderV = [NSString stringWithFormat:@"%d", sliderValue];
+    NSString *sliderV = [NSString stringWithFormat:@"%d", sliderVal];
     
     
     NSString *submit = [NSString stringWithFormat:@"lat=%@&long=%@&distance=%@",lata, longa, sliderV];
@@ -286,7 +289,17 @@ CLLocationManager *locationManager;
     
 	cell.eventName.numberOfLines = 2;
     //cell.nameLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
-    cell.eventTime.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"time_of_event"]];
+    
+    
+    NSString * timeStampString = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"time_of_event"]];
+    NSTimeInterval _interval=[timeStampString doubleValue];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
+    NSDateFormatter *_formatter=[[NSDateFormatter alloc]init];
+    [_formatter setDateFormat:@"HH:mm - dd/MM/yyyy"];
+    NSString *finaldate=[_formatter stringFromDate:date];
+    
+    
+    cell.eventTime.text = finaldate;
 	cell.eventTime.font = [UIFont fontWithName:@"Roboto-Light" size:10];
     
 
@@ -347,7 +360,9 @@ CLLocationManager *locationManager;
     NSString *lata = [NSString stringWithFormat:@"%f", latitude];
     int sliderValue = _searchDistanceSlider.value;
     
-    NSString *sliderV = [NSString stringWithFormat:@"%d",sliderValue];
+    int sliderVal = sliderValue + 1;
+    
+    NSString *sliderV = [NSString stringWithFormat:@"%d",sliderVal];
     
     
     NSString *submit = [NSString stringWithFormat:@"lat=%@&long=%@&distance=%@",lata, longa, sliderV];
