@@ -157,7 +157,7 @@ CLLocationManager *locationManager;
     NSString *sliderV = [NSString stringWithFormat:@"%d", sliderVal];
     
     
-    NSString *submit = [NSString stringWithFormat:@"lat=%@&long=%@&distance=%@",lata, longa, sliderV];
+   // NSString *submit = [NSString stringWithFormat:@"lat=%@&long=%@&distance=%@",lata, longa, sliderV];
     
     // Search bar
     searchBar.delegate = self;
@@ -182,8 +182,8 @@ CLLocationManager *locationManager;
     [self.tableV addSubview:indicator];
     [indicator startAnimating];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *UID = [defaults objectForKey:@"Con96TUID"];
+  //  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //NSString *UID = [defaults objectForKey:@"Con96TUID"];
     
     NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/nearby_events?lat=%@&long=%@&distance=%@",lata, longa, sliderV];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
@@ -206,16 +206,16 @@ CLLocationManager *locationManager;
         _distanceLabel.text = [NSString stringWithFormat:@"%d Miles", sliderValue];
     }
 
-    float latitude = locationManager.location.coordinate.latitude;
-    float longitude = locationManager.location.coordinate.longitude;
+   // float latitude = locationManager.location.coordinate.latitude;
+    //float longitude = locationManager.location.coordinate.longitude;
 	// Do any additional setup after loading the view.
     
     
-    NSString *longa = [NSString stringWithFormat:@"%f", longitude];
+   // NSString *longa = [NSString stringWithFormat:@"%f", longitude];
     
-    NSString *lata = [NSString stringWithFormat:@"%f", latitude];
+    //NSString *lata = [NSString stringWithFormat:@"%f", latitude];
     
-    NSString *sliderV = [NSString stringWithFormat:@"%d", sliderValue];
+    //NSString *sliderV = [NSString stringWithFormat:@"%d", sliderValue];
     
     
    /* NSString *submit = [NSString stringWithFormat:@"lat=%@&long=%@&distance=%@",lata, longa, sliderV];
@@ -365,7 +365,7 @@ CLLocationManager *locationManager;
     NSString *sliderV = [NSString stringWithFormat:@"%d",sliderVal];
     
     
-    NSString *submit = [NSString stringWithFormat:@"lat=%@&long=%@&distance=%@",lata, longa, sliderV];
+   // NSString *submit = [NSString stringWithFormat:@"lat=%@&long=%@&distance=%@",lata, longa, sliderV];
     
     // Search bar
     searchBar.delegate = self;
@@ -390,8 +390,8 @@ CLLocationManager *locationManager;
     [self.tableV addSubview:indicator];
     [indicator startAnimating];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *UID = [defaults objectForKey:@"Con96TUID"];
+ //   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //NSString *UID = [defaults objectForKey:@"Con96TUID"];
     
     NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/nearby_events?lat=%@&long=%@&distance=%@",lata, longa, sliderV];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
