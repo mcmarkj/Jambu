@@ -16,6 +16,7 @@
 
 - (IBAction)inviteFollowers:(id)sender;
 - (IBAction)closeView:(id)sender;
+
 @end
     NSMutableArray *InviteArray;
 @implementation CONINVITEInviteEventViewController
@@ -117,6 +118,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _inviteUsers = [[NSMutableArray alloc] init];
+    _inviteUsersNames = [[NSMutableArray alloc] init];
         // Search bar
     searchBar.delegate = self;
     [searchBar setAutocorrectionType:UITextAutocorrectionTypeNo];
@@ -315,11 +318,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
+   NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
     NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
+    NSString *name = [[tweets objectAtIndex:indexPath.row] objectForKey:@"full_name"];
+
     NSLog(@"Twitter UID: %@", UID);
     NSLog(@"API UserID: %@", AID);
-    
+    /*
    //NSMutableArray * InvitesArray = [NSMutableArray arrayWithArray:InviteArray];
     NSMutableArray *InviteArray = [[NSMutableArray alloc] init];
 
@@ -329,28 +334,25 @@
     for (id obj in InviteArray) {
         NSLog(@"%@", obj);
     }
-    NSLog(@"Object Added to Array");
+    NSLog(@"Object Added to Array");*/
     
     
     
-    //Navigation logic may go here. Create and push another view controller.
-    
-    //[self  performSegueWithIdentifier:@"showFriend" sender:self];
-    /*
-    static NSString *simpleTableIdentifier = @"CustomFriendCells";
-    
-    CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil)
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomFriendCells" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    if ([selectedCell accessoryType] == UITableViewCellAccessoryNone) {
+        [selectedCell setAccessoryType:UITableViewCellAccessoryCheckmark];
+        [_inviteUsers addObject:AID];
+        [_inviteUsersNames addObject:name];
+        NSLog(@"IVC selectedIndexes AddObject @ %@:", AID);
+        NSLog(@"IVC selectedIndexes: %@", _inviteUsers);
+        NSLog(@"IVC selectedNames: %@", _inviteUsersNames);
+    } else {
+        [selectedCell setAccessoryType:UITableViewCellAccessoryNone];
+        [_inviteUsers removeObject:AID];
+        [_inviteUsersNames removeObject:name];
+        NSLog(@"IVC selectedIndexes RemoveObject @ %@:", AID);
     }
-    
-    cell.friends_button.hidden = NO;
-    cell.not_friends.hidden = YES;
-    
-    [self.tableV reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
-*/
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
 
     
@@ -367,22 +369,20 @@
 - (IBAction)inviteFollowers:(id)sender {
     //Save Array to NSUserDefaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@"" forKey:@"CONInviteUIDS"];
-    [defaults setObject:@"" forKey:@"CONIniteUIDSUAT"];
+    [defaults setObject:_inviteUsers forKey:@"CONInvitees"];
+    [defaults setObject:_inviteUsersNames forKey:@"ConInviteesNames"];
     [defaults synchronize];
     
+            NSLog(@"The following AID's were invited: %@", _inviteUsers);
     
     //Close View
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)closeView:(id)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@"" forKey:@"CONInviteUIDS"];
-    [defaults setObject:@"" forKey:@"CONIniteUIDSUAT"];
-    [defaults synchronize];
-    
-        NSLog(@"Array Contents: %@", InviteArray);
+            NSLog(@"Array Contents - cleared: %@", _inviteUsers);
+    [_inviteUsers removeAllObjects];
+     NSLog(@"New contents: %@", _inviteUsers);
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

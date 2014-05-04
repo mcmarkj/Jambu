@@ -53,13 +53,51 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+     [super viewDidAppear:animated];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *inviteArrNames = [defaults objectForKey:@"ConInviteesNames"];
+    if(inviteArrNames == nil){
+        NSLog(@"No Invitees");
+}
+    else
+    {
+        NSLog(@"DAMMMMN GIRL WE HAVE INVITEES");
+    NSMutableString * result = [[NSMutableString alloc] init];
+    for (NSObject * obj in inviteArrNames)
+        
+    {
+  
+        [result appendString:[NSString stringWithFormat:@"%@, ",[obj description]]];
+    
+    }
+    NSLog(@"The concatenated string is %@", result);
+    
+    NSString *finalStr = [NSString stringWithFormat:@"Invited: %@",[inviteArrNames componentsJoinedByString:@" & "]];
+ 
+    
+    
+       [_attendButton setTitle:finalStr forState:UIControlStateNormal];
+}
+}
+
 - (void)viewDidLoad
 {
+   [super viewDidLoad];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:nil forKey:@"CONInvitees"];
+    [defaults setObject:nil forKey:@"ConInviteesNames"];
+    [defaults synchronize];
+   /* NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"" forKey:@"CONInvitees"];
+    [defaults setObject:@"" forKey:@"ConInviteesNames"];
+    [defaults synchronize];*/
     
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
     UIView *paddingsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 20)];
         _titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:18];
-    [super viewDidLoad];
+ 
     _eventOwner.font = [UIFont fontWithName:@"Roboto-Light" size:8];
     _eventDescription.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed: @"event_description.png"]];
     _eventTitle.font = [UIFont fontWithName:@"Roboto-Light" size:12];
@@ -89,6 +127,11 @@
 }
 
 - (IBAction)closeView:(id)sender {
+     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+     [defaults setObject:nil forKey:@"CONInvitees"];
+     [defaults setObject:nil forKey:@"ConInviteesNames"];
+     [defaults synchronize];
+    
         [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -238,4 +281,5 @@
     NSLog(@"Time to create the event");
     
 }
+
 @end

@@ -19,6 +19,8 @@
 
 @property (retain) NSArray *tweets;
 @property (retain) NSArray *friends;
+@property (nonatomic, strong) NSMutableArray *inviteUsers;
+@property (nonatomic, strong) NSMutableArray *inviteUsersNames;
 @property (retain) IBOutlet UISearchBar *searchBar;
 @property (retain) IBOutlet UITableView *tableV;
 @property (assign) NSMutableData *responseData;
