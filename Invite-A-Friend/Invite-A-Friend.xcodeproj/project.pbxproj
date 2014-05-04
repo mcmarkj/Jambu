@@ -85,6 +85,7 @@
 		4173460D18B8F7B700F84676 /* myinvites.png in Resources */ = {isa = PBXBuildFile; fileRef = 4173460B18B8F7B700F84676 /* myinvites.png */; };
 		4173460E18B8F7B700F84676 /* myinvites@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4173460C18B8F7B700F84676 /* myinvites@2x.png */; };
 		4173461018B91C1500F84676 /* fb-profile.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4173460F18B91C1500F84676 /* fb-profile.gif */; };
+		4174996E1916FF5600BBF9C4 /* CONINVITESearchLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174996D1916FF5600BBF9C4 /* CONINVITESearchLocationViewController.m */; };
 		41899359189066090089AC7E /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899342189066090089AC7E /* JSONModel.m */; };
 		4189935A189066090089AC7E /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899344189066090089AC7E /* JSONModelArray.m */; };
 		4189935B189066090089AC7E /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899346189066090089AC7E /* JSONModelClassProperty.m */; };
@@ -303,6 +304,8 @@
 		4173460B18B8F7B700F84676 /* myinvites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myinvites.png; sourceTree = "<group>"; };
 		4173460C18B8F7B700F84676 /* myinvites@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myinvites@2x.png"; sourceTree = "<group>"; };
 		4173460F18B91C1500F84676 /* fb-profile.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "fb-profile.gif"; sourceTree = "<group>"; };
+		4174996C1916FF5600BBF9C4 /* CONINVITESearchLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITESearchLocationViewController.h; sourceTree = "<group>"; };
+		4174996D1916FF5600BBF9C4 /* CONINVITESearchLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITESearchLocationViewController.m; sourceTree = "<group>"; };
 		41899341189066090089AC7E /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
 		41899342189066090089AC7E /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
 		41899343189066090089AC7E /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
@@ -789,6 +792,15 @@
 			name = "Main Views";
 			sourceTree = "<group>";
 		};
+		4174996B1916FF4200BBF9C4 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				4174996C1916FF5600BBF9C4 /* CONINVITESearchLocationViewController.h */,
+				4174996D1916FF5600BBF9C4 /* CONINVITESearchLocationViewController.m */,
+			);
+			name = Locations;
+			sourceTree = "<group>";
+		};
 		4189933F189066090089AC7E /* JSONModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -853,6 +865,7 @@
 		41A6AE6818CA9030008416EA /* CreateEvent */ = {
 			isa = PBXGroup;
 			children = (
+				4174996B1916FF4200BBF9C4 /* Locations */,
 				41FFD98618F9C38800CC85E5 /* Invitees */,
 				41A6AE6D18CA9092008416EA /* CONINVITECreateEventViewController.h */,
 				41A6AE6E18CA9092008416EA /* CONINVITECreateEventViewController.m */,
@@ -1225,6 +1238,7 @@
 				4144D37E18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.m in Sources */,
 				4142F2C2189E9ABC002ECA92 /* CONINVITEViewFriendViewController.m in Sources */,
 				4189935D189066090089AC7E /* NSArray+JSONModel.m in Sources */,
+				4174996E1916FF5600BBF9C4 /* CONINVITESearchLocationViewController.m in Sources */,
 				41899361189066090089AC7E /* JSONKeyMapper.m in Sources */,
 				4142F2BE189E8C26002ECA92 /* SBJsonParser.m in Sources */,
 				4142F2AB189E8C04002ECA92 /* SearchTableViewController.m in Sources */,

@@ -83,7 +83,8 @@ NSString *timestampStart;
     NSLog(@"The concatenated string is %@", result);
     
     NSString *finalStr = [NSString stringWithFormat:@"Invited: %@",[inviteArrNames componentsJoinedByString:@" & "]];
- 
+        
+
     
     
        [_attendButton setTitle:finalStr forState:UIControlStateNormal];
@@ -379,15 +380,84 @@ NSString *timestampStart;
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:finaldata];
     
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+   // NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request  delegate:self];
     
     // DISABLED WHILE WE CONFIGURE STUFF
     
     NSLog(@"We're now collecting to the API");
     
-    [connection start];
-    NSLog (@"Event Created");
+    NSURLResponse *response;
+    /*NSData *POSTReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    NSString *theReply = [[NSString alloc] initWithBytes:[POSTReply bytes] length:[POSTReply length] encoding: NSASCIIStringEncoding];
+    NSLog(@"Reply: %@", theReply);*/
+    
+    NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+    
+  //  BOOL success_result;
+    
+    NSNumber*json_success = [json valueForKey:@"success"];
+    NSString *Event_id = [json valueForKey:@"event_id"];
+  //  success_result = [json valueForKey:@"success"];
+   //     NSString *success_result = [json valueForKey:@"success"];
+    if(json_success == nil){
+        // something's failed...
+        NSString *errormessage = [json valueForKey:@"errors"];
+        NSLog(@"Error Id: %@", errormessage);
+    } else {
+    if([json_success  isEqual: @1]){
+        //Event Created
+          NSLog (@"Event Created");
+        
+        NSLog(@"Event Id: %@", Event_id);
 
+    } else {
+        // There was an error
+        NSLog(@"Event not created");
+        NSString *errormessage = [json valueForKey:@"errors"];
+        NSLog(@"Error Id: %@", errormessage);
+    }}
+    
+   // [connection start];
+    
+    
+  //Let's invite the attendee's
+    
+    //http://amber.concept96.co.uk/api/v1/batch_attendees
+    
+    NSURL *attendurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/batch_attendees/%@", @""]];
+
+    
+    
+     NSArray *inviteArrNames = [defaults objectForKey:@"CONInvitees"];
+
+    
+     
+     
+    
+    
+    //NSString *attendeesReg = [NSString stringWithFormat:@"[%@]", @""];
+    
+    NSDictionary *attendeesjson = [NSDictionary dictionaryWithObjectsAndKeys:  inviteArrNames, @"attendees" ,Event_id, @"event_id", nil];
+
+    
+    
+    NSData* attendeesjsonData = [NSJSONSerialization dataWithJSONObject:attendeesjson options:kNilOptions error:&error];
+    
+    NSString *attendeesjsonedit = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:attendeesjsonData encoding:NSUTF8StringEncoding]];
+    
+    NSData* finalattendees = [attendeesjsonedit dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableURLRequest *attendRequest = [[NSMutableURLRequest alloc] init];
+    
+    [attendRequest setURL:attendurl];
+    [attendRequest setHTTPMethod:@"POST"];
+    [attendRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [attendRequest setHTTPBody:finalattendees];
+
+       NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:attendRequest delegate:self];
+    
+    [connection start];
 
 }
 - (IBAction)chooseEndButton:(id)sender {

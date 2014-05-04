@@ -341,16 +341,16 @@
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     if ([selectedCell accessoryType] == UITableViewCellAccessoryNone) {
         [selectedCell setAccessoryType:UITableViewCellAccessoryCheckmark];
-        [_inviteUsers addObject:AID];
+        [_inviteUsers addObject:UID];
         [_inviteUsersNames addObject:name];
-        NSLog(@"IVC selectedIndexes AddObject @ %@:", AID);
+        NSLog(@"IVC selectedIndexes AddObject @ %@:", UID);
         NSLog(@"IVC selectedIndexes: %@", _inviteUsers);
         NSLog(@"IVC selectedNames: %@", _inviteUsersNames);
     } else {
         [selectedCell setAccessoryType:UITableViewCellAccessoryNone];
-        [_inviteUsers removeObject:AID];
+        [_inviteUsers removeObject:UID];
         [_inviteUsersNames removeObject:name];
-        NSLog(@"IVC selectedIndexes RemoveObject @ %@:", AID);
+        NSLog(@"IVC selectedIndexes RemoveObject @ %@:", UID);
     }
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
@@ -368,7 +368,11 @@
 
 - (IBAction)inviteFollowers:(id)sender {
     //Save Array to NSUserDefaults
+    
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *UID = [defaults objectForKey:@"Con96TUID"];
+    [_inviteUsers addObject:UID];
     [defaults setObject:_inviteUsers forKey:@"CONInvitees"];
     [defaults setObject:_inviteUsersNames forKey:@"ConInviteesNames"];
     [defaults synchronize];
