@@ -85,6 +85,7 @@
 {
    [super viewDidLoad];
     
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:nil forKey:@"CONInvitees"];
     [defaults setObject:nil forKey:@"ConInviteesNames"];
@@ -277,9 +278,48 @@
 - (IBAction)choosePrivicy:(id)sender {
     _privicyMenu.hidden = NO;
 }
+-(IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
+    
+    
+}
 - (IBAction)createEvent:(id)sender {
     NSLog(@"Time to create the event");
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *MID = [defaults objectForKey:@"Con96AID"];
+    
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", @""]];
+    
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: _eventTitle.text, @"title", _eventDescription.text, @"description", MID, @"user_id", nil];
+    
+    
+    NSError *error;
+    
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+    
+    NSString *editeddata = [NSString stringWithFormat:@"{\"event\":%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+    
+    NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:finaldata];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    // DISABLED WHILE WE CONFIGURE STUFF
+    
+    NSLog(@"We're now collecting to the API");
+    
+    [connection start];
+    
+
+
 }
 
 @end
