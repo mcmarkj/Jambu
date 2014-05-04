@@ -10,14 +10,21 @@
 
 @interface CONINVITECreateEventViewController ()
 - (IBAction)createEvent:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *endDateView;
+@property (strong, nonatomic) IBOutlet UIDatePicker *endDatePicker;
+
+
+@property (strong, nonatomic) IBOutlet UIImageView *eventButIcon;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (strong, nonatomic) IBOutlet UIView *thedatePicker;
 - (IBAction)dateDone:(id)sender;
+- (IBAction)chooseEndButton:(id)sender;
 - (IBAction)inviteFriends:(id)sender;
 - (IBAction)privacyMe:(id)sender;
 - (IBAction)privacyInvite:(id)sender;
 - (IBAction)privacyAnyone:(id)sender;
 - (IBAction)closePrivicy:(id)sender;
+
 - (IBAction)choosePrivicy:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *privicyMenu;
 @property (strong, nonatomic) IBOutlet UIButton *attendButton;
@@ -40,7 +47,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *eventLocation;
 @property (strong, nonatomic) IBOutlet UIButton *pickerLabel;
 
+
 @end
+NSString *timestampStart;
 
 @implementation CONINVITECreateEventViewController
 
@@ -188,15 +197,21 @@
     }
 }
 - (IBAction)dateDone:(id)sender {
-        _thedatePicker.hidden = YES;
+        _endDateView.hidden = YES;
     UIDatePicker *datePicker = _datePicker;
+    UIDatePicker *enddatePicker = _endDatePicker;
     NSDate *pickerdate = [datePicker date];
+    NSDate *pickerendingdate = [enddatePicker date];
     
     NSString *pickeraltdate = [NSString stringWithFormat:@"%@", pickerdate];
+ 
+       NSString *pickerenddate = [NSString stringWithFormat:@"%@", pickerendingdate];
     
-   // NSTimeInterval timestamp = [pickerdate timeIntervalSince1970];
-
+   NSTimeInterval timestamp = [pickerdate timeIntervalSince1970];
+    timestampStart = [NSString stringWithFormat:@"%f", timestamp];
     
+    // Calculate Start Date
+        
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
     NSString *eventdate = pickeraltdate;
@@ -208,11 +223,20 @@
     NSInteger daymonth = [components month];
    // NSInteger DayYear = [components year];
     NSInteger minute = [components minute];
-
     
+    // Calculate End Date
     
+    NSString *enddate = pickerenddate;
+    NSDate *endingdate = [dateFormatter dateFromString:enddate];
+    NSDateComponents *endcomponents = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit) fromDate:endingdate];
+    NSInteger endhour = [endcomponents hour];
+    NSInteger endday = [endcomponents day];
+    NSInteger enddaymonth = [endcomponents month];
+    // NSInteger DayYear = [components year];
+    NSInteger endminute = [endcomponents minute];
     
     {
+        //calculate start suffix
         NSString *suffix;
         int ones = day % 10;
         int temp = floor(day/10.0);
@@ -229,12 +253,33 @@
         } else {
             suffix = @"th";
         }
+        
+        
+        {
+            //caulcate end suffix
+            NSString *endsuffix;
+            int ones = endday % 10;
+            int temp = floor(endday/10.0);
+            int tens = temp%10;
+            
+            if (tens ==1) {
+                endsuffix = @"th";
+            } else if (ones ==1){
+                endsuffix = @"st";
+            } else if (ones ==2){
+                endsuffix = @"nd";
+            } else if (ones ==3){
+                endsuffix = @"rd";
+            } else {
+                endsuffix = @"th";
+            }
 
  //   NSString *completeAsString = [NSString stringWithFormat:@"%d%@",day,suffix];
     
     
         NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
         NSString *monthName = [[df monthSymbols] objectAtIndex:(daymonth-1)];
+                NSString *endmonthName = [[df monthSymbols] objectAtIndex:(enddaymonth-1)];
         
         //we need to format it if it's 05 past or 00 minutes past
         
@@ -245,10 +290,20 @@
             } else if ([altmin isEqualToString:@"0"]) {
                 altmin = @"00";
             }
+            
+            NSString *endaltmin = [NSString stringWithFormat:@"%ld",(long)endminute];
+            
+            if ([endaltmin isEqualToString:@"5"]) {
+                endaltmin = @"05";
+            } else if ([endaltmin isEqualToString:@"0"]) {
+                endaltmin = @"00";
+            }
         
-        NSString *newDate = [NSString stringWithFormat:@"event on: %ld%@ %@ at %ld:%@",(long)day,suffix,monthName,(long)hour,altmin];
+            _eventButIcon.hidden = YES;
+        NSString *newDate = [NSString stringWithFormat:@"event on: %ld%@ %@ at %ld:%@ until %ld%@ %@ at %ld:%@",(long)day,suffix,monthName,(long)hour,altmin, (long)endday, endsuffix, endmonthName, (long)endhour, endaltmin];
     
     [_dtButton setTitle:newDate forState:UIControlStateNormal];
+        }
     }
 }
 
@@ -292,7 +347,21 @@
     
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", @""]];
     
-    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: _eventTitle.text, @"title", _eventDescription.text, @"description", MID, @"user_id", nil];
+    
+    UIDatePicker *datePicker = _datePicker;
+    NSDate *pickerdate = [datePicker date];
+    UIDatePicker *enddatePicker = _endDatePicker;
+    NSDate *endpickerdate = [enddatePicker date];
+    
+  //  NSString *pickeraltdate = [NSString stringWithFormat:@"%@", pickerdate];
+    
+    NSTimeInterval timestamp = [pickerdate timeIntervalSince1970];
+   NSString *timestampStarts = [NSString stringWithFormat:@"%f", timestamp];
+    
+    NSTimeInterval endtimestamp = [endpickerdate timeIntervalSince1970];
+    NSString *timestampEnds = [NSString stringWithFormat:@"%f", endtimestamp];
+    
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: _eventTitle.text, @"title", _eventDescription.text, @"description", MID, @"user_id", timestampStarts, @"time_of_event",timestampEnds, @"time_of_event_end", @"NO", @"canceled?", @"123", @"lat", @"123", @"long", nil];
     
     
     NSError *error;
@@ -317,9 +386,13 @@
     NSLog(@"We're now collecting to the API");
     
     [connection start];
-    
+    NSLog (@"Event Created");
 
 
+}
+- (IBAction)chooseEndButton:(id)sender {
+    _thedatePicker.hidden = YES;
+    _endDateView.hidden = NO;
 }
 
 @end
