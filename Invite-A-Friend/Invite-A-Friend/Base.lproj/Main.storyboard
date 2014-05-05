@@ -1200,7 +1200,7 @@
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.60784313729999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="event name" clearsOnBeginEditing="YES" minimumFontSize="17" background="input_box.png" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ooV-ja-SzZ">
-                                <rect key="frame" x="20" y="87" width="280" height="38"/>
+                                <rect key="frame" x="20" y="91" width="280" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2627450980392157" green="0.29019607843137252" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1209,6 +1209,18 @@
                                     <action selector="eventNameChanged:" destination="1Rz-Ju-li4" eventType="editingDidBegin" id="y1k-tt-DfA"/>
                                     <action selector="eventNamefinished:" destination="1Rz-Ju-li4" eventType="editingDidEnd" id="Dwa-Jo-p4I"/>
                                     <action selector="textFieldReturn:" destination="1Rz-Ju-li4" eventType="editingDidEndOnExit" id="mfY-sG-h1R"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="event description" clearsOnBeginEditing="YES" minimumFontSize="17" background="input_box.png" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mgO-tF-u83">
+                                <rect key="frame" x="20" y="156" width="280" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.26274509800000001" green="0.2901960784" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="EventDisBegin:" destination="1Rz-Ju-li4" eventType="editingDidBegin" id="9Oa-I6-cnb"/>
+                                    <action selector="eventDescEdit:" destination="1Rz-Ju-li4" eventType="editingDidEnd" id="ehm-1d-WB5"/>
+                                    <action selector="textFieldReturn:" destination="1Rz-Ju-li4" eventType="editingDidEndOnExit" id="kwW-9T-u3X"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ny-ig-7nh">
@@ -1244,14 +1256,6 @@
                                     <action selector="inviteFriends:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="YXm-fR-XBu"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text=" event description" translatesAutoresizingMaskIntoConstraints="NO" id="G2X-Ds-QJg">
-                                <rect key="frame" x="22" y="138" width="276" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.26274509800000001" green="0.2901960784" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1N-wb-iHW">
                                 <rect key="frame" x="78" y="505" width="165" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1441,8 +1445,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleColor" red="1" green="0.99986628860000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="showPicker:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="dHg-4x-v7Z"/>
-                                    <segue destination="hgE-9N-ULc" kind="modal" identifier="setEventLocation" id="Emv-bl-l4d"/>
+                                    <action selector="chooseLocation:" destination="1Rz-Ju-li4" eventType="touchUpInside" id="7oH-y2-YZU"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="6TT-uZ-UPZ">
@@ -1459,15 +1462,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="endDatePicker" destination="a7U-IV-Ezd" id="cvy-Xf-ESj"/>
                         <outlet property="endDateView" destination="oU2-vo-XTG" id="IAE-Tc-eG2"/>
                         <outlet property="eventButIcon" destination="EnU-RU-ENi" id="WLM-es-5aP"/>
-                        <outlet property="eventDescription" destination="G2X-Ds-QJg" id="isb-Pb-XwA"/>
+                        <outlet property="eventDescription" destination="mgO-tF-u83" id="lMl-Gk-WW0"/>
                         <outlet property="eventOwner" destination="dIz-EX-Oyb" id="hyv-qm-UM1"/>
                         <outlet property="eventTitle" destination="ooV-ja-SzZ" id="WKC-Vw-Xpc"/>
+                        <outlet property="locationButton" destination="jJC-4b-Fqg" id="8bk-bp-X0K"/>
                         <outlet property="pickerLabel" destination="4Ny-ig-7nh" id="bnB-HV-eV0"/>
                         <outlet property="privButton" destination="9x8-W4-M4I" id="nby-uT-t5F"/>
                         <outlet property="privicyMenu" destination="Paj-dl-uAj" id="F0G-9S-5mF"/>
                         <outlet property="thedatePicker" destination="kb1-hm-oLq" id="5He-U6-4M6"/>
                         <outlet property="titleLabel" destination="AVm-bf-SP5" id="OfG-KQ-arf"/>
                         <segue destination="JPh-O6-dsn" kind="modal" identifier="showInvites" modalTransitionStyle="coverVertical" id="3GC-NE-ueb"/>
+                        <segue destination="hgE-9N-ULc" kind="modal" identifier="searchLocation" id="ZiE-uh-TLZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxx-dT-rkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1715,7 +1720,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlW-oE-Wlj">
-                                        <rect key="frame" x="284" y="232" width="25" height="25"/>
+                                        <rect key="frame" x="249" y="206" width="105" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

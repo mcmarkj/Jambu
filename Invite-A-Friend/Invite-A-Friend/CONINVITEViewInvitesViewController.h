@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface CONINVITEViewInvitesViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>{
     NSArray *tweets;

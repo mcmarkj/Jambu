@@ -382,16 +382,23 @@ CLLocationManager *locationManager;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
-    NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
+    
+    NSArray *geo = [tweets valueForKey:@"geometry"];
+    NSArray *geog = [geo valueForKey:@"location"];
+    NSString *latitude1 = [[geog objectAtIndex:indexPath.row] objectForKey:@"lat"];
+    NSString *long1 = [[geog objectAtIndex:indexPath.row] objectForKey:@"lng"];
+    NSString *locationName = [[tweets objectAtIndex:indexPath.row] objectForKey:@"name"];
+    
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:UID forKey:@"Con96FID"];
-    [defaults setObject:AID forKey:@"Con96FAID"];
+    [defaults setObject:latitude1 forKey:@"CON96LAT"];
+    [defaults setObject:long1 forKey:@"CON96LNG"];
+    [defaults setObject:locationName forKey:@"CON96LName"];
     [defaults synchronize];
     
     //Navigation logic may go here. Create and push another view controller.
     
-    [self  performSegueWithIdentifier:@"showFriend" sender:self];
+     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

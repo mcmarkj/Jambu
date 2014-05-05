@@ -10,11 +10,12 @@
 #import <QuartzCore/QuartzCore.h>
 #import "JSON.h"
 #include "CustomFriendCells.h"
+#include "EventListCell.h"
 
 @interface CONINVITEViewInvitesViewController ()
 - (IBAction)closeView:(id)sender;
 @end
-
+CLLocationManager *locationManager;
 @implementation CONINVITEViewInvitesViewController
 @synthesize tweets;
 @synthesize friends;
@@ -92,7 +93,7 @@
     
     [responseString release];
 	
-	NSArray *allTweets = [results objectForKey:@"friendships"];
+	NSArray *allTweets = [results objectForKey:@"events"];
 	[self setTweets:allTweets];
 	[self.tableV reloadData];
 }
@@ -199,59 +200,78 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    static NSString *simpleTableIdentifier = @"CustomFriendCells";
+    static NSString *simpleTableIdentifier = @"EventListCell";
     
-    CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    EventListCell *cell = (EventListCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomFriendCells" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"EventListCells" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.nameLabel.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"full_name"];
-	cell.nameLabel.adjustsFontSizeToFitWidth = YES;
-	cell.nameLabel.font = [UIFont fontWithName:@"Roboto-Black" size:20];
-	cell.nameLabel.numberOfLines = 2;
-    //cell.nameLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
-    cell.twitternameLabel.text = [NSString stringWithFormat:@"@%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"username"]];
-	cell.twitternameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:10];
     
-    NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_thumbnail"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    NSURLResponse *response;
-    NSError *error;
-    NSData *rawImage = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.eventName.text = [[tweets objectAtIndex:[indexPath row]] objectForKey:@"title"];
+	cell.eventName.adjustsFontSizeToFitWidth = YES;
+	cell.eventName.font = [UIFont fontWithName:@"Roboto-Light" size:20];
+	cell.eventName.numberOfLines = 2;
+    //cell.nameLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:85.0f/255.0f blue:127.0f/255.0f alpha:1.0f];
+    NSString * timeStampString = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"time_of_event"]];
+    NSTimeInterval _interval=[timeStampString doubleValue];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
+    NSDateFormatter *_formatter=[[NSDateFormatter alloc]init];
+    [_formatter setDateFormat:@"HH:mm - dd/MM/yyyy"];
+    NSString *finaldate=[_formatter stringFromDate:date];
+    
+    
+    cell.eventTime.text = finaldate;
+	cell.eventTime.font = [UIFont fontWithName:@"Roboto-Light" size:10];
+    
+    
+    
+    float latitude = locationManager.location.coordinate.latitude;
+    float longitude = locationManager.location.coordinate.longitude;
+    
+    float latitude1 = [[[tweets objectAtIndex:indexPath.row] objectForKey:@"lat"] floatValue];
+    float long1 = [[[tweets objectAtIndex:indexPath.row] objectForKey:@"long"] floatValue];
+    
+    CLLocation *location1 = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+    CLLocation *location2 = [[CLLocation alloc] initWithLatitude:latitude1 longitude:long1];
+    
+    float KMdistance = [location1 distanceFromLocation:location2]*0.000621371192;
+    float metdistance = [location1 distanceFromLocation:location2];
+    int meterdistance = (int)metdistance;
+    
+    int finaldistance = (int)KMdistance;
+    if(finaldistance == 0) {
+        //   NSString *finaldistance = @">5";
+        cell.distanceLabel.text = [NSString stringWithFormat:@"%d meters away", meterdistance];
+    } else {
+        
+        // float newDistance = ((KMdistance + 5)/10)*10;
+        
+        cell.distanceLabel.text = [NSString stringWithFormat:@"%d miles away", finaldistance];
+    }
+    
+    cell.distanceLabel.font = [UIFont fontWithName:@"Roboto-Light" size:10];
+    
+    [location1 release];
+    [location2 release];
+    
+    
+    // NSString *urlString = [[tweets objectAtIndex:indexPath.row] objectForKey:@"image_thumbnail"];
+    //   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    //   NSURLResponse *response;
+    //    NSError *error;
+    //   NSData *rawImage = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
     //_UserImage.image = [UIImage imageWithData:rawImage];
     
-    cell.thumbnailImageView.image = [UIImage imageWithData:rawImage];
+    //cell.thumbnailImageView.image = [UIImage imageWithData:rawImage];
     //cell.imageView.image = [UIImage imageNamed:@"searchcircle.png"];
     
-    
-    int rownum = indexPath.row;
-    int totnum = [tweets count] - 1;
-    
-    if(rownum == totnum){
-        
-        static NSString *simpleTableIdentifier = @"friendfeedcell";
-        
-        CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FriendFeedCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        // Reset previous content of the cell, I have these defined in a UITableCell subclass, change them where needed
-        // Here we create the ‘Load more’ cell
-        
-        
-    }
-    
     return cell;
-    
 }
-
 
 - (CGFloat)tableView:(UITableView *)tabelView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     

@@ -12,7 +12,12 @@
 - (IBAction)createEvent:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *endDateView;
 @property (strong, nonatomic) IBOutlet UIDatePicker *endDatePicker;
+- (IBAction)chooseLocation:(id)sender;
 
+- (IBAction)eventDescEdit:(id)sender;
+- (IBAction)EventDisBegin:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *locationButton;
 
 @property (strong, nonatomic) IBOutlet UIImageView *eventButIcon;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
@@ -33,7 +38,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIDatePicker *eventPicker;
 - (IBAction)closeView:(id)sender;
-@property (strong, nonatomic) IBOutlet UITextView *eventDescription;
+@property (strong, nonatomic) IBOutlet UITextField *eventDescription;
 - (IBAction)showPicker:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *eventOwner;
 - (IBAction)eventNameChanged:(id)sender;
@@ -66,6 +71,8 @@ NSString *timestampStart;
      [super viewDidAppear:animated];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *inviteArrNames = [defaults objectForKey:@"ConInviteesNames"];
+    NSString *locationName = [defaults objectForKey:@"CON96LName"];
+    
     if(inviteArrNames == nil){
         NSLog(@"No Invitees");
 }
@@ -89,6 +96,14 @@ NSString *timestampStart;
     
        [_attendButton setTitle:finalStr forState:UIControlStateNormal];
 }
+    
+    if(locationName == nil){
+        
+    } else {
+        [_locationButton setTitle:locationName forState:UIControlStateNormal];
+    }
+    
+    
 }
 
 - (void)viewDidLoad
@@ -99,6 +114,9 @@ NSString *timestampStart;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:nil forKey:@"CONInvitees"];
     [defaults setObject:nil forKey:@"ConInviteesNames"];
+    [defaults setObject:nil forKey:@"CON96LNG"];
+    [defaults setObject:nil forKey:@"CON96LNG"];
+    [defaults setObject:nil forKey:@"CON96LName"];
     [defaults synchronize];
    /* NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@"" forKey:@"CONInvitees"];
@@ -110,17 +128,21 @@ NSString *timestampStart;
         _titleLabel.font = [UIFont fontWithName:@"Roboto-Light" size:18];
  
     _eventOwner.font = [UIFont fontWithName:@"Roboto-Light" size:8];
-    _eventDescription.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed: @"event_description.png"]];
     _eventTitle.font = [UIFont fontWithName:@"Roboto-Light" size:12];
     _eventTitle.leftView = paddingView;
     _eventTitle.leftViewMode = UITextFieldViewModeAlways;
     _eventLocation.font = [UIFont fontWithName:@"Roboto-Light" size:12];
-    _eventLocation.leftView = paddingsView;
-    _eventLocation.leftViewMode = UITextFieldViewModeAlways;
+    _eventDescription.leftView = paddingsView;
+    _eventDescription.leftViewMode = UITextFieldViewModeAlways;
     _eventDescription.font = [UIFont fontWithName:@"Roboto-Light" size:12];
+   // _eventDescription.leftView = paddingView;
+   // _eventDescription.leftViewMode = UITextFieldViewModeAlways;
     [_dtButton.titleLabel setFont: [UIFont fontWithName:@"Roboto-Light" size:12]];
     _dtButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     _dtButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    [_locationButton.titleLabel setFont: [UIFont fontWithName:@"Roboto-Light" size:12]];
+    _locationButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    _locationButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
         [_privButton.titleLabel setFont: [UIFont fontWithName:@"Roboto-Light" size:12]];
     _privButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     _privButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
@@ -362,7 +384,11 @@ NSString *timestampStart;
     NSTimeInterval endtimestamp = [endpickerdate timeIntervalSince1970];
     NSString *timestampEnds = [NSString stringWithFormat:@"%f", endtimestamp];
     
-    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: _eventTitle.text, @"title", _eventDescription.text, @"description", MID, @"user_id", timestampStarts, @"time_of_event",timestampEnds, @"time_of_event_end", @"NO", @"canceled?", @"123", @"lat", @"123", @"long", nil];
+    NSString *lat1 = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"CON96LAT"]];
+    
+    NSString *long1 = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"CON96LNG"]];
+    
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: _eventTitle.text, @"title", _eventDescription.text, @"description", MID, @"user_id", timestampStarts, @"time_of_event",timestampEnds, @"time_of_event_end", @"NO", @"canceled?", lat1, @"lat", long1, @"long", nil];
     
     
     NSError *error;
@@ -465,4 +491,25 @@ NSString *timestampStart;
     _endDateView.hidden = NO;
 }
 
+- (IBAction)chooseLocation:(id)sender {
+    [self performSegueWithIdentifier:@"searchLocation" sender:self];
+}
+
+- (IBAction)eventDescEdit:(id)sender {
+    if([_eventDescription.text isEqualToString:@""]){
+        _eventDescription.text = @"event description";
+    } else {
+        
+    }
+
+}
+
+- (IBAction)EventDisBegin:(id)sender {
+    if([_eventDescription.text isEqualToString:@"event description"]){
+        _eventDescription.text = @"";
+    } else {
+        
+    }
+
+}
 @end
