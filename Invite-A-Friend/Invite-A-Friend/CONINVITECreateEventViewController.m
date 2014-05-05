@@ -484,6 +484,8 @@ NSString *timestampStart;
        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:attendRequest delegate:self];
     
     [connection start];
+    
+    [self closeView:self];
 
 }
 - (IBAction)chooseEndButton:(id)sender {
