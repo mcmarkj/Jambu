@@ -881,7 +881,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="searchOption" destination="SRj-Yf-4OA" id="bzb-2f-TZV"/>
+                        <outlet property="searchBar" destination="SRj-Yf-4OA" id="xEk-7m-kNA"/>
                         <outlet property="tableV" destination="bG4-9s-1lY" id="W28-Px-Fba"/>
                     </connections>
                 </viewController>
