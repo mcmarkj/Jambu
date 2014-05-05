@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "414AA815188AE743001B3301"
                BuildableName = "inviteproject.app"
-               BlueprintName = "inviteproject"
+               BlueprintName = "Jambu"
                ReferencedContainer = "container:Invite-A-Friend.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "414AA815188AE743001B3301"
             BuildableName = "inviteproject.app"
-            BlueprintName = "inviteproject"
+            BlueprintName = "Jambu"
             ReferencedContainer = "container:Invite-A-Friend.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "414AA815188AE743001B3301"
             BuildableName = "inviteproject.app"
-            BlueprintName = "inviteproject"
+            BlueprintName = "Jambu"
             ReferencedContainer = "container:Invite-A-Friend.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -81,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "414AA815188AE743001B3301"
             BuildableName = "inviteproject.app"
-            BlueprintName = "inviteproject"
+            BlueprintName = "Jambu"
             ReferencedContainer = "container:Invite-A-Friend.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -154,7 +154,7 @@
     
     _UserName.text = [userInfo valueForKey:@"full_name"];
     _UserTwitterName.text = [NSString stringWithFormat:@"@%@",twitterusername];
-    NSString *eventinvites = [countInfo valueForKey:@"event_invites_pending"];
+    NSString *eventinvites = [countInfo valueForKey:@"events_created"];
     _UserEventInvites.text = [NSString stringWithFormat:@"%@",eventinvites];;
 
     
@@ -231,7 +231,9 @@
     } else if([action isEqualToString:@"event created"]) {
         outputAction = [NSString stringWithFormat:@"%@ updated their event \"%@\"", _UserName.text, actionname];
     } else if([action isEqualToString:@"user created"]) {
-        outputAction = [NSString stringWithFormat:@"%@ signed up to project invite", _UserName.text];
+        outputAction = [NSString stringWithFormat:@"%@ created his account", _UserName.text];
+    } else if([action isEqualToString:@"joined event"]) {
+        outputAction = [NSString stringWithFormat:@"%@ is attending an event", _UserName.text];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -324,6 +326,20 @@
         [defaults setObject:AID forKey:@"Con96FAID"];
         [defaults synchronize];
         [self  performSegueWithIdentifier:@"feedFriend" sender:self];
+    } else if([action isEqualToString:@"joined event"]) {
+        NSString *eventID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"]];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:eventID forKey:@"Con96EVENTID"];
+        //[defaults setObject:AID forKey:@"Con96FAID"];
+        [defaults synchronize];
+        [self  performSegueWithIdentifier:@"showEvent" sender:self];
+    } else if([action isEqualToString:@"event created"]) {
+        NSString *eventID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"]];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:eventID forKey:@"Con96EVENTID"];
+        //[defaults setObject:AID forKey:@"Con96FAID"];
+        [defaults synchronize];
+        [self  performSegueWithIdentifier:@"showEvent" sender:self];
     }
     
     

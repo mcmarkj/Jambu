@@ -485,7 +485,7 @@
     } else if([action isEqualToString:@"event created"]) {
         outputAction = [NSString stringWithFormat:@"%@ updated their event \"%@\"", _UserName.text, actionname];
     } else if([action isEqualToString:@"user created"]) {
-        outputAction = [NSString stringWithFormat:@"%@ signed up to project invite", _UserName.text];
+        outputAction = [NSString stringWithFormat:@"%@ created an account", _UserName.text];
     }
 
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
