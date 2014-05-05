@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface CONINVITEListCreatedEventsViewController : UIViewController
+@interface CONINVITEListCreatedEventsViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>{
+    NSArray *tweets;
+    NSArray *friends;
+    UISearchBar *searchBar;
+    UITableView *tableV;
+    NSMutableData *responseData;
+    UIActivityIndicatorView *indicator;
+}
+@property (strong, nonatomic) IBOutlet UISearchBar *searchOption;
+@property (retain) NSArray *tweets;
+@property (retain) NSArray *friends;
+@property (retain) IBOutlet UISearchBar *searchBar;
+@property (retain) IBOutlet UITableView *tableV;
+@property (assign) NSMutableData *responseData;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIImageView *yourimageview;
 
 @end

@@ -763,8 +763,8 @@
                                                 <color key="backgroundColor" red="0.12941177189350128" green="0.14117647707462311" blue="0.18039216101169586" alpha="1" colorSpace="calibratedRGB"/>
                                                 <sections/>
                                                 <connections>
-                                                    <outlet property="dataSource" destination="FR9-m9-tMb" id="PnK-W3-uZS"/>
-                                                    <outlet property="delegate" destination="FR9-m9-tMb" id="kRN-Ze-ujw"/>
+                                                    <outlet property="dataSource" destination="5yl-aS-bqp" id="cXf-72-5bA"/>
+                                                    <outlet property="delegate" destination="5yl-aS-bqp" id="Ke3-xa-oQU"/>
                                                 </connections>
                                             </tableView>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HsX-1F-AKL">
@@ -800,6 +800,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tableV" destination="Hor-hx-z2j" id="Y3R-eT-svy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMk-oo-Fgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
