@@ -61,11 +61,62 @@
     UIImage* tabBarBackground = [UIImage imageNamed:@"tab-back.png"];
     [[UITabBar appearance] setBackgroundImage:tabBarBackground];
     
+    
+    
 
 
     return YES;
+    
+    NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+    if(notificationPayload) {
+         NSLog(@"We have a push!");
+        // Create a pointer so we can tell what type of notification it is
+        NSString *pointerType = [notificationPayload objectForKey:@"p"];
+        // Create a pointer so we can collect ID's or other data to open a particular event etc
+        NSString *pointerID = [notificationPayload objectForKey:@"pid"];
+        
+    
+        if([pointerType isEqualToString:@"eventUp"]){
+            //Was an event Updated?
+    
+            NSString *eventID = pointerID;
+            
+        } else if ([pointerType isEqualToString:@"invite"]){
+            //Was the user invited to an event?
+        
+            NSString *eventID = pointerID;
+            
+        } else if ([pointerType isEqualToString:@"foll"]){
+            //Was the user followed by someone
+            
+            NSString *UserID = pointerID;
+            
+        } else if ([pointerType isEqualToString:@"inresp"]){
+            //Did someone respond to an invite?
+            
+            NSString *eventID = pointerID;
+        }
+        
+    
+    }
+    
+    
 }
 
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    
+    NSDictionary *notificationPayload = [userInfo objectForKey:@"aps"];
+    
+    // the userInfo dictionary usually contains the same information as the notificationPayload dictionary above
+     NSLog(@"We have a push notification!");
+    
+    NSString *alertMessage = [notificationPayload objectForKey:@"alert"];
+    NSLog(@"The alert said %@", alertMessage);
+    
+    
+}
 
 
     - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken 
