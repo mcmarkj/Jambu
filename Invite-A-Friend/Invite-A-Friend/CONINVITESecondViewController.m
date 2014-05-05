@@ -105,24 +105,6 @@
     _eventStartslabel.font = [UIFont fontWithName:@"Roboto-Light" size:12];
     _eventStartTimelabel.font = [UIFont fontWithName:@"Roboto-Light" size:12];
 
-    
-    NSString *UID = [userdefaults objectForKey:@"ConNextUID"];
-    
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
-    [request setURL:url];
-    [request setHTTPMethod:@"GET"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    NSError *error;
-    NSURLResponse *response;
-    NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
-    
-    NSArray *userInfo = [json valueForKey:@"user"];
-
     {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -218,6 +200,7 @@
 
     
     _invitee_image.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"url"]]]];
+        
     }
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
