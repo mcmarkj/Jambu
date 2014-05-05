@@ -1523,8 +1523,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="dataSource" destination="Gmm-C0-fLu" id="J95-hP-t5v"/>
-                                            <outlet property="delegate" destination="Gmm-C0-fLu" id="iXI-Dm-gMC"/>
+                                            <outlet property="dataSource" destination="hgE-9N-ULc" id="y2m-Ze-d7f"/>
+                                            <outlet property="delegate" destination="hgE-9N-ULc" id="XWc-dw-QMt"/>
                                         </connections>
                                     </tableView>
                                     <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="fA4-pi-BnK">
@@ -1538,6 +1538,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="fA4-pi-BnK" id="csl-7a-ymB"/>
+                        <outlet property="tableV" destination="yKX-bO-w0W" id="9ho-ZC-09R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06P-Pk-bwr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

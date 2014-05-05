@@ -85,7 +85,7 @@
 		4173460D18B8F7B700F84676 /* myinvites.png in Resources */ = {isa = PBXBuildFile; fileRef = 4173460B18B8F7B700F84676 /* myinvites.png */; };
 		4173460E18B8F7B700F84676 /* myinvites@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4173460C18B8F7B700F84676 /* myinvites@2x.png */; };
 		4173461018B91C1500F84676 /* fb-profile.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4173460F18B91C1500F84676 /* fb-profile.gif */; };
-		4174996E1916FF5600BBF9C4 /* CONINVITESearchLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174996D1916FF5600BBF9C4 /* CONINVITESearchLocationViewController.m */; };
+		4174996E1916FF5600BBF9C4 /* CONINVITESearchLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174996D1916FF5600BBF9C4 /* CONINVITESearchLocationViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4174997019178F3300BBF9C4 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4174996F19178F3300BBF9C4 /* settings@2x.png */; };
 		41749972191791E400BBF9C4 /* 96.png in Resources */ = {isa = PBXBuildFile; fileRef = 41749971191791E400BBF9C4 /* 96.png */; };
 		417499761917950C00BBF9C4 /* CONINVITESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 417499751917950C00BBF9C4 /* CONINVITESettingsViewController.m */; };
