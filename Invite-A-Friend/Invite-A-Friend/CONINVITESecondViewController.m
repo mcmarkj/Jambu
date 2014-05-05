@@ -199,10 +199,26 @@
         //NSInteger minute = [components minute];
     }
     
+    {
+        
+        NSString *ID = [userdefaults objectForKey:@"ConNextUID"];
+        
+        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/image_from_id/%@", ID]];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        
+        [request setURL:url];
+        [request setHTTPMethod:@"GET"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        NSError *error;
+        NSURLResponse *response;
+        NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+
     
-    
-    _invitee_image.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userInfo valueForKey:@"image_url"]]]];
-    
+    _invitee_image.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"url"]]]];
+    }
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

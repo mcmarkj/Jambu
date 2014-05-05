@@ -13,7 +13,7 @@
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([CONINVITEAppDelegate class]));
+       return UIApplicationMain(argc, argv, nil, NSStringFromClass([CONINVITEAppDelegate class]));
     }
 }
 
