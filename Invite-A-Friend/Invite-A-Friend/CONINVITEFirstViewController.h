@@ -27,8 +27,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *UserCardSplitLabels1;
 @property (strong, nonatomic) IBOutlet UILabel *UserCardSplitLabels2;
 @property (strong, nonatomic) IBOutlet UILabel *UserCardSplitLabels3;
+@property (strong, nonatomic) IBOutlet UIButton *eventsAttended;
+- (IBAction)showAttendedEvents:(id)sender;
+- (IBAction)ShowMyEvents:(id)sender;
 
 - (IBAction)showFriends:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *myEvents;
 
 @property (strong, nonatomic) IBOutlet UILabel *UserIndicatorImage;
 @property (strong, nonatomic) IBOutlet UIButton *UserIndicatorButton;

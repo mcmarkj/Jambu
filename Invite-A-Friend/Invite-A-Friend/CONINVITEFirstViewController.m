@@ -430,9 +430,16 @@
         _UserNameLabel.font = [UIFont fontWithName:@"Roboto" size:20];
         _UserTNameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:13];
         _UserEventsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
-        _UserEventsLabel.text = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"events_created"]];
+        //_UserEventsLabel.text = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"events_created"]];
         _UserEventsAttendedLabel.font = [UIFont fontWithName:@"Roboto" size:20];
-        _UserEventsAttendedLabel.text = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"events_attended"]];;
+            NSString *event_created = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"events_created"]];
+            NSString *events_attended = [NSString stringWithFormat:@"%@", [countInfo valueForKey:@"events_attended"]];
+            
+        [_eventsAttended setTitle:events_attended forState:(UIControlStateNormal)];
+        _eventsAttended.titleLabel.font = [UIFont fontWithName:@"Roboto" size:20];
+        [_myEvents setTitle:event_created forState:(UIControlStateNormal)];
+        _myEvents.titleLabel.font = [UIFont fontWithName:@"Roboto" size:20];
+      //  _UserEventsAttendedLabel.text = [NSString stringWithFormat:@"%@",[countInfo valueForKey:@"events_attended"]];;
         [_UserFacebookFriendsLabel setTitle:friendscount forState:(UIControlStateNormal)];
         _UserFacebookFriendsLabel.titleLabel.font = [UIFont fontWithName:@"Roboto" size:20];
        // [_UserFacebookFriendsLabel setValue:[UIFont fontWithName:@"Roboto" size:20] forKeyPath:@"_UserFacebookFriendsLabel.font"];
@@ -537,7 +544,7 @@
     
     if(hours <= 0){
         if(mins <=0){
-        NSString *countdownText = [NSString stringWithFormat:@"No upcoming events :[ %@", @""];
+        NSString *countdownText = [NSString stringWithFormat:@"Shit one... No events mate! %@", @""];
         _overlaynexteventlabel.text = countdownText;
         } else if (mins >=1) {
             NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Mins", (long)mins];
@@ -587,11 +594,11 @@
     _UserIndicatorButton.alpha=0;
     _UserIndicatorImage.alpha=0;
     _UserFollowersButton.alpha=0;
-    _UserEventsLabel.alpha=0;
+    _myEvents.alpha=0;
     _UserNameLabel.alpha=1;
     _UserTwitterLabel.alpha=1;
     _UserFacebookFriendsLabel.alpha=0;
-    _UserEventsAttendedLabel.alpha=0;
+    _eventsAttended.alpha=0;
     
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
@@ -605,11 +612,11 @@
     _UserIndicatorButton.alpha=1;
     _UserIndicatorImage.alpha=1;
     _UserFollowersButton.alpha=1;
-    _UserEventsLabel.alpha=1;
+    _myEvents.alpha=1;
     _UserNameLabel.alpha=1;
     _UserTwitterLabel.alpha=1;
     _UserFacebookFriendsLabel.alpha=1;
-    _UserEventsAttendedLabel.alpha=1;
+    _eventsAttended.alpha=1;
     
     //also call this before commit animations......
     [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
@@ -627,11 +634,11 @@
         _UserIndicatorButton.alpha=1;
         _UserIndicatorImage.alpha=1;
         _UserFollowersButton.alpha=1;
-        _UserEventsLabel.alpha=1;
+        _myEvents.alpha=1;
         _UserNameLabel.alpha=1;
         _UserTwitterLabel.alpha=1;
         _UserFacebookFriendsLabel.alpha=1;
-        _UserEventsAttendedLabel.alpha=1;
+        _eventsAttended.alpha=1;
         
         [UIView commitAnimations];
     }
@@ -686,6 +693,14 @@
     }
 
 }
+- (IBAction)showAttendedEvents:(id)sender {
+    [self  performSegueWithIdentifier:@"listallevents" sender:self];
+}
+
+- (IBAction)ShowMyEvents:(id)sender {
+    [self  performSegueWithIdentifier:@"listmyevents" sender:self];
+}
+
 - (IBAction)showFriends:(id)sender {
         NSString *title = [_UserFacebookFriendsLabel currentTitle];
     

@@ -1,14 +1,14 @@
 //
-//  CONINVITEViewInvitesViewController.h
+//  CONINVITEListEventsViewController.h
 //  Invite-A-Friend
 //
-//  Created by Mark McWhirter on 17/04/2014.
+//  Created by Mark McWhirter on 05/05/2014.
 //  Copyright (c) 2014 Concept96. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface CONINVITEViewInvitesViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>{
+@interface CONINVITEListEventsViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>{
     NSArray *tweets;
     NSArray *friends;
     UISearchBar *searchBar;
@@ -16,7 +16,7 @@
     NSMutableData *responseData;
     UIActivityIndicatorView *indicator;
 }
-
+@property (strong, nonatomic) IBOutlet UISearchBar *searchOption;
 @property (retain) NSArray *tweets;
 @property (retain) NSArray *friends;
 @property (retain) IBOutlet UISearchBar *searchBar;

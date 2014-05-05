@@ -90,6 +90,8 @@
 		41749972191791E400BBF9C4 /* 96.png in Resources */ = {isa = PBXBuildFile; fileRef = 41749971191791E400BBF9C4 /* 96.png */; };
 		417499761917950C00BBF9C4 /* CONINVITESettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 417499751917950C00BBF9C4 /* CONINVITESettingsViewController.m */; };
 		417499791917951D00BBF9C4 /* CONINVITESettingsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 417499781917951D00BBF9C4 /* CONINVITESettingsWebViewController.m */; };
+		4174997C1917B3FD00BBF9C4 /* CONINVITEListEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174997B1917B3FD00BBF9C4 /* CONINVITEListEventsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4174997F1917B40C00BBF9C4 /* CONINVITEListCreatedEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174997E1917B40C00BBF9C4 /* CONINVITEListCreatedEventsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		41899359189066090089AC7E /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899342189066090089AC7E /* JSONModel.m */; };
 		4189935A189066090089AC7E /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899344189066090089AC7E /* JSONModelArray.m */; };
 		4189935B189066090089AC7E /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 41899346189066090089AC7E /* JSONModelClassProperty.m */; };
@@ -187,7 +189,7 @@
 		41F5980A188C602B00DAF315 /* topbanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DD188C602B00DAF315 /* topbanner.png */; };
 		41F5980B188C602B00DAF315 /* twittersync.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F597DE188C602B00DAF315 /* twittersync.png */; };
 		41FA39CB18FEDD6E00CEEE9E /* CONINVITEViewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FA39CA18FEDD6E00CEEE9E /* CONINVITEViewEventViewController.m */; };
-		41FA39D11900045900CEEE9E /* CONINVITEViewInvitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FA39D01900045900CEEE9E /* CONINVITEViewInvitesViewController.m */; };
+		41FA39D11900045900CEEE9E /* CONINVITEViewInvitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FA39D01900045900CEEE9E /* CONINVITEViewInvitesViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		41FFD96918F9654C00CC85E5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FFD96818F9654C00CC85E5 /* GoogleMaps.framework */; };
 		41FFD96B18F9657600CC85E5 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 41FFD96A18F9657600CC85E5 /* GoogleMaps.bundle */; };
 		41FFD96D18F9913500CC85E5 /* create.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FFD96C18F9913500CC85E5 /* create.png */; };
@@ -261,7 +263,7 @@
 		4142F2C8189FA836002ECA92 /* blue-profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-profile@2x.png"; sourceTree = "<group>"; };
 		4144D37C18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEFListFriendsFriendsViewController.h; sourceTree = "<group>"; };
 		4144D37D18A453E50089AC98 /* CONINVITEFListFriendsFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEFListFriendsFriendsViewController.m; sourceTree = "<group>"; };
-		414AA816188AE743001B3301 /* inviteproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inviteproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		414AA816188AE743001B3301 /* Jambu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jambu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		414AA819188AE743001B3301 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		414AA81B188AE743001B3301 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		414AA81D188AE743001B3301 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -316,6 +318,10 @@
 		417499751917950C00BBF9C4 /* CONINVITESettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITESettingsViewController.m; sourceTree = "<group>"; };
 		417499771917951D00BBF9C4 /* CONINVITESettingsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITESettingsWebViewController.h; sourceTree = "<group>"; };
 		417499781917951D00BBF9C4 /* CONINVITESettingsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITESettingsWebViewController.m; sourceTree = "<group>"; };
+		4174997A1917B3FD00BBF9C4 /* CONINVITEListEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEListEventsViewController.h; sourceTree = "<group>"; };
+		4174997B1917B3FD00BBF9C4 /* CONINVITEListEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEListEventsViewController.m; sourceTree = "<group>"; };
+		4174997D1917B40C00BBF9C4 /* CONINVITEListCreatedEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITEListCreatedEventsViewController.h; sourceTree = "<group>"; };
+		4174997E1917B40C00BBF9C4 /* CONINVITEListCreatedEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITEListCreatedEventsViewController.m; sourceTree = "<group>"; };
 		41899341189066090089AC7E /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
 		41899342189066090089AC7E /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
 		41899343189066090089AC7E /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
@@ -523,7 +529,7 @@
 		414AA817188AE743001B3301 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				414AA816188AE743001B3301 /* inviteproject.app */,
+				414AA816188AE743001B3301 /* Jambu.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -678,6 +684,10 @@
 				41F3227818A008D8001E07EB /* CONINVITESListFriendsViewController.m */,
 				414F5E7818C1FD82004AA658 /* CONINVITEListFollowersViewController.h */,
 				414F5E7918C1FD82004AA658 /* CONINVITEListFollowersViewController.m */,
+				4174997A1917B3FD00BBF9C4 /* CONINVITEListEventsViewController.h */,
+				4174997B1917B3FD00BBF9C4 /* CONINVITEListEventsViewController.m */,
+				4174997D1917B40C00BBF9C4 /* CONINVITEListCreatedEventsViewController.h */,
+				4174997E1917B40C00BBF9C4 /* CONINVITEListCreatedEventsViewController.m */,
 			);
 			name = "Lists (Friends etc)";
 			sourceTree = "<group>";
@@ -1039,7 +1049,7 @@
 			);
 			name = Jambu;
 			productName = "Invite-A-Friend";
-			productReference = 414AA816188AE743001B3301 /* inviteproject.app */;
+			productReference = 414AA816188AE743001B3301 /* Jambu.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1239,6 +1249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4174997F1917B40C00BBF9C4 /* CONINVITEListCreatedEventsViewController.m in Sources */,
 				4104B883190AC8ED00DB9C38 /* EventListCell.m in Sources */,
 				414AA833188AE743001B3301 /* CONINVITESecondViewController.m in Sources */,
 				41899360189066090089AC7E /* JSONModel+networking.m in Sources */,
@@ -1280,6 +1291,7 @@
 				4142F2A8189E8904002ECA92 /* CONINVITEFriendsSearchViewController.m in Sources */,
 				4189935C189066090089AC7E /* JSONModelError.m in Sources */,
 				41899359189066090089AC7E /* JSONModel.m in Sources */,
+				4174997C1917B3FD00BBF9C4 /* CONINVITEListEventsViewController.m in Sources */,
 				41A6AE6C18CA905C008416EA /* CONINVITENearbyEventViewController.m in Sources */,
 				4189935A189066090089AC7E /* JSONModelArray.m in Sources */,
 			);
