@@ -694,12 +694,25 @@
 
 }
 - (IBAction)showAttendedEvents:(id)sender {
+    NSString *title = [_eventsAttended currentTitle];
+    
+    if ([title isEqualToString:@"0"]) {
+        NSLog(@"User has no events attended");
+    } else {
+
     [self  performSegueWithIdentifier:@"listallevents" sender:self];
+    }
 }
 
 - (IBAction)ShowMyEvents:(id)sender {
+    NSString *title = [_myEvents currentTitle];
+    
+    if ([title isEqualToString:@"0"]) {
+        NSLog(@"User has no events created");
+    } else {
+
     [self  performSegueWithIdentifier:@"listmyevents" sender:self];
-}
+}}
 
 - (IBAction)showFriends:(id)sender {
         NSString *title = [_UserFacebookFriendsLabel currentTitle];
