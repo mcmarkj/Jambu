@@ -113,7 +113,10 @@ CLLocationManager *locationManager;
 {
     [super viewDidLoad];
     
-    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    [locationManager startUpdatingLocation];
     // Search bar
     searchBar.delegate = self;
     [searchBar setAutocorrectionType:UITextAutocorrectionTypeNo];
@@ -232,6 +235,9 @@ CLLocationManager *locationManager;
     
     float latitude1 = [[[tweets objectAtIndex:indexPath.row] objectForKey:@"lat"] floatValue];
     float long1 = [[[tweets objectAtIndex:indexPath.row] objectForKey:@"long"] floatValue];
+    
+    
+    
     
     CLLocation *location1 = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
     CLLocation *location2 = [[CLLocation alloc] initWithLatitude:latitude1 longitude:long1];

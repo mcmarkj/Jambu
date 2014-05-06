@@ -111,7 +111,7 @@
 - (IBAction)viewSamsProfile:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   //  NSString *MID = [defaults objectForKey:@"Con96AID"];
-    [defaults setObject:@"2309726184" forKey:@"Con96FID"];
+    [defaults setObject:@"2168339949" forKey:@"Con96FID"];
     [defaults synchronize];
 
     [self  performSegueWithIdentifier:@"viewProfile" sender:self];

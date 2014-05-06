@@ -395,11 +395,12 @@
                     </view>
                     <connections>
                         <segue destination="EoX-EU-McQ" kind="modal" identifier="webViewer" id="AOz-nM-Y3S"/>
+                        <segue destination="bvd-Vy-cXL" kind="modal" identifier="LoginPage" id="pA2-NI-Val"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDs-XE-wpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1721" y="58"/>
+            <point key="canvasLocation" x="1759" y="28"/>
         </scene>
         <!--Settings Web View Controller-->
         <scene sceneID="gWU-ny-Tms">
@@ -671,7 +672,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sJ-lk-E4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1735" y="851"/>
+            <point key="canvasLocation" x="1935" y="1027"/>
         </scene>
         <!--View Invites View Controller-->
         <scene sceneID="A3a-tH-yUc">
@@ -2644,11 +2645,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ccl-UX-6Uw"/>
-        <segue reference="HyW-k8-GWO"/>
+        <segue reference="M3E-Y3-Wu6"/>
+        <segue reference="pA2-NI-Val"/>
         <segue reference="slv-3R-j6T"/>
-        <segue reference="SUk-Ux-ee1"/>
-        <segue reference="9UP-zD-xGT"/>
         <segue reference="PwJ-sI-xxm"/>
+        <segue reference="HyW-k8-GWO"/>
+        <segue reference="Ccl-UX-6Uw"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -111,6 +111,10 @@ CLLocationManager *locationManager;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    [locationManager startUpdatingLocation];
     // Do any additional setup after loading the view.
     
     

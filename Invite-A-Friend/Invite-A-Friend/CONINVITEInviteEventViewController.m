@@ -118,6 +118,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     _inviteUsers = [[NSMutableArray alloc] init];
     _inviteUsersNames = [[NSMutableArray alloc] init];
         // Search bar

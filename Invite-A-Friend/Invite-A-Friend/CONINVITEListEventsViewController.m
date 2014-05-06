@@ -156,6 +156,10 @@ CLLocationManager *locationManager;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    [locationManager startUpdatingLocation];
     // Do any additional setup after loading the view.
     [_searchOption setScopeBarButtonTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
     [_searchOption setScopeBarButtonTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil] forState:UIControlStateSelected];

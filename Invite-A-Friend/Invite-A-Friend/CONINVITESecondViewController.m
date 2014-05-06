@@ -203,7 +203,7 @@
         
     }
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+        [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString *eventdate = [defaults objectForKey:@"ConNextEDate"];
         NSDate *endingDate = [dateFormatter dateFromString:eventdate];
