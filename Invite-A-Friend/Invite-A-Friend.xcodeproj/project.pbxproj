@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4104B883190AC8ED00DB9C38 /* EventListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4104B882190AC8ED00DB9C38 /* EventListCell.m */; };
 		4104B885190AC93D00DB9C38 /* EventListCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4104B884190AC93D00DB9C38 /* EventListCells.xib */; };
+		41078AA0191992FE00CF151A /* Main_4s.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41078A9E191992FE00CF151A /* Main_4s.storyboard */; };
 		4126560B18CB87A700368BB1 /* next_detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126560918CB87A700368BB1 /* next_detail@2x.png */; };
 		4126560C18CB87A700368BB1 /* next_detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126560A18CB87A700368BB1 /* next_detail.png */; };
 		4126560E18CB888500368BB1 /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126560D18CB888500368BB1 /* clock@2x.png */; };
@@ -212,6 +213,7 @@
 		4104B881190AC8ED00DB9C38 /* EventListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListCell.h; sourceTree = "<group>"; };
 		4104B882190AC8ED00DB9C38 /* EventListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListCell.m; sourceTree = "<group>"; };
 		4104B884190AC93D00DB9C38 /* EventListCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventListCells.xib; sourceTree = "<group>"; };
+		41078A9F191992FE00CF151A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_4s.storyboard; sourceTree = "<group>"; };
 		4126560918CB87A700368BB1 /* next_detail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next_detail@2x.png"; sourceTree = "<group>"; };
 		4126560A18CB87A700368BB1 /* next_detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_detail.png; sourceTree = "<group>"; };
 		4126560D18CB888500368BB1 /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 				414AA828188AE743001B3301 /* CONINVITEAppDelegate.h */,
 				414AA829188AE743001B3301 /* CONINVITEAppDelegate.m */,
 				414AA82B188AE743001B3301 /* Main.storyboard */,
+				41078A9E191992FE00CF151A /* Main_4s.storyboard */,
 				416C616118BA18AC009E53AB /* User Search */,
 				416C616318BA18E1009E53AB /* View Friends */,
 				416C616918BA1A57009E53AB /* Logins */,
@@ -1202,6 +1205,7 @@
 				41E8FB42189D1005000D43F4 /* README.md in Resources */,
 				414AA82D188AE743001B3301 /* Main.storyboard in Resources */,
 				4126563318CC9D5A00368BB1 /* notfriends.png in Resources */,
+				41078AA0191992FE00CF151A /* Main_4s.storyboard in Resources */,
 				414AA8AE188B0274001B3301 /* Roboto-ThinItalic.ttf in Resources */,
 				41F3228018A1A343001E07EB /* searchcircle@2x.png in Resources */,
 				41E8FB67189D7FF0000D43F4 /* search@2x.png in Resources */,
@@ -1300,6 +1304,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		41078A9E191992FE00CF151A /* Main_4s.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41078A9F191992FE00CF151A /* Base */,
+			);
+			name = Main_4s.storyboard;
+			sourceTree = "<group>";
+		};
 		414AA822188AE743001B3301 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
