@@ -9,6 +9,7 @@
 #import "CONINVITEViewEventViewController.h"
 
 @interface CONINVITEViewEventViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *eventNoLabel;
 
 @end
 
@@ -25,6 +26,13 @@
 
 - (void)viewDidLoad
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+       NSString *eventID = [defaults objectForKey:@"CON96EventID"];
+    
+    
+    _eventNoLabel.text = [NSString stringWithFormat:@"this will be event number: %@", eventID];
+        // [defaults setObject:AID forKey:@"Con96FAID"];
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

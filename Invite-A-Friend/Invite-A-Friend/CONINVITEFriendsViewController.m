@@ -328,17 +328,26 @@
         [self  performSegueWithIdentifier:@"feedFriend" sender:self];
     } else if([action isEqualToString:@"joined event"]) {
         NSString *eventID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"]];
+        //NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:eventID forKey:@"Con96EVENTID"];
-        //[defaults setObject:AID forKey:@"Con96FAID"];
+        [defaults setObject:eventID forKey:@"CON96EventID"];
+        // [defaults setObject:AID forKey:@"Con96FAID"];
         [defaults synchronize];
+        
+        //Navigation logic may go here. Create and push another view controller.
+        
         [self  performSegueWithIdentifier:@"showEvent" sender:self];
+
     } else if([action isEqualToString:@"event created"]) {
         NSString *eventID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"]];
+        //NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:eventID forKey:@"Con96EVENTID"];
-        //[defaults setObject:AID forKey:@"Con96FAID"];
+        [defaults setObject:eventID forKey:@"CON96EventID"];
+        // [defaults setObject:AID forKey:@"Con96FAID"];
         [defaults synchronize];
+        
+        //Navigation logic may go here. Create and push another view controller.
+        
         [self  performSegueWithIdentifier:@"showEvent" sender:self];
     }
     

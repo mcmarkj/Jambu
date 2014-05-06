@@ -732,6 +732,7 @@
                     </view>
                     <connections>
                         <outlet property="tableV" destination="XmY-EP-MQg" id="F0k-JG-jZX"/>
+                        <segue destination="EvN-gL-rsT" kind="modal" identifier="showEvent" id="8KX-mx-dgM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Nd-I1-UQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -803,6 +804,7 @@
                     </view>
                     <connections>
                         <outlet property="tableV" destination="Hor-hx-z2j" id="Y3R-eT-svy"/>
+                        <segue destination="EvN-gL-rsT" kind="modal" identifier="showEvent" id="rwF-af-fah"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMk-oo-Fgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -887,6 +889,7 @@
                     <connections>
                         <outlet property="searchBar" destination="SRj-Yf-4OA" id="xEk-7m-kNA"/>
                         <outlet property="tableV" destination="bG4-9s-1lY" id="W28-Px-Fba"/>
+                        <segue destination="EvN-gL-rsT" kind="modal" identifier="showEvent" id="Djy-6g-83u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q44-fC-PH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1149,6 +1152,7 @@
                         <outlet property="searchLabel" destination="A7L-At-GqO" id="naa-nQ-Dka"/>
                         <outlet property="tableV" destination="jeO-Jd-bsB" id="2ey-Tc-hho"/>
                         <outlet property="titleLabel" destination="hIE-sf-OsX" id="lg5-gZ-KfP"/>
+                        <segue destination="EvN-gL-rsT" kind="modal" identifier="showEvent" id="hZb-o9-cQx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHO-q8-2mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1646,18 +1650,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZS-nf-T6t">
-                                        <rect key="frame" x="0.0" y="-164" width="320" height="235"/>
+                                        <rect key="frame" x="0.0" y="-4" width="320" height="71"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UmK-lA-uSp">
-                                                <rect key="frame" x="66" y="194" width="188" height="21"/>
+                                                <rect key="frame" x="66" y="34" width="188" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTm-1q-pXW">
-                                                <rect key="frame" x="0.0" y="182" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="22" width="45" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="close.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1669,29 +1673,33 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </subviews>
                                         <color key="backgroundColor" red="0.18823529410000001" green="0.60784313729999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="I0L-Ek-SiV">
-                                        <rect key="frame" x="0.0" y="126" width="320" height="442"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="Gmm-C0-fLu" id="vFl-Fu-7Rw"/>
-                                            <outlet property="delegate" destination="Gmm-C0-fLu" id="Fkt-ku-cKv"/>
-                                        </connections>
-                                    </tableView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is a placeholder..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrV-1d-kCl">
+                                        <rect key="frame" x="87" y="254" width="278" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="eventNo:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcy-eP-1uE">
+                                        <rect key="frame" x="3" y="290" width="315" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.14117647059999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="eventNoLabel" destination="vcy-eP-1uE" id="xhe-7x-QZs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yhh-bS-Fd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="-542"/>
+            <point key="canvasLocation" x="2308" y="2262"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">
@@ -2090,6 +2098,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="Pkv-4c-iiK" kind="modal" identifier="editprofile" id="eR1-s8-gg5"/>
                         <segue destination="XVJ-lt-9MX" kind="modal" identifier="feedFriend" id="H4t-LS-p5U"/>
                         <segue destination="EvN-gL-rsT" kind="modal" identifier="showEvent" id="gI6-6m-ArT"/>
+                        <segue destination="EvN-gL-rsT" kind="modal" identifier="showEvent" id="tpF-B3-FI4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q7O-eu-Ocx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2258,7 +2267,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="Igf-oW-Ztn" kind="modal" identifier="showFriends" id="Bgi-A0-rbf"/>
                         <segue destination="8of-OM-Z7p" kind="modal" identifier="showFriendsFriends" id="LJc-TY-5MB"/>
                         <segue destination="0fF-WR-sE6" kind="modal" identifier="feedFriend" id="71z-8Y-E18"/>
-                        <segue destination="EvN-gL-rsT" kind="modal" id="Ccl-UX-6Uw"/>
+                        <segue destination="EvN-gL-rsT" kind="modal" identifier="showEvent" id="Ccl-UX-6Uw"/>
+                        <segue destination="EvN-gL-rsT" kind="modal" identifier="showEvent" id="EBh-nB-9ck"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gw-BY-Q2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2647,8 +2657,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <inferredMetricsTieBreakers>
         <segue reference="M3E-Y3-Wu6"/>
         <segue reference="pA2-NI-Val"/>
-        <segue reference="Ojr-Ml-8dI"/>
-        <segue reference="gI6-6m-ArT"/>
+        <segue reference="8KX-mx-dgM"/>
+        <segue reference="n1E-Iw-f0j"/>
         <segue reference="5ds-UG-5L4"/>
         <segue reference="eR1-s8-gg5"/>
     </inferredMetricsTieBreakers>

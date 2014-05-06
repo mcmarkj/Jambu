@@ -56,6 +56,20 @@ CLLocationManager *locationManager;
 - (void)searchBarResultsListButtonClicked:(UISearchBar *)searchBar{
     
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *eventID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"id"]];
+    //NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:eventID forKey:@"CON96EventID"];
+    // [defaults setObject:AID forKey:@"Con96FAID"];
+    [defaults synchronize];
+    
+    //Navigation logic may go here. Create and push another view controller.
+    
+    [self  performSegueWithIdentifier:@"showEvent" sender:self];
+    
+}
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     responseData = [[NSMutableData alloc] initWithLength:0];

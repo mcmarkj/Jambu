@@ -331,16 +331,16 @@ CLLocationManager *locationManager;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
-    NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
+    NSString *eventID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"id"]];
+    //NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:UID forKey:@"Con96FID"];
-    [defaults setObject:AID forKey:@"Con96FAID"];
+    [defaults setObject:eventID forKey:@"CON96EventID"];
+    // [defaults setObject:AID forKey:@"Con96FAID"];
     [defaults synchronize];
     
     //Navigation logic may go here. Create and push another view controller.
     
-    [self  performSegueWithIdentifier:@"showFriend" sender:self];
+    [self  performSegueWithIdentifier:@"showEvent" sender:self];
     
 }
 
