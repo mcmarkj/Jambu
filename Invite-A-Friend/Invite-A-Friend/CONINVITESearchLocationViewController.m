@@ -125,6 +125,8 @@ CLLocationManager *locationManager;
     
     [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor whiteColor]];
     
+[[UITextField appearance] setKeyboardAppearance:UIKeyboardAppearanceDark];
+    
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
@@ -387,7 +389,7 @@ CLLocationManager *locationManager;
     NSArray *geog = [geo valueForKey:@"location"];
     NSString *latitude1 = [[geog objectAtIndex:indexPath.row] objectForKey:@"lat"];
     NSString *long1 = [[geog objectAtIndex:indexPath.row] objectForKey:@"lng"];
-    NSString *locationName = [[tweets objectAtIndex:indexPath.row] objectForKey:@"name"];
+    NSString *locationName = [NSString stringWithFormat:@"%@, %@", [[tweets objectAtIndex:indexPath.row] objectForKey:@"name"], [[tweets objectAtIndex:indexPath.row] objectForKey:@"formatted_address"]];
     
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

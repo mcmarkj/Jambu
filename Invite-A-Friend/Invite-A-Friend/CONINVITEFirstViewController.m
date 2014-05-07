@@ -330,6 +330,7 @@
             
             
         NSString *twitterusername = [userInfo valueForKey:@"username"];
+            NSString *usersNameString = [userInfo valueForKey:@"full_name"];
         NSString *AID = [userInfo valueForKey:@"id"];
             NSString *imgurl = [userInfo valueForKey:@"image_url"];
             
@@ -341,6 +342,7 @@
             NSString *desc = [next_event valueForKey:@"description"];
             NSString *event_userID = [next_event valueForKey:@"user_id"];
             NSString *event_ID = [next_event valueForKey:@"id"];
+            NSString *event_location = [next_event valueForKey:@"location_name"];
             
             
             
@@ -377,10 +379,12 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:AID forKey:@"Con96AID"];
         [defaults setObject:twitterusername forKey:@"Con96TUNAME"];
+        [defaults setObject:usersNameString forKey:@"CON96users_name"];
         [defaults setObject:imgurl forKey:@"Con96UIMG"];
             [defaults setObject:dateString forKey:@"ConNextEDate"];
             [defaults setObject:eventTitle forKey:@"ConNextTitle"];
             [defaults setObject:enddateString forKey:@"ConNextEnd"];
+                [defaults setObject:event_location forKey:@"ConNextLocation"];
             [defaults setObject:lat forKey:@"ConNextLat"];
             [defaults setObject:lng forKey:@"ConNextLong"];
             [defaults setObject:desc forKey:@"ConNextDesc"];
@@ -539,7 +543,23 @@
     if(days>=1){
         NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Days, %ld Hours, and %ld Mins", (long)days, (long)hours, (long)mins];
         _overlaynexteventlabel.text = countdownText;
-    } else {
+    } else if (hours<=0) {
+        
+        NSString *countdownText = @"You have an event in progress...";
+        
+        _overlaynexteventlabel.text = countdownText;
+        
+        NSString *shours = [NSString stringWithFormat:@"%ld", (long)hours];
+        NSString *smins = [NSString stringWithFormat:@"%ld", (long)mins];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:shours forKey:@"CONEHours"];
+        [defaults setObject:smins forKey:@"CONEMins"];
+        [defaults synchronize];
+        
+    } else
+    
+    
+     {
     
     
     if(hours <= 0){
@@ -559,7 +579,7 @@
             
         }
     } else {
-    
+        
         NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Hours, and %ld Mins", (long)hours, (long)mins];
         _overlaynexteventlabel.text = countdownText;
         
@@ -571,7 +591,7 @@
         [defaults synchronize];
         
     }
-}
+    }
 }
 
 

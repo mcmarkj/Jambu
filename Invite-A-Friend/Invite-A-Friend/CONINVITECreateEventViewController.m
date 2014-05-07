@@ -118,7 +118,10 @@ NSString *timestampStart;
     [defaults setObject:nil forKey:@"CON96LNG"];
     [defaults setObject:nil forKey:@"CON96LNG"];
     [defaults setObject:nil forKey:@"CON96LName"];
+    [defaults setObject:@"public" forKey:@"CONPrivicy"];
     [defaults synchronize];
+    
+    _eventOwner.text = [NSString stringWithFormat:@"Event Owner: %@", [defaults objectForKey:@"CON96users_name"]];
    /* NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@"" forKey:@"CONInvitees"];
     [defaults setObject:@"" forKey:@"ConInviteesNames"];
@@ -339,17 +342,31 @@ NSString *timestampStart;
 
 - (IBAction)privacyMe:(id)sender {
  [_privButton setTitle:@"privacy: Only Me" forState:UIControlStateNormal];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"me" forKey:@"CONPrivicy"];
+    [defaults synchronize];
+    
         _privicyMenu.hidden = YES;
+    _attendButton.enabled = false;
 }
 
 - (IBAction)privacyInvite:(id)sender {
     [_privButton setTitle:@"privacy: Only People I Invite" forState:UIControlStateNormal];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"private" forKey:@"CONPrivicy"];
+    [defaults synchronize];
         _privicyMenu.hidden = YES;
+    _attendButton.enabled = YES;
 }
 
 - (IBAction)privacyAnyone:(id)sender {
     [_privButton setTitle:@"privacy: Anyone Can Attend" forState:UIControlStateNormal];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"public" forKey:@"CONPrivicy"];
+    [defaults synchronize];
         _privicyMenu.hidden = YES;
+    _attendButton.enabled = YES;
 }
 
 - (IBAction)closePrivicy:(id)sender {
@@ -390,8 +407,10 @@ NSString *timestampStart;
     NSString *lat1 = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"CON96LAT"]];
     
     NSString *long1 = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"CON96LNG"]];
+     NSString *locationName = [defaults objectForKey:@"CON96LName"];
+    NSString *privicyoption = [defaults objectForKey:@"CONPrivicy"];
     
-    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: _eventTitle.text, @"title", _eventDescription.text, @"description", MID, @"user_id", timestampStarts, @"time_of_event",timestampEnds, @"time_of_event_end", @"False", @"canceled", lat1, @"lat", long1, @"long", nil];
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: _eventTitle.text, @"title", _eventDescription.text, @"description", MID, @"user_id", timestampStarts, @"time_of_event",timestampEnds, @"time_of_event_end", privicyoption ,@"privacy", locationName ,@"location_name",@"false", @"canceled", lat1, @"lat", long1, @"long", nil];
     
     
     NSError *error;

@@ -87,7 +87,7 @@
     _EventName.font = [UIFont fontWithName:@"Roboto-Light" size:22];
    
     _EventName.text = [userdefaults objectForKey:@"ConNextTitle"];
-    
+    _eventLocationLabel.text = [userdefaults objectForKey:@"ConNextLocation"];
     
     _eventLocationLabel.font = [UIFont fontWithName:@"Roboto-Thin" size:18];
     _eventDaylabel.font = [UIFont fontWithName:@"Roboto-Medium" size:13];
