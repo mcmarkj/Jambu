@@ -123,7 +123,7 @@
     
         if([pointerType isEqualToString:@"eventUp"]){
             //Was an event Updated?
-    
+        
             NSString *eventID = pointerID;
             
         } else if ([pointerType isEqualToString:@"invite"]){
@@ -153,6 +153,8 @@
 {
     
     NSDictionary *notificationPayload = [userInfo objectForKey:@"aps"];
+    NSDictionary *notificationType = [userInfo objectForKey:@"p"];
+    NSDictionary *notificationID = [userInfo objectForKey:@"pid"];
     
     // the userInfo dictionary usually contains the same information as the notificationPayload dictionary above
      NSLog(@"We have a push notification!");
@@ -161,10 +163,52 @@
     NSLog(@"The alert said %@", alertMessage);
     
     
+    NSString *pointerType = [NSString stringWithFormat:@"%@", notificationType];
+    NSString *pointerID = [NSString stringWithFormat:@"%@", notificationID];
+    
+    if([pointerType isEqualToString:@"eventUp"]){
+        //Was an event Updated?
+        NSLog(@"We have an event update");
+        
+        NSString *eventID = pointerID;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:eventID forKey:@"CON96EventID"];
+        [defaults synchronize];
+        
+    } else if ([pointerType isEqualToString:@"invite"]){
+        //Was the user invited to an event?
+        NSLog(@"We have an event invite");
+        
+        NSString *eventID = pointerID;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:eventID forKey:@"CON96EventID"];
+        [defaults synchronize];
+        
+    } else if ([pointerType isEqualToString:@"foll"]){
+        //Was the user followed by someone
+          NSLog(@"We have an new follower");
+        
+        NSString *UserID = pointerID;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:UserID forKey:@"Con96FID"];
+        [defaults synchronize];
+        
+    } else if ([pointerType isEqualToString:@"esoon"]){
+        //Did someone respond to an invite?
+          NSLog(@"We have an event starting soon");
+        
+        NSString *eventID = pointerID;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:eventID forKey:@"CON96EventID"];
+        [defaults synchronize];
+    }
+
+    
+    
 }
 
 
-    - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken 
+    - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     {
         NSUInteger capacity = [deviceToken length] * 2;
         NSMutableString *stringBuffer = [NSMutableString stringWithCapacity:capacity];
