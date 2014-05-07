@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="rDK-mR-ejD">
-                                <rect key="frame" x="0.0" y="380" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="391" width="320" height="140"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="topbanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="Auq-Vs-HDm">
@@ -2770,7 +2770,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="newhere.png" width="320" height="65"/>
         <image name="next_detail.png" width="156" height="67"/>
         <image name="noevents@2.png" width="509" height="327"/>
-        <image name="overlay.png" width="320" height="150"/>
+        <image name="overlay.png" width="640" height="276"/>
         <image name="pink.png" width="320" height="339"/>
         <image name="plus2.png" width="26" height="26"/>
         <image name="purple.png" width="320" height="339"/>
