@@ -237,11 +237,11 @@
         static NSString *simpleTableIdentifier = @"friendfeedcell";
         
         CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        if (cell == nil)
+        /*if (cell == nil)
         {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FriendFeedCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
+        //    cell = [nib objectAtIndex:0];
+        }*/
         // Reset previous content of the cell, I have these defined in a UITableCell subclass, change them where needed
         // Here we create the ‘Load more’ cell
         
@@ -323,6 +323,7 @@
     [tweets release];
     [responseData release];
     [indicator release];
+    
     [super dealloc];
 }
 

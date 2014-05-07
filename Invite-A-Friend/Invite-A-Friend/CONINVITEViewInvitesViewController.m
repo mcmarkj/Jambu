@@ -223,10 +223,10 @@ CLLocationManager *locationManager;
     NSString * timeStampString = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"time_of_event"]];
     NSTimeInterval _interval=[timeStampString doubleValue];
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
-    NSDateFormatter *_formatter=[[NSDateFormatter alloc]init];
+    NSDateFormatter *_formatter=[[NSDateFormatter alloc] init];
     [_formatter setDateFormat:@"HH:mm - dd/MM/yyyy"];
     NSString *finaldate=[_formatter stringFromDate:date];
-    
+    [_formatter release];
     
     cell.eventTime.text = finaldate;
 	cell.eventTime.font = [UIFont fontWithName:@"Roboto-Light" size:10];
@@ -260,6 +260,7 @@ CLLocationManager *locationManager;
     cell.distanceLabel.font = [UIFont fontWithName:@"Roboto-Light" size:10];
     
     [location1 release];
+    
     [location2 release];
     
     
@@ -347,6 +348,7 @@ CLLocationManager *locationManager;
     [tweets release];
     [responseData release];
     [indicator release];
+    [locationManager release];
     [super dealloc];
 }
 

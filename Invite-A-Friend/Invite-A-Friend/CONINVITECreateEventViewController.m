@@ -92,9 +92,10 @@ NSString *timestampStart;
     NSString *finalStr = [NSString stringWithFormat:@"Invited: %@",[inviteArrNames componentsJoinedByString:@" & "]];
         
 
-    
+        [result autorelease];
     
        [_attendButton setTitle:finalStr forState:UIControlStateNormal];
+      
 }
     
     if(locationName == nil){
@@ -134,6 +135,8 @@ NSString *timestampStart;
     _eventLocation.font = [UIFont fontWithName:@"Roboto-Light" size:12];
     _eventDescription.leftView = paddingsView;
     _eventDescription.leftViewMode = UITextFieldViewModeAlways;
+    [paddingsView release];
+    [paddingView release];
     _eventDescription.font = [UIFont fontWithName:@"Roboto-Light" size:12];
    // _eventDescription.leftView = paddingView;
    // _eventDescription.leftViewMode = UITextFieldViewModeAlways;
@@ -150,7 +153,7 @@ NSString *timestampStart;
     _attendButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     _attendButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
 	// Do any additional setup after loading the view.
-    [paddingView release];
+   // [paddingView release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -235,7 +238,7 @@ NSString *timestampStart;
     
     // Calculate Start Date
         
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
     NSString *eventdate = pickeraltdate;
     NSDate *date = [dateFormatter dateFromString:eventdate];
@@ -257,7 +260,7 @@ NSString *timestampStart;
     NSInteger enddaymonth = [endcomponents month];
     // NSInteger DayYear = [components year];
     NSInteger endminute = [endcomponents minute];
-    
+    [dateFormatter release];
     {
         //calculate start suffix
         NSString *suffix;
@@ -484,7 +487,7 @@ NSString *timestampStart;
        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:attendRequest delegate:self];
     
     [connection start];
-    
+  //  [jsonData release];
     [self closeView:self];
 
 }

@@ -165,11 +165,7 @@ CLLocationManager *locationManager;
     [_searchOption setScopeBarButtonTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil] forState:UIControlStateSelected];
 
     
-    NSArray *scopechoice = _searchOption.scopeButtonTitles;
-    
-    NSString *selectedScope = [NSString stringWithFormat:@"%ld",(long)_searchOption.selectedScopeButtonIndex];
-    
-    
+
     
     // Search bar
     searchBar.delegate = self;
@@ -274,10 +270,10 @@ CLLocationManager *locationManager;
     NSString * timeStampString = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"time_of_event"]];
     NSTimeInterval _interval=[timeStampString doubleValue];
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
-    NSDateFormatter *_formatter=[[NSDateFormatter alloc]init];
+    NSDateFormatter *_formatter=[[NSDateFormatter alloc] init];
     [_formatter setDateFormat:@"HH:mm - dd/MM/yyyy"];
     NSString *finaldate=[_formatter stringFromDate:date];
-    
+    [_formatter release];
     
     cell.eventTime.text = finaldate;
 	cell.eventTime.font = [UIFont fontWithName:@"Roboto-Light" size:10];
@@ -399,6 +395,7 @@ CLLocationManager *locationManager;
     [tweets release];
     [responseData release];
     [indicator release];
+    [locationManager release];
     [super dealloc];
 }
 

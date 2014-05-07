@@ -406,6 +406,7 @@ CLLocationManager *locationManager;
     [tweets release];
     [responseData release];
     [indicator release];
+    [locationManager release];
     [super dealloc];
 }
 
