@@ -12,10 +12,17 @@
 #import <Crashlytics/Crashlytics.h>
 #import <GoogleMaps/GoogleMaps.h>
 
+
+
 @implementation CONINVITEAppDelegate
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:nil forKey:@"CON96EPushAction"];
+    [defaults synchronize];
     
     [GMSServices provideAPIKey:@"AIzaSyDZrNf8eUHU7VAQuf1unCGvKrDewHooeaY"];
    [Crashlytics startWithAPIKey:@"55c3ecc37a3b972e490db29a097513baf77b6aea"];
@@ -114,34 +121,92 @@
     
     NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if(notificationPayload) {
-         NSLog(@"We have a push!");
-        // Create a pointer so we can tell what type of notification it is
-        NSString *pointerType = [notificationPayload objectForKey:@"p"];
-        // Create a pointer so we can collect ID's or other data to open a particular event etc
-        NSString *pointerID = [notificationPayload objectForKey:@"pid"];
+      //  NSDictionary *notificationPayload = [userInfo objectForKey:@"aps"];
+        NSDictionary *notificationType = [notificationPayload objectForKey:@"p"];
+        NSDictionary *notificationID = [notificationPayload objectForKey:@"pid"];
         
-    
+        // the userInfo dictionary usually contains the same information as the notificationPayload dictionary above
+        NSLog(@"We have a push notification!");
+        
+        NSString *alertMessage = [notificationPayload objectForKey:@"alert"];
+        NSLog(@"The alert said %@", alertMessage);
+        
+        
+        NSString *pointerType = [NSString stringWithFormat:@"%@", notificationType];
+        NSString *pointerID = [NSString stringWithFormat:@"%@", notificationID];
+        
         if([pointerType isEqualToString:@"eventUp"]){
             //Was an event Updated?
-        
+            NSLog(@"We have an event update");
+            
             NSString *eventID = pointerID;
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:eventID forKey:@"CON96EventID"];
+            [defaults setObject:@"OpenEvent" forKey:@"CON96EPushAction"];
+            [defaults synchronize];
+            
+            
+            /*    CONINVITEFirstViewController *firstView = [[CONINVITEFirstViewController alloc] initWithNibName:@"Main" bundle:nil];
+             [firstView setModalPresentationStyle:UIModalPresentationFullScreen];
+             [firstView performSegueWithIdentifier:@"showFriend" sender:self]; */
+            
+            
+            NSLog(@"Showing event id: %@", eventID);
+            UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
+            
+            [[[navigationController viewControllers] objectAtIndex:0] performSegueWithIdentifier:@"showEvent" sender:self];
+            
+            
             
         } else if ([pointerType isEqualToString:@"invite"]){
             //Was the user invited to an event?
-        
+            NSLog(@"We have an event invite");
+            
             NSString *eventID = pointerID;
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:eventID forKey:@"CON96EventID"];
+            [defaults setObject:@"OpenEvent" forKey:@"CON96EPushAction"];
+            [defaults synchronize];
+            
+            
+            NSLog(@"Showing event id: %@", eventID);
+            UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
+            
+            [[[navigationController viewControllers] objectAtIndex:0] performSegueWithIdentifier:@"showEvent" sender:self];
+            
             
         } else if ([pointerType isEqualToString:@"foll"]){
             //Was the user followed by someone
+            NSLog(@"We have an new follower");
             
             NSString *UserID = pointerID;
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:UserID forKey:@"Con96FID"];
+            [defaults setObject:@"OpenProfile" forKey:@"CON96EPushAction"];
+            [defaults synchronize];
             
-        } else if ([pointerType isEqualToString:@"inresp"]){
+            NSLog(@"Showing user id: %@", UserID);
+            UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
+            
+            [[[navigationController viewControllers] objectAtIndex:0] performSegueWithIdentifier:@"showFriend" sender:self];
+            
+            
+        } else if ([pointerType isEqualToString:@"esoon"]){
             //Did someone respond to an invite?
+            NSLog(@"We have an event starting soon");
             
             NSString *eventID = pointerID;
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:eventID forKey:@"CON96EventID"];
+            [defaults setObject:@"OpenEvent" forKey:@"CON96EPushAction"];
+            [defaults synchronize];
+            
+            NSLog(@"Showing event id: %@", eventID);
+            UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
+            
+            [[[navigationController viewControllers] objectAtIndex:0] performSegueWithIdentifier:@"showEvent" sender:self];
+            
         }
-        
     
     }
     
@@ -162,9 +227,11 @@
     NSString *alertMessage = [notificationPayload objectForKey:@"alert"];
     NSLog(@"The alert said %@", alertMessage);
     
-    
+  
     NSString *pointerType = [NSString stringWithFormat:@"%@", notificationType];
     NSString *pointerID = [NSString stringWithFormat:@"%@", notificationID];
+    
+    
     
     if([pointerType isEqualToString:@"eventUp"]){
         //Was an event Updated?
@@ -173,7 +240,21 @@
         NSString *eventID = pointerID;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:eventID forKey:@"CON96EventID"];
+        [defaults setObject:@"OpenEvent" forKey:@"CON96EPushAction"];
         [defaults synchronize];
+    
+        
+    /*    CONINVITEFirstViewController *firstView = [[CONINVITEFirstViewController alloc] initWithNibName:@"Main" bundle:nil];
+        [firstView setModalPresentationStyle:UIModalPresentationFullScreen];
+        [firstView performSegueWithIdentifier:@"showFriend" sender:self]; */
+        
+        
+        NSLog(@"Showing event id: %@", eventID);
+        UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
+        
+        [[[navigationController viewControllers] objectAtIndex:0] performSegueWithIdentifier:@"showEvent" sender:self];
+
+        
         
     } else if ([pointerType isEqualToString:@"invite"]){
         //Was the user invited to an event?
@@ -182,28 +263,48 @@
         NSString *eventID = pointerID;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:eventID forKey:@"CON96EventID"];
+        [defaults setObject:@"OpenEvent" forKey:@"CON96EPushAction"];
         [defaults synchronize];
+        
+        
+        NSLog(@"Showing event id: %@", eventID);
+        UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
+        
+        [[[navigationController viewControllers] objectAtIndex:0] performSegueWithIdentifier:@"showEvent" sender:self];
+
         
     } else if ([pointerType isEqualToString:@"foll"]){
         //Was the user followed by someone
-          NSLog(@"We have an new follower");
+        NSLog(@"We have an new follower");
         
         NSString *UserID = pointerID;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:UserID forKey:@"Con96FID"];
+        [defaults setObject:@"OpenProfile" forKey:@"CON96EPushAction"];
         [defaults synchronize];
+        
+        NSLog(@"Showing user id: %@", UserID);
+        UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
+        
+        [[[navigationController viewControllers] objectAtIndex:0] performSegueWithIdentifier:@"showFriend" sender:self];
+
         
     } else if ([pointerType isEqualToString:@"esoon"]){
         //Did someone respond to an invite?
-          NSLog(@"We have an event starting soon");
+        NSLog(@"We have an event starting soon");
         
         NSString *eventID = pointerID;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:eventID forKey:@"CON96EventID"];
+        [defaults setObject:@"OpenEvent" forKey:@"CON96EPushAction"];
         [defaults synchronize];
-    }
+        
+        NSLog(@"Showing event id: %@", eventID);
+        UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
+        
+        [[[navigationController viewControllers] objectAtIndex:0] performSegueWithIdentifier:@"showEvent" sender:self];
 
-    
+    }
     
 }
 

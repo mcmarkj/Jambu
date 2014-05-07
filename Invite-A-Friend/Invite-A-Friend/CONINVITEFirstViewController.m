@@ -276,9 +276,57 @@
      
      ];}
 
+-(void)viewWillAppear:(BOOL)animated {
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSLog(@"The action is: %@", [userdefaults objectForKey:@"CON96PushAction"]);
+    NSString *action = [userdefaults objectForKey:@"CON96PushAction"];
+    if(action == nil){
+        NSLog(@"We have no push action");
+
+        
+    } else if([action isEqualToString:@"OpenEvent"]){
+        NSLog(@"We have an open event action");
+        [self  performSegueWithIdentifier:@"showEvent" sender:self];
+    } else if([action isEqualToString:@"OpenProfile"]){
+        NSLog(@"We have an open friend action");
+        [self  performSegueWithIdentifier:@"showFriend" sender:self];
+    }
+    
+    
+
+}
+
 - (void)viewDidAppear:(BOOL)animated{
     [self checkfornetwork];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    NSString *action = [userdefaults objectForKey:@"CON96PushAction"];
+    
+    NSLog(@"The action is: %@", [userdefaults objectForKey:@"CON96PushAction"]);
+    
+    if(action == nil){
+        NSLog(@"We have no push action");
+        
+        
+        
+    } else if([action isEqualToString:@"OpenEvent"]){
+        NSLog(@"We have an open event action");
+        [self  performSegueWithIdentifier:@"showEvent" sender:self];
+    } else if([action isEqualToString:@"OpenProfile"]){
+        NSLog(@"We have an open friend action");
+        [self  performSegueWithIdentifier:@"showFriend" sender:self];
+    }
+    
+    
+    
+    
+    
         NSString *UID = [defaults objectForKey:@"Con96TUID"];
     if ([[defaults objectForKey:@"NetConn"]  isEqual: @"True"]) {
     if ([[defaults objectForKey:@"Con96TUID"]boolValue]) {
@@ -491,6 +539,8 @@
 
         [self checkfornetwork];
     [super viewDidLoad];
+    
+    
 
   [self.eventsLoader startAnimating];
       [self.eventsLoader2 startAnimating];
@@ -498,6 +548,8 @@
       [self.eventsLoader4 startAnimating];
       [self.imageLoader startAnimating];
         NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+
+
     
         if ([[userdefaults objectForKey:@"NetConn"]  isEqual: @"True"]) {
             [self performSelector:@selector(fadein) withObject:nil afterDelay:-10];

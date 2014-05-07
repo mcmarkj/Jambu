@@ -267,6 +267,7 @@
                         <segue destination="FR9-m9-tMb" kind="modal" identifier="pendingInvites" id="Bwg-k9-HoQ"/>
                         <segue destination="5yl-aS-bqp" kind="modal" identifier="listmyevents" id="0Jw-Xn-gbt"/>
                         <segue destination="jnR-nE-oup" kind="modal" identifier="listallevents" id="wej-F4-L0I"/>
+                        <segue destination="XVJ-lt-9MX" kind="modal" identifier="viewFriend" id="asQ-ef-dmj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
@@ -2398,7 +2399,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gw-BY-Q2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2361" y="-658"/>
+            <point key="canvasLocation" x="2793" y="-1238"/>
         </scene>
         <!--Search Table View Controller-->
         <scene sceneID="GLd-gf-jxV">
@@ -2760,7 +2761,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="newhere.png" width="320" height="65"/>
         <image name="next_detail.png" width="156" height="67"/>
         <image name="noevents@2.png" width="509" height="327"/>
-        <image name="overlay.png" width="320" height="150"/>
+        <image name="overlay.png" width="640" height="276"/>
         <image name="pink.png" width="320" height="339"/>
         <image name="plus2.png" width="26" height="26"/>
         <image name="purple.png" width="320" height="339"/>
@@ -2782,9 +2783,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <inferredMetricsTieBreakers>
         <segue reference="M3E-Y3-Wu6"/>
         <segue reference="9UP-zD-xGT"/>
+        <segue reference="asQ-ef-dmj"/>
         <segue reference="PwJ-sI-xxm"/>
-        <segue reference="slv-3R-j6T"/>
-        <segue reference="8KX-mx-dgM"/>
-        <segue reference="n1E-Iw-f0j"/>
+        <segue reference="Bgi-A0-rbf"/>
+        <segue reference="EBh-nB-9ck"/>
     </inferredMetricsTieBreakers>
 </document>

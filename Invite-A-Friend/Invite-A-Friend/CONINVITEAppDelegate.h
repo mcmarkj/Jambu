@@ -11,6 +11,7 @@
 @interface CONINVITEAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) UIViewController *currentModalViewController;
 extern int resultscount;
 
 @end

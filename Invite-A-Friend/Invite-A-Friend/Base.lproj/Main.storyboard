@@ -270,6 +270,8 @@
                         <segue destination="FR9-m9-tMb" kind="modal" identifier="pendingInvites" id="Bwg-k9-HoQ"/>
                         <segue destination="5yl-aS-bqp" kind="modal" identifier="listmyevents" id="0Jw-Xn-gbt"/>
                         <segue destination="jnR-nE-oup" kind="modal" identifier="listallevents" id="wej-F4-L0I"/>
+                        <segue destination="EvN-gL-rsT" kind="modal" identifier="showEvent" id="Zz5-4o-WzP"/>
+                        <segue destination="XVJ-lt-9MX" kind="modal" identifier="showFriend" id="S0y-7m-QeW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
@@ -2408,7 +2410,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gw-BY-Q2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2361" y="-658"/>
+            <point key="canvasLocation" x="2713" y="-952"/>
         </scene>
         <!--Search Table View Controller-->
         <scene sceneID="GLd-gf-jxV">
@@ -2791,10 +2793,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="SUk-Ux-ee1"/>
-        <segue reference="TE3-BG-HGX"/>
-        <segue reference="n1E-Iw-f0j"/>
         <segue reference="PwJ-sI-xxm"/>
         <segue reference="slv-3R-j6T"/>
-        <segue reference="8KX-mx-dgM"/>
+        <segue reference="9UP-zD-xGT"/>
+        <segue reference="Zz5-4o-WzP"/>
+        <segue reference="S0y-7m-QeW"/>
     </inferredMetricsTieBreakers>
 </document>
