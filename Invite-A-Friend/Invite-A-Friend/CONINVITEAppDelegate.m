@@ -141,6 +141,13 @@
     }
 
 
+-(void) openEventview {
+    UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
+    
+    [[[navigationController viewControllers] objectAtIndex:0] performSegueWithIdentifier:@"showEvent" sender:self];
+    
+}
+
 -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
     
@@ -183,10 +190,8 @@
                 
                 
                 NSLog(@"Showing event id: %@", eventID);
-                UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
-                
-                [[[navigationController viewControllers] objectAtIndex:0] performSegueWithIdentifier:@"showEvent" sender:self];
-                
+                [self performSelector:@selector(openEventview) withObject:nil afterDelay:5.06];
+
                 
                 
             } else if ([pointerType isEqualToString:@"invite"]){

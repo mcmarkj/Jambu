@@ -94,8 +94,20 @@ NSString *timestampStart;
 
         [result autorelease];
     
-       [_attendButton setTitle:finalStr forState:UIControlStateNormal];
+
       
+        int arraycount = [inviteArrNames count];
+        if(arraycount == 0){
+
+        }
+        else if(arraycount == 1){
+        //NSString *finalString = [NSString stringWithFormat:@"%@",inviteArrNames];
+                   [_attendButton setTitle:finalStr forState:UIControlStateNormal];
+        }else{
+                NSString *finalString = [NSString stringWithFormat:@"Invited: %@ and %d others",[inviteArrNames objectAtIndex:1], arraycount-1];
+                               [_attendButton setTitle:finalString forState:UIControlStateNormal];
+        }
+        
 }
     
     if(locationName == nil){
@@ -118,6 +130,8 @@ NSString *timestampStart;
     [defaults setObject:nil forKey:@"CON96LNG"];
     [defaults setObject:nil forKey:@"CON96LNG"];
     [defaults setObject:nil forKey:@"CON96LName"];
+    [defaults setObject:nil forKey:@"CONInviteAlready"];
+    [defaults setObject:nil forKey:@"CONInviteAlreadyNames"];
     [defaults setObject:@"public" forKey:@"CONPrivicy"];
     [defaults synchronize];
     

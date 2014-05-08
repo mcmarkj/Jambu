@@ -125,6 +125,30 @@
     searchBar.delegate = self;
     [searchBar setAutocorrectionType:UITextAutocorrectionTypeNo];
     
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    
+    
+ 
+    NSString *UID = [userdefaults objectForKey:@"Con96TUID"];
+    
+    
+    if([_inviteUsers containsObject:UID]){
+        NSLog(@"Contains UID");
+    } else {
+        
+        [_inviteUsers addObject:[NSString stringWithFormat:@"%@",[userdefaults objectForKey:@"Con96TUID"]]];
+        [_inviteUsersNames addObject:[userdefaults objectForKey:@"CON96users_name"]];
+        
+    }
+
+    
+    
+       [_inviteUsers addObjectsFromArray:[userdefaults objectForKey:@"CONInviteAlready"]];
+           [_inviteUsersNames addObjectsFromArray:[userdefaults objectForKey:@"CONInviteAlreadyNames"]];
+    
+    NSLog(@"Current Invite Names: %@",_inviteUsersNames);
+        NSLog(@"Current Invite UID: %@",_inviteUsers);
+    
     // Title
     self.title = @"Twitter search";
     
@@ -144,10 +168,10 @@
     [self.tableV addSubview:indicator];
     [indicator startAnimating];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *UID = [defaults objectForKey:@"Con96AID"];
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *AID = [userdefaults objectForKey:@"Con96AID"];
     
-    NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@",UID];
+    NSMutableString *searchString = [NSMutableString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/friendships/%@",AID];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchString]];
     [NSURLConnection connectionWithRequest:request delegate:self];
     [self.searchBar resignFirstResponder];
@@ -259,6 +283,18 @@
         
     }*/
     
+    NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
+    
+    if([_inviteUsers containsObject:UID])
+    {
+        //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell.friends_button.hidden = NO;
+        cell.not_friends.hidden=YES;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+
+    
     return cell;
     
 }
@@ -339,26 +375,78 @@
     
     
     
-    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-    if ([selectedCell accessoryType] == UITableViewCellAccessoryNone) {
-        [selectedCell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    //UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    
+    
+    if([_inviteUsers containsObject:UID]){
+        [_inviteUsers removeObject:UID];
+        [_inviteUsersNames removeObject:name];
+        NSLog(@"IVC selectedIndexes RemoveObject @ %@:", UID);
+        
+        [self.tableV beginUpdates];
+        
+        
+        
+        [self.tableV reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableV endUpdates];
+
+    } else {
         [_inviteUsers addObject:UID];
         [_inviteUsersNames addObject:name];
         NSLog(@"IVC selectedIndexes AddObject @ %@:", UID);
         NSLog(@"IVC selectedIndexes: %@", _inviteUsers);
         NSLog(@"IVC selectedNames: %@", _inviteUsersNames);
+        
+        [self.tableV beginUpdates];
+        
+        
+        
+        [self.tableV reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableV endUpdates];
+        
+
+    }
+    
+    /*
+    if ([selectedCell accessoryType] == UITableViewCellAccessoryNone) {
+        selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+        [_inviteUsers addObject:UID];
+        [_inviteUsersNames addObject:name];
+        NSLog(@"IVC selectedIndexes AddObject @ %@:", UID);
+        NSLog(@"IVC selectedIndexes: %@", _inviteUsers);
+        NSLog(@"IVC selectedNames: %@", _inviteUsersNames);
+        
+        [self.tableV beginUpdates];
+        
+        
+        
+        [self.tableV reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableV endUpdates];
+        
+        
+
+
     } else {
-        [selectedCell setAccessoryType:UITableViewCellAccessoryNone];
+
         [_inviteUsers removeObject:UID];
         [_inviteUsersNames removeObject:name];
         NSLog(@"IVC selectedIndexes RemoveObject @ %@:", UID);
-    }
+        
+        [self.tableV beginUpdates];
+        
+        
+        
+        [self.tableV reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableV endUpdates];
+        
+    }*/
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
 
     
 }
-
 -(void)dealloc{
     [tweets release];
     [responseData release];
@@ -372,10 +460,12 @@
     
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *UID = [defaults objectForKey:@"Con96TUID"];
-    [_inviteUsers addObject:UID];
+  
+    
     [defaults setObject:_inviteUsers forKey:@"CONInvitees"];
+    [defaults setObject:_inviteUsers forKey:@"CONInviteAlready"];
     [defaults setObject:_inviteUsersNames forKey:@"ConInviteesNames"];
+        [defaults setObject:_inviteUsersNames forKey:@"CONInviteAlreadyNames"];
     [defaults synchronize];
     
             NSLog(@"The following AID's were invited: %@", _inviteUsers);
