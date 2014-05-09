@@ -410,6 +410,15 @@
             
             
             {
+            [dateformatter setDateFormat:@"dd-MM-yy HH:mm"];
+            
+            NSString *dateString=[dateformatter stringFromDate:date];
+                
+            _overlayeventdatelabel.text = dateString;
+            // end of conversion
+            }
+            
+            {
             //Let's convert the unix timestamp
             double timestampval = [[next_event valueForKey:@"time_of_event_end"] doubleValue];
             NSTimeInterval timestamp = (NSTimeInterval)timestampval;
@@ -430,6 +439,7 @@
         [defaults setObject:usersNameString forKey:@"CON96users_name"];
         [defaults setObject:imgurl forKey:@"Con96UIMG"];
             [defaults setObject:dateString forKey:@"ConNextEDate"];
+
             [defaults setObject:eventTitle forKey:@"ConNextTitle"];
             [defaults setObject:enddateString forKey:@"ConNextEnd"];
                 [defaults setObject:event_location forKey:@"ConNextLocation"];
@@ -479,6 +489,19 @@
         _overlayeventdatelabel.font = [UIFont fontWithName:@"Roboto-Light" size:9];
         _overlayeventattendeeslabel.font = [UIFont fontWithName:@"Roboto-Light" size:9];
         
+            
+            NSString *attendeecount = [NSString stringWithFormat:@"%@", [json valueForKey:@"next_event_attendees"]];
+            
+            if(attendeecount == Nil){
+            } else if([attendeecount isEqualToString:@"1"]){
+                
+                _overlayeventattendeeslabel.text = [NSString stringWithFormat:@"%@ attendee",attendeecount];
+
+            } else {
+            
+            _overlayeventattendeeslabel.text = [NSString stringWithFormat:@"%@ attendees",attendeecount];
+            }
+            //_overlayeventdatelabel.text = @"";
         _UserNameLabel.font = [UIFont fontWithName:@"Roboto" size:20];
         _UserTNameLabel.font = [UIFont fontWithName:@"Roboto-Light" size:13];
         _UserEventsLabel.font = [UIFont fontWithName:@"Roboto" size:20];
@@ -595,28 +618,13 @@
     if(days>=1){
         NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Days, %ld Hours, and %ld Mins", (long)days, (long)hours, (long)mins];
         _overlaynexteventlabel.text = countdownText;
-    } else if (hours<=0) {
-        
-        NSString *countdownText = @"You have an event in progress...";
-        
-        _overlaynexteventlabel.text = countdownText;
-        
-        NSString *shours = [NSString stringWithFormat:@"%ld", (long)hours];
-        NSString *smins = [NSString stringWithFormat:@"%ld", (long)mins];
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:shours forKey:@"CONEHours"];
-        [defaults setObject:smins forKey:@"CONEMins"];
-        [defaults synchronize];
-        
-    } else
-    
-    
+    } else if (hours<=0)
      {
     
     
     if(hours <= 0){
         if(mins <=0){
-        NSString *countdownText = [NSString stringWithFormat:@"Shit one... No events mate! %@", @""];
+        NSString *countdownText = [NSString stringWithFormat:@"No events upcoming %@", @""];
         _overlaynexteventlabel.text = countdownText;
         } else if (mins >=1) {
             NSString *countdownText = [NSString stringWithFormat:@"Your next event is in %ld Mins", (long)mins];

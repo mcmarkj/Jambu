@@ -234,7 +234,10 @@
         outputAction = [NSString stringWithFormat:@"%@ created his account", _UserName.text];
     } else if([action isEqualToString:@"joined event"]) {
         outputAction = [NSString stringWithFormat:@"%@ is attending an event", _UserName.text];
+    } else if([action isEqualToString:@"attendee updated"]) {
+        outputAction = [NSString stringWithFormat:@"%@ is attending an event", _UserName.text];
     }
+
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", _UserName.text, @""];
