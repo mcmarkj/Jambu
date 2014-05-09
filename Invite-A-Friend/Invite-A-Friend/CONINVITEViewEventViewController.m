@@ -10,6 +10,8 @@
 #include <math.h>
 
 @interface CONINVITEViewEventViewController ()
+@property (strong, nonatomic) IBOutlet UIButton *viewEventButton;
+- (IBAction)editEvent:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *eventNoLabel;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *hoursLabel;
@@ -44,6 +46,8 @@
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     
     
+
+    
     NSString *event_ID = [userdefaults objectForKey:@"CON96EventID"];
     
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", event_ID]];
@@ -66,6 +70,18 @@
     NSString *lat = [json valueForKey:@"lat"];
     NSString *lng = [json valueForKey:@"long"];
     
+    //Let's determine if we're the event owners
+    
+    
+        NSString *myAID = [userdefaults valueForKey:@"Con96AID"];
+        NSString *eventAID = [json valueForKey:@"user_id"];
+        
+        if(myAID == eventAID){
+            _viewEventButton.hidden = NO;
+        } else {
+            _viewEventButton.hidden = YES;
+        }
+        
     
     
     
@@ -364,7 +380,7 @@
     NSString *event_id = [defaults objectForKey:@"CON96EventID"];
         NSString *user_id = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"Con96TUID"]];
     
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/attendees/%@", @""]];
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/rsvp/%@", @""]];
     
     
     NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:  @"true" , @"going?" , user_id , @"uid" , event_id , @"event_id" ,nil];
@@ -384,7 +400,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     [request setURL:url];
-    [request setHTTPMethod:@"PUT"];
+    [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:finaldata];
     
@@ -404,7 +420,7 @@
     NSString *event_id = [defaults objectForKey:@"CON96EventID"];
     NSString *user_id = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"Con96TUID"]];
     
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/attendees/%@", @""]];
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/rsvp/%@", @""]];
     
     
     NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:  @"false" , @"going?" , user_id , @"uid" , event_id , @"event_id" ,nil];
@@ -424,7 +440,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     [request setURL:url];
-    [request setHTTPMethod:@"PUT"];
+    [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:finaldata];
     
@@ -443,4 +459,6 @@
         _RSVPWindow.hidden = NO;
 }
 
+- (IBAction)editEvent:(id)sender {
+}
 @end
