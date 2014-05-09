@@ -776,12 +776,12 @@
 - (IBAction)showAttendedEvents:(id)sender {
     NSString *title = [_eventsAttended currentTitle];
     
-    if ([title isEqualToString:@"0"]) {
+  /*  if ([title isEqualToString:@"0"]) {
         NSLog(@"User has no events attended");
-    } else {
+    } else {*/
 
     [self  performSegueWithIdentifier:@"listallevents" sender:self];
-    }
+  //  }
 }
 
 - (IBAction)ShowMyEvents:(id)sender {
