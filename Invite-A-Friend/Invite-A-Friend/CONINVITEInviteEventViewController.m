@@ -140,9 +140,9 @@
     
     NSLog(@"Edit Array: %@", EditArray);
     
-    NSString *UID = [userdefaults objectForKey:@"Con96TUID"];
+  //  NSString *UID = [userdefaults objectForKey:@"Con96TUID"];
     
-    
+    /*
     if([_inviteUsers containsObject:UID]){
         NSLog(@"Contains UID");
     } else {
@@ -152,7 +152,7 @@
         
     }
 
-    
+    */
     
        [_inviteUsers addObjectsFromArray:[userdefaults objectForKey:@"CONInviteAlready"]];
            [_inviteUsersNames addObjectsFromArray:[userdefaults objectForKey:@"CONInviteAlreadyNames"]];
@@ -480,19 +480,56 @@
     
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  
-    
-    [defaults setObject:_inviteUsers forKey:@"CONInvitees"];
-    [defaults setObject:_inviteUsers forKey:@"CONInviteAlready"];
-    [defaults setObject:_inviteUsersNames forKey:@"ConInviteesNames"];
+    if(EditArray == nil){
+        [defaults setObject:_inviteUsers forKey:@"CONInvitees"];
+        [defaults setObject:_inviteUsers forKey:@"CONInviteAlready"];
+        [defaults setObject:_inviteUsersNames forKey:@"ConInviteesNames"];
         [defaults setObject:_inviteUsersNames forKey:@"CONInviteAlreadyNames"];
-    [defaults synchronize];
+        [defaults synchronize];
+        
+        NSLog(@"The following AID's were invited: %@", _inviteUsers);
+        
+        //Close View
+        [self dismissViewControllerAnimated:YES completion:nil];
+
+    } else {
+        NSURL *attendurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/batch_attendees/%@", @""]];
+        
+        
+        
+    //    NSArray *inviteArrNames = [defaults objectForKey:@"CONInvitees"];
+        
+        
+        
+            NSString *event_id = [defaults objectForKey:@"CON96EventID"];
+        
+        
+        //NSString *attendeesReg = [NSString stringWithFormat:@"[%@]", @""];
+        
+        NSDictionary *attendeesjson = [NSDictionary dictionaryWithObjectsAndKeys:  _inviteUsers, @"attendees" ,event_id, @"event_id", nil];
+        NSError *error;
+        
+        
+        NSData* attendeesjsonData = [NSJSONSerialization dataWithJSONObject:attendeesjson options:kNilOptions error:&error];
+        
+        NSString *attendeesjsonedit = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:attendeesjsonData encoding:NSUTF8StringEncoding]];
+        
+        NSData* finalattendees = [attendeesjsonedit dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSMutableURLRequest *attendRequest = [[NSMutableURLRequest alloc] init];
+        
+        [attendRequest setURL:attendurl];
+        [attendRequest setHTTPMethod:@"POST"];
+        [attendRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [attendRequest setHTTPBody:finalattendees];
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:attendRequest delegate:self];
+        
+        [connection start];
+             [self dismissViewControllerAnimated:YES completion:nil];
+    }
     
-            NSLog(@"The following AID's were invited: %@", _inviteUsers);
-    
-    //Close View
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+    }
 
 - (IBAction)closeView:(id)sender {
             NSLog(@"Array Contents - cleared: %@", _inviteUsers);
