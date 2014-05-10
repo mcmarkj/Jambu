@@ -484,6 +484,31 @@ NSString *timestampStart;
 }
 
 - (IBAction)inviteFriends:(id)sender {
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    
+    
+    NSString *event_ID = [userdefaults objectForKey:@"CON96EventID"];
+    
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/attendees/%@", event_ID]];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSError *error;
+    NSURLResponse *response;
+    NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+    
+
+    NSArray *alreadyInvited = [json valueForKey:@"attendees"];
+    NSArray *invitedUID = [alreadyInvited valueForKey:@"uid"];
+    [userdefaults setObject:invitedUID forKey:@"CONInviteEdit"];
+    [userdefaults synchronize];
     [self  performSegueWithIdentifier:@"inviteFriends" sender:self];
 }
 

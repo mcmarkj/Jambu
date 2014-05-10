@@ -19,6 +19,7 @@
 
 @end
     NSMutableArray *InviteArray;
+    NSMutableArray *EditArray;
 @implementation CONINVITEInviteEventViewController
 - (IBAction)inviteFriends:(id)sender {
 }
@@ -118,7 +119,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    EditArray = [[NSMutableArray alloc] init];
     _inviteUsers = [[NSMutableArray alloc] init];
     _inviteUsersNames = [[NSMutableArray alloc] init];
         // Search bar
@@ -128,7 +129,17 @@
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     
     
+    NSArray *editArrays = [userdefaults valueForKey:@"CONInviteEdit"];
+    
+    if(editArrays == Nil)
+    {
+    } else {
+    [EditArray addObjectsFromArray:editArrays];
+    }
  
+    
+    NSLog(@"Edit Array: %@", EditArray);
+    
     NSString *UID = [userdefaults objectForKey:@"Con96TUID"];
     
     
@@ -284,7 +295,14 @@
     }*/
     
     NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"uid"]];
-    
+    if([EditArray containsObject:UID]){
+        
+        //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell.friends_button.hidden = NO;
+        cell.not_friends.hidden=YES;
+    } else {
+        
+
     if([_inviteUsers containsObject:UID])
     {
         //cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -293,7 +311,7 @@
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-
+    }
     
     return cell;
     
@@ -377,7 +395,9 @@
     
     //UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     
-    
+    if([EditArray containsObject:UID]){
+        NSLog(@"User has already been invited before");
+    } else {
     
     if([_inviteUsers containsObject:UID]){
         [_inviteUsers removeObject:UID];
@@ -407,7 +427,7 @@
         
 
     }
-    
+    }
     /*
     if ([selectedCell accessoryType] == UITableViewCellAccessoryNone) {
         selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;

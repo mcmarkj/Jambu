@@ -129,6 +129,7 @@ NSString *timestampStart;
     [defaults setObject:nil forKey:@"ConInviteesNames"];
     [defaults setObject:nil forKey:@"CON96LNG"];
     [defaults setObject:nil forKey:@"CON96LNG"];
+    [defaults setObject:nil forKey:@"CONInviteEdit"];
     [defaults setObject:nil forKey:@"CON96LName"];
     [defaults setObject:nil forKey:@"CONInviteAlready"];
     [defaults setObject:nil forKey:@"CONInviteAlreadyNames"];
