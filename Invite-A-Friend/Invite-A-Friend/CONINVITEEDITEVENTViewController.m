@@ -70,6 +70,45 @@ NSString *timestampStart;
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    
+    
+    NSString *event_ID = [userdefaults objectForKey:@"CON96EventID"];
+    
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", event_ID]];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSError *error;
+    NSURLResponse *response;
+    NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+
+    
+    _eventTitle.text = [json valueForKey:@"title"];
+    _eventDescription.text = [json valueForKey:@"description"];
+   // [_locationButton setTitle:[json valueForKey:@"location_name"] forState:UIControlStateNormal];
+    //[_dtButton setTitle:@"date/time" forState:UIControlStateNormal];
+    /*NSString *privacyOption = [json valueForKey:@"privacy"];
+    
+    
+    if([privacyOption isEqualToString:@"public"]){
+        [self privacyAnyone:self];
+    } else if([privacyOption isEqualToString:@"private"]){
+        [self privacyInvite:self];
+    } else if([privacyOption isEqualToString:@"me"]){
+        [self privacyMe:self];
+    }*/
+    [_attendButton setTitle:@"Invite more friends" forState:UIControlStateNormal];
+    [_privButton setTitle:@"Change Privacy Settings" forState:UIControlStateNormal];
     NSArray *inviteArrNames = [defaults objectForKey:@"ConInviteesNames"];
     NSString *locationName = [defaults objectForKey:@"CON96LName"];
     
@@ -113,6 +152,50 @@ NSString *timestampStart;
     if(locationName == nil){
         
     } else {
+        
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *event_id = [defaults objectForKey:@"CON96EventID"];
+        //NSString *user_id = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"Con96TUID"]];
+        
+        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", event_id]];
+        NSString *lat1 = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"CON96LAT"]];
+        
+        NSString *long1 = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"CON96LNG"]];
+        
+        NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: lat1, @"lat", long1, @"long",locationName , @"location_name" ,nil];
+        
+        NSLog(@"JSON: %@", newDatasetInfo);
+        
+        
+        NSError *error;
+        
+        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+        
+        NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+        NSLog(@"Altered Json: %@", editeddata);
+        
+        NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        
+        [request setURL:url];
+        [request setHTTPMethod:@"PUT"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:finaldata];
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        // DISABLED WHILE WE CONFIGURE STUFF
+        
+        NSLog(@"We're now collecting to the API");
+        
+        [connection start];
+
+        
+        
+        
+        
         [_locationButton setTitle:locationName forState:UIControlStateNormal];
     }
     
@@ -346,18 +429,101 @@ NSString *timestampStart;
             NSString *newDate = [NSString stringWithFormat:@"event on: %ld%@ %@ at %ld:%@ until %ld%@ %@ at %ld:%@",(long)day,suffix,monthName,(long)hour,altmin, (long)endday, endsuffix, endmonthName, (long)endhour, endaltmin];
             
             [_dtButton setTitle:newDate forState:UIControlStateNormal];
+            
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString *event_id = [defaults objectForKey:@"CON96EventID"];
+            //NSString *user_id = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"Con96TUID"]];
+            
+            NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", event_id]];
+            
+            UIDatePicker *datePicker = _datePicker;
+            NSDate *pickerdate = [datePicker date];
+            UIDatePicker *enddatePicker = _endDatePicker;
+            NSDate *endpickerdate = [enddatePicker date];
+            
+            //  NSString *pickeraltdate = [NSString stringWithFormat:@"%@", pickerdate];
+            
+            NSTimeInterval timestamp = [pickerdate timeIntervalSince1970];
+            NSString *timestampStarts = [NSString stringWithFormat:@"%f", timestamp];
+            
+            NSTimeInterval endtimestamp = [endpickerdate timeIntervalSince1970];
+            NSString *timestampEnds = [NSString stringWithFormat:@"%f", endtimestamp];
+            
+            NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: timestampEnds ,@"time_of_event_end", timestampStarts , @"time_of_event" ,nil];
+            
+            NSLog(@"JSON: %@", newDatasetInfo);
+            
+            
+            NSError *error;
+            
+            NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+            
+            NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+            NSLog(@"Altered Json: %@", editeddata);
+            
+            NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+            
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+            
+            [request setURL:url];
+            [request setHTTPMethod:@"PUT"];
+            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            [request setHTTPBody:finaldata];
+            
+            NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            
+            // DISABLED WHILE WE CONFIGURE STUFF
+            
+            NSLog(@"We're now collecting to the API");
+            
+            [connection start];
+            
+            
         }
     }
 }
 
 - (IBAction)inviteFriends:(id)sender {
-    [self  performSegueWithIdentifier:@"showInvites" sender:self];
+    [self  performSegueWithIdentifier:@"inviteFriends" sender:self];
 }
 
 - (IBAction)privacyMe:(id)sender {
     [_privButton setTitle:@"privacy: Only Me" forState:UIControlStateNormal];
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *event_id = [defaults objectForKey:@"CON96EventID"];
+   // NSString *user_id = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"Con96TUID"]];
+    
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", event_id]];
+    
+    
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: @"me" , @"privacy" ,nil];
+    
+    NSLog(@"JSON: %@", newDatasetInfo);
+    
+    
+    NSError *error;
+    
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+    
+    NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+    NSLog(@"Altered Json: %@", editeddata);
+    
+    NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"PUT"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:finaldata];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    // DISABLED WHILE WE CONFIGURE STUFF
+    
+    NSLog(@"We're now collecting to the API");
+    
+    [connection start];
     [defaults setObject:@"me" forKey:@"CONPrivicy"];
     [defaults synchronize];
     
@@ -368,6 +534,40 @@ NSString *timestampStart;
 - (IBAction)privacyInvite:(id)sender {
     [_privButton setTitle:@"privacy: Only People I Invite" forState:UIControlStateNormal];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *event_id = [defaults objectForKey:@"CON96EventID"];
+    
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", event_id]];
+    
+    
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: @"private" , @"privacy" ,nil];
+    
+    NSLog(@"JSON: %@", newDatasetInfo);
+    
+    
+    NSError *error;
+    
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+    
+    NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+    NSLog(@"Altered Json: %@", editeddata);
+    
+    NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"PUT"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:finaldata];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    // DISABLED WHILE WE CONFIGURE STUFF
+    
+    NSLog(@"We're now collecting to the API");
+    
+    [connection start];
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@"private" forKey:@"CONPrivicy"];
     [defaults synchronize];
     _privicyMenu.hidden = YES;
@@ -377,6 +577,41 @@ NSString *timestampStart;
 - (IBAction)privacyAnyone:(id)sender {
     [_privButton setTitle:@"privacy: Anyone Can Attend" forState:UIControlStateNormal];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *event_id = [defaults objectForKey:@"CON96EventID"];
+    //NSString *user_id = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"Con96TUID"]];
+    
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", event_id]];
+    
+    
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: @"public" , @"privacy" ,nil];
+    
+    NSLog(@"JSON: %@", newDatasetInfo);
+    
+    
+    NSError *error;
+    
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+    
+    NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+    NSLog(@"Altered Json: %@", editeddata);
+    
+    NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"PUT"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:finaldata];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    // DISABLED WHILE WE CONFIGURE STUFF
+    
+    NSLog(@"We're now collecting to the API");
+    
+    [connection start];
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@"public" forKey:@"CONPrivicy"];
     [defaults synchronize];
     _privicyMenu.hidden = YES;
@@ -398,128 +633,43 @@ NSString *timestampStart;
 }
 - (IBAction)createEvent:(id)sender {
     NSLog(@"Time to create the event");
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *MID = [defaults objectForKey:@"Con96AID"];
+    NSString *event_id = [defaults objectForKey:@"CON96EventID"];
+    //NSString *user_id = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"Con96TUID"]];
     
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", @""]];
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", event_id]];
     
     
-    UIDatePicker *datePicker = _datePicker;
-    NSDate *pickerdate = [datePicker date];
-    UIDatePicker *enddatePicker = _endDatePicker;
-    NSDate *endpickerdate = [enddatePicker date];
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: _eventDescription.text ,@"description" , _eventTitle.text ,@"title" ,nil];
     
-    //  NSString *pickeraltdate = [NSString stringWithFormat:@"%@", pickerdate];
-    
-    NSTimeInterval timestamp = [pickerdate timeIntervalSince1970];
-    NSString *timestampStarts = [NSString stringWithFormat:@"%f", timestamp];
-    
-    NSTimeInterval endtimestamp = [endpickerdate timeIntervalSince1970];
-    NSString *timestampEnds = [NSString stringWithFormat:@"%f", endtimestamp];
-    
-    NSString *lat1 = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"CON96LAT"]];
-    
-    NSString *long1 = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"CON96LNG"]];
-    NSString *locationName = [defaults objectForKey:@"CON96LName"];
-    NSString *privicyoption = [defaults objectForKey:@"CONPrivicy"];
-    
-    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: _eventTitle.text, @"title", _eventDescription.text, @"description", MID, @"user_id", timestampStarts, @"time_of_event",timestampEnds, @"time_of_event_end", privicyoption ,@"privacy", locationName ,@"location_name",@"false", @"canceled", lat1, @"lat", long1, @"long", nil];
+    NSLog(@"JSON: %@", newDatasetInfo);
     
     
     NSError *error;
     
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
     
-    NSString *editeddata = [NSString stringWithFormat:@"{\"event\":%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+    NSString *editeddata = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+    NSLog(@"Altered Json: %@", editeddata);
     
     NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     [request setURL:url];
-    [request setHTTPMethod:@"POST"];
+    [request setHTTPMethod:@"PUT"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:finaldata];
     
-    // NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request  delegate:self];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
     // DISABLED WHILE WE CONFIGURE STUFF
     
     NSLog(@"We're now collecting to the API");
     
-    NSURLResponse *response;
-    /*NSData *POSTReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-     NSString *theReply = [[NSString alloc] initWithBytes:[POSTReply bytes] length:[POSTReply length] encoding: NSASCIIStringEncoding];
-     NSLog(@"Reply: %@", theReply);*/
-    
-    NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
-    
-    //  BOOL success_result;
-    
-    NSNumber*json_success = [json valueForKey:@"success"];
-    NSString *Event_id = [json valueForKey:@"event_id"];
-    //  success_result = [json valueForKey:@"success"];
-    //     NSString *success_result = [json valueForKey:@"success"];
-    if(json_success == nil){
-        // something's failed...
-        NSString *errormessage = [json valueForKey:@"errors"];
-        NSLog(@"Error Id: %@", errormessage);
-    } else {
-        if([json_success  isEqual: @1]){
-            //Event Created
-            NSLog (@"Event Created");
-            
-            NSLog(@"Event Id: %@", Event_id);
-            
-        } else {
-            // There was an error
-            NSLog(@"Event not created");
-            NSString *errormessage = [json valueForKey:@"errors"];
-            NSLog(@"Error Id: %@", errormessage);
-        }}
-    
-    // [connection start];
-    
-    
-    //Let's invite the attendee's
-    
-    //http://amber.concept96.co.uk/api/v1/batch_attendees
-    
-    NSURL *attendurl = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/batch_attendees/%@", @""]];
-    
-    
-    
-    NSArray *inviteArrNames = [defaults objectForKey:@"CONInvitees"];
-    
-    
-    
-    
-    
-    
-    //NSString *attendeesReg = [NSString stringWithFormat:@"[%@]", @""];
-    
-    NSDictionary *attendeesjson = [NSDictionary dictionaryWithObjectsAndKeys:  inviteArrNames, @"attendees" ,Event_id, @"event_id", nil];
-    
-    
-    
-    NSData* attendeesjsonData = [NSJSONSerialization dataWithJSONObject:attendeesjson options:kNilOptions error:&error];
-    
-    NSString *attendeesjsonedit = [NSString stringWithFormat:@"%@",[[NSString alloc] initWithData:attendeesjsonData encoding:NSUTF8StringEncoding]];
-    
-    NSData* finalattendees = [attendeesjsonedit dataUsingEncoding:NSUTF8StringEncoding];
-    
-    NSMutableURLRequest *attendRequest = [[NSMutableURLRequest alloc] init];
-    
-    [attendRequest setURL:attendurl];
-    [attendRequest setHTTPMethod:@"POST"];
-    [attendRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [attendRequest setHTTPBody:finalattendees];
-    
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:attendRequest delegate:self];
-    
     [connection start];
+    
+    
     //  [jsonData release];
     [self closeView:self];
     
@@ -530,6 +680,7 @@ NSString *timestampStart;
 }
 
 - (IBAction)chooseLocation:(id)sender {
+    NSLog(@"Opening Location Search Viewer");
     [self performSegueWithIdentifier:@"searchLocation" sender:self];
 }
 

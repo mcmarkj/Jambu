@@ -460,5 +460,7 @@
 }
 
 - (IBAction)editEvent:(id)sender {
+    [self  performSegueWithIdentifier:@"editEvent" sender:self];
+    
 }
 @end
