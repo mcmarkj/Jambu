@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PageContentViewController.h"
 
 @interface CONINVITEFriendsViewController : UIViewController <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>{
     NSArray *tweets;
@@ -18,7 +19,9 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *profilecolourimage;
 @property (strong, nonatomic) IBOutlet UILabel *toptitle;
-
+@property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, retain) NSArray *pageTitles;
+@property (strong, retain) NSArray *pageImages;
 @property (strong, nonatomic) IBOutlet UILabel *profilelabel1;
 @property (strong, nonatomic) IBOutlet UILabel *profilelabel2;
 @property (strong, nonatomic) IBOutlet UILabel *profilelabel3;

@@ -14,6 +14,7 @@
 
 @interface CONINVITEFriendsViewController ()
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *LoadingIndicator;
+@property (strong, nonatomic) IBOutlet UIPageControl *pageDot;
 
 @end
 
@@ -91,6 +92,31 @@
 {
 
     
+    //Start Swipe Viewer Setup
+    
+    // Create the data model
+    _pageTitles = @[@"   ", @"Create Events Invite Friends..."];
+    _pageImages = @[@"red-profile.png", @"red-bio.png"];
+    
+
+    // Create page view controller
+    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+    self.pageViewController.dataSource = self;
+    
+    PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+    NSArray *viewControllers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    // Change the size of page view controller
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 290);
+    
+    [self addChildViewController:_pageViewController];
+    [self.view addSubview:_pageViewController.view];
+    [self.pageViewController didMoveToParentViewController:self];
+    [_pageImages retain];
+    [_pageTitles retain];
+// End swipeviewer setup
+    
     
     //setfonts
     _UserEventsAttended.font = [UIFont fontWithName:@"Roboto-Light" size:20];
@@ -102,6 +128,70 @@
         _profilelabel2.font = [UIFont fontWithName:@"Roboto-Light" size:12];
         _profilelabel3.font = [UIFont fontWithName:@"Roboto-Light" size:12];
     _toptitle.font = [UIFont fontWithName:@"Roboto-Light" size:20];
+}
+
+- (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
+{
+    if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
+        return nil;
+    }
+    
+    // Create a new view controller and pass suitable data.
+    PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    pageContentViewController.imageFile = self.pageImages[index];
+    pageContentViewController.titleText = self.pageTitles[index];
+    pageContentViewController.pageIndex = index;
+    
+    return pageContentViewController;
+    [_pageImages retain];
+    [_pageTitles retain];
+}
+
+#pragma mark - Page View Controller Data Source
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    
+    if ((index == 0) || (index == NSNotFound)) {
+        return nil;
+    }
+    
+    index--;
+    return [self viewControllerAtIndex:index];
+    [_pageImages retain];
+    [_pageTitles retain];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    
+    if (index == NSNotFound) {
+        return nil;
+    }
+    
+    index++;
+    if (index == [self.pageTitles count]) {
+        return nil;
+    }
+    return [self viewControllerAtIndex:index];
+    [_pageImages retain];
+    [_pageTitles retain];
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+{
+    return [self.pageTitles count];
+    [_pageImages retain];
+    [_pageTitles retain];
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return 0;
+    [_pageImages retain];
+    [_pageTitles retain];
 }
 
 - (void)getProfileColourImage{

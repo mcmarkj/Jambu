@@ -10,6 +10,11 @@
 		4104B883190AC8ED00DB9C38 /* EventListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4104B882190AC8ED00DB9C38 /* EventListCell.m */; };
 		4104B885190AC93D00DB9C38 /* EventListCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4104B884190AC93D00DB9C38 /* EventListCells.xib */; };
 		41078AA0191992FE00CF151A /* Main_4s.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41078A9E191992FE00CF151A /* Main_4s.storyboard */; };
+		411BE7B3191E415A00ED448D /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 411BE7B2191E415A00ED448D /* PageContentViewController.m */; };
+		411BE7B6191E433900ED448D /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = 411BE7B4191E433900ED448D /* page1.png */; };
+		411BE7B7191E433900ED448D /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 411BE7B5191E433900ED448D /* page2.png */; };
+		411BE7B9191E495A00ED448D /* red-bio.png in Resources */ = {isa = PBXBuildFile; fileRef = 411BE7B8191E495A00ED448D /* red-bio.png */; };
+		411BE7BB191E498B00ED448D /* blank-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 411BE7BA191E498B00ED448D /* blank-profile.png */; };
 		4126560B18CB87A700368BB1 /* next_detail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126560918CB87A700368BB1 /* next_detail@2x.png */; };
 		4126560C18CB87A700368BB1 /* next_detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126560A18CB87A700368BB1 /* next_detail.png */; };
 		4126560E18CB888500368BB1 /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126560D18CB888500368BB1 /* clock@2x.png */; };
@@ -215,6 +220,12 @@
 		4104B882190AC8ED00DB9C38 /* EventListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListCell.m; sourceTree = "<group>"; };
 		4104B884190AC93D00DB9C38 /* EventListCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventListCells.xib; sourceTree = "<group>"; };
 		41078A9F191992FE00CF151A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_4s.storyboard; sourceTree = "<group>"; };
+		411BE7B1191E415A00ED448D /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		411BE7B2191E415A00ED448D /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		411BE7B4191E433900ED448D /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
+		411BE7B5191E433900ED448D /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
+		411BE7B8191E495A00ED448D /* red-bio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-bio.png"; sourceTree = "<group>"; };
+		411BE7BA191E498B00ED448D /* blank-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank-profile.png"; sourceTree = "<group>"; };
 		4126560918CB87A700368BB1 /* next_detail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next_detail@2x.png"; sourceTree = "<group>"; };
 		4126560A18CB87A700368BB1 /* next_detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_detail.png; sourceTree = "<group>"; };
 		4126560D18CB888500368BB1 /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
@@ -646,6 +657,10 @@
 			children = (
 				419BB6B3188C454700B7D403 /* CONINVITEFriendsViewController.h */,
 				419BB6B4188C454700B7D403 /* CONINVITEFriendsViewController.m */,
+				411BE7B1191E415A00ED448D /* PageContentViewController.h */,
+				411BE7B4191E433900ED448D /* page1.png */,
+				411BE7B5191E433900ED448D /* page2.png */,
+				411BE7B2191E415A00ED448D /* PageContentViewController.m */,
 				41D068D518BA648100F29CD0 /* FriendFeedCell.h */,
 				41D068D618BA648100F29CD0 /* FriendFeedCell.m */,
 				41D068D718BA648100F29CD0 /* FriendFeedCell.xib */,
@@ -710,6 +725,8 @@
 		416C616418BA18FA009E53AB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				411BE7BA191E498B00ED448D /* blank-profile.png */,
+				411BE7B8191E495A00ED448D /* red-bio.png */,
 				41F597B2188C602B00DAF315 /* appicons */,
 				416C616818BA1A21009E53AB /* Backgrounds etc */,
 				416C616718BA195E009E53AB /* Icons */,
@@ -1165,6 +1182,7 @@
 				41F597FF188C602B00DAF315 /* icon2.png in Resources */,
 				41F597EF188C602B00DAF315 /* iTunesArtwork@2x.png in Resources */,
 				41F597EC188C602B00DAF315 /* Icon.png in Resources */,
+				411BE7B7191E433900ED448D /* page2.png in Resources */,
 				414AA824188AE743001B3301 /* InfoPlist.strings in Resources */,
 				41F597E6188C602B00DAF315 /* Icon-76.png in Resources */,
 				41F597E0188C602B00DAF315 /* Icon-40.png in Resources */,
@@ -1234,9 +1252,12 @@
 				4126560B18CB87A700368BB1 /* next_detail@2x.png in Resources */,
 				41F597E1188C602B00DAF315 /* Icon-40@2x.png in Resources */,
 				41F597DF188C602B00DAF315 /* SampleImage.jpg in Resources */,
+				411BE7B9191E495A00ED448D /* red-bio.png in Resources */,
 				41A6AE5F18CA8B5D008416EA /* street_view@2x.png in Resources */,
 				41F597E8188C602B00DAF315 /* Icon-Small-50.png in Resources */,
+				411BE7BB191E498B00ED448D /* blank-profile.png in Resources */,
 				41A6AE6618CA8DBC008416EA /* plus2.png in Resources */,
+				411BE7B6191E433900ED448D /* page1.png in Resources */,
 				41F3227C18A1A296001E07EB /* searchhole.png in Resources */,
 				41F597E7188C602B00DAF315 /* Icon-76@2x.png in Resources */,
 				414AA8B1188B0274001B3301 /* RobotoCondensed-Italic.ttf in Resources */,
@@ -1287,6 +1308,7 @@
 				41FA39CB18FEDD6E00CEEE9E /* CONINVITEViewEventViewController.m in Sources */,
 				413326F118B115F50070517B /* CustomFriendCells.m in Sources */,
 				41F27C1D1893EA4D00E64CC1 /* LoginViewTwoViewController.m in Sources */,
+				411BE7B3191E415A00ED448D /* PageContentViewController.m in Sources */,
 				4196C3BC191D618A00422938 /* CONINVITEEDITEVENTViewController.m in Sources */,
 				414AA830188AE743001B3301 /* CONINVITEFirstViewController.m in Sources */,
 				416C616D18BA2494009E53AB /* MBProgressHUD.m in Sources */,

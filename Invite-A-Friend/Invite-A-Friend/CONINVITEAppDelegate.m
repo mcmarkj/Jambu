@@ -24,6 +24,12 @@
     [defaults setObject:nil forKey:@"CON96EPushAction"];
     [defaults synchronize];
     
+    // Override point for customization after application launch.
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.backgroundColor = [UIColor clearColor];
+    
     
     [GMSServices provideAPIKey:@"AIzaSyDZrNf8eUHU7VAQuf1unCGvKrDewHooeaY"];
    [Crashlytics startWithAPIKey:@"55c3ecc37a3b972e490db29a097513baf77b6aea"];
