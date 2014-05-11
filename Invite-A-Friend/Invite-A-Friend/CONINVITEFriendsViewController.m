@@ -91,12 +91,13 @@
 - (void)viewDidLoad
 {
 
-    
+   /*
     //Start Swipe Viewer Setup
     
     // Create the data model
     _pageTitles = @[@"   ", @"Create Events Invite Friends..."];
     _pageImages = @[@"red-profile.png", @"red-bio.png"];
+    
     
 
     // Create page view controller
@@ -115,7 +116,7 @@
     [self.pageViewController didMoveToParentViewController:self];
     [_pageImages retain];
     [_pageTitles retain];
-// End swipeviewer setup
+// End swipeviewer setup*/
     
     
     //setfonts
@@ -129,17 +130,35 @@
         _profilelabel3.font = [UIFont fontWithName:@"Roboto-Light" size:12];
     _toptitle.font = [UIFont fontWithName:@"Roboto-Light" size:20];
 }
-
+/*
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
         return nil;
     }
+
     
     // Create a new view controller and pass suitable data.
     PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    if (index == 1){
+        NSLog(@"Bla Bla Bla 2nd view");
+        pageContentViewController.nameText = @"";
+        pageContentViewController.twitterText = @"";
+        
+    } else {
+    
+            pageContentViewController.nameText = @"Mark McWhirter";
+            pageContentViewController.twitterText = @"@officialmarkm";
+            
+        
+    }
     pageContentViewController.imageFile = self.pageImages[index];
     pageContentViewController.titleText = self.pageTitles[index];
+    pageContentViewController.user_image = _UserImage.self;
+
+    
+
+
     pageContentViewController.pageIndex = index;
     
     return pageContentViewController;
@@ -153,9 +172,13 @@
 {
     NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
     
+
+    
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
     }
+
+    
     
     index--;
     return [self viewControllerAtIndex:index];
@@ -166,6 +189,9 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    
+    NSLog(@"Index: %lu", (unsigned long)index);
+
     
     if (index == NSNotFound) {
         return nil;
@@ -192,7 +218,7 @@
     return 0;
     [_pageImages retain];
     [_pageTitles retain];
-}
+}*/
 
 - (void)getProfileColourImage{
 
@@ -254,7 +280,6 @@
 
     
     _UserImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userInfo valueForKey:@"image_url"]]]];
-    
 
 }
 

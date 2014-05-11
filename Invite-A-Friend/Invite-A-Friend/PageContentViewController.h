@@ -9,9 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface PageContentViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *user_image;
+@property (strong, nonatomic) IBOutlet UILabel *name_Label;
+@property (strong, nonatomic) IBOutlet UILabel *twitter_Label;
+@property (strong, retain) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property  NSUInteger pageIndex;
 @property (strong, retain) NSString *titleText;
 @property (strong, retain) NSString *imageFile;
+@property (strong, retain) NSString *nameText;
+@property (strong, retain) NSString *twitterText;
 @end
