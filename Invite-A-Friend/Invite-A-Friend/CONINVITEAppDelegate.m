@@ -20,6 +20,37 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    
+    //Used it beta only
+    
+    //We're checking if beta's expired
+        NSString *expiredate = @"2014-05-31 12:00:00";
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *aDate = [df dateFromString: expiredate];
+    
+    
+
+    
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:[NSDate date]];
+    NSDate *today = [cal dateFromComponents:components];
+    components = [cal components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:aDate];
+    NSDate *otherDate = [cal dateFromComponents:components];
+    
+    //if([today isEqualToDate:otherDate]) {
+      //  exit(0);
+    //}
+    
+    if ([today timeIntervalSinceDate:otherDate] > 0 ){
+        exit(0);
+    }
+    
+    //
+    
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:nil forKey:@"CON96EPushAction"];
     [defaults synchronize];
