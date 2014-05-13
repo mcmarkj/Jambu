@@ -480,7 +480,7 @@
     
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if(EditArray == nil){
+    if(EditArray.count == 0){
         [defaults setObject:_inviteUsers forKey:@"CONInvitees"];
         [defaults setObject:_inviteUsers forKey:@"CONInviteAlready"];
         [defaults setObject:_inviteUsersNames forKey:@"ConInviteesNames"];

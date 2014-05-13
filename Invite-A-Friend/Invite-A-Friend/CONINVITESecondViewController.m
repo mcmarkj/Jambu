@@ -37,8 +37,10 @@
 @end
 
 @implementation CONINVITESecondViewController
-
-- (void)viewDidLoad
+-(void)viewDidLoad{
+    [super viewDidLoad];
+}
+- (void)viewDidAppear:(BOOL)animated
 {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     
@@ -74,7 +76,7 @@
     
     [self.viewForMap addSubview:_mapView];
     
-        [super viewDidLoad];
+    
     
 
     
@@ -130,12 +132,14 @@
         [userdefaults setObject:sthour forKey:@"constart"];
         [userdefaults synchronize];
         
-        if(hour>=17 & hour<=23){
-            _eventDaylabel.text = @"TONIGHT";
-        } else {
-            _eventDaylabel.text = @"TODAY";
+        {
+            //Calculate Day of the Week
+            NSDateFormatter *weekDay = [[NSDateFormatter alloc] init];
+            [weekDay setDateFormat:@"EEEE"];
+            
+            _eventDaylabel.text = [weekDay stringFromDate:date];
         }
-
+        
         //NSInteger minute = [components minute];
     }
     
@@ -170,12 +174,12 @@
         
         int datediff = (daydate - starthour);
         
-        if(datediff == 1){
-            _eventEnddaylabel.text = @"TOMORROW";
-        } else if (datediff == 0) {
-            _eventEnddaylabel.text = @"TODAY";
-        } else if (datediff > 1) {
-            _eventEnddaylabel.text = [NSString stringWithFormat:@"%ld/%ld/%ld", (long)daydate, (long)daymonth, (long)DayYear];
+        {
+            //Calculate Day of the Week
+            NSDateFormatter *weekDay = [[NSDateFormatter alloc] init];
+            [weekDay setDateFormat:@"EEEE"];
+            
+            _eventEnddaylabel.text = [weekDay stringFromDate:date];
         }
         
         //NSInteger minute = [components minute];
@@ -221,12 +225,26 @@
         
         //THERE"S NO EVENT!
         
-    } else {
-    
-    
-    NSString *eventHour = [NSString stringWithFormat:@"%ld", (long)hours];
-    NSString *eventMin = [NSString stringWithFormat:@"%ld", (long)mins];
-    
+        
+        
+    } else if(days>=1)
+    {    NSString *eventHour = [NSString stringWithFormat:@"%ld", (long)hours];
+        NSString *eventday = [NSString stringWithFormat:@"%ld", (long)days];
+        
+        
+        _hoursLabel.text = @"Days";
+        _minsLabel.text = @"Hours";
+        _eventHour.text = eventday;
+        _eventMinute.text = eventHour;
+        _eventMinute.textColor = [UIColor whiteColor];
+        _eventHour.textColor = [UIColor whiteColor];
+        }
+    else {
+
+        NSString *eventHour = [NSString stringWithFormat:@"%ld", (long)hours];
+        NSString *eventMin = [NSString stringWithFormat:@"%ld", (long)mins];
+
+       
     if([eventHour isEqual:@"0"]) {
       //we're not doing anything as we want it to stay as 0
                     _hoursLabel.text = @"Hours";

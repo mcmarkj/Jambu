@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4104B883190AC8ED00DB9C38 /* EventListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4104B882190AC8ED00DB9C38 /* EventListCell.m */; };
 		4104B885190AC93D00DB9C38 /* EventListCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4104B884190AC93D00DB9C38 /* EventListCells.xib */; };
-		41078AA0191992FE00CF151A /* Main_4s.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41078A9E191992FE00CF151A /* Main_4s.storyboard */; };
 		411BE7B3191E415A00ED448D /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 411BE7B2191E415A00ED448D /* PageContentViewController.m */; };
 		411BE7B6191E433900ED448D /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = 411BE7B4191E433900ED448D /* page1.png */; };
 		411BE7B7191E433900ED448D /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 411BE7B5191E433900ED448D /* page2.png */; };
@@ -126,6 +125,7 @@
 		41A6AE6718CA8DBC008416EA /* plus2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A6AE6518CA8DBC008416EA /* plus2@2x.png */; };
 		41A6AE6C18CA905C008416EA /* CONINVITENearbyEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A6AE6B18CA905C008416EA /* CONINVITENearbyEventViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		41A6AE6F18CA9092008416EA /* CONINVITECreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A6AE6E18CA9092008416EA /* CONINVITECreateEventViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		41CF3448192141260063630B /* Main_4s.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41CF3446192141260063630B /* Main_4s.storyboard */; };
 		41D068D818BA648100F29CD0 /* FriendFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D068D618BA648100F29CD0 /* FriendFeedCell.m */; };
 		41D068DD18BA6BFE00F29CD0 /* FriendFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D068D718BA648100F29CD0 /* FriendFeedCell.xib */; };
 		41D068E018BA6E4200F29CD0 /* cellback.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D068DE18BA6E4200F29CD0 /* cellback.png */; };
@@ -219,7 +219,6 @@
 		4104B881190AC8ED00DB9C38 /* EventListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListCell.h; sourceTree = "<group>"; };
 		4104B882190AC8ED00DB9C38 /* EventListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListCell.m; sourceTree = "<group>"; };
 		4104B884190AC93D00DB9C38 /* EventListCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventListCells.xib; sourceTree = "<group>"; };
-		41078A9F191992FE00CF151A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_4s.storyboard; sourceTree = "<group>"; };
 		411BE7B1191E415A00ED448D /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		411BE7B2191E415A00ED448D /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		411BE7B4191E433900ED448D /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
@@ -381,6 +380,7 @@
 		41A6AE6B18CA905C008416EA /* CONINVITENearbyEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITENearbyEventViewController.m; sourceTree = "<group>"; };
 		41A6AE6D18CA9092008416EA /* CONINVITECreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONINVITECreateEventViewController.h; sourceTree = "<group>"; };
 		41A6AE6E18CA9092008416EA /* CONINVITECreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CONINVITECreateEventViewController.m; sourceTree = "<group>"; };
+		41CF3447192141260063630B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_4s.storyboard; sourceTree = "<group>"; };
 		41D068D518BA648100F29CD0 /* FriendFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendFeedCell.h; sourceTree = "<group>"; };
 		41D068D618BA648100F29CD0 /* FriendFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendFeedCell.m; sourceTree = "<group>"; };
 		41D068D718BA648100F29CD0 /* FriendFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendFeedCell.xib; sourceTree = "<group>"; };
@@ -587,7 +587,7 @@
 				414AA828188AE743001B3301 /* CONINVITEAppDelegate.h */,
 				414AA829188AE743001B3301 /* CONINVITEAppDelegate.m */,
 				414AA82B188AE743001B3301 /* Main.storyboard */,
-				41078A9E191992FE00CF151A /* Main_4s.storyboard */,
+				41CF3446192141260063630B /* Main_4s.storyboard */,
 				416C616118BA18AC009E53AB /* User Search */,
 				416C616318BA18E1009E53AB /* View Friends */,
 				416C616918BA1A57009E53AB /* Logins */,
@@ -1213,6 +1213,7 @@
 				4142F2C9189FA836002ECA92 /* blue-profile.png in Resources */,
 				41FFD97418F9972800CC85E5 /* button.png in Resources */,
 				41F59805188C602B00DAF315 /* launch.png in Resources */,
+				41CF3448192141260063630B /* Main_4s.storyboard in Resources */,
 				41A6AE6318CA8D0F008416EA /* plus@2x.png in Resources */,
 				41E8FB6D189D8314000D43F4 /* pink@2x.png in Resources */,
 				4142F27D189D993E002ECA92 /* AddFriend@2x.png in Resources */,
@@ -1236,7 +1237,6 @@
 				41E8FB42189D1005000D43F4 /* README.md in Resources */,
 				414AA82D188AE743001B3301 /* Main.storyboard in Resources */,
 				4126563318CC9D5A00368BB1 /* notfriends.png in Resources */,
-				41078AA0191992FE00CF151A /* Main_4s.storyboard in Resources */,
 				414AA8AE188B0274001B3301 /* Roboto-ThinItalic.ttf in Resources */,
 				41F3228018A1A343001E07EB /* searchcircle@2x.png in Resources */,
 				41E8FB67189D7FF0000D43F4 /* search@2x.png in Resources */,
@@ -1340,14 +1340,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		41078A9E191992FE00CF151A /* Main_4s.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				41078A9F191992FE00CF151A /* Base */,
-			);
-			name = Main_4s.storyboard;
-			sourceTree = "<group>";
-		};
 		414AA822188AE743001B3301 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1362,6 +1354,14 @@
 				414AA82C188AE743001B3301 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		41CF3446192141260063630B /* Main_4s.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41CF3447192141260063630B /* Base */,
+			);
+			name = Main_4s.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

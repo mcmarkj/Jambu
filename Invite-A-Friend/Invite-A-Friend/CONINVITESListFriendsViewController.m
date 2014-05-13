@@ -229,14 +229,14 @@
     //cell.imageView.image = [UIImage imageNamed:@"searchcircle.png"];
     
     
-    int rownum = indexPath.row;
-    int totnum = [tweets count] - 1;
+  //  int rownum = indexPath.row;
+    //int totnum = [tweets count] - 1;
     
-    if(rownum == totnum){
+    //if(rownum == totnum){
         
-        static NSString *simpleTableIdentifier = @"friendfeedcell";
+      //  static NSString *simpleTableIdentifier = @"friendfeedcell";
         
-        CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+       // CustomFriendCells *cell = (CustomFriendCells *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         /*if (cell == nil)
         {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"FriendFeedCell" owner:self options:nil];
@@ -244,9 +244,9 @@
         }*/
         // Reset previous content of the cell, I have these defined in a UITableCell subclass, change them where needed
         // Here we create the ‘Load more’ cell
+    
         
-        
-    }
+    //}
     
     return cell;
 

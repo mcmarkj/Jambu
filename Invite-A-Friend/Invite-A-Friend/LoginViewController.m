@@ -274,6 +274,8 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
     NSString *fname = [defaults objectForKey:@"Con96fname"];
     
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/users/%@", UID]];
+   
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     [request setURL:url];
@@ -290,6 +292,8 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
 
     
     NSString *DBNAME = [userInfo valueForKey:@"full_name"];
+    
+    NSString *AID = [userInfo valueForKey:@"id"];
     
     //Do some checks to make sure the returned values are correct.
     
@@ -310,16 +314,22 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
         
         if(deviceToken == nil){
 
-        } else{ {
+        } else{
+            
+            {
             
 
         /*We're now going to add the device token to our DB so they're notified*/
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSString *MID = [defaults objectForKey:@"Con96AID"];
+        //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        //NSString *MID = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"Con96AID"]];
         
+                
+                
         NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/device_tokens/%@", @""]];
+                
+            
         
-        NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: deviceToken, @"token", @"iOS", @"os", MID, @"user_id", nil];
+        NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: deviceToken, @"token", @"iOS", @"os", AID, @"user_id", nil];
         
         
         NSError *error;
@@ -349,7 +359,8 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
         
         
         
-        }}
+        }
+        }
         //lets mark the user as logged in for the future.
     } else {
         NSLog(@"The API hasn't returned a correct ID, something mustn't have worked");
@@ -387,7 +398,7 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
     
     NSArray *userInfo = [json valueForKey:@"user"];
     
-    
+    NSString *AID = [userInfo valueForKey:@"id"];
     
     NSString *DBNAME = [userInfo valueForKey:@"full_name"];
     
@@ -410,46 +421,49 @@ message:@"There are no Twitter accounts added to your device. You can add or mak
             
             if(deviceToken == nil){
                 
-            } else{ {
+            } else{
                 
-                
-                
-                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                NSString *MID = [defaults objectForKey:@"Con96AID"];
-                
-                NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/device_tokens/%@", @""]];
-                
-                NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: deviceToken, @"token", @"iOS", @"os", MID, @"user_id", nil];
-                
-                
-                NSError *error;
-                
-                NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
-                
-                NSString *editeddata = [NSString stringWithFormat:@"{\"device_token\":%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
-                
-                NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
-                
-                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-                
-                [request setURL:url];
-                [request setHTTPMethod:@"POST"];
-                [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-                [request setHTTPBody:finaldata];
-                
-                NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-                
-                // DISABLED WHILE WE CONFIGURE STUFF
-                
-                NSLog(@"We're now collecting to the API");
-                
-                [connection start];
-                
-                
-                
-                
-                
-            }}
+                {
+                    
+                    
+                    /*We're now going to add the device token to our DB so they're notified*/
+                    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                    NSString *MID = [defaults objectForKey:@"Con96AID"];
+                    
+                    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/device_tokens/%@", @""]];
+                    
+                    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: deviceToken, @"token", @"iOS", @"os", AID, @"user_id", nil];
+                    
+                    
+                    NSError *error;
+                    
+                    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:&error];
+                    
+                    NSString *editeddata = [NSString stringWithFormat:@"{\"device_token\":%@}",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
+                    
+                    NSData* finaldata = [editeddata dataUsingEncoding:NSUTF8StringEncoding];
+                    
+                    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+                    
+                    [request setURL:url];
+                    [request setHTTPMethod:@"POST"];
+                    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                    [request setHTTPBody:finaldata];
+                    
+                    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+                    
+                    // DISABLED WHILE WE CONFIGURE STUFF
+                    
+                    NSLog(@"We're now collecting to the API");
+                    
+                    [connection start];
+                    
+                    
+                    
+                    
+                    
+                }
+            }
             //lets mark the user as logged in for the future.
         } else {
             NSLog(@"The API hasn't returned a correct ID, something mustn't have worked");

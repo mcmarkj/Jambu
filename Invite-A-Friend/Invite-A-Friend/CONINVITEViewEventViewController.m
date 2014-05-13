@@ -41,6 +41,14 @@
 
 @implementation CONINVITEViewEventViewController
 
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    //[self viewDidAppear];
+    [self checkifattending];
+}
+
+
 - (void)viewDidLoad
 {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
@@ -78,6 +86,7 @@
         
         if(myAID == eventAID){
             _viewEventButton.hidden = NO;
+                [_RSVPButton setTitle:@"Cancel Event" forState:UIControlStateNormal];
         } else {
             _viewEventButton.hidden = YES;
         }
@@ -87,6 +96,8 @@
     
     // long long latat = [lat longLongValue];
     //long long longa = [lng longLongValue];
+    
+    
     
     self.camera = [GMSCameraPosition cameraWithLatitude:[lat floatValue]
                                               longitude:[lng floatValue] zoom:14
@@ -212,8 +223,8 @@
         NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSDayCalendarUnit | NSMinuteCalendarUnit | NSWeekdayCalendarUnit) fromDate:date];
         NSInteger hour = [components hour];
         NSInteger minute = [components minute];
-        NSInteger daydate = [components day];
-        NSInteger weekday = [components weekday];
+    //    NSInteger daydate = [components day];
+      //  NSInteger weekday = [components weekday];
         //  NSInteger AMPM = [components]
         
         NSString *altminute = @"00";
@@ -308,7 +319,19 @@
         
         //THERE"S NO EVENT!
         
-    } else {
+    } else if(days>=1)
+    {    NSString *eventHour = [NSString stringWithFormat:@"%ld", (long)hours];
+        NSString *eventday = [NSString stringWithFormat:@"%ld", (long)days];
+        
+        
+        _hoursLabel.text = @"Days";
+        _minsLabel.text = @"Hours";
+        _eventHour.text = eventday;
+        _eventMinute.text = eventHour;
+        _eventMinute.textColor = [UIColor whiteColor];
+        _eventHour.textColor = [UIColor whiteColor];
+    }
+else {
         
         
         NSString *eventHour = [NSString stringWithFormat:@"%ld", (long)hours];
@@ -454,9 +477,79 @@
     _RSVPWindow.hidden= YES;
         [_RSVPButton setTitle:@"Not Going" forState:UIControlStateNormal];
 }
+
+
+-(void)checkifattending{
+    // http://amber.concept96.co.uk/api/v1/attendees/
+    
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    NSString *event_ID = [userdefaults objectForKey:@"CON96EventID"];
+        NSString *UID = [userdefaults objectForKey:@"Con96TUID"];
+    
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/attendees/%@", event_ID]];
+    
+    NSLog(@"URL: %@", url);
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSError *error;
+    NSURLResponse *response;
+    NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+    
+    NSArray *atendees = [json valueForKey:@"attendees"];
+    NSArray *atendeeIDs = [atendees valueForKey:@"uid"];
+
+    NSString *altUID = [NSString stringWithFormat:@"%@", UID];
+    
+    if([atendeeIDs containsObject:altUID]){
+                [_RSVPButton setTitle:@"Going" forState:UIControlStateNormal];
+    } else {
+                [_RSVPButton setTitle:@"Not Going" forState:UIControlStateNormal];
+    }
+    
+    
+    
+    
+}
+
+
+
 - (IBAction)RSVPClick:(id)sender {
-  
+    NSString *RSVPTitle = _RSVPButton.titleLabel.text;
+    
+    if([RSVPTitle isEqual:@"Cancel Event"]){
+        NSLog(@"Cancel Clicked");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *event_id = [defaults objectForKey:@"CON96EventID"];
+
+        NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://amber.concept96.co.uk/api/v1/events/%@", event_id]];
+        NSLog(@"URL: %@", url);
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        
+        [request setURL:url];
+        [request setHTTPMethod:@"DELETE"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:NULL];
+
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        // DISABLED WHILE WE CONFIGURE STUFF
+        
+        NSLog(@"We're now collecting to the API");
+        
+        [connection start];
+        [self closeView:self];
+    } else {
+    
         _RSVPWindow.hidden = NO;
+    }
 }
 
 - (IBAction)editEvent:(id)sender {

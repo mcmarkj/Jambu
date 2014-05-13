@@ -485,8 +485,13 @@
     } else if([action isEqualToString:@"event created"]) {
         outputAction = [NSString stringWithFormat:@"%@ updated their event \"%@\"", _UserName.text, actionname];
     } else if([action isEqualToString:@"user created"]) {
-        outputAction = [NSString stringWithFormat:@"%@ created an account", _UserName.text];
+        outputAction = [NSString stringWithFormat:@"%@ created his account", _UserName.text];
+    } else if([action isEqualToString:@"joined event"]) {
+        outputAction = [NSString stringWithFormat:@"%@ is attending an event", _UserName.text];
+    } else if([action isEqualToString:@"attendee updated"]) {
+        outputAction = [NSString stringWithFormat:@"%@ is attending an event", _UserName.text];
     }
+
 
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", _UserName.text, @""];
@@ -573,7 +578,6 @@
     
     
     //Navigation logic may go here. Create and push another view controller.
-    
     if([action isEqualToString:@"friend added"]) {
         NSString *UID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"]];
         NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"];
@@ -582,8 +586,30 @@
         [defaults setObject:AID forKey:@"Con96FAID"];
         [defaults synchronize];
         [self  performSegueWithIdentifier:@"feedFriend" sender:self];
+    } else if([action isEqualToString:@"joined event"]) {
+        NSString *eventID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"]];
+        //NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:eventID forKey:@"CON96EventID"];
+        // [defaults setObject:AID forKey:@"Con96FAID"];
+        [defaults synchronize];
+        
+        //Navigation logic may go here. Create and push another view controller.
+        
+        [self  performSegueWithIdentifier:@"showEvent" sender:self];
+        
+    } else if([action isEqualToString:@"event created"]) {
+        NSString *eventID = [NSString stringWithFormat:@"%@",[[tweets objectAtIndex:indexPath.row] objectForKey:@"argument"]];
+        //NSString *AID = [[tweets objectAtIndex:indexPath.row] objectForKey:@"id"];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:eventID forKey:@"CON96EventID"];
+        // [defaults setObject:AID forKey:@"Con96FAID"];
+        [defaults synchronize];
+        
+        //Navigation logic may go here. Create and push another view controller.
+        
+        [self  performSegueWithIdentifier:@"showEvent" sender:self];
     }
-    
     
 }
 

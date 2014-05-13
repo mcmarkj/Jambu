@@ -301,11 +301,7 @@
     [self checkfornetwork];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
-    
-    
     NSString *action = [userdefaults objectForKey:@"CON96PushAction"];
     
     NSLog(@"The action is: %@", [userdefaults objectForKey:@"CON96PushAction"]);
@@ -774,7 +770,7 @@
 
 }
 - (IBAction)showAttendedEvents:(id)sender {
-    NSString *title = [_eventsAttended currentTitle];
+   // NSString *title = [_eventsAttended currentTitle];
     
   /*  if ([title isEqualToString:@"0"]) {
         NSLog(@"User has no events attended");
