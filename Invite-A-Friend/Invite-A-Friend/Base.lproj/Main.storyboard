@@ -377,7 +377,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkY-v9-ncZ">
                                                 <rect key="frame" x="24" y="392" width="276" height="49"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Rate Jambu" backgroundImage="button.png">
+                                                <state key="normal" title="Give Beta Feedback" backgroundImage="button.png">
                                                     <color key="titleColor" red="1" green="0.98296921420000005" blue="0.97787577739999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -3434,10 +3434,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <segue reference="SUk-Ux-ee1"/>
         <segue reference="eR1-s8-gg5"/>
         <segue reference="5ds-UG-5L4"/>
-        <segue reference="3GC-NE-ueb"/>
-        <segue reference="ZiE-uh-TLZ"/>
         <segue reference="9UP-zD-xGT"/>
         <segue reference="xlm-FY-KGa"/>
         <segue reference="Y49-Y4-P4Y"/>
+        <segue reference="iJ4-Jz-xWc"/>
+        <segue reference="aM9-2V-Bnr"/>
     </inferredMetricsTieBreakers>
 </document>

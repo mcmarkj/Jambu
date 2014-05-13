@@ -394,7 +394,9 @@
             
             
             //Let's convert the unix timestamp
+            
             double timestampval = [[next_event valueForKey:@"time_of_event"] doubleValue];
+            
             NSTimeInterval timestamp = (NSTimeInterval)timestampval;
             NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
             NSDateFormatter *dateformatter=[[NSDateFormatter alloc]init];
@@ -409,8 +411,12 @@
             [dateformatter setDateFormat:@"dd-MM-yy HH:mm"];
             
             NSString *dateString=[dateformatter stringFromDate:date];
-                
+            
+                if([next_event valueForKey:@"time_of_event"] == nil){
+                    _overlayeventdatelabel.text = @"no event";
+                } else {
             _overlayeventdatelabel.text = dateString;
+                }
             // end of conversion
             }
             
@@ -488,7 +494,8 @@
             
             NSString *attendeecount = [NSString stringWithFormat:@"%@", [json valueForKey:@"next_event_attendees"]];
             
-            if(attendeecount == Nil){
+            if([attendeecount isEqualToString:@"(null)"]){
+                 _overlayeventattendeeslabel.text = [NSString stringWithFormat:@"%@ attendees",@"no"];
             } else if([attendeecount isEqualToString:@"1"]){
                 
                 _overlayeventattendeeslabel.text = [NSString stringWithFormat:@"%@ attendee",attendeecount];

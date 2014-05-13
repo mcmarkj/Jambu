@@ -43,7 +43,7 @@
         _titleLabel.text = @"Rate Jambu";
         //go to rate page
         //1
-        NSString *urlString = @"itms-apps://itunes.apple.com/app/id353372460";
+        NSString *urlString = @"https://docs.google.com/forms/d/1R0-UL0UWe9Fmqo2MiHdHM2BpG8JhdapsQkOL877rjbQ/viewform";
         //2
         NSURL *url = [NSURL URLWithString:urlString];
         //3

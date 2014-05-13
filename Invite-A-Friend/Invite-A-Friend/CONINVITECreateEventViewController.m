@@ -400,6 +400,8 @@ NSString *timestampStart;
 - (IBAction)createEvent:(id)sender {
     NSLog(@"Time to create the event");
     
+
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *MID = [defaults objectForKey:@"Con96AID"];
     
@@ -424,6 +426,83 @@ NSString *timestampStart;
     NSString *long1 = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"CON96LNG"]];
      NSString *locationName = [defaults objectForKey:@"CON96LName"];
     NSString *privicyoption = [defaults objectForKey:@"CONPrivicy"];
+    
+    NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+    
+    //Lets validate the data
+    
+    int validdata = 1;
+    
+    if(timestamp == now){
+        //notvalid
+        validdata = 0;
+    } else {
+        //valid
+     
+
+    }
+    if(endtimestamp == now){
+        //notvalid
+        validdata = 0;
+
+    } else {
+        //valid
+       
+
+    }
+    
+    
+    if(lat1 == nil){
+        //notvalid
+        validdata = 0;
+
+    } else {
+        
+
+    }
+    
+    if(long1 == nil){
+        //notvalid
+        validdata = 0;
+
+    } else {
+        //valid
+   
+
+    }
+    
+    if(locationName == nil){
+        //notvalid
+        validdata = 0;
+
+    } else {
+        //valid
+       
+
+    }
+    
+    
+    //
+    
+    
+    if([_eventDescription.text isEqualToString:@"event description"]){
+        //notvalid
+         validdata = 0;
+    } else {
+        //valid
+        
+    }
+    
+    if([_eventDescription.text isEqualToString:@""]){
+        //notvalid
+         validdata = 0;
+    } else {
+        //valid
+        
+    }
+    
+    
+    
     
     NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys: _eventTitle.text, @"title", _eventDescription.text, @"description", MID, @"user_id", timestampStarts, @"time_of_event",timestampEnds, @"time_of_event_end", privicyoption ,@"privacy", locationName ,@"location_name",@"false", @"canceled", lat1, @"lat", long1, @"long", nil];
     
@@ -454,9 +533,14 @@ NSString *timestampStart;
     NSString *theReply = [[NSString alloc] initWithBytes:[POSTReply bytes] length:[POSTReply length] encoding: NSASCIIStringEncoding];
     NSLog(@"Reply: %@", theReply);*/
     
-    NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
     
+    if(validdata == 1){
+        
+        NSData *jsondata = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        NSArray *json = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingAllowFragments error:nil];
+        
+
+
   //  BOOL success_result;
     
     NSNumber*json_success = [json valueForKey:@"success"];
@@ -520,11 +604,44 @@ NSString *timestampStart;
 
        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:attendRequest delegate:self];
     
-    [connection start];
+    
+    if(validdata == 1){
+    
+        [connection start];
+    
+        [self closeView:self];
+    } else {
+            NSLog(@"There was an issue");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                            message:@"You seem to have entered some invalid data, please check what you've inputted a try again. Every form is a requirement."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil
+                                  ];
+            [alert performSelectorOnMainThread:@selector(show)
+                                    withObject:nil
+                                 waitUntilDone:NO];
+        }
   //  [jsonData release];
-    [self closeView:self];
 
+    } else {
+        NSLog(@"There was an issue");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                        message:@"You seem to have entered some invalid data, please check what you've inputted a try again. Every form is a requirement."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil
+                              ];
+        [alert performSelectorOnMainThread:@selector(show)
+                                withObject:nil
+                             waitUntilDone:NO];
+
+    }
+    //  [jsonData release];
+
+    
 }
+
 - (IBAction)chooseEndButton:(id)sender {
     _thedatePicker.hidden = YES;
     _endDateView.hidden = NO;
