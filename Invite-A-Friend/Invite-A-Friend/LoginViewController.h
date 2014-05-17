@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Twitter/Twitter.h>
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UIActionSheetDelegate>
 {
+    UIActionSheet *actionsheet;
         NSString *username;
     BOOL *login;
     NSInteger intTmp;

@@ -934,7 +934,7 @@
                                                 <rect key="frame" x="0.0" y="-4" width="320" height="71"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Events Your Attending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQR-NZ-yMD">
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Events You're Attending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQR-NZ-yMD">
                                                         <rect key="frame" x="0.0" y="38" width="320" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -3435,9 +3435,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <segue reference="eR1-s8-gg5"/>
         <segue reference="5ds-UG-5L4"/>
         <segue reference="9UP-zD-xGT"/>
-        <segue reference="xlm-FY-KGa"/>
-        <segue reference="Y49-Y4-P4Y"/>
-        <segue reference="iJ4-Jz-xWc"/>
+        <segue reference="Djy-6g-83u"/>
         <segue reference="aM9-2V-Bnr"/>
+        <segue reference="iJ4-Jz-xWc"/>
+        <segue reference="Y49-Y4-P4Y"/>
     </inferredMetricsTieBreakers>
 </document>

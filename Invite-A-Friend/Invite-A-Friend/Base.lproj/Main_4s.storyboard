@@ -934,7 +934,7 @@
                                                 <rect key="frame" x="0.0" y="-4" width="320" height="71"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Events Your Attending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQR-NZ-yMD">
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Events You're Attending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQR-NZ-yMD">
                                                         <rect key="frame" x="0.0" y="38" width="320" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -976,7 +976,6 @@
         <!--Login View Two View Controller-->
         <scene sceneID="MCK-ek-P4L">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QN7-un-hbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Pkv-4c-iiK" customClass="LoginViewTwoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dNQ-aD-h7u"/>
@@ -1074,6 +1073,7 @@
                         <outlet property="UserImage5" destination="aCb-Ar-Mll" id="iBS-Pm-KAc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QN7-un-hbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2367" y="739"/>
         </scene>
@@ -3406,10 +3406,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <segue reference="SUk-Ux-ee1"/>
         <segue reference="ZiE-uh-TLZ"/>
         <segue reference="3GC-NE-ueb"/>
-        <segue reference="5ds-UG-5L4"/>
-        <segue reference="eR1-s8-gg5"/>
         <segue reference="pA2-NI-Val"/>
         <segue reference="8vI-El-fwu"/>
-        <segue reference="xlm-FY-KGa"/>
+        <segue reference="Djy-6g-83u"/>
+        <segue reference="eR1-s8-gg5"/>
+        <segue reference="5ds-UG-5L4"/>
     </inferredMetricsTieBreakers>
 </document>
