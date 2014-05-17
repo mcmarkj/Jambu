@@ -88,12 +88,17 @@
     NSLog(@"Checking twitter for updates");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *user_img = [defaults objectForKey:@"Con96UIMG"];
-    NSString *currenttwitter_username = [defaults objectForKey:@"Con96TUNAME"];
-
+    NSString *currenttwitter_username = [NSString stringWithFormat:@"@%@",[defaults objectForKey:@"Con96TUNAME"]];
+    NSString *newString = [currenttwitter_username stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
-    ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
+    
+    NSArray *accountDescriptions = [accountsArray valueForKey:@"accountDescription"];
+    
+   int accountindex = [accountDescriptions indexOfObject:newString];
+    
+    ACAccount *twitterAccount = [accountsArray objectAtIndex:accountindex];
 
 
     
