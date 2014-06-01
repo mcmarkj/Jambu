@@ -185,7 +185,12 @@
         //NSInteger minute = [components minute];
     }
     
-    {
+    {if(_eventHider.hidden == YES){
+        
+        NSLog(@"No event");
+    } else {
+         NSLog(@"There is an event");
+    
         
         NSString *ID = [userdefaults objectForKey:@"ConNextUID"];
         
@@ -204,7 +209,7 @@
 
     
     _invitee_image.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[json valueForKey:@"url"]]]];
-        
+    }
     }
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];

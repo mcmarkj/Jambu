@@ -7,7 +7,7 @@
 //
 
 #import "CONINVITECreateEventViewController.h"
-
+#import "TestFlight.h"
 @interface CONINVITECreateEventViewController ()
 - (IBAction)createEvent:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *endDateView;
@@ -399,7 +399,7 @@ NSString *timestampStart;
 }
 - (IBAction)createEvent:(id)sender {
     NSLog(@"Time to create the event");
-    
+
 
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -426,6 +426,10 @@ NSString *timestampStart;
     NSString *long1 = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"CON96LNG"]];
      NSString *locationName = [defaults objectForKey:@"CON96LName"];
     NSString *privicyoption = [defaults objectForKey:@"CONPrivicy"];
+    
+    
+    
+        [TestFlight passCheckpoint:[NSString stringWithFormat:@"Created Event: %@",locationName]];
     
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
     

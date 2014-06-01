@@ -25,7 +25,7 @@
     //Used it beta only
     
     //We're checking if beta's expired
-        NSString *expiredate = @"2014-05-31 12:00:00";
+        NSString *expiredate = @"2014-06-30 12:00:00";
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];

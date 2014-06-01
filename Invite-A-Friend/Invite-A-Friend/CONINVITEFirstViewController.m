@@ -539,7 +539,7 @@
         
 
         
-                    [self checktwitterupdate];
+                   // [self checktwitterupdate];
         
         //[self.view setNeedsDisplay];
 

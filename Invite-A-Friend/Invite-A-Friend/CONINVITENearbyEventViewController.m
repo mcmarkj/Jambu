@@ -9,6 +9,7 @@
 #import "CONINVITENearbyEventViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "JSON.h"
+#import "TestFlight.h"
 #include "EventListCell.h"
 
 @interface CONINVITENearbyEventViewController ()
@@ -131,7 +132,7 @@ CLLocationManager *locationManager;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [TestFlight passCheckpoint:@"NearbyEvents"];
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.distanceFilter = kCLDistanceFilterNone;

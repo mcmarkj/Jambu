@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewTwoViewController.h"
+#import "TestFlight.h"
 
 @interface LoginViewTwoViewController ()
 
@@ -26,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [TestFlight passCheckpoint:@"Edit Profile"];
 	// Do any additional setup after loading the view.
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
