@@ -131,6 +131,8 @@
 
         NSString *prof_img = [json objectForKey:@"profile_image_url"];
         
+        NSString *name = [json objectForKey:@"name"];
+        NSString *currentName = _UserNameLabel.text;
         
         NSString *altprof_img = [prof_img stringByReplacingOccurrencesOfString:@"_normal"
                                                                     withString:@""];
@@ -220,7 +222,7 @@
             }
         }
         
-    /*    if([currentName isEqualToString:name]) {
+        if([currentName isEqualToString:name]) {
             //Do nothing
                         NSLog(@"User name is up to date");
         } else {
@@ -273,7 +275,7 @@
             }
             
             
-        } */
+        }
 
         //NSString *nooffollwers = [json objectForKey:@"follower_count"];
         
@@ -538,9 +540,10 @@
         [self performSelector:@selector(updateCountdown) withObject:nil afterDelay:1];
         
 
-        
-                   // [self checktwitterupdate];
-        
+            if(_UserTNameLabel == NULL){
+            } else {
+                    [self checktwitterupdate];
+            }
         //[self.view setNeedsDisplay];
 
         } }
